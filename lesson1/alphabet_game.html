@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Alphabet Game</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        .game-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+            background: #f9f9f9;
+            font-family: var(--letter-font, 'Arial', sans-serif);
+            border-radius: .5rem;
+            transition: transform .08s ease, background-color .15s ease, box-shadow .15s ease;
+        }
+        
+        .card:hover {
+            background: #eef;
+        }
+        
+        .card.correct {
+            box-shadow: 0 0 0 3px #28a745 inset;
+            background: #e8f8ee;
+        }
+        
+        .card.wrong {
+            box-shadow: 0 0 0 3px #dc3545 inset;
+            background: #fdeaea;
+        }
+        
+        .shake {
+            animation: shake .2s linear 1;
+        }
+        
+        @keyframes shake {
+            0% {
+                transform: translateX(0)
+            }
+            25% {
+                transform: translateX(-3px)
+            }
+            50% {
+                transform: translateX(3px)
+            }
+            75% {
+                transform: translateX(-2px)
+            }
+            100% {
+                transform: translateX(0)
+            }
+        }
+        
+        .score-board {
+            margin-top: 1rem;
+            font-size: 18px;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../lessons.html">Lessons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../resources.html">Resources</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="game-container">
+        <h2>Russian Alphabet Game</h2>
+        <p>Listen to the letter and click the correct one.</p>
+
+        <div class="d-flex justify-content-center mb-3 gap-2">
+            <button id="voiceMale" class="btn btn-outline-primary btn-sm">Male Voice</button>
+            <button id="voiceFemale" class="btn btn-outline-secondary btn-sm">Female Voice</button>
+            <button id="printFont" class="btn btn-outline-dark btn-sm">Print Letters</button>
+            <button id="handFont" class="btn btn-outline-dark btn-sm">Handwritten Letters</button>
+        </div>
+
+        <button id="playSound" class="btn btn-primary">Play Letter</button>
+        <div class="grid mt-3" id="grid"></div>
+        <div class="score-board">
+            <span id="score">Score: 0</span> | <span id="streak">Streak: 0</span>
+        </div>
+        <div id="live" class="sr-only" aria-live="polite"></div>
+    </main>
+
+    <footer class="text-center mt-5 p-3 bg-light">
+        <p class="mb-0">&copy; 2025 Community Russian Language Course</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JSON map: keys are the **letter names** (match your mp3 filenames)
+        const LETTERS = {
+            "а": {
+                display: "А а"
+            },
+            "бэ": {
+                display: "Б б"
+            },
+            "вэ": {
+                display: "В в"
+            },
+            "гэ": {
+                display: "Г г"
+            },
+            "дэ": {
+                display: "Д д"
+            },
+            "е": {
+                display: "Е е"
+            },
+            "ё": {
+                display: "Ё ё"
+            },
+            "жэ": {
+                display: "Ж ж"
+            },
+            "зэ": {
+                display: "З з"
+            },
+            "и": {
+                display: "И и"
+            },
+            "й": {
+                display: "Й й"
+            },
+            "ка": {
+                display: "К к"
+            },
+            "эл": {
+                display: "Л л"
+            },
+            "эм": {
+                display: "М м"
+            },
+            "эн": {
+                display: "Н н"
+            },
+            "о": {
+                display: "О о"
+            },
+            "пэ": {
+                display: "П п"
+            },
+            "эр": {
+                display: "Р р"
+            },
+            "эс": {
+                display: "С с"
+            },
+            "тэ": {
+                display: "Т т"
+            },
+            "у": {
+                display: "У у"
+            },
+            "эф": {
+                display: "Ф ф"
+            },
+            "ха": {
+                display: "Х х"
+            },
+            "цэ": {
+                display: "Ц ц"
+            },
+            "чэ": {
+                display: "Ч ч"
+            },
+            "ша": {
+                display: "Ш ш"
+            },
+            "ща": {
+                display: "Щ щ"
+            },
+            "твёрдый_знак": {
+                display: "Ъ ъ"
+            },
+            "ы": {
+                display: "Ы ы"
+            },
+            "мягкий_знак": {
+                display: "Ь ь"
+            },
+            "э": {
+                display: "Э э"
+            },
+            "ю": {
+                display: "Ю ю"
+            },
+            "я": {
+                display: "Я я"
+            }
+        };
+
+        let currentKey = null; // current **letter name**
+        let wrongCount = 0; // wrong attempts this round (0 or 1)
+        let score = 0;
+        let streak = 0;
+        let voice = 'male';
+        let letterFont = 'print';
+
+        const grid = document.getElementById('grid');
+        const scoreEl = document.getElementById('score');
+        const streakEl = document.getElementById('streak');
+        const live = document.getElementById('live');
+
+        function buildGrid() {
+            grid.innerHTML = '';
+            Object.entries(LETTERS).forEach(([name, info]) => {
+                const div = document.createElement('button');
+                div.type = 'button';
+                div.className = 'card';
+                div.style.fontFamily = (letterFont === 'hand') ? 'Pacifico, cursive' : 'Arial, sans-serif';
+                div.textContent = info.display;
+                div.onclick = () => checkAnswer(name, div);
+                grid.appendChild(div);
+            });
+        }
+
+        function playLetterByName(letterName) {
+            const safe = encodeURIComponent(letterName);
+            const audio = new Audio(`../assets/sound/${voice}/${safe}.mp3`);
+            audio.onerror = () => console.warn('Missing mp3 for', letterName);
+            audio.play();
+        }
+
+        // --- Feedback sounds (no external assets needed) ---
+        let AC = null;
+
+        function ctx() {
+            if (!AC) AC = new(window.AudioContext || window.webkitAudioContext)();
+            return AC;
+        }
+
+        function pleasantChime() {
+            // two short sine tones: C5 -> E5
+            const a = ctx();
+            const now = a.currentTime;
+            const seq = [523.25, 659.25];
+            seq.forEach((f, i) => {
+                const o = a.createOscillator(),
+                    g = a.createGain();
+                o.type = 'sine';
+                o.frequency.value = f;
+                g.gain.setValueAtTime(0.0001, now + i * 0.12);
+                g.gain.exponentialRampToValueAtTime(0.2, now + i * 0.12 + 0.02);
+                g.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.12 + 0.25);
+                o.connect(g).connect(a.destination);
+                o.start(now + i * 0.12);
+                o.stop(now + i * 0.12 + 0.26);
+            });
+        }
+
+        function buzz() {
+            const a = ctx();
+            const t0 = a.currentTime;
+            const o = a.createOscillator();
+            const g = a.createGain();
+            o.type = 'square';
+            o.frequency.setValueAtTime(120, t0);
+            g.gain.setValueAtTime(0.0001, t0);
+            g.gain.exponentialRampToValueAtTime(0.25, t0 + 0.02);
+            g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.25);
+            o.connect(g).connect(a.destination);
+            o.start(t0);
+            o.stop(t0 + 0.28);
+        }
+
+        function announce(msg) {
+            live.textContent = msg;
+        }
+
+        function nextQuestion() {
+            wrongCount = 0;
+            const keys = Object.keys(LETTERS);
+            const randomIndex = Math.floor(Math.random() * keys.length);
+            currentKey = keys[randomIndex];
+            playLetterByName(currentKey);
+        }
+
+        function updateHUD() {
+            scoreEl.textContent = 'Score: ' + score;
+            streakEl.textContent = 'Streak: ' + streak;
+        }
+
+        function checkAnswer(chosenKey, el) {
+            if (chosenKey === currentKey) {
+                score++;
+                streak++;
+                el.classList.add('correct');
+                pleasantChime();
+                announce('Correct');
+                setTimeout(() => {
+                    el.classList.remove('correct');
+                    updateHUD();
+                    nextQuestion();
+                }, 280);
+            } else {
+                streak = 0;
+                updateHUD();
+                el.classList.add('wrong');
+                grid.classList.add('shake');
+                setTimeout(() => {
+                    el.classList.remove('wrong');
+                    grid.classList.remove('shake');
+                }, 220);
+
+                if (wrongCount === 0) {
+                    wrongCount = 1;
+                    announce('Try again');
+                    // repeat the same target
+                    playLetterByName(currentKey);
+                } else {
+                    announce('Incorrect');
+                    buzz();
+                    nextQuestion();
+                }
+            }
+        }
+
+        document.getElementById('playSound').onclick = () => {
+            if (currentKey) {
+                playLetterByName(currentKey);
+            } else {
+                nextQuestion();
+            }
+        };
+        document.getElementById('voiceMale').onclick = () => {
+            voice = 'male';
+        };
+        document.getElementById('voiceFemale').onclick = () => {
+            voice = 'female';
+        };
+        document.getElementById('printFont').onclick = () => {
+            letterFont = 'print';
+            buildGrid();
+        };
+        document.getElementById('handFont').onclick = () => {
+            letterFont = 'hand';
+            buildGrid();
+        };
+
+        buildGrid();
+        nextQuestion();
+    </script>
+</body>
+
+</html>

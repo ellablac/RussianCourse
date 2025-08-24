@@ -1,0 +1,141 @@
+        /* =========================
+       Simple theme + handwriting styles for alphabet table and practice sheets.
+       ========================= */
+        
+         :root {
+            /* Handwriting stack: tries EuroScript/Pacifico first, then Cyrillic-safe picks */
+            --hand-font: 'Pacifico', 'EuroScript', cursive;
+            /* Colors */
+            --bg-soft: #f7fbff;
+            --vowel: #eee3fb68;
+            /* light blue */
+            --vowel-border: #f7fbff;
+            --cons: #e1fded7c;
+            /* light green */
+            --cons-border: #f7fbff;
+            --sign: #f7f7ad35;
+            /* light purple */
+            --sign-border: #f7fbff;
+            /* Propisi guide lines */
+            --guide-top: #ffd7d7;
+            /* red-ish top */
+            --guide-mid: #d7e9ff;
+            /* blue middle */
+            --guide-base: #c9d2e0;
+            /* gray baseline */
+        }
+        /*
+        body {
+            padding-bottom: 5rem;
+        }
+        
+        header {
+            background: linear-gradient(180deg, var(--bg-soft), transparent);
+        }
+        /* Handwriting utility */
+        
+        .hand {
+            font-family: var(--hand-font);
+        }
+        /* Optional utility from Google Fonts docs */
+        
+        .pacifico-regular {
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        /* Table coloring (vowels vs consonants vs signs) */
+        
+        .alphabet-table thead th {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 2;
+        }
+        
+        .alphabet-table tr.row-vowel>* {
+            background: var(--vowel) !important;
+            border: 2px solid var(--vowel-border);
+        }
+        
+        .alphabet-table tr.row-cons>* {
+            background: var(--cons) !important;
+            border: 2px solid var(--cons-border);
+        }
+        
+        .alphabet-table tr.row-sign>* {
+            background: var(--sign) !important;
+            border: 2px solid var(--sign-border);
+        }
+        /* Practice sheet cards */
+        
+        .practice-card {
+            border-radius: 1rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+        }
+        
+        .trace-row {
+            border-top: 1px dashed #c9d2e0;
+            padding: .35rem 0;
+        }
+        
+        .trace-big {
+            font-size: 2.4rem;
+            letter-spacing: .2rem;
+        }
+        
+        .trace-medium {
+            font-size: 1.8rem;
+            letter-spacing: .2rem;
+        }
+        
+        .trace-big,
+        .trace-medium {
+            font-family: var(--hand-font);
+            opacity: .32;
+        }
+        /* Three propisi guide lines */
+        
+        .trace-lines {
+            position: relative;
+            height: 2.8rem;
+            border: 0;
+        }
+        
+        .trace-lines .g {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+        }
+        
+        .trace-lines .g.top {
+            top: 0;
+            background: var(--guide-top);
+        }
+        
+        .trace-lines .g.mid {
+            top: 50%;
+            background: var(--guide-mid);
+        }
+        
+        .trace-lines .g.base {
+            bottom: 0;
+            background: var(--guide-base);
+        }
+        /* Print tweaks */
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .container {
+                max-width: 100% !important;
+            }
+            .practice-card {
+                page-break-inside: avoid;
+            }
+            thead {
+                display: table-header-group;
+            }
+        }
