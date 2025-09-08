@@ -2,6 +2,11 @@ import asyncio, re
 import string
 import edge_tts
 
+# Activate venv and run:
+# source .venv/bin/activate
+# python utilities/word2mp3.py
+
+
 # Choose a natural Russian neural voice
 # VOICE = "ru-RU-SvetlanaNeural"
 # GENDER = "female"
@@ -19,7 +24,13 @@ GENDER = "male"
 # ]
 
 WORDS = [
-    "рoбат", "р-р-р"
+   #  "рoбат", "р-р-р"
+   # "комета", "космос"
+#    "мама", "томат", "кот", "атом"
+    # "текст", "маска"
+    # "метро", "карта", "банк", "Москва",
+    # "мотор", "ракета", "театр", "секрет"
+
 ]
 
 # azbuka = \

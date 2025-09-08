@@ -275,7 +275,7 @@ hr.hair {
 /* Text gradient utility for big headlines */
 
 .text-gradient {
-    background: linear-gradient(90deg, #0d6efd 0%, #6f42c1 50%, #10b981 100%);
+    background: linear-gradient(180deg, #0d6efd 0%, #6f42c1 50%, #10b981 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -332,6 +332,24 @@ hr.hair {
     letter-spacing: -.01em;
     line-height: 1.50;
     margin: 0 0 2rem;
+}
+
+
+/* Card with same background as .hero--light, small font, and card styling */
+
+.card-light-small {
+    background: radial-gradient(700px 450px at 80% 0%, var(--wash-b), transparent 55%), radial-gradient(700px 450px at 0% 100%, var(--wash-a), transparent 55%), #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    padding: 1rem 1rem;
+    font-size: 0.88rem;
+    /* Slightly smaller than body */
+    color: var(--ink);
+    max-width: 100vw;
+    /* Allow full page width */
+    margin: 1rem 1vw;
+    /* Margin keeps it inside the page */
 }
 
 
@@ -417,6 +435,21 @@ hr.hair {
 
 .link-aim:hover::after {
     transform: scaleX(1);
+}
+
+a.deep-dive {
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    font-size: 0.95rem;
+}
+
+a.deep-dive:hover {
+    color: var(--crc-brand);
+    text-decoration: underline;
 }
 
 

@@ -5,11 +5,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Look‑alike Russian Letters – А Е К М О Т (and С)</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="../assets/css/site.css">
-    <link rel="stylesheet" href="../assets/css/alphabet.css">
+    <!-- Google Fonts: Pacifico includes Cyrillic; use as primary handwriting font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/alphabet.css" />
     <meta name="description" content="Learn Russian letters that look like English and sound almost the same: А, Е, К, М, О, Т — plus С. With audio and stress marks." />
 </head>
 
@@ -28,159 +32,187 @@
         </div>
     </nav>
 
-    <main id="main" class="wrap stack">
+    <section class="text-center">
 
-        <section class="hero hero--light text-center">
-            <div class="container stack">
-                <h1>True Friends - Russian Letters that Look the Same and Sound (Almost) the Same</h1>
-                <p>Start with these friendly six: <strong>А а, Е е, К к, М м, О о, Т т</strong>. Tap a tile to hear the sound and see an English hint.</p>
-            </div>
-        </section>
+        <h5 class=" blue-ink" , style="margin-top: 10px;">Lesson 1 </h5>
 
-        <!-- LETTER TILES -->
-        <section class="stack">
-            <h2>Letters &amp; Sounds</h2>
-            <ul class="grid-letters" role="list" id="letter-tiles">
-                <!-- Template items (audio files assumed to exist). Replace src paths if needed. -->
-                <li class="tile">
-                    <button class="tile-btn play-letter" data-letter="А" data-audio="/audio/letters/А.mp3" aria-label="Play sound for А">
-            <span class="ru">А а</span>
-            <span class="en">like <em>a</em> in <strong>f<strong>ather</strong></strong></span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li class="tile">
-                    <button class="tile-btn play-letter" data-letter="Е" data-audio="/audio/letters/Е.mp3" aria-label="Play sound for Е">
-            <span class="ru">Е е</span>
-            <span class="en">like <em>ye</em> in <strong>y<strong>e</strong>s</strong></span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li class="tile">
-                    <button class="tile-btn play-letter" data-letter="К" data-audio="/audio/letters/К.mp3" aria-label="Play sound for К">
-            <span class="ru">К к</span>
-            <span class="en">like <em>k</em> in <strong>k<strong>i</strong>t</strong></span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li class="tile">
-                    <button class="tile-btn play-letter" data-letter="М" data-audio="/audio/letters/М.mp3" aria-label="Play sound for М">
-            <span class="ru">М м</span>
-            <span class="en">like <em>m</em> in <strong>m<strong>o</strong>m</strong></span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li class="tile">
-                    <button class="tile-btn play-letter" data-letter="О" data-audio="/audio/letters/О.mp3" aria-label="Play sound for О">
-            <span class="ru">О о</span>
-            <span class="en">like <em>o</em> in <strong>m<strong>o</strong>re</strong> (stressed)</span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li class="tile">
-                    <button class="tile-btn play-letter" data-letter="Т" data-audio="/audio/letters/Т.mp3" aria-label="Play sound for Т">
-            <span class="ru">Т т</span>
-            <span class="en">like <em>t</em> in <strong>t<strong>o</strong>p</strong></span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-            </ul>
-            <div id="status-letters" class="sr" aria-live="polite"></div>
-        </section>
+        <h3 class="text-gradient">
+            Old Friends <br> А а, Е е, К к, М м, О о, Т т
+        </h3>
+        <h5 class="text-gradient">
+            Russian Letters that Look the Same and Sound (Almost) the Same
+        </h5>
+    </section>
 
-        <!-- WORDS: COGNATES FIRST -->
-        <section class="stack">
-            <h2>Words Using Only These Letters</h2>
-            <p><strong>Cognates first.</strong> Notice how these sound just like English. If you remember <strong>коме́та</strong> (comet), you already have all the sounds!</p>
-            <ul class="word-list" role="list">
-                <li>
-                    <button class="word-btn play-word" data-word="коме́та" data-audio="/audio/words/КОМЕТА.mp3" aria-label="Play word комета">
-            <span class="ru">ком<span class="stress">е́</span>та</span>
-            <span class="en">comet</span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                    <small class="note">All letters are from the set А Е К М О Т; stress on <strong>е́</strong>.</small>
-                </li>
-                <li>
-                    <button class="word-btn play-word" data-word="а́том" data-audio="/audio/words/АТОМ.mp3" aria-label="Play word атом">
-            <span class="ru"><span class="stress">а́</span>том</span>
-            <span class="en">atom</span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-            </ul>
 
-            <h3>Then, non‑cognates (translations shown)</h3>
-            <ul class="word-list" role="list">
-                <li>
-                    <button class="word-btn play-word" data-word="ма́к" data-audio="/audio/words/МАК.mp3" aria-label="Play word мак">
-            <span class="ru"><span class="stress">ма́</span>к</span>
-            <span class="en">poppy</span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li>
-                    <button class="word-btn play-word" data-word="кот" data-audio="/audio/words/КОТ.mp3" aria-label="Play word кот">
-            <span class="ru">кот</span>
-            <span class="en">cat (male)</span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li>
-                    <button class="word-btn play-word" data-word="ток" data-audio="/audio/words/ТОК.mp3" aria-label="Play word ток">
-            <span class="ru">ток</span>
-            <span class="en">electric current</span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li>
-                    <button class="word-btn play-word" data-word="те́ма" data-audio="/audio/words/ТЕМА.mp3" aria-label="Play word тема">
-            <span class="ru"><span class="stress">те́</span>ма</span>
-            <span class="en">topic</span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li>
-                    <button class="word-btn play-word" data-word="том" data-audio="/audio/words/ТОМ.mp3" aria-label="Play word том">
-            <span class="ru">том</span>
-            <span class="en">volume (book)</span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-                <li>
-                    <button class="word-btn play-word" data-word="ком" data-audio="/audio/words/КОМ.mp3" aria-label="Play word ком">
-            <span class="ru">ком</span>
-            <span class="en">lump</span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-            </ul>
-            <div id="status-words" class="sr" aria-live="polite"></div>
-        </section>
 
-        <!-- ADD THE LETTER С с -->
-        <section class="stack">
-            <h2>Now add: С с</h2>
+    <section class="card-light-small">
+        <div class="container">
             <p>
-                In English, the letters <strong>k, c, s</strong> can represent /k/ or /s/ (e.g., <em>cat</em> vs. <em>center</em>). In Russian, it’s simpler:
+                These six letters are the easiest to learn because they look like English letters and sound almost the same. (We’ll add one more letter, <strong>С с</strong>, later.)
             </p>
-            <ul class="list">
-                <li><strong>К к</strong> is always /k/ (like <em>kit</em>).</li>
-                <li><strong>С с</strong> is always /s/ (like <em>sun</em> or English <em>C</em> in <em>Ce<strong>l</strong>sius</em>).</li>
-            </ul>
-            <ul class="grid-letters" role="list">
-                <li class="tile">
-                    <button class="tile-btn play-letter" data-letter="С" data-audio="/audio/letters/С.mp3" aria-label="Play sound for С">
-            <span class="ru">С с</span>
-            <span class="en">always <em>s</em>, like in <strong>C<strong>e</strong>nter</strong></span>
-            <span class="icon" aria-hidden="true">▶</span>
-          </button>
-                </li>
-            </ul>
-            <p>So Russian doesn’t need an extra letter like English <strong>C</strong>. You’ll use <strong>К</strong> for /k/ and <strong>С</strong> for /s/ every time.</p>
-        </section>
+            <p>
+                <strong>Note:</strong> The letter <strong>Е е</strong> may sound like <em>ye</em> in <em>yes</em>, or <em>e</em> in <em>met</em>. 🧩
 
+                <a target="blank" href="softening_vowels.html" class="extra-notes"> Deep Dive</a>
+
+            </p>
+            <p>
+                The letter <strong>О о</strong> sounds like <em>o</em> in <em>more</em> when it’s stressed. When it’s unstressed, it sounds more like <em>a</em> in <em>about</em>. We’ll cover that in more detail later.
+            </p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- ======================
+         Alphabet Table
+         ====================== -->
+        <section id="alphabet" class="my-4">
+
+            <div class="table-responsive">
+                <table class="table align-middle alphabet-table">
+                    <thead>
+                        <tr>
+                            <th>Letter </th>
+                            <th>Handwriting </th>
+                            <th>Name (RU)</th>
+                            <th>Sound [IPA]</th>
+                            <th>Similar English Sound</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="row-vowel">
+                            <td>А а</td>
+                            <td class="hand">А а</td>
+                            <td>а</td>
+                            <td>[a]</td>
+                            <td>f<strong>a</strong>ther</td>
+                        </tr>
+                        <tr class="row-vowel">
+                            <td>Е е</td>
+                            <td class="hand">Е е</td>
+                            <td>е</td>
+                            <td>[je], [e]</td>
+                            <td>y<strong>e</strong>s / m<strong>e</strong>t</td>
+                        </tr>
+                        <tr class="row-cons">
+                            <td>К к</td>
+                            <td class="hand">К к</td>
+                            <td>ка</td>
+                            <td>[k]</td>
+                            <td><strong>k</strong>ite</td>
+                        </tr>
+                        <tr class="row-cons">
+                            <td>М м</td>
+                            <td class="hand">М м</td>
+                            <td>эм</td>
+                            <td>[m]</td>
+                            <td><strong>m</strong>an</td>
+                        </tr>
+                        <tr class="row-vowel">
+                            <td>О о</td>
+                            <td class="hand">О о</td>
+                            <td>о</td>
+                            <td>[o] / [a]</td>
+                            <td>m<strong>o</strong>re</td>
+                        </tr>
+                        <tr class="row-cons">
+                            <td>Т т</td>
+                            <td class="hand">Т т</td>
+                            <td>тэ</td>
+                            <td>[t]</td>
+                            <td><strong>t</strong>op</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <section class="card-light-small">
+                <div class="container">
+                    <h2>Now add: С с</h2>
+                    <p>
+                        In English, the letters <strong>k, c, s</strong> are used to represent sounds [k] or [s] (e.g., <em>cat</em> vs. <em>center</em>). In Russian, it’s simpler:
+                    </p>
+                    <ul class="list">
+                        <li><strong>К к</strong> is always [k] (like <em>Kit</em>).</li>
+                        <li><strong>С с</strong> is always [s] (like <em>C</em> in <em>Celsius</em> or <em>Center</em>).</li>
+                    </ul>
+                    So Russian doesn’t need an extra letter S. You’ll use К for [k] and С for [s] every time.
+
+                </div>
+            </section>
+            <div class="table-responsive">
+                <table class="table align-middle alphabet-table">
+                    <tbody>
+                        <tr class="row-cons">
+                            <td>С с</td>
+                            <td class="hand">С с</td>
+                            <td>эс</td>
+                            <td>[s]</td>
+                            <td><strong>c</strong>enter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <section class="card-light-small">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Left: text -->
+                        <div class="col-md-5">
+                            <p>
+                                To remember the 7 "friendly" letters, memorize these 2 Russian words. These words are cognates (sound similar to English words). Can you guess what they mean?
+                            </p>
+                            <ul class="list">
+                                <li class="word-with-audio" data-text="комета"><span lang="ru">Коме́та</span></li>
+                                <li class="word-with-audio" data-text="космос"><span lang="ru">Ко́смос</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Right: image -->
+                        <div class="col-md-7 text-center">
+                            <img src="assets/kometa_kosmos.gif" alt="Illustration of a comet and cosmos" class="img-fluid rounded shadow-sm">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card-light-small">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <p>
+                            Practice readining these additional cognates. The stress mark (´) shows which syllable is stressed.
+                        </p>
+                    </div>
+                    <div class="row align-items-center">
+                        <!-- Left: text -->
+                        <div class="col-md-6">
+
+                            <ul class="list">
+                                <li class="word-with-audio" data-text="мама"><span lang="ru">ма́ма</span> 🤱 </li>
+                                <li class="word-with-audio" data-text="томат"><span lang="ru">тома́т</span> 🍅 </li>
+                                <li class="word-with-audio" data-text="текст"><span lang="ru">текст</span> 📰 </li>
+                            </ul>
+                        </div>
+
+                        <!-- Right: image -->
+                        <div class="col-md-6">
+                            <ul class="list">
+                                <li class="word-with-audio" data-text="кот"><span lang="ru">кот</span> 🐈 </li>
+                                <li class="word-with-audio" data-text="атом"><span lang="ru">а́том</span> ⚛️ </li>
+                                <li class="word-with-audio" data-text="маска"><span lang="ru">ма́ска</span> 🤡 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </section>
     </main>
+
 
     <!-- Footer -->
     <footer class="site-footer ">
@@ -189,98 +221,54 @@
 
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js "></script>
+    <script src="../assets/js/audioUtils.js"></script>
+
     <script>
-        // Year in footer
-        document.getElementById('y').textContent = new Date().getFullYear();
+        (function() {
+            // Add a small speaker button to each alphabet row using the shared function
+            function decorateTable() {
+                document.querySelectorAll('.alphabet-table tbody tr').forEach(tr => {
+                    const cells = tr.querySelectorAll('td');
+                    if (cells.length < 3) return;
+                    const say = (cells[2].textContent || '').trim() || (cells[0].textContent || '').trim();
+                    if (!say) return;
+                    if (cells[0].querySelector('.speak-btn')) return;
+                    // Use the shared createAudioButton function
+                    const btn = createAudioButton(say, '../assets/sound/male/');
+                    cells[0].prepend(btn);
+                });
+            }
 
-        // Simple audio player with fallbacks
-        const play = (srcList, statusEl, label) => {
-            const audio = new Audio();
-            const tryPlay = async(i = 0) => {
-                if (i >= srcList.length) {
-                    statusEl.textContent = `Audio not available for ${label}`;
-                    return;
-                }
-                audio.src = srcList[i];
-                try {
-                    await audio.play();
-                    statusEl.textContent = `Playing: ${label}`;
-                } catch (e) {
-                    tryPlay(i + 1);
-                }
-            };
-            tryPlay();
-        };
+            // Add a speaker button with audio to any <li class="word-with-audio" data-text="...">
+            function decorateWords() {
+                document.querySelectorAll('.word-with-audio').forEach(li => {
+                    // Prevent duplicate buttons
+                    if (li.querySelector('.speak-btn')) return;
 
-        const statusLetters = document.getElementById('status-letters');
-        const statusWords = document.getElementById('status-words');
+                    // Pull Russian text from data-text (preferred) or fallback to text content
+                    const text = (li.dataset.text || li.textContent || '').trim();
+                    if (!text) return;
 
-        document.querySelectorAll('.play-letter').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const src = btn.dataset.audio;
-                const letter = btn.dataset.letter;
-                play([src, src.replace('.mp3', '.m4a'), src.replace('.mp3', '.ogg')], statusLetters, letter);
-            });
-        });
+                    const btn = createAudioButton(text, '../assets/sound/male/words/');
+                    li.prepend(btn);
+                });
+            }
 
-        document.querySelectorAll('.play-word').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const src = btn.dataset.audio;
-                const word = btn.dataset.word || btn.textContent.trim();
-                play([src, src.replace('.mp3', '.m4a'), src.replace('.mp3', '.ogg')], statusWords, word);
-            });
-        });
+            // Run both decorators
+            function decorateAll() {
+                decorateTable();
+                decorateWords();
+            }
+
+            // Ensure buttons are added when voices are loaded or DOM is ready
+            const synth = window.speechSynthesis;
+            if (synth && typeof synth.onvoiceschanged !== 'undefined') {
+                synth.onvoiceschanged = decorateAll;
+            }
+            window.addEventListener('DOMContentLoaded', decorateAll);
+        })();
     </script>
-
-    <style>
-        /* Local page tweaks that rely on site.css / alphabet.css tokens */
-        
-        .word-list {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            gap: var(--space-3);
-        }
-        
-        .word-btn {
-            width: 100%;
-            text-align: left;
-            padding: 1rem 1.25rem;
-            border: 0;
-            border-radius: 1rem;
-            background: var(--surface);
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-        
-        .word-btn .ru {
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
-            font-weight: 700;
-        }
-        
-        .word-btn .en {
-            opacity: .8;
-            font-size: .95rem;
-        }
-        
-        .word-btn .icon {
-            margin-inline-start: auto;
-        }
-        
-        .stress {
-            text-decoration: underline;
-            text-decoration-thickness: .15em;
-            text-underline-offset: .15em;
-        }
-        
-        .list {
-            list-style: disc;
-            padding-inline-start: 1.25rem;
-        }
-    </style>
 </body>
 
 </html>
