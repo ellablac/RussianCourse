@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video + Audio Play</title>
+</head>
+
+<body>
+    <video id="myVideo" width="640" height="360" controls>
+    <source src="..\assets\r_robot_animated_speaks.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+    <audio id="myAudio">
+    <source src="..\assets\letter_17_audio.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+
+    <script>
+        const video = document.getElementById("myVideo");
+        const audio = document.getElementById("myAudio");
+
+        // Start audio whenever the video starts (works for control clicks, keyboard, programmatic)
+        video.addEventListener('play', async() => {
+            try {
+                await audio.play();
+            } catch (err) {
+                // If browser blocked it, the next user click anywhere will try again
+                console.warn('Audio play was blocked, will retry on next click:', err);
+            }
+
+        });
+
+        // Pause/seek/rate sync
+        video.addEventListener('pause', () => audio.pause());
+        video.addEventListener('seeking', align);
+        video.addEventListener('seeked', align);
+        video.addEventListener('ratechange', () => (audio.playbackRate = video.playbackRate));
+        video.addEventListener('ended', () => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+    </script>
+</body>
+
+</html>
