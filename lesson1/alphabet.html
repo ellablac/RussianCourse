@@ -331,92 +331,31 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js "></script>
-    <!-- =============================
-       Simple per-letter audio (TTS)
-       Uses the Web Speech API; no audio files needed.
-       ============================= -->
+    <script src="../assets/js/audioUtils.js"></script>
+
     <script>
         (function() {
-            const synth = window.speechSynthesis;
-
-            // Speak helper: says text in Russian (ru-RU) a bit slower for clarity
-            function speak(text, lang) {
-                if (!synth) {
-                    console.warn('SpeechSynthesis not supported in this browser');
-                    return;
-                }
-                const u = new SpeechSynthesisUtterance(text);
-                u.lang = lang || 'ru-RU';
-                u.rate = 0.9; // slightly slower
-                // Prefer a Russian voice if available
-                const voices = synth.getVoices ? synth.getVoices() : [];
-                const ru = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('ru'));
-                if (ru) u.voice = ru;
-                synth.cancel();
-                synth.speak(u);
-            }
-
-            // Add a small speaker button to each alphabet row.
-            // Add a click handler to play the letter name. 
-            // The mp3 files are used if available; otherwise fallback to TTS.
+            // Add a small speaker button to each alphabet row using the shared function
             function decorateTable() {
                 document.querySelectorAll('.alphabet-table tbody tr').forEach(tr => {
                     const cells = tr.querySelectorAll('td');
                     if (cells.length < 3) return;
-                    // "Name (RU) " column holds how Russians say the letter (e.g., "бэ ").
                     const say = (cells[2].textContent || '').trim() || (cells[0].textContent || '').trim();
                     if (!say) return;
-
-                    // Avoid duplicating buttons on reruns
                     if (cells[0].querySelector('.speak-btn')) return;
-
-                    // Create a tiny speaker button
-                    const btn = document.createElement('button');
-                    btn.type = 'button';
-                    btn.className = 'btn btn-sm btn-outline-secondary me-2 speak-btn';
-                    btn.setAttribute('data-say', say);
-                    btn.setAttribute('aria-label', 'Play pronunciation');
-                    btn.textContent = '🔊';
-                    btn.addEventListener('click', function(ev) {
-                        ev.stopPropagation();
-                        const letterNameRaw = btn.getAttribute('data-say');
-                        const letterName = safeFileName(letterNameRaw);
-                        const audio = new Audio(`../assets/sound/male/${letterName}.mp3`);
-
-                        // If file not found, fallback to synthesis
-                        audio.onerror = function() {
-                            speak(letterNameRaw, 'ru-RU');
-                        };
-
-                        audio.play().catch(() => {
-                            // Some browsers block autoplay until user interaction
-                            speak(letterNameRaw, 'ru-RU');
-                        });
-                    });
-
-                    // Put the button at the very start of the first cell
+                    // Use the shared createAudioButton function
+                    const btn = createAudioButton(say, '../assets/sound/male/');
                     cells[0].prepend(btn);
                 });
             }
 
-            // Voices may load asynchronously. Ensure buttons are added either way.
+            // Ensure buttons are added when voices are loaded or DOM is ready
+            const synth = window.speechSynthesis;
             if (synth && typeof synth.onvoiceschanged !== 'undefined') {
                 synth.onvoiceschanged = decorateTable;
             }
             window.addEventListener('DOMContentLoaded', decorateTable);
         })();
-
-        // Returns a safe file name for a given letter name
-        function safeFileName(letterName, maxLength = 50) {
-            // Replace any character that is not a Russian/English letter, number, or underscore with an underscore
-            let safe = letterName.replace(/[^\wа-яА-ЯёЁ]/g, '_');
-            // Collapse multiple underscores into one
-            safe = safe.replace(/_+/g, '_');
-            // Trim leading/trailing underscores
-            safe = safe.replace(/^_+|_+$/g, '');
-            // Trim to maxLength
-            return safe.substring(0, maxLength);
-        }
     </script>
 </body>
 
