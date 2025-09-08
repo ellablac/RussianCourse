@@ -18,10 +18,14 @@ GENDER = "male"
 #     "ха", "цэ", "чэ", "ша", "щща", "твёрдый знак", "ы", "мягкий знак", "э", "ю", "я"
 # ]
 
-azbuka = \
-    "а́, бэ, вэ, гэ, дэ, е, ё, жэ, зэ, и, й, \
-    ка, эл, эм, эн, о́, пэ, эр, эс, тэ, у, эф, \
-    ха, цэ, чэ, ша, щща, твёрдый знак, ы, мягкий знак, э, ю, я"
+WORDS = [
+    "рoбат", "р-р-р"
+]
+
+# azbuka = \
+#     "а́, бэ, вэ, гэ, дэ, е, ё, жэ, зэ, и, й, \
+#     ка, эл, эм, эн, о́, пэ, эр, эс, тэ, у, эф, \
+#     ха, цэ, чэ, ша, щща, твёрдый знак, ы, мягкий знак, э, ю, я"
     
 
 
@@ -33,29 +37,29 @@ async def main():
     # # supports a file with the words separated by either commas or newlines
     # WORDS = [word.strip() for word in re.split(r"[,\n]", content) if word.strip()]
 
-    # for input_text in WORDS:
-    #     safe_name = safe_filename(input_text)
-    #     filename = f"assets/sound/{GENDER}/{safe_name}.mp3"
-    #     communicate = edge_tts.Communicate(
-    #         text=input_text,
-    #         voice=VOICE,
-    #         rate="-20%",
-    #         volume="+0%",
-    #         pitch="+0Hz"
-    #     )
-    #     await communicate.save(filename)
-    #     print(f"Saved {filename}")
-
-    filename = f"assets/sound/{GENDER}/azbuka.mp3"
-    communicate = edge_tts.Communicate(
-            text=azbuka,
+    for input_text in WORDS:
+        safe_name = safe_filename(input_text)
+        filename = f"../assets/sound/{GENDER}/words/{safe_name}.mp3"
+        communicate = edge_tts.Communicate(
+            text=input_text,
             voice=VOICE,
-            rate="-50%",
+            rate="+0%",
             volume="+0%",
             pitch="+0Hz"
         )
-    await communicate.save(filename)
-    print(f"Saved {filename}")
+        await communicate.save(filename)
+        print(f"Saved {filename}")
+
+    # filename = f"../assets/sound/{GENDER}/azbuka.mp3"
+    # communicate = edge_tts.Communicate(
+    #         text=azbuka,
+    #         voice=VOICE,
+    #         rate="-50%",
+    #         volume="+0%",
+    #         pitch="+0Hz"
+    #     )
+    # await communicate.save(filename)
+    # print(f"Saved {filename}")
 
 def safe_filename(text: str, max_length: int = 50) -> str:
     """
