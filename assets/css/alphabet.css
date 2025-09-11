@@ -67,6 +67,12 @@
             background: var(--sign) !important;
             border: 2px solid var(--sign-border);
         }
+        
+        tr.row-vowel td:first-child,
+        tr.row-cons td:first-child,
+        tr.row-sign td:first-child {
+            font-weight: bold;
+        }
         /* Practice sheet cards */
         
         .practice-card {
