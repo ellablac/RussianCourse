@@ -47,9 +47,13 @@ This is a beginner-friendly Russian language course designed for English speaker
 * **js/**
 
   * scripts.js
-* **utils/**
+* **utilities/**
 
   * helper functions, tools.
+
+## Development
+* To run python scripts, activate venv: source .venv/bin/activate
+* Run: python utilities/word2mp3.py
 
 ## Technologies
 
@@ -57,13 +61,16 @@ This is a beginner-friendly Russian language course designed for English speaker
 * CSS3
 * JavaScript
 * Bootstrap
+* Python
 
 ## Deployment
 
 The course materials will be hosted on GitHub Pages for easy access.
 
-### Steps:
+### Steps for publishing the site:
 
 1. Push repository to GitHub.
 2. Enable GitHub Pages under repository settings.
 3. Access the site at `https://username.github.io/repository-name`.
+
+### 

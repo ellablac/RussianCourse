@@ -324,7 +324,7 @@ hr.hair {
     color: var(--crc-brand);
     font-weight: 700;
     margin-bottom: .5rem;
-    font-size: var(--fs-300);
+    font-size: var(--fs-100);
 }
 
 .hero--light .display {
