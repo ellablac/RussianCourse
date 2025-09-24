@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interesting Historical Note — The Hard Sign ъ in Old Russian Orthography</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+    <!-- Bootstrap + site styles (match other pages) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/alphabet.css" />
+    <meta name="description" content="Extra Notes: how the hard sign ъ was used at the ends of words before the 1918 reform, and why it largely disappeared." />
+</head>
+
+<body>
+    <!-- Shared navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../lessons.html">Lessons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../resources.html">Resources</a></li>
+                    <span class="nav-ink" aria-hidden="true"></span>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Title -->
+    <section class="text-center">
+        <br>
+        <div class="container">
+            <h5> 💡 <span class="text-gradient"> Interesting Historical Note</span></h5>
+        </div>
+        <br>
+    </section>
+
+    <main class="container">
+        <div class="card-light-small p-2 p-md-3">
+            <h2 class="h4 mb-3 text-center">Before 1918: Final <span lang="ru">ъ</span> Everywhere</h2>
+            <ul class="styled-list small">
+                <li>Before 1918, a silent hard sign <span lang="ru">ъ</span> was written at the end of every word that ended in a hard consonant. This was a holdover from Old Church Slavonic orthography, where the hard sign represented a very short vowel
+                    sound (a "reduced vowel" or "yer"). Over time, this vowel sound disappeared in spoken Russian, but the hard sign remained in writing as a silent letter.
+                </li>
+            </ul>
+            <h3 class="h4 mt-3 text-center">1918 Orthography Reform</h3>
+            <ul class="styled-list small">
+                <li>The final hard sign <span lang="ru">ъ</span> at word end was abolished.</li>
+                <li>The hard sign remained in modern Russian, but with a <em>new role</em>: it separates prefixes from iotated vowels (<span lang="ru">е, ё, ю, я</span>) to signal a “y” onset, e.g., <span lang="ru">подъезд</span> (<em>pod‑<strong>ye</strong>zd</em>),
+                    <span lang="ru">объём</span> (<em>ob‑<strong>yo</strong>m</em>).</li>
+                <li>The reform saved space and ink. Publishers reportedly saved pages by dropping thousands of final <span lang="ru">ъ</span>’s per edition.</li>
+            </ul>
+            <p class="text-soft mb-0">So if you spot a word ending in <span lang="ru">ъ</span>, you’re likely looking at a historical text, a stylized logo, or Church Slavonic spelling.</p>
+        </div>
+
+        <figure class="card overflow-hidden shadow-sm">
+            <img src="assets/russian_bible_1896.jpg" alt="Printed page from an 1896 Russian Bible showing final hard signs (ъ) at the ends of words" class="img-fluid" />
+            <figcaption class="card-body small text-soft">An 1896 Russian Bible page. Note the hard sign <strong>ъ</strong> printed at the end of many words.</figcaption>
+        </figure>
+
+        <section class="mt-4">
+            <button onclick="history.back()">← Back</button>
+        </section>
+    </main>
+
+    <footer class="site-footer text-center py-3">
+        &copy; <span id="y"></span> Sky4Tech, LLC
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function() {
+            const y = document.getElementById('y');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
+    </script>
+</body>
+
+</html>

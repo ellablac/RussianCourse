@@ -123,11 +123,58 @@
         </div>
 
         <button id="startBtn" class="btn btn-primary">Start</button>
+        <button id="endBtn" class="btn btn-primary">End Game</button>
         <div class="grid mt-3" id="grid"></div>
         <div class="score-board">
             <span id="score">Score: 0</span> | <span id="streak">Streak: 0</span>
         </div>
         <div id="live" class="sr-only" aria-live="polite"></div>
+
+        <!-- Score modal (shows final score when game ends) -->
+        <div class="modal fade" id="scoreModal" tabindex="-1" aria-labelledby="scoreModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+                <div class="modal-content">
+                    <!-- Gradient header with icon -->
+                    <div class="modal-header border-0" style="background: linear-gradient(90deg,#ff9a9e 0%, #fad0c4 55%, #fbc2eb 100%); color: #111;">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="fs-2">🎉</div>
+                            <div>
+                                <h5 class="modal-title mb-0" id="scoreModalLabel">Well done!</h5>
+                                <small class="text-muted">Your game summary</small>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body text-center">
+                        <div class="py-3">
+                            <!-- Large numeric score -->
+                            <div class="h1 fw-bold mb-1" id="finalScoreLarge">0</div>
+                            <div class="text-muted mb-3">points</div>
+
+                            <!-- Badges for streak / correct -->
+                            <div class="mb-3">
+                                <span class="badge bg-success me-2" id="finalCountBadge">Streak: 0</span>
+                                <span class="badge bg-info text-dark" id="finalCorrectBadge">Correct: 0</span>
+                            </div>
+
+                            <!-- Progress bar visual -->
+                            <div class="progress mb-3" style="height:10px; max-width:360px; margin:0 auto;">
+                                <div class="progress-bar bg-success" id="finalProgress" role="progressbar" style="width:0%"></div>
+                            </div>
+
+                            <!-- <p class="mb-0 text-muted small">Tip: try the handwritten font for extra practice.</p> -->
+                        </div>
+                    </div>
+
+                    <div class="modal-footer justify-content-center">
+                        <!-- <button type="button" id="playAgainBtn" class="btn btn-primary px-4">Play again</button> -->
+                        <button type="button" id="closeScoreBtn" class="btn btn-outline-secondary px-3" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="site-footer">
@@ -242,6 +289,7 @@
         let currentKey = null; // current **letter name**
         let wrongCount = 0; // wrong attempts this round (0 or 1)
         let score = 0;
+        let count = 0; // total attempts
         let streak = 0;
         let voice = 'male';
         let letterFont = 'print';
@@ -262,7 +310,6 @@
                 div.onclick = () => checkAnswer(name, div);
                 grid.appendChild(div);
             });
-            grid.classList.add("disabled");
         }
 
         function playLetterByName(letterName) {
@@ -324,10 +371,11 @@
             const randomIndex = Math.floor(Math.random() * keys.length);
             currentKey = keys[randomIndex];
             playLetterByName(currentKey);
+            count += 1;
         }
 
         function updateHUD() {
-            scoreEl.textContent = 'Score: ' + score;
+            scoreEl.textContent = 'Score: ' + score + '/' + count;
             streakEl.textContent = 'Streak: ' + streak;
         }
 
@@ -372,17 +420,61 @@
         }
 
         document.getElementById('startBtn').onclick = (el) => {
-            grid.classList.remove("disabled");
-            // document.getElementById('startBtn').style.display = 'none';
-            el.target.disabled = true;
-            // On start, play the first letter
 
+            // document.getElementById('startBtn').style.display = 'none';
+            // el.target.disabled = true;
+            document.getElementById('startBtn').style.display = "none";
+            document.getElementById('endBtn').style.display = "inline-block";
+            // On start, play the first letter
             if (currentKey) {
                 playLetterByName(currentKey);
             } else {
                 nextQuestion();
             }
+            grid.classList.remove("disabled");
         };
+
+        document.getElementById('endBtn').onclick = (el) => {
+            // Capture final values to show to the user
+            const finalScore = score;
+            const countFinal = count;
+
+            currentKey = null; // current **letter name**
+            wrongCount = 0; // wrong attempts this round (0 or 1)
+            score = 0;
+            count = 0; // total attempts
+            streak = 0;
+            voice = 'male';
+            letterFont = 'print';
+            buildGrid();
+            updateHUD();
+            grid.classList.add("disabled");
+            document.getElementById('endBtn').style.display = "none";
+            document.getElementById('startBtn').style.display = "inline-block";
+            announce('Game ended. Click Start to play again.'); // accessibility
+
+            // Populate modal content and show it
+            document.getElementById('finalScoreLarge').textContent = finalScore;
+            document.getElementById('finalCountBadge').textContent = `Letters Played: ${countFinal}`;
+
+            // Count correct answers = finalScore (since each correct increments score)
+            document.getElementById('finalCorrectBadge').textContent = `Correct: ${finalScore}`;
+
+            // Update progress bar: show percentage of letters correct (clamped)
+
+            let pct = 0;
+            if (countFinal > 0)
+                pct = Math.round(Math.min(100, (finalScore / countFinal) * 100));
+            const progressEl = document.getElementById('finalProgress');
+            progressEl.style.width = pct + '%';
+            progressEl.setAttribute('aria-valuenow', pct);
+
+            // Show modal
+            const scoreModalEl = document.getElementById('scoreModal');
+            const scoreModal = new bootstrap.Modal(scoreModalEl);
+            scoreModal.show();
+        };
+
         document.getElementById('voiceMale').onclick = () => {
             voice = 'male';
         };
@@ -399,7 +491,9 @@
         };
 
         buildGrid();
-        nextQuestion();
+        grid.classList.add("disabled");
+        document.getElementById('endBtn').style.display = "none";
+        document.getElementById('startBtn').style.display = "inline-block";
     </script>
 </body>
 
