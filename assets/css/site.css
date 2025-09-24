@@ -352,6 +352,13 @@ hr.hair {
     /* Margin keeps it inside the page */
 }
 
+.card-img-left-fluid {
+    max-width: 25%;
+    /* limit only this image */
+    height: auto;
+    /* keep proportions */
+}
+
 
 /* ========== 7) BUTTONS (pill, high-contrast) ========================= */
 
@@ -557,4 +564,54 @@ ul.styled-list.large li {
 ul.styled-list.large li::before {
     font-size: 1.5rem;
     left: 0.9rem;
+}
+
+ul.styled-list.diamond li:before {
+    content: "🔹";
+    display: inline-block;
+    /* turn it into a box */
+    width: 1em;
+    /* reserve space */
+    margin-left: -1em;
+    /* pull it into the margin */
+    margin-right: 0.5em;
+    /* space after the bullet */
+}
+
+.callout {
+    border-left: 4px solid;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #f9f9f9;
+}
+
+.callout h5 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.callout-note {
+    border-color: #0d6efd;
+    /* Bootstrap blue */
+    background: #e7f1ff;
+}
+
+.callout-tip {
+    border-color: #198754;
+    /* Bootstrap green */
+    background: #eafaf1;
+}
+
+.callout-warning {
+    border-color: #ffc107;
+    /* Bootstrap yellow */
+    background: #fff9e6;
+}
+
+.callout-small {
+    margin-top: 0;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    margin: 0rem 0;
 }
