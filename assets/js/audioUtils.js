@@ -33,7 +33,9 @@ function speak(text, lang = 'ru-RU') {
  */
 function safeFileName(text, maxLength = 20) {
     // Replace anything that's not a letter, number, or underscore with an underscore
-    let safe = text.replace(/[^\wа-яА-ЯёЁ]/g, '_');
+    let safe = text.replaceAll('?', '_q');
+    safe = safe.replaceAll('!', '_ex');
+    safe = safe.replace(/[^\wа-яА-ЯёЁ]/g, '_');
     // Collapse multiple underscores
     safe = safe.replace(/_+/g, '_');
     // Remove underscores from start/end
@@ -53,13 +55,18 @@ function createAudioButton(text, audioPath = '../assets/sound/male/') {
     btn.type = 'button';
     btn.className = 'btn btn-sm btn-outline-secondary me-2 speak-btn';
     btn.setAttribute('data-say', text);
-    btn.setAttribute('aria-label', 'Play pronunciation');
+    // Accessible label includes the text; keep it short and safe for screen readers
+    const safeLabel = `Play pronunciation for ${text}`;
+    btn.setAttribute('aria-label', safeLabel);
     btn.textContent = '🔊';
 
     btn.addEventListener('click', function(ev) {
         ev.stopPropagation();
         const fileName = safeFileName(text);
-        const audio = new Audio(`${audioPath}${fileName}.mp3`);
+        const url = `${audioPath}${fileName}.mp3`;
+        // encodeURI so non-ASCII filenames (Cyrillic) work in browsers/servers
+        const audio = new Audio(encodeURI(url));
+        audio.preload = 'metadata';
         audio.onerror = function() {
             speak(text, 'ru-RU');
         };
@@ -69,4 +76,44 @@ function createAudioButton(text, audioPath = '../assets/sound/male/') {
     });
 
     return btn;
+}
+
+/**
+ * Attach overlay audio buttons to images with class `img-with-audio`.
+ * This keeps per-page markup minimal; images should carry a `data-text` attribute
+ * whose value maps to the mp3 filename (e.g. data-text="э?").
+ */
+function attachImageAudio() {
+    if (typeof createAudioButton !== 'function') return;
+    document.querySelectorAll('img.img-with-audio').forEach(img => {
+        try {
+            // Avoid duplicate buttons
+            if (img.parentElement.querySelector('.speak-btn')) return;
+            const text = (img.dataset.text || '').trim();
+            if (!text) return;
+
+            // Ensure the image is wrapped by a positionable container
+            let wrapper = img.parentElement;
+            if (getComputedStyle(wrapper).position === 'static') {
+                const wrap = document.createElement('div');
+                wrap.className = 'position-relative d-inline-block';
+                wrapper.replaceChild(wrap, img);
+                wrap.appendChild(img);
+                wrapper = wrap;
+            }
+
+            const btn = createAudioButton(text, '../assets/sound/male/words/');
+            btn.classList.add('position-absolute', 'top-0', 'end-0', 'm-2', 'img-sound-btn');
+            wrapper.appendChild(btn);
+        } catch (e) {
+            // swallowing errors so other pages aren't impacted
+            console.warn('attachImageAudio error', e);
+        }
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attachImageAudio);
+} else {
+    attachImageAudio();
 }

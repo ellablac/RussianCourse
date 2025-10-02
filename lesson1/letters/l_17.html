@@ -2,35 +2,98 @@
 <html lang="en">
 
 <head>
+    <!--
+    File: l_17.html
+
+    Purpose:
+    - Small standalone page that plays a short video and an accompanying audio track,
+      when they must be kept separate (e.g. different formats, ai generated separately, etc.).
+
+    Notes:
+    - The script below implements a simple align() function to keep the separate
+      audio element roughly synced to the video's currentTime when the user seeks.
+    - Modern browsers may block autoplay of audio; the code attempts to play audio
+      on video 'play' and logs a warning if blocked. A subsequent user interaction
+      will retry playback (see click handler).
+  -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Video + Audio Play</title>
+    <style>
+        /* small inline styles for the hint; move to site.css if desired */
+        
+        #audioHint {
+            display: none;
+            margin-top: .5rem;
+            padding: .5rem .75rem;
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            border-radius: 4px;
+            max-width: 640px;
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
 
 <body>
-    <video id="myVideo" width="640" height="360" controls>
-    <source src="..\assets\r_robot_animated_speaks.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <main>
+        <video id="myVideo" width="640" height="360" controls preload="metadata">
+      <source src="../assets/r_robot_animated_speaks.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-    <audio id="myAudio">
-    <source src="..\assets\letter_17_audio.m4a" type="audio/mp4">
-    Your browser does not support the audio element.
-  </audio>
+        <audio id="myAudio" preload="metadata">
+      <source src="../assets/letter_17_audio.m4a" type="audio/mp4">
+      Your browser does not support the audio element.
+    </audio>
+
+        <div id="audioHint" role="status" aria-live="polite">
+            Audio playback may be blocked by your browser. Click anywhere on the page or on the video controls to enable sound.
+        </div>
+    </main>
 
     <script>
-        const video = document.getElementById("myVideo");
-        const audio = document.getElementById("myAudio");
+        const video = document.getElementById('myVideo');
+        const audio = document.getElementById('myAudio');
+        const audioHint = document.getElementById('audioHint');
 
-        // Start audio whenever the video starts (works for control clicks, keyboard, programmatic)
-        video.addEventListener('play', async() => {
+        let audioPlayBlocked = false;
+
+        function showHint() {
+            audioHint.style.display = 'block';
+        }
+
+        function hideHint() {
+            audioHint.style.display = 'none';
+        }
+
+        async function tryPlayAudio() {
             try {
                 await audio.play();
+                audioPlayBlocked = false;
+                hideHint();
             } catch (err) {
-                // If browser blocked it, the next user click anywhere will try again
-                console.warn('Audio play was blocked, will retry on next click:', err);
+                audioPlayBlocked = true;
+                showHint();
+                console.warn('audio.play() was blocked:', err);
             }
+        }
 
-        });
+        // Sync helpers
+        function align() {
+            try {
+                // Avoid setting when videoTime is NaN or audio not ready
+                if (!isNaN(video.currentTime) && !isNaN(audio.duration)) {
+                    audio.currentTime = video.currentTime;
+                }
+            } catch (e) {
+                console.warn('align() failed:', e);
+            }
+        }
+
+        // Start audio whenever the video starts
+        video.addEventListener('play', tryPlayAudio);
 
         // Pause/seek/rate sync
         video.addEventListener('pause', () => audio.pause());
@@ -40,6 +103,19 @@
         video.addEventListener('ended', () => {
             audio.pause();
             audio.currentTime = 0;
+        });
+
+        // If audio.play() was blocked, retry once the user interacts with the page
+        document.addEventListener('click', async function onFirstClick() {
+            if (audioPlayBlocked) {
+                try {
+                    await audio.play();
+                    audioPlayBlocked = false;
+                    hideHint();
+                } catch (err) {
+                    console.warn('Retrying audio.play() failed:', err);
+                }
+            }
         });
     </script>
 </body>

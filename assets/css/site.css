@@ -352,6 +352,18 @@ hr.hair {
     /* Margin keeps it inside the page */
 }
 
+
+/* Another gradient background for Bootstrap card */
+
+.card-gradient-teal-peach {
+    background: linear-gradient(to bottom, #C0DEED 0%, #F9D5C2 50%, #D0EBD6 100%);
+}
+
+.card-gradient-teal-peach .card-body {
+    background: transparent;
+    /* so the gradient shows through */
+}
+
 .card-img-left-fluid {
     max-width: 25%;
     /* limit only this image */
@@ -614,4 +626,23 @@ ul.styled-list.diamond li:before {
     font-size: 0.8rem;
     padding: 0.5rem;
     margin: 0rem 0;
+}
+
+
+/* image audio overlay button used across pages */
+
+.img-sound-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    padding: 0.25rem 0.4rem;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.img-sound-btn:focus {
+    outline: 3px solid rgba(0, 123, 255, 0.25);
+    outline-offset: 2px;
 }

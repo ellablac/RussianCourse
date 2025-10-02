@@ -6,6 +6,8 @@ import edge_tts
 # source .venv/bin/activate
 # python utilities/word2mp3.py
 
+# edge_tts is a free undocumented Microsoft service that provides
+# text-to-speech synthesis. Works in all browsers, including Chrome.
 
 # Choose a natural Russian neural voice
 # VOICE = "ru-RU-SvetlanaNeural"
@@ -35,7 +37,9 @@ WORDS = [
     # "конь", "есть", "есть", "сесть" , "съесть", "счастье",
     # "подъезд", "объект", "субъект", "адъютант", "инъекция"
     # "ест", "мель", "шесть", "пьеса", "жить", "тень", "мой", "йогурт", "йода", "жесть", "восемь"
-    "ёгурт"
+    # "ёгурт"
+    # "здравствуйте", "привет", "как дела?", "как вас зовут?", "меня зовут Элла", "очень приятно"
+    "здравствуйте!", "как дела?", "как дела", "как вас зовут?", "как вас зовут"
 ]
 
 # azbuka = \
@@ -85,7 +89,9 @@ def safe_filename(text: str, max_length: int = 50) -> str:
     - Trim to max_length
     """
     # Replace invalid characters with underscore
-    safe = re.sub(r'[^0-9A-Za-zА-Яа-яЁё _-]', '_', text)
+    safe = re.sub(r'[?]', '_q', text)
+    safe = re.sub(r'[!]', '_ex', safe)
+    safe = re.sub(r'[^0-9A-Za-zА-Яа-яЁё _-]', '_', safe)
 
     # Strip leading/trailing spaces/underscores
     safe = safe.strip(" _-")

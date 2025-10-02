@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Record TTS to MP3</title>
+</head>
+
+<body>
+    <button id="speak">🎢 Speak Rollercoaster И</button>
+    <button id="record">⏺️ Record</button>
+    <a id="download" style="display:none">Download</a>
+
+    <script>
+        let mediaRecorder;
+        let chunks = [];
+
+        async function startRecording() {
+            // Ask browser to capture system audio
+            const stream = await navigator.mediaDevices.getDisplayMedia({
+                video: false,
+                audio: true
+            });
+
+            mediaRecorder = new MediaRecorder(stream, {
+                mimeType: "audio/webm"
+            });
+
+            mediaRecorder.ondataavailable = e => {
+                if (e.data.size > 0) chunks.push(e.data);
+            };
+
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(chunks, {
+                    type: "audio/webm"
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.getElementById("download");
+                a.href = url;
+                a.download = "rollercoaster.webm"; // you can convert to MP3 later with ffmpeg
+                a.style.display = "inline";
+                a.textContent = "⬇️ Download Recording";
+            };
+
+            mediaRecorder.start();
+            console.log("Recording started!");
+        }
+
+        function stopRecording() {
+            mediaRecorder.stop();
+            console.log("Recording stopped!");
+        }
+
+        function speakRoller() {
+            const u1 = new SpeechSynthesisUtterance("и-и-и! и-и-и!");
+            u1.lang = "ru-RU";
+            u1.rate = 0;
+            u1.pitch = 3.0;
+
+            const u2 = new SpeechSynthesisUtterance("и-и-и-и-и-и-и-и-и-и-и-и-и-и!");
+            u2.lang = "ru-RU";
+            u2.rate = 2;
+            u2.pitch = 0.6;
+
+            u1.onend = () => speechSynthesis.speak(u2);
+            speechSynthesis.speak(u1);
+        }
+
+        document.getElementById("speak").onclick = speakRoller;
+
+        document.getElementById("record").onclick = async() => {
+            if (!mediaRecorder || mediaRecorder.state === "inactive") {
+                await startRecording();
+                speakRoller();
+                setTimeout(stopRecording, 4000); // auto-stop after 4 sec
+            }
+        };
+    </script>
+</body>
+
+</html>
