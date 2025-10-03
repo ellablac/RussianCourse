@@ -176,7 +176,7 @@ Tip: Move this to .bg-wash if you want to apply per-page instead. */
         .navbar .btn-gradient {
             border-radius: 0 20px 20px 0;
             border: none;
-            background: linear-gradient(90deg, #19b5a5, #ffc7a1);
+            background: linear-gradient(180deg, rgba(111, 66, 193, 0.20), rgba(13, 110, 253, 0.60), rgba(255, 166, 0, 0.15));
             /* teal → peach */
             color: #fff;
             font-weight: 600;
