@@ -477,30 +477,6 @@
     </script>
 
     <script>
-        // Video with linked audio
-        const video = document.getElementById("myVideo ");
-        const audio = document.getElementById("myAudio ");
-
-        // Start audio whenever the video starts
-        video.addEventListener('play', async() => {
-            try {
-                await audio.play();
-            } catch (err) {
-                console.warn('Audio play was blocked, will retry on next click:', err);
-                document.body.addEventListener('click', () => audio.play(), {
-                    once: true
-                });
-            }
-        });
-
-        // Pause audio if video pauses
-        video.addEventListener('pause', () => audio.pause());
-
-        // Keep them in sync (restart audio if video restarts)
-        video.addEventListener('seeked', () => {
-            audio.currentTime = video.currentTime;
-        });
-
         // Set current year in footer
         document.getElementById("y ").textContent = new Date().getFullYear();
     </script>

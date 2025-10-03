@@ -1,3 +1,5 @@
+The site is published at https://ellablac.github.io/RussianCourse/
+
 # Community Russian Language Course
 
 ## Overview

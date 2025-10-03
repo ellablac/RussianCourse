@@ -4,138 +4,188 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Basic Russian Greetings and Introductions</title>
+    <title>Lesson – Basic Introductions (Russian)</title>
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <!-- Google Fonts: Pacifico includes Cyrillic; use as primary handwriting font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
+    <!-- Shared site styles -->
     <link rel="stylesheet" href="../assets/css/site.css" />
-    <link rel="stylesheet" href="../assets/css/alphabet.css" />
-    <meta name="description" content="Basic Russian Greetings and Introductions" />
+
+    <style>
+        /* Page-specific tweaks (kept tiny; most styling comes from site.css) */
+        
+        .image-placeholder {
+            height: 240px;
+            border: 2px dashed rgba(0, 0, 0, .2);
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+        
+        .phrase-list li {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        
+        .phrase-list li>span[lang="ru"] {
+            font-weight: 600;
+            margin-right: .35rem;
+        }
+        
+        .hint {
+            font-size: .95rem;
+            color: var(--muted);
+        }
+        
+        .li-accent-glow {
+            background: #f3bb4346;
+            border-left: 4px solid #ff9800;
+            border-radius: 12px;
+            padding: .6rem .75rem;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, .02), 0 0 0 4px rgba(255, 152, 0, .05);
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Keep the site header/menu consistent with existing pages -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+    <!-- Shared navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
             <a class="navbar-brand" href="../index.html"></a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="../lessons.html">Lessons</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../resources/resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../resources.html">Resources</a></li>
+                    <span class="nav-ink" aria-hidden="true"></span>
                 </ul>
             </div>
         </div>
     </nav>
 
-
-    <section class="text-center">
-
-        <h4 class="text-gradient mb-4">
-            <br>Basic Russian Greetings and Introductions
-        </h4>
-
+    <!-- Header -->
+    <section class="text-center page-section pt-4 pb-4">
+        <h5 class="blue-ink">Lesson • Speaking Essentials</h5>
+        <h2 class="text-gradient">Basic Introductions & Greetings</h2>
+        <p class="lead mx-auto">
+            Very simple conversation starters for brand‑new learners.
+        </p>
     </section>
 
-    <main class="container">
-
-
-        <hr class="hair ">
-        <div hidden>
-            <!-- 3) Reading practice (ALL letters together, at the end) -->
-            <section class="page-section pt-0 ">
-                <h2 class="section-title h3 ">Reading Practice </h2>
-                <h3 class="h6 ">Cognates & loanwords</h3>
-                <div class="row g-4 ">
-                    <div class="col-lg-6 ">
-                        <ul class="styled-list small ">
-                            <!-- Ё (few start with Ё; use words containing ё) -->
-                            <li class="word-with-audio " data-text="шофёр ">
-                                <span lang="ru ">шофёр</span> — chauffeur/driver
-                            </li>
-                            <li class="word-with-audio " data-text="дирижёр ">
-                                <span lang="ru ">дирижёр</span> — conductor
-                            </li>
-
-                            <!-- И -->
-                            <li class="word-with-audio " data-text="интернет ">
-                                <span lang="ru ">интерне́т</span> — internet
-                            </li>
-                            <li class="word-with-audio " data-text="идея ">
-                                <span lang="ru ">иде́я</span> — idea
-                            </li>
-                            <li class="word-with-audio " data-text="импорт ">
-                                <span lang="ru ">и́мпорт</span> — import
-                            </li>
-                            <li class="word-with-audio " data-text="индекс ">
-                                <span lang="ru ">и́ндекс</span> — index
-                            </li>
-                            <li class="word-with-audio " data-text="инженер ">
-                                <span lang="ru ">инжене́р</span> — engineer
-                            </li>
-
-                            <!-- Ы (no common Russian words begin with Ы) -->
-                            <li class="word-with-audio " data-text="сын ">
-                                <span lang="ru ">сын</span> — son
-                            </li>
-                            <li class="word-with-audio " data-text="мышь ">
-                                <span lang="ru ">мышь</span> — mouse
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 2 -->
-                    <div class="col-lg-6 ">
-                        <ul class="styled-list small ">
-
-                            <!-- Э -->
-                            <li class="word-with-audio " data-text="экзамен ">
-                                <span lang="ru ">экзаме́н</span> — exam
-                            </li>
-                            <li class="word-with-audio " data-text="экономика ">
-                                <span lang="ru ">эконо́мика</span> — economy
-                            </li>
-                            <li class="word-with-audio " data-text="электрон ">
-                                <span lang="ru ">электро́н</span> — electron
-                            </li>
-                            <li class="word-with-audio " data-text="энергия ">
-                                <span lang="ru ">эне́ргия</span> — energy
-                            </li>
-                            <li class="word-with-audio " data-text="эффект ">
-                                <span lang="ru ">эффе́кт</span> — effect
-                            </li>
-
-                            <!-- Ю -->
-                            <li class="word-with-audio " data-text="юмор ">
-                                <span lang="ru ">ю́мор</span> — humor
-                            </li>
-                            <li class="word-with-audio " data-text="Юпитер ">
-                                <span lang="ru ">Юпи́тер</span> — Jupiter
-                            </li>
-
-
-                            <!-- Я -->
-                            <li class="word-with-audio " data-text="яхта ">
-                                <span lang="ru ">я́хта</span> — yacht
-                            </li>
-                            <li class="word-with-audio " data-text="ягуар ">
-                                <span lang="ru ">ягуа́р</span> — jaguar
-                            </li>
-                        </ul>
-                    </div>
-
-
-                </div>
-                <div id="status-words " class="sr-only " aria-live="polite "></div>
-            </section>
-            <hr class="hair ">
+    <main class="container page-section pt-0">
+        <!-- Intro / Formal vs Informal -->
+        <div class="p-3 p-md-4 rounded-3" style="background:var(--wash-a)">
+            <p class="mb-0 text-center ">In this lesson, we will practice basic introductions and greetings. <br> Each phrase has audio, click <span aria-hidden="true">🔊</span> to hear it. <br>Transliterations [an approximate spelling using English letters] in are also given, but
+                try reading in Russian first.</p>
         </div>
+        <section class="card card-light-small card-gradient-teal-peach ">
+            <div class="card-header text-gradient text-center ">
+                <h3 class="h5 mb-2">Formal vs. Informal</h3>
+            </div>
+            <div class="card-body p-4 ">
+                <div class="row align-items-center ">
+                    <div class="col-lg-7 col-md-7">
+                        <div class="p-3 p-md-4 rounded-3 mt-3" style="background:var(--wash-c)">
+                            <ul class="styled-list small mb-2 mt-1" style="background:#ffffff99;>
+                                <li><span lang=" ru "><strong>Ты</strong></span> is <em>informal</em> “you” (friends, kids, people you know well).<br>
+                                    <span lang="ru "><strong>Вы</strong></span> is <em>formal</em> or plural “you” (new people, elders, polite situations).</li>
+                                <li><span lang="ru ">Здравствуйте</span> [Zdravstvuyte] — a polite “Hello.”
+                                    <br><span lang="ru ">Привет</span> [Privet] — friendly “Hi.”</li>
+                                <li>Asking a name: <br><span lang="ru ">Как вас зовут?</span> [Kak vas zovut?] (formal) vs.<br>
+                                    <span lang="ru ">Как тебя зовут?</span> [Kak tebya zovut?] (informal).</li>
+                                <li>Saying goodbye: <br><span lang="ru ">До свидания</span> [Do svidaniya] (neutral/formal) vs.
+                                    <br><span lang="ru ">Пока</span> [Poka] (casual “Bye”).</li>
+                            </ul>
+                            <p class="hint mb-0 ">Tip: When in doubt, start formal (<span lang="ru ">Вы</span> / <span lang="ru ">Здравствуйте</span>). People will switch you to informal if appropriate.</p>
+                        </div>
+                    </div>
 
+                    <!-- Image placeholder -->
+                    <div class="col-lg-5 col-md-5 ">
+                        <img src="assets/greetings.png " alt="Two people greeting each other " class="img-fluid rounded-3 shadow-sm " />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phrase list (single column) -->
+        <section class="card card-light-small card-gradient-teal-peach ">
+            <div class="card-header text-gradient text-center ">
+                <h3 class="h5 mb-2 ">Essential Phrases</h3>
+            </div>
+            <div class="card-body p-4 ">
+                <div class="small mb-2 text-soft ">Click the speaker to hear each phrase.<br> An <strong>accent (´)</strong> above a vowel marks <strong>stress</strong>; an <strong>apostrophe '</strong> after a consonant indicates <strong>softening</strong>.
+                    <br>Minimal suggested phrases for your first practice session are highlighted in orange.</div>
+                <ul style="background:#ffffff99; " class="styled-list large phrase-list ">
+                    <!-- FORMAL / POLITE -->
+                    <li class=" word-with-audio li-accent-glow " data-text="Здравствуйте ">
+                        <span lang="ru ">Здра́вствуйте</span> [Zdrástvuyt'e] — Hello (formal/polite)
+                    </li>
+
+                    <li class="word-with-audio li-accent-glow " data-text="Как вас зовут ">
+                        <span lang="ru ">Как вас зову́т?</span> [Kak vas zovút?] — What is your name? (formal)
+                    </li>
+
+                    <li class="word-with-audio li-accent-glow " data-text="Меня зовут Яков ">
+                        <span lang="ru ">Меня́ зову́т Яков.</span> [Men'á zovút Yakov.] — My name is Yakov.
+                    </li>
+
+                    <li class="word-with-audio " data-text="приятно познакомиться ">
+                        <span lang="ru ">Прия́тно познако́миться.</span> [Pr'iyátno poznakóm'its'a.] — Nice to meet you.
+                    </li>
+
+                    <li class="word-with-audio " data-text="Очень приятно ">
+                        <span lang="ru ">Очень прия́тно.</span> [Ochen' pr'iyátno.] — (It’s) very nice (to meet you).
+                    </li>
+
+                    <li class="word-with-audio li-accent-glow " data-text="До свидания ">
+                        <span lang="ru ">До свида́ния.</span> [Do sv'idán'iya.] — Goodbye.
+                    </li>
+
+                    <li class="word-with-audio " data-text="До скорой встречи ">
+                        <span lang="ru ">До ско́рой встре́чи.</span> [Do skóroy vstr'échi.] — See you soon.
+                    </li>
+
+                    <!-- INFORMAL -->
+                    <li class="word-with-audio li-accent-glow " data-text="Привет ">
+                        <span lang="ru ">Приве́т!</span> [Pr'iv'e't!] — Hi!
+                    </li>
+
+                    <li class="word-with-audio " data-text="Как дела ">
+                        <span lang="ru ">Как дела́?</span> [Kak d'ela'?] — How are you?
+                    </li>
+
+                    <li class="word-with-audio " data-text="Спасибо, хорошо ">
+                        <span lang="ru ">Спаси́бо, хорошо́.</span> [Spas'íbo, khoroshó.] — Thanks, (I’m) good.
+                    </li>
+
+                    <li class="word-with-audio " data-text="Как ваши дела? ">
+                        <span lang="ru ">Как ва́ши дела́?</span> [Kak váshi d'elá?] — How are <em>you</em>? (formal)
+                    </li>
+
+
+                    <li class="word-with-audio li-accent-glow " data-text="Пока ">
+                        <span lang="ru ">Пока́!</span> [Poka'!] — Bye!
+                    </li>
+
+                    <li class="word-with-audio " data-text="Спасибо ">
+                        <span lang="ru ">Спаси́бо.</span> [Spas'i'bo.] — Thank you.
+                    </li>
+
+                    <li class="word-with-audio " data-text="Пожалуйста ">
+                        <span lang="ru ">Пожа́луйста.</span> [Pozháluysta.] — Please / You’re welcome.
+                    </li>
+
+                    <li class="word-with-audio " data-text="С праздником! ">
+                        <span lang="ru ">С пра́здником!</span> [S pra'zdn'ikom!] — Happy holiday!
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer text-center py-3 ">
@@ -193,30 +243,6 @@
     </script>
 
     <script>
-        // Video with linked audio
-        const video = document.getElementById("myVideo ");
-        const audio = document.getElementById("myAudio ");
-
-        // Start audio whenever the video starts
-        video.addEventListener('play', async() => {
-            try {
-                await audio.play();
-            } catch (err) {
-                console.warn('Audio play was blocked, will retry on next click:', err);
-                document.body.addEventListener('click', () => audio.play(), {
-                    once: true
-                });
-            }
-        });
-
-        // Pause audio if video pauses
-        video.addEventListener('pause', () => audio.pause());
-
-        // Keep them in sync (restart audio if video restarts)
-        video.addEventListener('seeked', () => {
-            audio.currentTime = video.currentTime;
-        });
-
         // Set current year in footer
         document.getElementById("y ").textContent = new Date().getFullYear();
     </script>
