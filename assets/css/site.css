@@ -1,648 +1,717 @@
-/* =====================================================================
+        /* =====================================================================
 site.css — Community Russian Course
 ---------------------------------------------------------------------
 Purpose: Shared styles across the site. Clean, high-contrast aesthetic
 with subtle gradient washes, spacious layout, and strong typography.
 Technologies: Plain CSS layered over Bootstrap 5.
 ===================================================================== */
-
-
-/* ========== 1) DESIGN TOKENS (CSS custom properties) ==================
+        /* ========== 1) DESIGN TOKENS (CSS custom properties) ==================
 Edit values here to change the theme globally.
 ------------------------------------------------------------------ */
-
-:root {
-    /* Colors */
-    --ink: #0e0e0e;
-    /* Primary text (near-black) */
-    --ink-soft: #2a2a2a;
-    /* Secondary text */
-    --muted: #6b7280;
-    /* Muted text */
-    --line: rgba(0, 0, 0, .08);
-    /* Hairline borders */
-    --bg: #ffffff;
-    /* Base page background */
-    --bg-soft: #f8fafc;
-    /* Alternate section background */
-    /* Accent colors (neutral/dark for CTAs) */
-    --accent: #111;
-    --accent-ink: #fff;
-    /* Brand blue (primary hue used across the site) */
-    --crc-brand: #033b90;
-    /* main */
-    --crc-brand-ink: #0b5ed7;
-    /* hover/darker */
-    /* Gradient washes (subtle, increased visibility) */
-    --wash-a: rgba(13, 110, 253, 0.12);
-    /* soft blue (Bootstrap primary @ 12%) */
-    --wash-b: rgba(111, 66, 193, 0.12);
-    /* soft purple @ 12% */
-    --wash-c: rgba(16, 185, 129, 0.10);
-    /* soft green @ 10% */
-    /* Fluid type scale (mobile-first) */
-    --fs-100: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
-    /* body */
-    --fs-300: clamp(1.1rem, 1.0rem + 0.8vw, 1.35rem);
-    /* lead text */
-    --fs-600: clamp(1.8rem, 1.5rem + 2vw, 2.4rem);
-    /* section titles */
-    --fs-800: clamp(2.2rem, 2rem + 4vw, 3.6rem);
-    /* hero headlines */
-}
-
-
-/* ========== 2) GLOBAL SETUP ========================================== */
-
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-
-/* Base page background uses layered gradients (light washes).
+        
+         :root {
+            /* Colors */
+            --ink: #0e0e0e;
+            /* Primary text (near-black) */
+            --ink-soft: #2a2a2a;
+            /* Secondary text */
+            --muted: #6b7280;
+            /* Muted text */
+            --line: rgba(0, 0, 0, .08);
+            /* Hairline borders */
+            --bg: #ffffff;
+            /* Base page background */
+            --bg-soft: #f8fafc;
+            /* Alternate section background */
+            /* Accent colors (neutral/dark for CTAs) */
+            --accent: #111;
+            --accent-ink: #fff;
+            /* Brand blue (primary hue used across the site) */
+            --crc-brand: #033b90;
+            /* main */
+            --crc-brand-ink: #0b5ed7;
+            /* hover/darker */
+            /* Gradient washes (subtle, increased visibility) */
+            --wash-a: rgba(13, 110, 253, 0.12);
+            /* soft blue (Bootstrap primary @ 12%) */
+            --wash-b: rgba(111, 66, 193, 0.12);
+            /* soft purple @ 12% */
+            --wash-c: rgba(16, 185, 129, 0.10);
+            /* soft green @ 10% */
+            /* Fluid type scale (mobile-first) */
+            --fs-100: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
+            /* body */
+            --fs-300: clamp(1.1rem, 1.0rem + 0.8vw, 1.35rem);
+            /* lead text */
+            --fs-600: clamp(1.8rem, 1.5rem + 2vw, 2.4rem);
+            /* section titles */
+            --fs-800: clamp(2.2rem, 2rem + 4vw, 3.6rem);
+            /* hero headlines */
+        }
+        /* ========== 2) GLOBAL SETUP ========================================== */
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        /* Base page background uses layered gradients (light washes).
 Tip: Move this to .bg-wash if you want to apply per-page instead. */
-
-body {
-    margin: 0;
-    color: var(--ink);
-    background: linear-gradient(to bottom, var(--bg) 0%, var(--wash-a) 25%, var(--wash-b) 50%, var(--wash-a) 75%, var(--bg) 100%);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
-    font-size: var(--fs-100);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
-/* --- Sticky footer layout (keeps footer at the bottom on short pages) --- */
-
-body {
-    min-height: 100vh;
-    /* fill at least one viewport height */
-    display: flex;
-    /* make the page a column flex container */
-    flex-direction: column;
-}
-
-
-/* ========== 3) LAYOUT HELPERS ======================================== */
-
-.container {
-    max-width: 1120px;
-}
-
-.page-section {
-    padding: 4rem 0;
-}
-
-.page-section.alt {
-    background: var(--bg-soft);
-}
-
-hr.hair {
-    border: 0;
-    border-top: 1px solid var(--line);
-    margin: 2rem 0;
-}
-
-
-/* ========== 4) NAVBAR (shared across pages) ========================== */
-
-.navbar {
-    /* Glassy navbar so page gradients shimmer through */
-    background: rgba(255, 255, 255, 0.78);
-    -webkit-backdrop-filter: saturate(140%) blur(10px);
-    backdrop-filter: saturate(140%) blur(10px);
-    border-bottom: 1px solid var(--line);
-}
-
-.navbar-brand {
-    font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    font-weight: 800;
-    letter-spacing: .2px;
-    color: var(--ink) !important;
-}
-
-.navbar .navbar-nav {
-    position: relative;
-    padding-bottom: .35rem;
-}
-
-.navbar .nav-link {
-    position: relative;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    color: var(--ink-soft);
-    padding: .4rem .6rem;
-    border-radius: .5rem;
-    z-index: 0;
-    overflow: hidden;
-    /* subtle hover background radius */
-}
-
-
-/* The animated layer */
-
-.navbar .nav-link::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: .5rem;
-    /* soft multi-stop gradient band */
-    background: linear-gradient( 90deg, transparent 0%, rgba(13, 110, 253, .10) 25%, rgba(111, 66, 193, .10) 50%, rgba(16, 185, 129, .10) 75%, transparent 100%);
-    background-size: 200% 100%;
-    /* larger than box so it can scroll */
-    background-position: 0% 0%;
-    opacity: 0;
-    /* hidden until hover */
-    will-change: background-position, opacity;
-    transition: opacity .2s ease;
-    z-index: -1;
-    animation: nav-glide 2.5s linear infinite paused;
-    /* pause by default */
-}
-
-.navbar .nav-link:hover::before,
-.navbar .nav-link:focus::before {
-    opacity: 1;
-    animation-play-state: running;
-    /* loop while hovered/focused */
-}
-
-
-/* keep active item clean (optional)
-.navbar .nav-link.active::before {
-    display: none;
-    }
- */
-
-@keyframes nav-glide {
-    from {
-        background-position: 0% 0%;
-    }
-    to {
-        background-position: 200% 0%;
-    }
-}
-
-
-/* Respect reduced motion */
-
-@media (prefers-reduced-motion: reduce) {
-    .navbar .nav-link::before {
-        animation: none;
-        opacity: 0;
-    }
-}
-
-.navbar .nav-link::after {
-    /* Base animated underline */
-    content: "";
-    position: absolute;
-    left: .6rem;
-    right: .6rem;
-    bottom: .25rem;
-    height: 2px;
-    background: var(--ink);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .24s ease;
-}
-
-.navbar .nav-link:hover::after,
-.navbar .nav-link:focus::after,
-.navbar .nav-link.active::after {
-    transform: scaleX(1);
-}
-
-
-/* Active link: gradient text fill (distinct but tasteful) */
-
-.navbar .nav-link.active {
-    background: linear-gradient(90deg, #0d6efd, #6f42c1, #10b981);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent !important;
-}
-
-
-/* Floating gradient "ink" underline positioned via JS */
-
-.navbar .nav-ink {
-    position: absolute;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    background: linear-gradient(90deg, #0d6efd, #6f42c1, #10b981);
-    border-radius: 2px;
-    transition: left .24s cubic-bezier(.2, .8, .2, 1), width .24s cubic-bezier(.2, .8, .2, 1);
-    pointer-events: none;
-}
-
-
-/* Remove the per-link underline; keep the moving .nav-ink */
-
-.navbar .nav-link::after {
-    display: none !important;
-}
-
-
-/* ========== 5) TYPOGRAPHY & HEADINGS ================================= */
-
-.hero .display,
-.section-title,
-.navbar-brand,
-.btn-pill {
-    font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    font-weight: 800;
-    /* Bold, punchy headings */
-}
-
-.lead {
-    color: var(--crc-brand);
-    font-size: var(--fs-300);
-    line-height: 1.5;
-}
-
-
-/* Text gradient utility for big headlines */
-
-.text-gradient {
-    background: linear-gradient(180deg, #0d6efd 0%, #6f42c1 50%, #10b981 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-
-/* ========== 6) HERO VARIANTS ========================================= */
-
-
-/* Base hero block: spacing only (compose with variants) */
-
-.hero {
-    padding: 5rem 0 3rem;
-}
-
-
-/* Dark-on-light hero variant: large headline, crisp dark text */
-
-.hero--light {
-    background: radial-gradient(700px 450px at 80% 0%, var(--wash-b), transparent 55%), radial-gradient(700px 450px at 0% 100%, var(--wash-a), transparent 55%), #fff;
-    border-bottom: 1px solid var(--line);
-    padding: 6rem 0 4rem;
-    /* generous spacing */
-}
-
-.hero--light .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    color: var(--muted);
-    font-weight: 700;
-    margin-bottom: .5rem;
-    font-size: var(--fs-300);
-}
-
-.blue-ink-uppercase {
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    color: var(--crc-brand);
-    font-weight: 700;
-    margin-bottom: .5rem;
-    font-size: var(--fs-300);
-}
-
-.blue-ink {
-    letter-spacing: .12em;
-    color: var(--crc-brand);
-    font-weight: 700;
-    margin-bottom: .5rem;
-    font-size: var(--fs-100);
-}
-
-.hero--light .display {
-    font-size: var(--fs-800);
-    letter-spacing: -.01em;
-    line-height: 1.50;
-    margin: 0 0 2rem;
-}
-
-
-/* Card with same background as .hero--light, small font, and card styling */
-
-.card-light-small {
-    background: radial-gradient(700px 450px at 80% 0%, var(--wash-b), transparent 55%), radial-gradient(700px 450px at 0% 100%, var(--wash-a), transparent 55%), #fff;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    padding: 1rem 1rem;
-    font-size: 0.88rem;
-    /* Slightly smaller than body */
-    color: var(--ink);
-    max-width: 100vw;
-    /* Allow full page width */
-    margin: 1rem 1vw;
-    /* Margin keeps it inside the page */
-}
-
-
-/* Another gradient background for Bootstrap card */
-
-.card-gradient-teal-peach {
-    background: linear-gradient(to bottom, #C0DEED 0%, #F9D5C2 50%, #D0EBD6 100%);
-}
-
-.card-gradient-teal-peach .card-body {
-    background: transparent;
-    /* so the gradient shows through */
-}
-
-.card-img-left-fluid {
-    max-width: 25%;
-    /* limit only this image */
-    height: auto;
-    /* keep proportions */
-}
-
-
-/* ========== 7) BUTTONS (pill, high-contrast) ========================= */
-
-.btn-pill {
-    border-radius: 999px;
-    padding: .7rem 1.1rem;
-    letter-spacing: .02em;
-    background: #563a93 linear-gradient(180deg, #37c8b7 0%, #4a72a1 22%, #563a93 75%, #9c72fb 100%) 0% 0% no-repeat padding-box;
-    border-radius: 15px;
-    color: #fff
-}
-
-.btn-pill:hover {
-    background-size: 200% 200%;
-    animation: gradient 2s ease infinite;
-    color: white;
-}
-
-
-/*
+        
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: linear-gradient(to bottom, var(--bg) 0%, var(--wash-a) 25%, var(--wash-b) 50%, var(--wash-a) 75%, var(--bg) 100%);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+            font-size: var(--fs-100);
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* --- Sticky footer layout (keeps footer at the bottom on short pages) --- */
+        
+        body {
+            min-height: 100vh;
+            /* fill at least one viewport height */
+            display: flex;
+            /* make the page a column flex container */
+            flex-direction: column;
+        }
+        /* ========== 3) LAYOUT HELPERS ======================================== */
+        
+        .container {
+            max-width: 1120px;
+        }
+        
+        .page-section {
+            padding: 4rem 0;
+        }
+        
+        .page-section.alt {
+            background: var(--bg-soft);
+        }
+        
+        hr.hair {
+            border: 0;
+            border-top: 1px solid var(--line);
+            margin: 2rem 0;
+        }
+        /* ========== 4) NAVBAR (shared across pages) ========================== */
+        
+        .navbar {
+            /* Glassy navbar so page gradients shimmer through */
+            background: rgba(255, 255, 255, 0.78);
+            -webkit-backdrop-filter: saturate(140%) blur(10px);
+            backdrop-filter: saturate(140%) blur(10px);
+            border-bottom: 1px solid var(--line);
+        }
+        
+        .navbar-brand {
+            font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+            font-weight: 800;
+            letter-spacing: .2px;
+            color: var(--ink) !important;
+        }
+        
+        .navbar .navbar-nav {
+            position: relative;
+            padding-bottom: .35rem;
+        }
+        
+        .navbar .nav-link {
+            position: relative;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--ink-soft);
+            padding: .4rem .6rem;
+            border-radius: .5rem;
+            z-index: 0;
+            overflow: hidden;
+            /* subtle hover background radius */
+        }
+        /* The animated layer */
+        
+        .navbar .nav-link::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: .5rem;
+            /* soft multi-stop gradient band */
+            background: linear-gradient( 90deg, transparent 0%, rgba(13, 110, 253, .10) 25%, rgba(111, 66, 193, .10) 50%, rgba(16, 185, 129, .10) 75%, transparent 100%);
+            background-size: 200% 100%;
+            /* larger than box so it can scroll */
+            background-position: 0% 0%;
+            opacity: 0;
+            /* hidden until hover */
+            will-change: background-position, opacity;
+            transition: opacity .2s ease;
+            z-index: -1;
+            animation: nav-glide 2.5s linear infinite paused;
+            /* pause by default */
+        }
+        
+        .navbar .nav-link:hover::before,
+        .navbar .nav-link:focus::before {
+            opacity: 1;
+            animation-play-state: running;
+            /* loop while hovered/focused */
+        }
+        /* keep active item clean (optional)
+            .navbar .nav-link.active::before {
+            display: none;
+            }
+        */
+        /* Input + button look */
+        
+        .navbar .form-control {
+            border-radius: 20px 0 0 20px;
+            border: 1px solid #ced4da;
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar .btn-gradient {
+            border-radius: 0 20px 20px 0;
+            border: none;
+            background: linear-gradient(90deg, #19b5a5, #ffc7a1);
+            /* teal → peach */
+            color: #fff;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            transition: opacity .2s ease;
+        }
+        
+        .navbar .btn-gradient:hover {
+            opacity: .92;
+        }
+        /* Live dropdown */
+        
+        .search-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            /* full width under form */
+            z-index: 1000;
+            margin: .25rem 0 0;
+            padding: .25rem 0;
+            list-style: none;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, .12);
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+            display: none;
+            /* toggled by JS */
+            max-height: 60vh;
+            overflow: auto;
+        }
+        
+        .search-dropdown li {
+            padding: .5rem .75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        
+        .search-dropdown li[aria-selected="true"],
+        .search-dropdown li:hover {
+            background: linear-gradient(90deg, rgba(25, 181, 165, .08), rgba(255, 199, 161, .12));
+        }
+        
+        .search-dropdown a {
+            color: inherit;
+            text-decoration: none;
+            flex: 1;
+        }
+        /* Optional tiny pill for section/type */
+        
+        .search-tag {
+            font-size: .75rem;
+            padding: .1rem .4rem;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, .06);
+        }
+        /* highlight matched text */
+        
+        .search-dropdown mark {
+            background: linear-gradient(90deg, #e6fffb, #fff1e6);
+            padding: 0 .1em;
+            border-radius: 3px;
+        }
+        /* Narrow screens: dropdown keeps within viewport */
+        
+        @media (max-width: 576px) {
+            .search-dropdown {
+                left: 0;
+                right: 0;
+            }
+        }
+        
+        @keyframes nav-glide {
+            from {
+                background-position: 0% 0%;
+            }
+            to {
+                background-position: 200% 0%;
+            }
+        }
+        /* Respect reduced motion */
+        
+        @media (prefers-reduced-motion: reduce) {
+            .navbar .nav-link::before {
+                animation: none;
+                opacity: 0;
+            }
+        }
+        
+        .navbar .nav-link::after {
+            /* Base animated underline */
+            content: "";
+            position: absolute;
+            left: .6rem;
+            right: .6rem;
+            bottom: .25rem;
+            height: 2px;
+            background: var(--ink);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .24s ease;
+        }
+        
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link:focus::after,
+        .navbar .nav-link.active::after {
+            transform: scaleX(1);
+        }
+        /* Active link: gradient text fill (distinct but tasteful) */
+        
+        .navbar .nav-link.active {
+            background: linear-gradient(90deg, #0d6efd, #6f42c1, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
+        }
+        /* Floating gradient "ink" underline positioned via JS */
+        
+        .navbar .nav-ink {
+            position: absolute;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            background: linear-gradient(90deg, #0d6efd, #6f42c1, #10b981);
+            border-radius: 2px;
+            transition: left .24s cubic-bezier(.2, .8, .2, 1), width .24s cubic-bezier(.2, .8, .2, 1);
+            pointer-events: none;
+        }
+        /* Remove the per-link underline; keep the moving .nav-ink */
+        
+        .navbar .nav-link::after {
+            display: none !important;
+        }
+        /* ========== 5) TYPOGRAPHY & HEADINGS ================================= */
+        
+        .hero .display,
+        .section-title,
+        .navbar-brand,
+        .btn-pill {
+            font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+            font-weight: 800;
+            /* Bold, punchy headings */
+        }
+        
+        .lead {
+            color: var(--crc-brand);
+            font-size: var(--fs-300);
+            line-height: 1.5;
+        }
+        /* Text gradient utility for big headlines */
+        
+        .text-gradient {
+            background: linear-gradient(180deg, #0d6efd 0%, #6f42c1 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* ========== 6) HERO VARIANTS ========================================= */
+        /* Base hero block: spacing only (compose with variants) */
+        
+        .hero {
+            padding: 5rem 0 3rem;
+        }
+        /* Dark-on-light hero variant: large headline, crisp dark text */
+        
+        .hero--light {
+            background: radial-gradient(700px 450px at 80% 0%, var(--wash-b), transparent 55%), radial-gradient(700px 450px at 0% 100%, var(--wash-a), transparent 55%), #fff;
+            border-bottom: 1px solid var(--line);
+            padding: 6rem 0 4rem;
+            /* generous spacing */
+        }
+        
+        .hero--light .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--muted);
+            font-weight: 700;
+            margin-bottom: .5rem;
+            font-size: var(--fs-300);
+        }
+        
+        .blue-ink-uppercase {
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--crc-brand);
+            font-weight: 700;
+            margin-bottom: .5rem;
+            font-size: var(--fs-300);
+        }
+        
+        .blue-ink {
+            letter-spacing: .12em;
+            color: var(--crc-brand);
+            font-weight: 700;
+            margin-bottom: .5rem;
+            font-size: var(--fs-100);
+        }
+        
+        .hero--light .display {
+            font-size: var(--fs-800);
+            letter-spacing: -.01em;
+            line-height: 1.50;
+            margin: 0 0 2rem;
+        }
+        /* Card with same background as .hero--light, small font, and card styling */
+        
+        .card-light-small {
+            background: radial-gradient(700px 450px at 80% 0%, var(--wash-b), transparent 55%), radial-gradient(700px 450px at 0% 100%, var(--wash-a), transparent 55%), #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            padding: 1rem 1rem;
+            font-size: 0.88rem;
+            /* Slightly smaller than body */
+            color: var(--ink);
+            max-width: 100vw;
+            /* Allow full page width */
+            margin: 1rem 1vw;
+            /* Margin keeps it inside the page */
+        }
+        /* Another gradient background for Bootstrap card */
+        
+        .card-gradient-teal-peach {
+            background: linear-gradient(to bottom, #C0DEED 0%, #F9D5C2 50%, #D0EBD6 100%);
+        }
+        
+        .card-gradient-teal-peach .card-body {
+            background: transparent;
+            /* so the gradient shows through */
+        }
+        
+        .card-img-left-fluid {
+            max-width: 25%;
+            /* limit only this image */
+            height: auto;
+            /* keep proportions */
+        }
+        
+        .lesson-label {
+            font-size: 0.9rem;
+            /* small but readable */
+            color: #003366;
+            /* deep blue ink (instead of gray) */
+            margin-top: 0;
+            /* push it up higher */
+            margin-bottom: 0.25rem;
+            /* small spacing below */
+            border-bottom: 2px solid #003366;
+            /* underline */
+            display: inline-block;
+            /* underline fits text width */
+            padding-bottom: 2px;
+            /* space between text and line */
+        }
+        /* ========== 7) BUTTONS (pill, high-contrast) ========================= */
+        
+        .btn-pill {
+            border-radius: 999px;
+            padding: .7rem 1.1rem;
+            letter-spacing: .02em;
+            background: #563a93 linear-gradient(180deg, #37c8b7 0%, #4a72a1 22%, #563a93 75%, #9c72fb 100%) 0% 0% no-repeat padding-box;
+            border-radius: 15px;
+            color: #fff
+        }
+        
+        .btn-pill:hover {
+            background-size: 200% 200%;
+            animation: gradient 2s ease infinite;
+            color: white;
+        }
+        /*
 @keyframe <animation name> where animation name is defined in the CSS of the element with animation.
 */
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
-.btn-dark {
-    background: var(--accent);
-    color: var(--accent-ink);
-    border: 1px solid #000;
-}
-
-.btn-dark:hover {
-    background: #000;
-    color: #fff;
-}
-
-.btn-outline-dark {
-    background: transparent;
-    color: var(--ink);
-    border: 1px solid var(--ink);
-}
-
-.btn-outline-dark:hover {
-    background: var(--ink);
-    color: #fff;
-}
-
-
-/* ========== 8) LINKS ================================================== */
-
-.link-aim {
-    position: relative;
-    font-weight: 800;
-    color: var(--ink);
-    text-decoration: none;
-    padding-bottom: .15rem;
-}
-
-.link-aim::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 2px;
-    background: var(--ink);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .24s ease;
-}
-
-.link-aim:hover::after {
-    transform: scaleX(1);
-}
-
-a.deep-dive {
-    font-weight: 600;
-    color: var(--muted);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: .35rem;
-    font-size: 0.95rem;
-}
-
-a.deep-dive:hover {
-    color: var(--crc-brand);
-    text-decoration: underline;
-}
-
-
-/* ========== 9) FOOTER ================================================= */
-
-.site-footer {
-    margin: auto;
-    /* push footer to the bottom when there's extra space */
-    /* much smaller than 1rem */
-    font-size: 0.6rem;
-    color: var(--muted);
-}
-
-
-/* ========== 10) UTILITIES ============================================ */
-
-.text-soft {
-    color: var(--muted) !important;
-}
-
-.max-w-700 {
-    max-width: 700px;
-}
-
-.space-y-2>*+* {
-    margin-top: 1rem;
-}
-
-.space-y-3>*+* {
-    margin-top: 1.5rem;
-}
-
-
-/* =============== 11) LISTS ==================*/
-
-
-/* Base styled list */
-
-ul.styled-list {
-    list-style: none;
-    margin: 1rem 0;
-    padding: 1rem 1.25rem;
-    background: #f9fafc;
-    border: 1px solid #e0e6f0;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-}
-
-ul.styled-list li {
-    position: relative;
-    padding: 0.6rem 0.75rem 0.6rem 2rem;
-    margin: 0.25rem 0;
-    border-radius: 8px;
-    transition: background 0.2s ease, transform 0.1s ease;
-}
-
-ul.styled-list li::before {
-    position: absolute;
-    left: 0.8rem;
-    color: #3b82f6;
-    font-size: 1.2rem;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-ul.styled-list li:hover {
-    background: #eef4ff;
-    transform: translateX(3px);
-    cursor: pointer;
-}
-
-
-/* ───── Size variants ───── */
-
-
-/* Smaller list */
-
-ul.styled-list.small {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-}
-
-ul.styled-list.small li {
-    padding: 0.4rem 0.5rem 0.4rem 1.5rem;
-    margin: 0.15rem 0;
-}
-
-ul.styled-list.small li::before {
-    font-size: 0.9rem;
-    left: 0.5rem;
-}
-
-
-/* Larger list */
-
-ul.styled-list.large {
-    font-size: 1.15rem;
-    padding: 1.25rem 1.5rem;
-}
-
-ul.styled-list.large li {
-    padding: 0.8rem 1rem 0.8rem 2.25rem;
-}
-
-ul.styled-list.large li::before {
-    font-size: 1.5rem;
-    left: 0.9rem;
-}
-
-ul.styled-list.diamond li:before {
-    content: "🔹";
-    display: inline-block;
-    /* turn it into a box */
-    width: 1em;
-    /* reserve space */
-    margin-left: -1em;
-    /* pull it into the margin */
-    margin-right: 0.5em;
-    /* space after the bullet */
-}
-
-.callout {
-    border-left: 4px solid;
-    border-radius: 4px;
-    padding: 1rem;
-    margin: 1rem 0;
-    background: #f9f9f9;
-}
-
-.callout h5 {
-    margin-top: 0;
-    font-size: 1.1rem;
-}
-
-.callout-note {
-    border-color: #0d6efd;
-    /* Bootstrap blue */
-    background: #e7f1ff;
-}
-
-.callout-tip {
-    border-color: #198754;
-    /* Bootstrap green */
-    background: #eafaf1;
-}
-
-.callout-warning {
-    border-color: #ffc107;
-    /* Bootstrap yellow */
-    background: #fff9e6;
-}
-
-.callout-small {
-    margin-top: 0;
-    font-size: 0.8rem;
-    padding: 0.5rem;
-    margin: 0rem 0;
-}
-
-
-/* image audio overlay button used across pages */
-
-.img-sound-btn {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 6px;
-    padding: 0.25rem 0.4rem;
-    font-size: 1rem;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 5;
-}
-
-.img-sound-btn:focus {
-    outline: 3px solid rgba(0, 123, 255, 0.25);
-    outline-offset: 2px;
-}
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+        
+        .btn-dark {
+            background: var(--accent);
+            color: var(--accent-ink);
+            border: 1px solid #000;
+        }
+        
+        .btn-dark:hover {
+            background: #000;
+            color: #fff;
+        }
+        
+        .btn-outline-dark {
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid var(--ink);
+        }
+        
+        .btn-outline-dark:hover {
+            background: var(--ink);
+            color: #fff;
+        }
+        /* ========== 8) LINKS ================================================== */
+        
+        .link-aim {
+            position: relative;
+            font-weight: 800;
+            color: var(--ink);
+            text-decoration: none;
+            padding-bottom: .15rem;
+        }
+        
+        .link-aim::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background: var(--ink);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .24s ease;
+        }
+        
+        .link-aim:hover::after {
+            transform: scaleX(1);
+        }
+        
+        a.deep-dive {
+            font-weight: 600;
+            color: var(--muted);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            font-size: 0.95rem;
+        }
+        
+        a.deep-dive:hover {
+            color: var(--crc-brand);
+            text-decoration: underline;
+        }
+        /* ========== 9) FOOTER ================================================= */
+        
+        .site-footer {
+            margin: auto;
+            /* push footer to the bottom when there's extra space */
+            /* much smaller than 1rem */
+            font-size: 0.6rem;
+            color: var(--muted);
+        }
+        /* ========== 10) UTILITIES ============================================ */
+        
+        .text-soft {
+            color: var(--muted) !important;
+        }
+        
+        .max-w-700 {
+            max-width: 700px;
+        }
+        
+        .space-y-2>*+* {
+            margin-top: 1rem;
+        }
+        
+        .space-y-3>*+* {
+            margin-top: 1.5rem;
+        }
+        /* =============== 11) LISTS ==================*/
+        /* Base styled list */
+        
+        ul.styled-list {
+            list-style: none;
+            margin: 1rem 0;
+            padding: 1rem 1.25rem;
+            background: #f9fafc;
+            border: 1px solid #e0e6f0;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+        
+        ul.styled-list li {
+            position: relative;
+            padding: 0.6rem 0.75rem 0.6rem 2rem;
+            margin: 0.25rem 0;
+            border-radius: 8px;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+        
+        ul.styled-list li::before {
+            position: absolute;
+            left: 0.8rem;
+            color: #3b82f6;
+            font-size: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        ul.styled-list li:hover {
+            background: #eef4ff;
+            transform: translateX(3px);
+            cursor: pointer;
+        }
+        /* ───── Size variants ───── */
+        /* Smaller list */
+        
+        ul.styled-list.small {
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+        }
+        
+        ul.styled-list.small li {
+            padding: 0.4rem 0.5rem 0.4rem 1.5rem;
+            margin: 0.15rem 0;
+        }
+        
+        ul.styled-list.small li::before {
+            font-size: 0.9rem;
+            left: 0.5rem;
+        }
+        /* Larger list */
+        
+        ul.styled-list.large {
+            font-size: 1.15rem;
+            padding: 1.25rem 1.5rem;
+        }
+        
+        ul.styled-list.large li {
+            padding: 0.8rem 1rem 0.8rem 2.25rem;
+        }
+        
+        ul.styled-list.large li::before {
+            font-size: 1.5rem;
+            left: 0.9rem;
+        }
+        
+        ul.styled-list.diamond li:before {
+            content: "🔹";
+            display: inline-block;
+            /* turn it into a box */
+            width: 1em;
+            /* reserve space */
+            margin-left: -1em;
+            /* pull it into the margin */
+            margin-right: 0.5em;
+            /* space after the bullet */
+        }
+        
+        .callout {
+            border-left: 4px solid;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+            background: #f9f9f9;
+        }
+        
+        .callout h5 {
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+        
+        .callout-note {
+            border-color: #0d6efd;
+            /* Bootstrap blue */
+            background: #e7f1ff;
+        }
+        
+        .callout-tip {
+            border-color: #198754;
+            /* Bootstrap green */
+            background: #eafaf1;
+        }
+        
+        .callout-warning {
+            border-color: #ffc107;
+            /* Bootstrap yellow */
+            background: #fff9e6;
+        }
+        
+        .callout-small {
+            margin-top: 0;
+            font-size: 0.8rem;
+            padding: 0.5rem;
+            margin: 0rem 0;
+        }
+        /* image audio overlay button used across pages */
+        
+        .img-sound-btn {
+            position: absolute;
+            /* overlay on image */
+            background-color: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 6px;
+            padding: 0.25rem 0.4rem;
+            font-size: 1rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 5;
+            top: 20px;
+            /* distance from the top edge */
+            right: 20px;
+            /* distance from the right edge */
+        }
+        
+        .img-sound-btn:focus {
+            outline: 3px solid rgba(0, 123, 255, 0.25);
+            outline-offset: 2px;
+        }
+        
+        .img-with-audio {
+            position: relative;
+            /* makes image the positioning context */
+            display: inline-block;
+            /* wraps tightly around the image */
+        }
+        /* ARIA live region for assistive technologies such as screen readers. 
+             Mainly for visually impaired users */
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }

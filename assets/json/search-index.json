@@ -1,0 +1,13 @@
+[
+    { "title": "Home", "url": "../index.html", "tag": "Page" },
+    { "title": "Lessons", "url": "../../lessons.html", "tag": "Index" },
+    { "title": "Alphabet", "url": "../../lesson1/alphabet.html", "tag": "Lesson 1" },
+    { "title": "False Friends", "url": "../../lesson1/false-friends.html", "tag": "Lesson 1" },
+    { "title": "Resources", "url": "../../resources/resources.html", "tag": "Page" },
+    { "title": "Techniques", "url": "../../techniques.html", "tag": "Page" },
+    { "title": "Vowels", "url": "../../lesson1/vowels.html", "tag": "Lesson 1" },
+    { "title": "Introduction", "url": "../../introduction.html", "tag": "Lesson 1" },
+    { "title": "Old Friends", "url": "../../lesson1/friends.html", "tag": "Lesson 1" },
+    { "title": "Sibilants", "url": "../../lesson1/sibilants.html", "tag": "Lesson 1" },
+    { "title": "Signs", "url": "../../lesson1/signs.html", "tag": "Lesson 1" }
+]

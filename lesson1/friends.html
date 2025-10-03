@@ -20,29 +20,56 @@
 
 <body>
     <!-- Keep the site header/menu consistent with existing pages -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html"></a>
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/basilika.png" alt="Logo" height="40"></img>
+            </a>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="../lessons.html">Lessons</a></li>
                     <li class="nav-item"><a class="nav-link" href="../resources/resources.html">Resources</a></li>
                 </ul>
+
+                <form class="d-flex position-relative" role="search" id="site-search-form" autocomplete="off">
+                    <input id="site-search" class="form-control me-0" type="search" placeholder="Search lessons & resources…" aria-label="Search" aria-autocomplete="list" aria-controls="search-results" aria-expanded="false">
+                    <button class="btn btn-gradient" type="button" id="site-search-btn">Search</button>
+
+                    // Live dropdown
+                    <ul id="search-results" class="search-dropdown" role="listbox"></ul>
+                </form>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
-    <section class="text-center">
 
-        <h6 class=" blue-ink" , style="margin-top: 10px;">Lesson 1. Alphabet </h6>
-        <br>
-        <h3 class="text-gradient">
-            1.2. "Old Friends" <br>А а, Е е, К к, М м, О о, Т т, С с
-        </h3>
-        <h6 style="color:steelblue;">
-            Russian Letters that Look the Same and Sound (Almost) the Same
-        </h6>
+    <div id="navbar-placeholder"></div>
+    <section class="lesson-header container-fluid mt-2">
+        <div class="row align-items-start">
+            <!-- Left column: lesson label -->
+            <div class="col-12 col-lg-3 text-start">
+                <h6 class="lesson-label">Lesson 1. Alphabet</h6>
+            </div>
+
+            <!-- Center column: main title -->
+            <div class="col-12 col-lg-6 text-center">
+                <h3 class="text-gradient mb-0">
+                    <br>Old Friends: <br>А а, Е е, К к, М м, О о, Т т, С с <br> &nbsp </h3>
+            </div>
+
+            <!-- Right column: empty spacer -->
+            <div class="col-12 col-lg-3"></div>
+        </div>
+    </section>
+
+
+    <section class="card-light-small">
+        <div class="container">
+            <p class="text-center" style="color:var(--crc-brand); font-weight: bold;">
+                These Russian Letters Look and Sound (Almost) the Same as Their English Counterparts. They are the easiest ones to learn!
+            </p>
+        </div>
     </section>
 
 
@@ -214,6 +241,24 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js "></script>
     <script src="../assets/js/audioUtils.js"></script>
+    <!-- Top-level code in a deferred script (not wrapped in a function) runs in order after HTML parsing 
+       but before DOMContentLoaded.
+    The defer attribute also preserves execution order (as they appear in HTML).
+     Theoretically we can remove DOMContentLoaded wrappers from function calls as long as functions 
+     don't depend on other wrapped scripts.
+     But it won't hurt anything to keep DOMContentLoaded wrappers, just in case a function call 
+     is parsed before the script is loaded. The deferred script code
+     loads in parallel with HTML parsing, so I think there is little risk of a race condition in
+     this scenario:
+     - A deferred script loads in parallel with HTML parsing
+     - HTML body has a non-deferred script with a call to a function in the deferred script 
+        -> It is still possible that a function call could be parsed before the script defining it is loaded, 
+          even if the function call is at the end of the html body
+        -> In this case, the function would be undefined and throw an error.
+        -> So the DOMContentLoaded wrappers are kept to be safe, but this may need to be investigated further.
+         -->
+    <script src="../assets/js/navbar.js" defer></script>
+    <script src="../assets/js/site-search.js" defer></script>
 
     <script>
         (function() {
@@ -250,6 +295,8 @@
             function decorateAll() {
                 decorateTable();
                 decorateWords();
+                injectNavbar("#navbar-placeholder");
+                initSiteSearch();
             }
 
             // Ensure buttons are added when voices are loaded or DOM is ready
@@ -260,6 +307,13 @@
             window.addEventListener('DOMContentLoaded', decorateAll);
         })();
     </script>
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            initSiteSearch(); // Initialize search after loading navbar
+        });
+    </script> -->
 </body>
 
 </html>

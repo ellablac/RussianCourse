@@ -104,6 +104,7 @@ function attachImageAudio() {
 
             const btn = createAudioButton(text, '../assets/sound/male/words/');
             btn.classList.add('position-absolute', 'top-0', 'end-0', 'm-2', 'img-sound-btn');
+
             wrapper.appendChild(btn);
         } catch (e) {
             // swallowing errors so other pages aren't impacted
