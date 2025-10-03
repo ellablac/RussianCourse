@@ -45,6 +45,16 @@
             padding: .6rem .75rem;
             box-shadow: 0 1px 0 rgba(0, 0, 0, .02), 0 0 0 4px rgba(255, 152, 0, .05);
         }
+        /* Allow breaking inside long words/URLs */
+        
+        ul,
+        ol,
+        li {
+            overflow-wrap: anywhere;
+            /* modern, best effort */
+            word-break: normal;
+            /* keep natural breaking */
+        }
     </style>
 </head>
 
@@ -90,17 +100,16 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-7 col-md-7">
                         <div class="p-3 p-md-4 rounded-3 mt-3" style="background:var(--wash-c)">
-                            <ul class="styled-list small mb-2 mt-1" style="background:#ffffff99;>
-                                <li><span lang=" ru "><strong>Ты</strong></span> is <em>informal</em> “you” (friends, kids, people you know well).<br>
-                                    <span lang="ru "><strong>Вы</strong></span> is <em>formal</em> or plural “you” (new people, elders, polite situations).</li>
-                                <li><span lang="ru ">Здравствуйте</span> [Zdravstvuyte] — a polite “Hello.”
-                                    <br><span lang="ru ">Привет</span> [Privet] — friendly “Hi.”</li>
-                                <li>Asking a name: <br><span lang="ru ">Как вас зовут?</span> [Kak vas zovut?] (formal) vs.<br>
-                                    <span lang="ru ">Как тебя зовут?</span> [Kak tebya zovut?] (informal).</li>
-                                <li>Saying goodbye: <br><span lang="ru ">До свидания</span> [Do svidaniya] (neutral/formal) vs.
-                                    <br><span lang="ru ">Пока</span> [Poka] (casual “Bye”).</li>
+                            <ul class="styled-list small mb-2 mt-1" style="background:#ffffff99;">
+                                <li><strong>Ты</strong> is <em>informal</em> “you” (friends, kids, people you know well).<br>
+                                    <strong>Вы</strong> is <em>formal</em> or plural “you” (new people, elders, polite situations).</li>
+                                <li>Здравствуйте [Zdravstvuyte] — a polite “Hello.”
+                                    <br>Привет [Privet] — friendly “Hi.”</li>
+                                <li>Asking a name: <br>Как вас зовут? [Kak vas zovut?] (formal) vs.<br> Как тебя зовут? [Kak tebya zovut?] (informal).</li>
+                                <li>Saying goodbye: <br>До свидания [Do svidaniya] (neutral/formal) vs.
+                                    <br>Пока [Poka] (casual “Bye”).</li>
                             </ul>
-                            <p class="hint mb-0 ">Tip: When in doubt, start formal (<span lang="ru ">Вы</span> / <span lang="ru ">Здравствуйте</span>). People will switch you to informal if appropriate.</p>
+                            <p class="hint mb-0 ">Tip: When in doubt, start formal (Вы / Здравствуйте). People will switch you to informal if appropriate.</p>
                         </div>
                     </div>
 
@@ -113,77 +122,80 @@
         </section>
 
         <!-- Phrase list (single column) -->
-        <section class="card card-light-small card-gradient-teal-peach ">
+        <section class="card card-gradient-teal-peach container-fluid">
             <div class="card-header text-gradient text-center ">
                 <h3 class="h5 mb-2 ">Essential Phrases</h3>
             </div>
             <div class="card-body p-4 ">
                 <div class="small mb-2 text-soft ">Click the speaker to hear each phrase.<br> An <strong>accent (´)</strong> above a vowel marks <strong>stress</strong>; an <strong>apostrophe '</strong> after a consonant indicates <strong>softening</strong>.
                     <br>Minimal suggested phrases for your first practice session are highlighted in orange.</div>
-                <ul style="background:#ffffff99; " class="styled-list large phrase-list ">
-                    <!-- FORMAL / POLITE -->
-                    <li class=" word-with-audio li-accent-glow " data-text="Здравствуйте ">
-                        <span lang="ru ">Здра́вствуйте</span> [Zdrástvuyt'e] — Hello (formal/polite)
-                    </li>
-
-                    <li class="word-with-audio li-accent-glow " data-text="Как вас зовут ">
-                        <span lang="ru ">Как вас зову́т?</span> [Kak vas zovút?] — What is your name? (formal)
-                    </li>
-
-                    <li class="word-with-audio li-accent-glow " data-text="Меня зовут Яков ">
-                        <span lang="ru ">Меня́ зову́т Яков.</span> [Men'á zovút Yakov.] — My name is Yakov.
-                    </li>
-
-                    <li class="word-with-audio " data-text="приятно познакомиться ">
-                        <span lang="ru ">Прия́тно познако́миться.</span> [Pr'iyátno poznakóm'its'a.] — Nice to meet you.
-                    </li>
-
-                    <li class="word-with-audio " data-text="Очень приятно ">
-                        <span lang="ru ">Очень прия́тно.</span> [Ochen' pr'iyátno.] — (It’s) very nice (to meet you).
-                    </li>
-
-                    <li class="word-with-audio li-accent-glow " data-text="До свидания ">
-                        <span lang="ru ">До свида́ния.</span> [Do sv'idán'iya.] — Goodbye.
-                    </li>
-
-                    <li class="word-with-audio " data-text="До скорой встречи ">
-                        <span lang="ru ">До ско́рой встре́чи.</span> [Do skóroy vstr'échi.] — See you soon.
-                    </li>
-
-                    <!-- INFORMAL -->
-                    <li class="word-with-audio li-accent-glow " data-text="Привет ">
-                        <span lang="ru ">Приве́т!</span> [Pr'iv'e't!] — Hi!
-                    </li>
-
-                    <li class="word-with-audio " data-text="Как дела ">
-                        <span lang="ru ">Как дела́?</span> [Kak d'ela'?] — How are you?
-                    </li>
-
-                    <li class="word-with-audio " data-text="Спасибо, хорошо ">
-                        <span lang="ru ">Спаси́бо, хорошо́.</span> [Spas'íbo, khoroshó.] — Thanks, (I’m) good.
-                    </li>
-
-                    <li class="word-with-audio " data-text="Как ваши дела? ">
-                        <span lang="ru ">Как ва́ши дела́?</span> [Kak váshi d'elá?] — How are <em>you</em>? (formal)
-                    </li>
+                <div class="row align-items-center ">
 
 
-                    <li class="word-with-audio li-accent-glow " data-text="Пока ">
-                        <span lang="ru ">Пока́!</span> [Poka'!] — Bye!
-                    </li>
+                    <ul style="background:#ffffff99; " class="styled-list large phrase-list ">
+                        <!-- FORMAL / POLITE -->
+                        <li class=" word-with-audio li-accent-glow " data-text="Здравствуйте ">
+                            Здра́вствуйте [Zdrástvuyt'e] — Hello (formal/polite)
+                        </li>
 
-                    <li class="word-with-audio " data-text="Спасибо ">
-                        <span lang="ru ">Спаси́бо.</span> [Spas'i'bo.] — Thank you.
-                    </li>
+                        <li class="word-with-audio li-accent-glow " data-text="Как вас зовут ">
+                            Как вас зову́т? [Kak vas zovút?] — What is your name? (formal)
+                        </li>
 
-                    <li class="word-with-audio " data-text="Пожалуйста ">
-                        <span lang="ru ">Пожа́луйста.</span> [Pozháluysta.] — Please / You’re welcome.
-                    </li>
+                        <li class="word-with-audio li-accent-glow " data-text="Меня зовут Яков ">
+                            Меня́ зову́т Яков. [Men'á zovút Yakov.] — My name is Yakov.
+                        </li>
 
-                    <li class="word-with-audio " data-text="С праздником! ">
-                        <span lang="ru ">С пра́здником!</span> [S pra'zdn'ikom!] — Happy holiday!
-                    </li>
-                </ul>
+                        <li class="word-with-audio " data-text="приятно познакомиться ">
+                            Прия́тно познако́миться. [Pr'iyátno poznakóm'its'a.] — Nice to meet you.
+                        </li>
+
+                        <li class="word-with-audio " data-text="Очень приятно ">
+                            Очень прия́тно. [Ochen' pr'iyátno.] — (It’s) very nice (to meet you).
+                        </li>
+
+                        <li class="word-with-audio li-accent-glow " data-text="До свидания ">
+                            До свида́ния. [Do sv'idán'iya.] — Goodbye.
+                        </li>
+
+                        <li class="word-with-audio " data-text="До скорой встречи ">
+                            До ско́рой встре́чи. [Do skóroy vstr'échi.] — See you soon.
+                        </li>
+
+                        <!-- INFORMAL -->
+                        <li class="word-with-audio li-accent-glow " data-text="Привет ">
+                            Приве́т! [Pr'iv'e't!] — Hi!
+                        </li>
+
+                        <li class="word-with-audio " data-text="Как дела ">
+                            Как дела́? [Kak d'ela'?] — How are you?
+                        </li>
+
+                        <li class="word-with-audio " data-text="Спасибо, хорошо ">
+                            Спаси́бо, хорошо́. [Spas'íbo, khoroshó.] — Thanks, (I’m) good.
+                        </li>
+
+                        <li class="word-with-audio " data-text="Как ваши дела? ">
+                            Как ва́ши дела́? [Kak váshi d'elá?] — How are you? (formal)
+                        </li>
+
+
+                        <li class="word-with-audio li-accent-glow " data-text="Пока ">
+                            Пока́! [Poka'!] — Bye!
+                        </li>
+                        <li class="word-with-audio " data-text="Спасибо ">
+                            Спаси́бо. [Spas'i'bo.] — Thank you.
+                        </li>
+
+                        <li class="word-with-audio " data-text="Пожалуйста ">
+                            Пожа́луйста. [Pozháluysta.] — Please / You’re welcome.
+                        </li>
+
+                        <li class="word-with-audio " data-text="С праздником! ">
+                            С пра́здником! [S pra'zdn'ikom!] — Happy holiday!
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
