@@ -3,13 +3,10 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Lesson 1. Old Friends – Look-alike Russian Letters (Printable)</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lesson 1 – Russian Alphabet (Printable)</title>
     <style>
-        /* Page & typography */
-        
         body {
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: serif;
             margin: 2cm;
             color: #000;
             background: #fff;
@@ -18,114 +15,94 @@
         h1 {
             font-size: 1.2em;
             text-align: center;
-            margin: 0 0 .25em;
+            margin-bottom: 0.2em;
         }
         
-        h2 {
-            font-size: 1.4em;
+        h2,
+        h4 {
             text-align: center;
-            margin: 0 0 .6em;
+            margin-top: 0;
         }
-        
-        h3 {
-            margin: 1.2em 0 .4em;
-        }
-        
-        p {
-            margin: .5em 0;
-        }
-        /* Two tables side by side */
         
         .tables {
             display: flex;
             gap: 1cm;
             justify-content: center;
-            align-items: flex-start;
-            margin-top: .6em;
+            margin-top: 1em;
         }
         
         table {
             border-collapse: collapse;
-            width: 48%;
             font-size: 1em;
+            /* slightly larger text overall */
+            width: 48%;
         }
         
         th,
         td {
             border: 1px solid #333;
-            padding: .35em .4em;
+            padding: 0.3em;
+            text-align: left;
             vertical-align: middle;
         }
         
         th {
+            font-size: 0.9em;
             text-align: center;
-            font-weight: 700;
         }
-        /* Big letters column */
         
         td:first-child {
             font-size: 1.6em;
-            font-weight: 700;
+            /* bigger letters */
+            font-weight: bold;
+            /* bold letters */
             text-align: center;
-            width: 22%;
+            width: 20%;
         }
-        /* Keep tables compact and neat */
-        
-        td,
-        th {
-            line-height: 1.15;
-        }
-        /* Prevent awkward page breaks */
-        
-        table,
-        tr,
-        td,
-        th {
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-        /* Reading practice list */
-        
-        .practice ul {
-            margin: .4em 0 .2em;
-            padding-left: 1.2em;
-        }
-        
-        .practice li {
-            margin: .1em 0;
-            line-height: 1.25;
-        }
-        /* QR block */
         
         .qr {
             text-align: center;
-            margin-top: 1.4em;
+            margin-top: 2em;
         }
         
         .qr img {
             width: 1in;
+            /* 1 inch wide */
             height: 1in;
+            /* 1 inch tall */
         }
-        /* Print tweaks */
+        /* Book-style boxes */
         
-        @page {
-            margin: 1.7cm;
+        .box {
+            /* border: 1px solid #222; */
+            padding: .6em .8em;
+            border-radius: 4px;
+            text-align: center;
         }
         
-        @media print {
-            a[href]:after {
-                content: "";
-            }
-            /* don’t print link URLs after text */
+        .box--boxed {
+            border: 1px solid #222;
+            padding: .6em .8em;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .muted {
+            font-size: .93em;
+            color: #000;
         }
     </style>
 </head>
 
-<body>
-    <h1>Lesson 1. Old Friends</h1>
-    <h2>Look-alike Russian Letters: А Е К М О Т (and С)</h2>
 
-    <p><strong>Why “Old friends”?</strong> These letters are friendly because their printed shapes — А, Е, К, М, О, Т (and often С) — <em>look</em> and <em>sound</em> almost the same as their English counterparts, so they’re the easiest to learn first.</p>
+<body>
+    <h1>Old Friends</h1>
+    <h2>Look-alike Russian Letters: А Е К М О Т (and С)</h2>
+    <br>
+    <!-- Brief intro box -->
+    <div class="box">
+        <p><strong>Why “Old friends”?</strong> <br>These letters are friendly because they <em>look</em> and <em>sound</em> almost the same as their English counterparts, so they’re the easiest to learn first.
+    </div>
 
     <div class="tables">
         <!-- Table 1 (4 rows) -->
@@ -207,36 +184,36 @@
             </tbody>
         </table>
     </div>
-
+    <br>
     <!-- Optional brief notes (kept very tight for 1-page fit) -->
-    <p style="margin-top:.6em">
-        <strong>Notes:</strong> Е е can be “ye” (<em>yes</em>) or “e” (<em>met</em>). О о is “o” when stressed; often reduced toward “a” when unstressed. In Russian, <strong>К</strong> is always [k] and <strong>С</strong> is always [s] (unlike English
-        where C can be <em>cat</em> vs. <em>center</em>).
-    </p>
-
-    <div class="practice">
+    <div class="box">
+        <strong>Notes:</strong> Е е can be “ye” (<em>yes</em>) or “e” (<em>met</em>).
+        <br>О о is “o” when stressed; often reduced toward “a” when unstressed. <br> In Russian, <strong>К</strong> is always [k] and <strong>С</strong> is always [s] (unlike English where C can be <em>cat</em> vs. <em>center</em>).
+    </div>
+    <br>
+    <div class="box--boxed practice">
         <h3>Reading Practice — Cognates</h3>
         <p>These are <em>cognates</em> (they sound like English words). Can you guess what they mean?</p>
 
         <p><strong>Tip:</strong> To remember the 7 “true friend” letters, memorize these two Russian words — they use only А, Е, К, М, О, Т, С:</p>
         <ul>
-            <li>Коме́та ☄️</li>
-            <li>Ко́смос</li>
+            <li style="display: inline-block; margin-right:50px">Коме́та ☄️</li>
+            <li style="display: inline-block;">Ко́смос 🪐</li>
         </ul>
 
         <p>More easy cognates to practice (stress mark shows the stressed syllable):</p>
         <ul>
-            <li>ма́ма</li>
-            <li>тома́т</li>
-            <li>текст</li>
-            <li>кот</li>
-            <li>а́том ⚛️</li>
-            <li>ма́ска</li>
+            <li style="display: inline-block; margin-right:30px">ма́ма 🤱</li>
+            <li style="display: inline-block; margin-right:30px">тома́т 🍅 </li>
+            <li style="display: inline-block; margin-right:30px">текст 📰 </li>
+            <li style="display: inline-block; margin-right:30px">кот 🐈 </li>
+            <li style="display: inline-block; margin-right:30px">а́том ⚛️ </li>
+            <li style="display: inline-block; margin-right:30px">ма́ска 🎭 </li>
         </ul>
     </div>
 
     <div class="qr">
-        <p>Scan to access this lesson online and listen to the letter sounds.</p>
+        <p>Scan to access this lesson online and listen to audio.</p>
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ellablac.github.io/RussianCourse/lesson1/friends.html" alt="QR code for this lesson (friends.html)" />
         <p><small>https://ellablac.github.io/RussianCourse/lesson1/friends.html</small></p>
     </div>

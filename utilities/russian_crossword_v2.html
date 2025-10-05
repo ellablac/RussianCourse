@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Russian Crossword – Beginner Cognates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+         :root {
+            --bg: #f7f7fb;
+            --ink: #111;
+            --muted: #666;
+            --accent: #2f6fde;
+            --cell: #fff;
+            --cell-border: #ddd;
+            --block: #1111111e;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: var(--bg);
+            color: var(--ink);
+        }
+        
+        .wrapper {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        @media (max-width: 1000px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        h1 {
+            margin: 0 0 1rem;
+            font-size: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(21, 1fr);
+            width: min(90vw, 700px);
+            aspect-ratio: 21/21;
+            border: 1px solid var(--cell-border);
+            background: var(--block);
+        }
+        
+        .cell {
+            position: relative;
+            background: var(--cell);
+            border: 1px solid var(--cell-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: clamp(12px, 1.6vw, 18px);
+        }
+        
+        .cell.block {
+            background: var(--block);
+            border-color: var(--block);
+        }
+        
+        .num {
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            font-size: 0.6em;
+            color: var(--muted);
+        }
+        
+        .legend h2 {
+            margin: .25rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .legend ol {
+            padding-left: 1.25rem;
+        }
+        
+        .legend li {
+            margin: .25rem 0;
+        }
+        
+        .controls {
+            margin: .5rem 0 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: .4rem .7rem;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .btn.primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        
+        small.muted {
+            color: var(--muted);
+        }
+        
+        .answer-key {
+            margin-top: 1rem;
+            padding: .75rem;
+            background: #fff;
+            border: 1px solid var(--cell-border);
+            border-radius: 10px;
+        }
+        
+        .kbd {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            background: #eee;
+            padding: 0 .25rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Russian Crossword – Beginner Cognates</h1>
+    <div class="wrapper">
+        <div>
+            <div class="grid">
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="б">
+                    <div class="num">1</div>
+                    <div class="ch" style="visibility:hidden">б</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="м">
+                    <div class="num">2</div>
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="з">
+                    <div class="num">3</div>
+                    <div class="ch" style="visibility:hidden">з</div>
+                </div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="м">
+                    <div class="num">4</div>
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell" data-ch="р">
+                    <div class="num">5</div>
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="щ">
+                    <div class="ch" style="visibility:hidden">щ</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="б">
+                    <div class="num">6</div>
+                    <div class="ch" style="visibility:hidden">б</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="т">
+                    <div class="num">7</div>
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell" data-ch="к">
+                    <div class="ch" style="visibility:hidden">к</div>
+                </div>
+                <div class="cell" data-ch="с">
+                    <div class="ch" style="visibility:hidden">с</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="num">8</div>
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="р">
+                    <div class="num">9</div>
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="ц">
+                    <div class="num">10</div>
+                    <div class="ch" style="visibility:hidden">ц</div>
+                </div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell" data-ch="р">
+                    <div class="num">11</div>
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="и">
+                    <div class="num">12</div>
+                    <div class="ch" style="visibility:hidden">и</div>
+                </div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="и">
+                    <div class="ch" style="visibility:hidden">и</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="к">
+                    <div class="ch" style="visibility:hidden">к</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="с">
+                    <div class="ch" style="visibility:hidden">с</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="э">
+                    <div class="num">13</div>
+                    <div class="ch" style="visibility:hidden">э</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="с">
+                    <div class="ch" style="visibility:hidden">с</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="э">
+                    <div class="num">14</div>
+                    <div class="ch" style="visibility:hidden">э</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="ф">
+                    <div class="ch" style="visibility:hidden">ф</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="к">
+                    <div class="num">15</div>
+                    <div class="ch" style="visibility:hidden">к</div>
+                </div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="у">
+                    <div class="ch" style="visibility:hidden">у</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="э">
+                    <div class="num">16</div>
+                    <div class="ch" style="visibility:hidden">э</div>
+                </div>
+                <div class="cell" data-ch="к">
+                    <div class="ch" style="visibility:hidden">к</div>
+                </div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell" data-ch="м">
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell" data-ch="и">
+                    <div class="num">17</div>
+                    <div class="ch" style="visibility:hidden">и</div>
+                </div>
+                <div class="cell" data-ch="к">
+                    <div class="ch" style="visibility:hidden">к</div>
+                </div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="р">
+                    <div class="num">18</div>
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="ф">
+                    <div class="ch" style="visibility:hidden">ф</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="з">
+                    <div class="ch" style="visibility:hidden">з</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="м">
+                    <div class="num">19</div>
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell" data-ch="с">
+                    <div class="ch" style="visibility:hidden">с</div>
+                </div>
+                <div class="cell" data-ch="к">
+                    <div class="ch" style="visibility:hidden">к</div>
+                </div>
+                <div class="cell" data-ch="в">
+                    <div class="ch" style="visibility:hidden">в</div>
+                </div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="ж">
+                    <div class="ch" style="visibility:hidden">ж</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="п">
+                    <div class="num">20</div>
+                    <div class="ch" style="visibility:hidden">п</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="б">
+                    <div class="ch" style="visibility:hidden">б</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="к">
+                    <div class="ch" style="visibility:hidden">к</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="м">
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="и">
+                    <div class="num">21</div>
+                    <div class="ch" style="visibility:hidden">и</div>
+                </div>
+                <div class="cell" data-ch="м">
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell" data-ch="п">
+                    <div class="ch" style="visibility:hidden">п</div>
+                </div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="с">
+                    <div class="num">22</div>
+                    <div class="ch" style="visibility:hidden">с</div>
+                </div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell" data-ch="к">
+                    <div class="ch" style="visibility:hidden">к</div>
+                </div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="ж">
+                    <div class="ch" style="visibility:hidden">ж</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="ы">
+                    <div class="ch" style="visibility:hidden">ы</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="к">
+                    <div class="num">23</div>
+                    <div class="ch" style="visibility:hidden">к</div>
+                </div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell" data-ch="м">
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="н">
+                    <div class="ch" style="visibility:hidden">н</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="ю">
+                    <div class="num">24</div>
+                    <div class="ch" style="visibility:hidden">ю</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="м">
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="м">
+                    <div class="num">25</div>
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell" data-ch="с">
+                    <div class="ch" style="visibility:hidden">с</div>
+                </div>
+                <div class="cell" data-ch="с">
+                    <div class="ch" style="visibility:hidden">с</div>
+                </div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell" data-ch="ж">
+                    <div class="ch" style="visibility:hidden">ж</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="а">
+                    <div class="ch" style="visibility:hidden">а</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="м">
+                    <div class="ch" style="visibility:hidden">м</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="х">
+                    <div class="num">26</div>
+                    <div class="ch" style="visibility:hidden">х</div>
+                </div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell" data-ch="р">
+                    <div class="ch" style="visibility:hidden">р</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="о">
+                    <div class="ch" style="visibility:hidden">о</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell" data-ch="ш">
+                    <div class="num">27</div>
+                    <div class="ch" style="visibility:hidden">ш</div>
+                </div>
+                <div class="cell" data-ch="е">
+                    <div class="ch" style="visibility:hidden">е</div>
+                </div>
+                <div class="cell" data-ch="с">
+                    <div class="ch" style="visibility:hidden">с</div>
+                </div>
+                <div class="cell" data-ch="т">
+                    <div class="ch" style="visibility:hidden">т</div>
+                </div>
+                <div class="cell" data-ch="ь">
+                    <div class="ch" style="visibility:hidden">ь</div>
+                </div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+                <div class="cell block"></div>
+            </div>
+            <div class="controls">
+                <a href="#" class="btn" onclick="document.body.classList.toggle('show-answers'); return false;">Show/Hide letters</a>
+                <a href="#" class="btn primary" onclick="window.print(); return false;">Print</a>
+                <div><small class="muted">Tip: use <span class="kbd">Ctrl</span>+<span class="kbd">P</span> / <span class="kbd">⌘</span>+<span class="kbd">P</span> to print.</small></div>
+            </div>
+            <div class="answer-key">
+                <strong>Teacher note:</strong> Letters are hidden by default. Toggle “Show/Hide letters” for an answer key.
+            </div>
+        </div>
+        <div class="container" <div class=" row">
+            <div class="col-6">
+                <h2>Across</h2>
+                <ul style="list-style-type: none;">
+                    <li><strong>3</strong>. No parking in this ___.</li>
+                    <li><strong>4</strong>. I run underground in cities.</li>
+                    <li><strong>7</strong>. Words on a page.</li>
+                    <li><strong>10</strong>. Not left, not right, in the ___.</li>
+                    <li><strong>12</strong>. The web that connects your phone to everything.</li>
+                    <li><strong>15</strong>. Purr machine.</li>
+                    <li><strong>16</strong>. The study of money and markets.</li>
+                    <li><strong>19</strong>. There is a Saint Basil’s there, and Red Square too.</li>
+                    <li><strong>21</strong>. Goods coming into a country.</li>
+                    <li><strong>22</strong>. It's hush-hush.</li>
+                    <li><strong>23</strong>. Tail-wagging traveler in space.</li>
+                    <li><strong>25</strong>. Spa treatment.</li>
+                    <li><strong>26</strong>. Church’s melodic ensemble.</li>
+                    <li><strong>27</strong>. After five, before seven.</li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <h2>Down</h2>
+                <ul style="list-style-type: none;">
+                    <li><strong>1</strong>. Don’t skip the sour cream!</li>
+                    <li><strong>2</strong>. First word for many babies.</li>
+                    <li><strong>5</strong>. Blasts off into space.</li>
+                    <li><strong>6</strong>. You can cash checks there.</li>
+                    <li><strong>8</strong>. Where actors perform.</li>
+                    <li><strong>9</strong>. You may go there if you are hungry.</li>
+                    <li><strong>10</strong>. Acrobats, clowns, and a big top.</li>
+                    <li><strong>11</strong>. Gold, oil or book.</li>
+                    <li><strong>13</strong>. Her kindness had a lasting ___.</li>
+                    <li><strong>14</strong>. It's a final ___ day, bring a pencil and deep breaths.</li>
+                    <li><strong>17</strong>. I design bridges, rockets, or software.</li>
+                    <li><strong>18</strong>. A worker that does not need lunch breaks or sleep.</li>
+                    <li><strong>20</strong>. The uniform for sleeping.</li>
+                    <li><strong>22</strong>. Parents call him "our boy."</li>
+                    <li><strong>23</strong>. Where astronauts go.</li>
+                    <li><strong>24</strong>. What puts a smile on a face.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        const cells = document.querySelectorAll('.cell[data-ch]');
+
+        function updateVisibility() {
+            const show = document.body.classList.contains('show-answers');
+            cells.forEach(c => {
+                c.querySelector('.ch').style.visibility = show ? 'visible' : 'hidden';
+            });
+        }
+        document.body.addEventListener('click', updateVisibility);
+        document.addEventListener('DOMContentLoaded', updateVisibility);
+    </script>
+</body>
+
+</html>

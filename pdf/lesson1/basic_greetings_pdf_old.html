@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lesson 1. Basic Greetings (Printable)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        /* Page + typography (book-like, B/W) */
+        
+        @page {
+            margin: 1.7cm;
+        }
+        
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #000;
+            background: #fff;
+            margin: 1.8cm;
+        }
+        
+        h1 {
+            font-size: 1.25em;
+            text-align: center;
+            margin: 0 0 .3em;
+        }
+        
+        h2 {
+            font-size: 1.35em;
+            text-align: center;
+            margin: 0 0 .8em;
+        }
+        
+        h3 {
+            font-size: 1.05em;
+            margin: 1.1em 0 .5em;
+        }
+        
+        p {
+            margin: .5em 0;
+            line-height: 1.35;
+        }
+        /* Book-style boxes */
+        
+        .box {
+            border: 1px solid #222;
+            padding: .6em .8em;
+            border-radius: 4px;
+        }
+        
+        .muted {
+            font-size: .93em;
+            color: #000;
+        }
+        
+        .hint {
+            font-style: italic;
+        }
+        /* Two-column vocabulary tables */
+        
+        .tables {
+            display: flex;
+            gap: 1cm;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: .6em;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: .98em;
+        }
+        
+        th,
+        td {
+            border: 1px solid #333;
+            padding: .35em .45em;
+            vertical-align: middle;
+            line-height: 1.2;
+        }
+        
+        th {
+            background: #fff;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        td:first-child {
+            width: 34%;
+            font-weight: 700;
+        }
+        /* Russian column a bit wider */
+        /* Dialogue blocks (book style) */
+        
+        .dialogue {
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: .6em .8em;
+            margin-top: .8em;
+        }
+        
+        .turn {
+            margin: .25em 0;
+        }
+        
+        .ru {
+            font-weight: 700;
+        }
+        
+        .tr {
+            font-style: italic;
+            color: #000;
+        }
+        /* Notes area */
+        
+        .notes {
+            border-top: 1px dashed #333;
+            margin-top: 1em;
+            padding-top: .6em;
+        }
+        
+        .rule {
+            border-top: 1px dashed #ccc;
+            margin: .6em 0;
+        }
+        /* QR block */
+        
+        .qr {
+            text-align: center;
+            margin-top: 1.2em;
+        }
+        
+        .qr img {
+            width: 1in;
+            height: 1in;
+        }
+        /* Keep elements together on a page */
+        
+        table,
+        tr,
+        td,
+        th,
+        .dialogue,
+        .box {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        @media print {
+            a[href]:after {
+                content: "";
+            }
+            /* don’t print raw URLs after links */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Headers (book convention) -->
+    <h1>Lesson 1. Basic Greetings</h1>
+    <h2>Greetings & Introductions</h2>
+
+    <!-- Brief intro box -->
+    <div class="box muted">
+        <p><strong>Goal:</strong> Say hello, ask someone’s name, and say goodbye.
+            <br>Stress marks (´) show the stressed syllable.</p>
+    </div>
+    <br>
+
+    <!-- Two tables side-by-side (fits on a page; compact line-height/padding) -->
+    <!-- <div class="tables"> -->
+    <!-- Table 1: Greetings -->
+    <table>
+        <thead>
+            <tr>
+                <th>Russian </th>
+                <th>Transliteration</th>
+                <th>Meaning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Здра́вствуйте [Zdrástvuyt'e] — Hello (formal/polite)</td>
+                <td>priv<strong>y</strong>ET</td>
+                <td>Hi (informal)</td>
+            </tr>
+            <tr>
+                <td>Как вас зову́т? [Kak vas zovút?] — What is your name? (formal)</td>
+                <td>ZDRAH-stvooy-tye</td>
+                <td>Hello (formal/plural)</td>
+            </tr>
+            <tr>
+                <td>До́брое у́тро</td>
+                <td>DO-bra-ye OO-tra</td>
+                <td>Good morning</td>
+            </tr>
+            <tr>
+                <td>До́брый день</td>
+                <td>DO-bryy dyen’</td>
+                <td>Good afternoon</td>
+            </tr>
+            <tr>
+                <td>До́брый ве́чер</td>
+                <td>DO-bryy VYE-cher</td>
+                <td>Good evening</td>
+            </tr>
+            <tr>
+                <td>Ка́к дела́?</td>
+                <td>KAK de-LA?</td>
+                <td>How are you? (informal)</td>
+            </tr>
+            <tr>
+                <td>Как вы пожива́ете?</td>
+                <td>KAK vy po-zhi-VA-ye-tye?</td>
+                <td>How are you? (formal)</td>
+            </tr>
+
+            <tr>
+                <td>Как вас зову́т?</td>
+                <td>KAK vas za-VOOT?</td>
+                <td>What is your name? (formal)</td>
+            </tr>
+            <tr>
+                <td>Как тебя́ зову́т?</td>
+                <td>KAK tee-BYA za-VOOT?</td>
+                <td>What is your name? (informal)</td>
+            </tr>
+            <tr>
+                <td>Меня́ зову́т…</td>
+                <td>me-NYA za-VOOT…</td>
+                <td>My name is…</td>
+            </tr>
+            <tr>
+                <td>О́чень прия́тно</td>
+                <td>O-chen’ pri-YAT-na</td>
+                <td>Nice to meet you</td>
+            </tr>
+            <tr>
+                <td>Спаси́бо</td>
+                <td>spa-SEE-ba</td>
+                <td>Thank you</td>
+            </tr>
+            <tr>
+                <td>Пожа́луйста</td>
+                <td>pa-ZHA-loos-ta</td>
+                <td>Please / You’re welcome</td>
+            </tr>
+            <tr>
+                <td>Извини́те</td>
+                <td>eez-vee-NEE-tye</td>
+                <td>Excuse me / I’m sorry (formal)</td>
+            </tr>
+            <tr>
+                <td>Пока́</td>
+                <td>pa-KA</td>
+                <td>Bye (informal)</td>
+            </tr>
+            <tr>
+                <td>До свида́ния</td>
+                <td>da svee-DA-ni-ya</td>
+                <td>Goodbye (neutral/formal)</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- </div> -->
+
+    <!-- Short dialogue practice (kept on one page with break-inside: avoid) -->
+    <div class="dialogue">
+        <h3>Mini-Dialogues (Read & Repeat)</h3>
+        <div class="turn"><span class="ru">A:</span> <span class="ru">Здра́вствуйте!</span> <span class="tr">ZDRAH-stvooy-tye!</span></div>
+        <div class="turn"><span class="ru">B:</span> <span class="ru">Здра́вствуйте! Как вас зову́т?</span> <span class="tr">KAK vas za-VOOT?</span></div>
+        <div class="turn"><span class="ru">A:</span> <span class="ru">Меня́ зову́т Э́лла. О́чень прия́тно.</span> <span class="tr">me-NYA za-VOOT Ella. O-chen’ pri-YAT-na.</span></div>
+        <div class="turn"><span class="ru">B:</span> <span class="ru">О́чень прия́тно.</span> <span class="tr">O-chen’ pri-YAT-na.</span></div>
+        <div class="rule"></div>
+        <div class="turn"><span class="ru">A:</span> <span class="ru">Приве́т! Ка́к дела́?</span> <span class="tr">pri-VYET! KAK de-LA?</span></div>
+        <div class="turn"><span class="ru">B:</span> <span class="ru">Хоро́шо, спаси́бо. А у тебя́?</span> <span class="tr">ha-ra-SHO, spa-SEE-ba. A oo tee-BYA?</span></div>
+        <div class="turn"><span class="ru">A:</span> <span class="ru">То́же хорошо́.</span> <span class="tr">TO-zhe ha-ra-SHO.</span></div>
+    </div>
+
+    <!-- Reading practice (as a “book page” section) -->
+    <div class="box" style="margin-top: .9em;">
+        <h3>Reading Practice — Cognates</h3>
+        <p class="hint">These are <em>cognates</em> — words that look/sound like English. Can you guess what they mean?</p>
+
+        <ul>
+            <li>то́ст 🥂</li>
+            <li>кафе́ ☕</li>
+            <li>ме́тро 🚇</li>
+            <li>тема́ 📘</li>
+            <li>сома́ ⛵</li>
+            <li>нота 🎵</li>
+            <li>то́мат 🍅</li>
+            <li>коме́та ☄️</li>
+            <li>ко́смос ✨</li>
+        </ul>
+
+        <p class="muted"><strong>“True friend” letters reminder:</strong> А, Е, К, М, О, Т, С — they look (and mostly sound) like English. Notice how <em>коме́та</em> (comet) and <em>ко́смос</em> (cosmos) use only these letters — a nice memory trick!</p>
+    </div>
+
+    <!-- Notes lines (optional) -->
+    <div class="notes">
+        <h3>Notes</h3>
+        <p>______________________________________________________________</p>
+        <p>______________________________________________________________</p>
+    </div>
+
+    <!-- QR code -->
+    <div class="qr">
+        <p>Scan to access this lesson online and listen to the letter sounds.</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ellablac.github.io/RussianCourse/lesson1/basic_greetings.html" alt="QR code for this lesson (basic_greetings.html)" />
+        <p><small>https://ellablac.github.io/RussianCourse/lesson1/basic_greetings.html</small></p>
+    </div>
+
+</body>
+
+</html>

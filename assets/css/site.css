@@ -715,3 +715,14 @@ Tip: Move this to .bg-wash if you want to apply per-page instead. */
             white-space: nowrap;
             border: 0;
         }
+        /* QR block */
+        
+        .qr {
+            text-align: center;
+            margin-top: 1.2em;
+        }
+        
+        .qr img {
+            width: 1in;
+            height: 1in;
+        }
