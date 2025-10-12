@@ -1,0 +1,35 @@
+# Normalize text files to LF (good cross-platform default)
+*                 text=auto
+
+# Explicitly enforce LF
+*.sh              text eol=lf
+*.py              text eol=lf
+*.js              text eol=lf
+*.ts              text eol=lf
+*.css             text eol=lf
+*.html            text eol=lf
+*.txt             text eol=lf
+*.xml             text eol=lf
+*.json            text eol=lf
+*.yml             text eol=lf
+*.yaml            text eol=lf
+*.md              text eol=lf
+
+# Windows-only scripts keep CRLF
+*.bat             text eol=crlf
+*.cmd             text eol=crlf
+
+# Binary (no conversions)
+*.png             -text
+*.jpg             -text
+*.jpeg            -text
+*.gif             -text
+*.webp            -text
+*.mp3             -text
+*.mp4             -text
+*.pdf             -text
+*.zip             -text
+
+# Treat Word docs as binary (no EOL munging)
+*.doc             -text
+*.docx            -text
