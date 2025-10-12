@@ -1,0 +1,99 @@
+/* ******************************************************************
+    Bootstrap Modal Animation
+*/
+
+
+/* Add this CSS AFTER Bootstrap */
+
+
+/*  No JS is needed to animate a bootstrap modal, just apply the class,
+e.g. apply anim-zoom class to modal-dialog. Transition-based CSS  keys off 
+Bootstrap’s .show class. Bootstrap will add/remove .show on the modal 
+automatically;  CSS can animate from the “at rest” state to the “shown” state. 
+TODO : Some js may be needed to animate after it changes back to not shown */
+
+
+/* #1  ***** Zoom animation  */
+
+
+/* BIG, obvious zoom-in that overrides Bootstrap's transform 
+The form slides in from the top left corner*/
+
+.modal .modal-dialog.anim-zoom-max {
+    opacity: 0;
+    transform-origin: 0 0;
+    /* top-left corner */
+}
+
+.modal.show .modal-dialog.anim-zoom-max {
+    /* Use keyframes so we don't fight Bootstrap's built-in transition */
+    animation: fromCorner 1s cubic-bezier(.2, .8, .25, 1) both;
+}
+
+@keyframes fromCorner {
+    0% {
+        transform: translate(-60vw, -60vh) scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    /* overshoot pop */
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Optional: zoom/slide out on close - does not work, 
+either add hiding in js or think of a better way to animate on 
+bootsrap modal close*/
+
+.modal.hiding .modal-dialog.anim-zoom-max {
+    animation: toCorner 1s ease forwards;
+}
+
+@keyframes toCorner {
+    to {
+        transform: translate(-10vw, -10vh) scale(.85);
+        opacity: 0;
+    }
+}
+
+
+/* #2  ***** Bounce animation (needs work) */
+
+.modal .modal-dialog.anim-bounce-obvious {
+    opacity: 0;
+}
+
+.modal.show .modal-dialog.anim-bounce-obvious {
+    animation: bounceObvious .6s cubic-bezier(.2, .7, .3, 1.2) both;
+}
+
+@keyframes bounceObvious {
+    0% {
+        transform: translateY(-70vh) scale(.7) rotate(-6deg);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(0) scale(1.08) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .modal .modal-dialog {
+        transition: none !important;
+        animation: none !important;
+    }
+}

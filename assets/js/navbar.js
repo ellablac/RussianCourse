@@ -14,7 +14,7 @@ function injectNavbar(selector = "#navbar-placeholder") {
         </ul>
         <form class="d-flex position-relative" role="search" id="site-search-form" autocomplete="off">
           <input id="site-search" class="form-control me-0" type="search"
-                 placeholder="Search lessons & resources…" aria-label="Search"
+                 placeholder=" " aria-label="Search""
                  aria-autocomplete="list" aria-controls="search-results" aria-expanded="false">
           <button class="btn btn-gradient" type="button" id="site-search-btn">Search</button>
           <ul id="search-results" class="search-dropdown" role="listbox"></ul>

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Softening vs. Non-Softening Vowels (Russian)</title>
 
+    <link rel="stylesheet" href="../assets/css/gradients.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/animations.css" />
     <link rel="stylesheet" href="../assets/css/site.css" />
     <style>
         .page-section {
@@ -14,7 +16,6 @@
         }
         
         .rule-callout {
-            background: #fff8e1;
             border-left: 4px solid #f59e0b;
             padding: 1rem 1.25rem;
             border-radius: .5rem
@@ -41,6 +42,21 @@
         
         table.vowel-table td small {
             color: #6b7280
+        }
+        /* Force transparent table + cells (BS5/5.3) */
+        
+        .table.my-frosted {
+            --bs-table-bg: transparent;
+            --bs-table-striped-bg: transparent;
+            --bs-table-hover-bg: transparent;
+            background-color: transparent !important;
+        }
+        /* Cells in all sections (thead/tbody/tfoot) */
+        
+        .table.my-frosted> :not(caption)>*>* {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            /* kills the inner cell shadow some themes add */
         }
         
         code.k {
@@ -71,7 +87,7 @@
         }
         /* Make IPA/brackets a touch softer */
         
-        .vowel-pairs .text-muted {
+        .text-muted {
             opacity: .85;
         }
         /* Optional: center header text and give it a hairline divider */
@@ -81,6 +97,13 @@
             border-bottom: 1px solid rgba(0, 0, 0, .15);
         }
         /* Optional dark-mode tweak (if your site has a dark theme) */
+        
+        .modal-content {
+            --bs-modal-border-radius: 5rem;
+            /* try 1.25rem, 2rem, etc. */
+            border-radius: var(--bs-modal-border-radius);
+            overflow: hidden;
+        }
         
         @media (prefers-color-scheme: dark) {
             .vowel-pairs .card {
@@ -99,109 +122,148 @@
     <section class="lesson-header container-fluid mt-2">
         <div class="row align-items-start">
             <!-- Left column: lesson label -->
-            <div class="col-12 col-lg-3 text-start">
+            <div class="col-12 col-lg-2 text-start">
                 <!-- <h6 class="lesson-label">Lesson 1. Alphabet</h6> -->
             </div>
 
             <!-- Center column: main title -->
-            <div class="col-12 col-lg-6 text-center">
-                <h3 class="text-gradient mb-0">
-                    <br>Softening vs. Non-Softening Vowels <br> &nbsp </h3>
+            <div class="col-12 col-lg-8 text-center">
+                <h3 class="text-gradient pb-2 mb-0">
+                    <br>Softening vs. Non-Softening Vowels
+                </h3>
+                <p class="lead mb-0">How <span lang="ru">я ё ю е и</span> soften the previous consonant (and how their partners don't).</p>
             </div>
 
             <!-- Right column: empty spacer -->
-            <div class="col-12 col-lg-3"></div>
+            <div class="col-12 col-lg-2"></div>
         </div>
     </section>
 
-    <!-- Header -->
-    <header class="text-center py-4">
-        <div class="container">
-            <h1 class="display-6 fw-bold">Softening vs. Non-Softening Vowels</h1>
-            <p class="lead mb-0">How <span lang="ru">я ё ю е и</span> soften the previous consonant (and how their partners don't).</p>
-        </div>
-    </header>
-
     <main class="container page-section">
+        <div class="d-flex justify-content-center mb-5">
+            <!-- Compact, translucent card with bordered, small table of vowel pairs -->
+            <div class="card w-100 vowel-pairs shadow-sm border" style="max-width: 560px;">
+                <div class="card-header py-2 text-center rounded gr-steelrose-korobka">
+                    <strong>Vowel Pairs</strong>
+                </div>
+                <div class="card-body rounded gr-steelrose-soft-3 bg-hue-16 ">
+                    <table class="table table-sm table-borderless mb-0 x-small align-middle my-frosted " style="background-color: transparent !important; ">
+                        <thead>
+                            <tr class="border-bottom ">
+                                <th class="text-center py-2 ">Non-softening</th>
+                                <th class="text-center py-2 ">&nbsp</th>
+                                <th class="text-center py-2 ">Softening</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-bottom">
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">а</span> <span class="text-muted ">[а]</span>
+                                </td>
+                                <td class="text-center py-2 ">
+                                    <span class="fw-bold">
+                                            &lt; -- &gt;
+                                        </span>
+                                </td>
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">я</span> <span class="text-muted ">[йа]</span>
+                                </td>
+                            </tr>
+                            <tr class="border-bottom ">
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">о</span> <span class="text-muted ">[о]</span>
+                                </td>
+                                <td class="text-center py-2 ">
+                                    <span class="fw-bold">
+                                            &lt; -- &gt;
+                                        </span>
+                                </td>
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">ё</span> <span class="text-muted ">[йо]</span>
+                                </td>
+                            </tr>
+                            <tr class="border-bottom ">
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">у</span> <span class="text-muted ">[у]</span>
+                                </td>
+                                <td class="text-center py-2 ">
+                                    <span class="fw-bold">
+                                            &lt; -- &gt;
+                                        </span>
+                                </td>
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">ю</span> <span class="text-muted ">[йу]</span>
+                                </td>
+                            </tr>
+                            <tr class="border-bottom ">
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">э</span> <span class="text-muted ">[э]</span>
+                                </td>
+                                <td class="text-center py-2 ">
+                                    <span class="fw-bold">
+                                            &lt; -- &gt;
+                                        </span>
+                                </td>
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">е</span> <span class="text-muted ">[йе]</span>
+                                </td>
+                            </tr>
+                            <tr class="border-bottom ">
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">ы</span> <span class="text-muted ">[ы]</span>
+                                </td>
+                                <td class="text-center py-2 ">
+                                    <span class="fw-bold">
+                                            &lt; -- &gt;
+                                        </span>
+                                </td>
 
-        <!-- 1) Short explanation -->
-        <section class="mb-4">
-            <div class="rule-callout">
-                <p class="mb-1"><strong>The rule:</strong> After most consonants, the vowels <span lang="ru">я, ё, ю, е, и</span> make that consonant <em>soft</em> (palatalized; mark softness as <span class="ipa">ʹ</span> or with an apostrophe in transliteration). Their
-                    partners <span lang="ru">а, о, у, э, ы</span> keep the consonant <em>hard</em>.</p>
-                <p class="mb-0">At the <strong>beginning of a word</strong> or <strong>after another vowel</strong>, <span lang="ru">я, ё, ю, е</span> are pronounced with a “y-glide”: <span class="ipa">[ya], [yo], [yu], [ye]</span>. After a consonant they represent
-                    <span class="ipa">[a], [o], [u], [e]</span> but soften that consonant.</p>
+                                <td class="text-center py-2 ">
+                                    <span lang="ru " class="fw-bold letter word-with-audio">и</span> <span class="text-muted ">[и]&nbsp</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Compact, translucent card with bordered, small table of vowel pairs -->
-        <div class="card vowel-pairs shadow-sm rounded-4 border bg-trans-10" style="background-color: rgba(255,255,255,0.10); border-color: rgba(0,0,0,0.20); max-width: 560px;">
-            <div class="card-header py-2 text-center bg-transparent">
-                <strong>Vowel Pairs (Hard ↔ Softening)</strong>
-            </div>
-            <div class="card-body p-0">
-                <table class="table table-sm table-borderless mb-0 small align-middle">
-                    <thead>
-                        <tr class="border-bottom">
-                            <th class="text-center py-2">Non-softening</th>
-                            <th class="text-center py-2">Softening</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-bottom">
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">а</span> <span class="text-muted">[а]</span>
-                            </td>
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">я</span> <span class="text-muted">[йа]</span>
-                            </td>
-                        </tr>
-                        <tr class="border-bottom">
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">о</span> <span class="text-muted">[о]</span>
-                            </td>
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">ё</span> <span class="text-muted">[йо]</span>
-                            </td>
-                        </tr>
-                        <tr class="border-bottom">
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">у</span> <span class="text-muted">[у]</span>
-                            </td>
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">ю</span> <span class="text-muted">[йу]</span>
-                            </td>
-                        </tr>
-                        <tr class="border-bottom">
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">э</span> <span class="text-muted">[э]</span>
-                            </td>
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">е</span> <span class="text-muted">[йе]</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">ы</span> <span class="text-muted">[ы]</span>
-                            </td>
-                            <td class="text-center py-2">
-                                <span lang="ru" class="fw-bold">и</span> <span class="text-muted">[и]</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="d-flex justify-content-center">
+            <section class="mb-5">
+                <div class="gr-seashore-soft-2 p-5">
+                    <p class="mb-2"><strong>Core rule:</strong></p>
+                    <ul class="mb-2 styled-list diamond glass-4">
+                        <li>
+                            <strong>Softening vowels<span lang="ru" style="color:red"> я, ё, ю, е, и</span> after a consonant</strong> sound like their pairs <strong><span lang="ru"  style="color:red">а, о, у, э, ы</span></strong> and <em>soften the preceding consonant</em>                            (marked with <span class="ipa">ʹ</span>).
+                        </li>
+                        <li>
+                            <strong>Softening vowels<span lang="ru" style="color:red"> я, ё, ю, е</span></strong> at the <strong>start of a word</strong> or <strong>after another vowel</strong>, <em>are pronounced with a short "y" glide:</em>
+                            <strong><span class=span lang="ru" style="color:red">йа, йо, йу, йэ</span></strong> (no consonant to soften here).
+                        </li>
+
+
+                        <li>
+                            <strong>Non-softening vowels <span lang="ru" style="color:red">а, о, у, э, ы</span> </strong><em>are almost </em>
+                            </span>
+                            <!-- Trigger: small round info box -->
+                            <button type="button" class="note-dot" data-bs-toggle="modal" data-bs-target="#noteModalVowels" title="Click to read about Exceptions (optional)" aria-label="Note: exceptions">
+i
+</button> <em> always pronounced as written</em> (no "y "glide) and <em>never soften the consonant before them.</em>
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </div>
 
 
         <!-- 2) Table -->
-        <section class="mb-4">
-            <h2 class="h5">Vowel Pairs and Pronunciation</h2>
-            <p class="text-muted small">Skipping special rules after sibilants (see exceptions below).</p>
+        <section class="mb-5 ">
+            <h2 class="h5 ">Vowel Pairs and Pronunciation</h2>
+            <p class="text-muted small ">Skipping special rules after sibilants (see exceptions below).</p>
 
-            <div class="table-responsive">
-                <table class="table vowel-table align-middle">
-                    <thead class="table-light">
+            <div class="table-responsive ">
+                <table class="table vowel-table align-middle ">
+                    <thead class="table-light ">
                         <tr>
                             <th>Non-softening</th>
                             <th>Softening</th>
@@ -212,41 +274,41 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span lang="ru">а</span></td>
-                            <td><span lang="ru">я</span></td>
-                            <td><span class="ipa">Hard + [a]</span>, consonant is <em>hard</em> — <span lang="ru">ма́ма</span> [ma-ma]<br>
-                                <span class="ipa">Soft + [a]</span>, but <em>soft</em> before <span lang="ru">я</span> — <span lang="ru">мя́со</span> [m'a-so]</td>
-                            <td><span class="ipa">[ya]</span> — <span lang="ru">края́</span> [kra-<strong>ya</strong>]</td>
-                            <td><span class="ipa">[ya]</span> — <span lang="ru">я́блоко</span> [<strong>ya</strong>-blo-ko]</td>
+                            <td><span lang="ru ">а</span></td>
+                            <td><span lang="ru ">я</span></td>
+                            <td><span class="ipa ">Hard + [a]</span>, consonant is <em>hard</em> — <span lang="ru ">ма́ма</span> [ma-ma]<br>
+                                <span class="ipa ">Soft + [a]</span>, but <em>soft</em> before <span lang="ru ">я</span> — <span lang="ru ">мя́со</span> [m'a-so]</td>
+                            <td><span class="ipa ">[ya]</span> — <span lang="ru ">края́</span> [kra-<strong>ya</strong>]</td>
+                            <td><span class="ipa ">[ya]</span> — <span lang="ru ">я́блоко</span> [<strong>ya</strong>-blo-ko]</td>
                         </tr>
                         <tr>
-                            <td><span lang="ru">о</span></td>
-                            <td><span lang="ru">ё</span></td>
-                            <td>Hard + <span class="ipa">[o]</span> — <span lang="ru">мо́ст</span> [mo̞st]<br> Soft + <span class="ipa">[o]</span> — <span lang="ru">лёд</span> [l'o̞t]</td>
-                            <td><span class="ipa">[yo]</span> — <span lang="ru">поёт</span> [pa-<strong>yo</strong>t]</td>
-                            <td><span class="ipa">[yo]</span> — <span lang="ru">ё́лка</span> [<strong>yo</strong>l-ka]</td>
+                            <td><span lang="ru ">о</span></td>
+                            <td><span lang="ru ">ё</span></td>
+                            <td>Hard + <span class="ipa ">[o]</span> — <span lang="ru ">мо́ст</span> [mo̞st]<br> Soft + <span class="ipa ">[o]</span> — <span lang="ru ">лёд</span> [l'o̞t]</td>
+                            <td><span class="ipa ">[yo]</span> — <span lang="ru ">поёт</span> [pa-<strong>yo</strong>t]</td>
+                            <td><span class="ipa ">[yo]</span> — <span lang="ru ">ё́лка</span> [<strong>yo</strong>l-ka]</td>
                         </tr>
                         <tr>
-                            <td><span lang="ru">у</span></td>
-                            <td><span lang="ru">ю</span></td>
-                            <td>Hard + <span class="ipa">[u]</span> — <span lang="ru">су́п</span> [sup]<br> Soft + <span class="ipa">[u]</span> — <span lang="ru">лю́ди</span> [l'u-di]</td>
-                            <td><span class="ipa">[yu]</span> — <span lang="ru">пою́</span> [pa-<strong>yu</strong>]</td>
-                            <td><span class="ipa">[yu]</span> — <span lang="ru">ю́мор</span> [<strong>yu</strong>-mar]</td>
+                            <td><span lang="ru ">у</span></td>
+                            <td><span lang="ru ">ю</span></td>
+                            <td>Hard + <span class="ipa ">[u]</span> — <span lang="ru ">су́п</span> [sup]<br> Soft + <span class="ipa ">[u]</span> — <span lang="ru ">лю́ди</span> [l'u-di]</td>
+                            <td><span class="ipa ">[yu]</span> — <span lang="ru ">пою́</span> [pa-<strong>yu</strong>]</td>
+                            <td><span class="ipa ">[yu]</span> — <span lang="ru ">ю́мор</span> [<strong>yu</strong>-mar]</td>
                         </tr>
                         <tr>
-                            <td><span lang="ru">э</span></td>
-                            <td><span lang="ru">е</span></td>
-                            <td>Hard + <span class="ipa">[e]</span> — <span lang="ru">нэ́п</span> (NEP) [ne]<br> Soft + <span class="ipa">[e]</span> — <span lang="ru">ме́д</span> [m'e̞d]</td>
-                            <td><span class="ipa">[ye]</span> — <span lang="ru">поёт? → пе́ние</span> [p'e-<strong>ye</strong>-ni-e]</td>
-                            <td><span class="ipa">[ye]</span> — <span lang="ru">е́нот</span> [<strong>ye</strong>-not]</td>
+                            <td><span lang="ru ">э</span></td>
+                            <td><span lang="ru ">е</span></td>
+                            <td>Hard + <span class="ipa ">[e]</span> — <span lang="ru ">нэ́п</span> (NEP) [ne]<br> Soft + <span class="ipa ">[e]</span> — <span lang="ru ">ме́д</span> [m'e̞d]</td>
+                            <td><span class="ipa ">[ye]</span> — <span lang="ru ">поёт? → пе́ние</span> [p'e-<strong>ye</strong>-ni-e]</td>
+                            <td><span class="ipa ">[ye]</span> — <span lang="ru ">е́нот</span> [<strong>ye</strong>-not]</td>
                         </tr>
                         <tr>
-                            <td><span lang="ru">ы</span><br><small>(hard “i”)</small></td>
-                            <td><span lang="ru">и</span><br><small>(soft “i”)</small></td>
-                            <td><span lang="ru">ы</span> keeps consonant <em>hard</em> — <span lang="ru">мы</span> [mi]<br>
-                                <span lang="ru">и</span> makes it <em>soft</em> — <span lang="ru">мир</span> [m'ir]</td>
-                            <td><span class="ipa">[i] / [i]</span> (no y-glide) — <span lang="ru">краи́</span> / <span lang="ru">краи́</span></td>
-                            <td><span class="ipa">[i]</span> — <span lang="ru">игла</span> [i-gla] (note: no [yi])</td>
+                            <td><span lang="ru ">ы</span><br><small>(hard “i”)</small></td>
+                            <td><span lang="ru ">и</span><br><small>(soft “i”)</small></td>
+                            <td><span lang="ru ">ы</span> keeps consonant <em>hard</em> — <span lang="ru ">мы</span> [mi]<br>
+                                <span lang="ru ">и</span> makes it <em>soft</em> — <span lang="ru ">мир</span> [m'ir]</td>
+                            <td><span class="ipa ">[i] / [i]</span> (no y-glide) — <span lang="ru ">мои́</span></td>
+                            <td><span class="ipa ">[i]</span> — <span lang="ru ">игла</span> [i-gla] (note: no [yi])</td>
                         </tr>
                     </tbody>
                 </table>
@@ -254,113 +316,115 @@
         </section>
 
         <!-- 3) Exceptions -->
-        <section class="mb-4">
-            <div class="danger">
+        <section class="mb-4 ">
+            <div class="danger ">
                 <strong>Exceptions / special consonants:</strong>
                 <ul class="mb-0">
-                    <li><span lang="ru">ж, ш</span> are always hard; <span lang="ru">ч, щ</span> are always soft (the vowel doesn't change that).</li>
-                    <li><span lang="ru">ц</span> is usually hard; before <span lang="ru">и</span> it often sounds like <span class="ipa">[ɨ]</span>-type (“цы”).</li>
-                    <li>After sibilants the “y-glide” may disappear (e.g., <span lang="ru">же</span> is [ʐe], not [ʐye]). We skip these in the table to keep the core rule clear.</li>
+                    <li><span lang="ru ">ж, ш</span> are always hard; <span lang="ru ">ч, щ</span> are always soft (the vowel doesn't change that).</li>
+                    <li><span lang="ru ">ц</span> is usually hard; before <span lang="ru ">и</span> it often sounds like <span class="ipa ">[ɨ]</span>-type (“цы”).</li>
+                    <li>After sibilants the “y-glide” may disappear (e.g., <span lang="ru ">же</span> is [ʐe], not [ʐye]). We skip these in the table to keep the core rule clear.</li>
                 </ul>
             </div>
         </section>
 
         <!-- 4) Note on И vs Ы -->
-        <section class="mb-4">
-            <div class="note">
-                <p class="mb-1"><strong>Why <span lang="ru">и</span> and <span lang="ru">ы</span> are different:</strong> unlike <span lang="ru">я/а, ё/о, ю/у, е/э</span>, the pair <span lang="ru">и/ы</span> does <em>not</em> alternate with a y-glide at the start of
-                    words. <span lang="ru">И</span> is simply [i] and softens the preceding consonant; <span lang="ru">ы</span> is a separate vowel [ɨ] that follows hard consonants and never adds a [j] sound.</p>
-                <p class="mb-0"><em>Tip:</em> compare <span lang="ru">мир</span> [m'ir] “peace/world” vs. <span lang="ru">мы</span> [my] “we”.</p>
+        <section class="mb-4 ">
+            <div class="note ">
+                <p class="mb-1 "><strong>Why <span lang="ru ">и</span> and <span lang="ru ">ы</span> are different:</strong> unlike <span lang="ru ">я/а, ё/о, ю/у, е/э</span>, the pair <span lang="ru ">и/ы</span> does <em>not</em> alternate with a y-glide at the start
+                    of words. <span lang="ru ">И</span> is simply [i] and softens the preceding consonant; <span lang="ru ">ы</span> is a separate vowel [ɨ] that follows hard consonants and never adds a [j] sound.</p>
+                <p class="mb-0 "><em>Tip:</em> compare <span lang="ru ">мир</span> [m'ir] “peace/world” vs. <span lang="ru ">мы</span> [my] “we”.</p>
             </div>
         </section>
 
         <!-- 5) Practice words -->
         <section>
-            <h2 class="h5">Practice: Soft vs. Hard (paired examples)</h2>
-            <p class="text-muted small">Transliteration uses <strong>'</strong> to mark a softened consonant; primary stress is marked in Russian.</p>
+            <h2 class="h5 ">Practice: Soft vs. Hard (paired examples)</h2>
+            <p class="text-muted small ">Transliteration [...] uses <strong>'</strong> to mark a softened consonant, always after a consonant; the stress mark is always above or next to a vowel.</p>
 
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <ul class="styled-list small">
+            <div class="row ">
+                <div class="col-12 col-md-6 ">
+                    <ul class="styled-list small ">
                         <!-- ю/у, church & cognates -->
-                        <li class="word-with-audio" data-text="юмор">
-                            <span lang="ru">ю́мор</span> — humor [<strong>yu</strong>-mar]
+                        <li class="word-with-audio " data-text="юмор ">
+                            <span lang="ru ">ю́мор</span> — humor [yu-mar]
                         </li>
-                        <li class="word-with-audio" data-text="умor">
-                            <!-- keep exact rus: умор doesn't exist; use "у́м" -->
-                            <span lang="ru">у́м</span> — mind [um]
+                        <li class="word-with-audio " data-text="ум">
+                            <span lang="ru ">у́м</span> — mind [um]
                         </li>
 
                         <!-- е/э with church/cognates -->
-                        <li class="word-with-audio" data-text="евангелие">
-                            <span lang="ru">ено́т</span> — Racoon [ye-not]
+                        <li class="word-with-audio " data-text="евангелие ">
+                            <span lang="ru ">Ева́нгелие</span> - The Gospel [ye-ván-g'e-l'i-ye]
                         </li>
-                        <li class="word-with-audio" data-text="экзамен">
-                            <span lang="ru">экза́мен</span> — exam [eɡ-zá-men]
+                        <li class="word-with-audio " data-text="енот ">
+                            <span lang="ru ">ено́т</span> — racoon [ye-nót]
+                        </li>
+                        <li class="word-with-audio " data-text="экзамен ">
+                            <span lang="ru ">экза́мен</span> — exam [eɡ-zá-m'en]
                         </li>
 
                         <!-- л + ю/у -->
-                        <li class="word-with-audio" data-text="люк">
-                            <span lang="ru">лю́к</span> — hatch [l'uk]
+                        <li class="word-with-audio " data-text="люк ">
+                            <span lang="ru ">лю́к</span> — hatch [l'uk]
                         </li>
-                        <li class="word-with-audio" data-text="лук">
-                            <span lang="ru">лу́к</span> — onion/bow [luk]
+                        <li class="word-with-audio " data-text="лук ">
+                            <span lang="ru ">лу́к</span> — onion/bow [luk]
                         </li>
 
                         <!-- бить/быть (your example) -->
-                        <li class="word-with-audio" data-text="бить">
-                            <span lang="ru">би́ть</span> — to beat [b'it']
+                        <li class="word-with-audio " data-text="бить ">
+                            <span lang="ru ">би́ть</span> — to beat [b'it']
                         </li>
-                        <li class="word-with-audio" data-text="быть">
-                            <span lang="ru">бы́ть</span> — to be [byt']
+                        <li class="word-with-audio " data-text="быть ">
+                            <span lang="ru ">бы́ть</span> — to be [bit']
                         </li>
                     </ul>
                 </div>
 
-                <div class="col-12 col-md-6">
-                    <ul class="styled-list small">
+                <div class="col-12 col-md-6 ">
+                    <ul class="styled-list small ">
                         <!-- г + е/а (cognates/church) -->
-                        <li class="word-with-audio" data-text="генезис">
-                            <span lang="ru">ге́незис</span> — genesis [g'e-ne-zis]
+                        <li class="word-with-audio " data-text="генезис ">
+                            <span lang="ru ">ге́незис</span> — genesis(origin) [g'e-n'e-z'is]
                         </li>
-                        <li class="word-with-audio" data-text="гамма">
-                            <span lang="ru">га́мма</span> — gamma [ga-ma]
+                        <li class="word-with-audio " data-text="гамма ">
+                            <span lang="ru ">га́мма</span> — gamma [gá-ma]
                         </li>
 
                         <!-- д + е/о -->
-                        <li class="word-with-audio" data-text="декан">
-                            <span lang="ru">деке́н</span>
-                            <!-- fix: better "декан" -->
+                        <li class="word-with-audio " data-text="дьякон ">
+                            <span lang="ru ">дья́кон</span> - deacon [d'ya-kan]
                         </li>
-                        <li class="word-with-audio" data-text="декан">
-                            <span lang="ru">декан</span> — dean [d'e-kan]
+                        <li class="word-with-audio " data-text="декан ">
+                            <span lang="ru ">дека́н</span> - dean [de-kán]
                         </li>
-                        <li class="word-with-audio" data-text="дом">
-                            <span lang="ru">до́м</span> — home/house [dom]
+
+                        <li class="word-with-audio " data-text="дом ">
+                            <span lang="ru ">до́м</span> — home/house [dom]
                         </li>
 
                         <!-- п + е/а (church word + common) -->
-                        <li class="word-with-audio" data-text="песнь">
-                            <span lang="ru">пе́снь</span> — hymn/song [p'esn']
+                        <li class="word-with-audio " data-text="песнь ">
+                            <span lang="ru ">пе́снь</span> — hymn/song [p'esn']
                         </li>
-                        <li class="word-with-audio" data-text="пасха">
-                            <span lang="ru">Па́сха</span> — Pascha/Easter [pa-scha]
+                        <li class="word-with-audio " data-text="пасха ">
+                            <span lang="ru ">Па́сха</span> — Pascha/Easter [pá-scha]
                         </li>
 
                         <!-- ф + и/ы (rare start with ы → use inside) -->
-                        <li class="word-with-audio" data-text="фильм">
-                            <span lang="ru">фи́льм</span> — film [f'il'm]
+                        <li class="word-with-audio " data-text="фильм ">
+                            <span lang="ru ">фи́льм</span> — film [f'il'm]
                         </li>
-                        <li class="word-with-audio" data-text="миф">
-                            <span lang="ru">миф</span> — myth [m'if]
+                        <li class="word-with-audio " data-text="миф ">
+                            <span lang="ru ">миф</span> — myth [m'if]
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <p class="mt-3 small text-muted">
-                More good pairs to try aloud: <span lang="ru">свет / святой</span> [sv'et / sv'atoj],
-                <span lang="ru">пи́лот / пыль</span> [p'ilot / pyl'], <span lang="ru">ге́ний / го́род</span> [g'enij / go-rod].
+            <p class="mt-3 small text-muted ">
+                More good pairs to try aloud: <span lang="ru ">свет / святой</span> [sv'et / sv'atoj],
+                <span lang="ru ">пи́лот / пыль</span> [p'ilot / pyl'], <span lang="ru ">ге́ний / го́род</span> [g'enij / go-rod].
             </p>
         </section>
 
@@ -373,8 +437,32 @@
 
     </footer>
 
+    <!-- Small Bootstrap modal -->
+    <div class="modal fade" id="noteModalVowels" tabindex="-1" aria-labelledby="noteModalVowelsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered  anim-zoom-max   ">
+            <div class="modal-content gr-aloha-soft-2">
+                <div class="modal-header px-5 py-3 gr-aloha-soft-5 ">
+                    <h5 class="modal-title" id="noteModalVowelsLabel">Exceptions</h5>
+                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <ul class="styled-list  glass-2">
+                        <li>In unstressed syllables, vowel quality can reduce (e.g., "о" often sounds like [а] and "e" as [и]).</li>
+                        <li>After <span lang="ru">ж, ш, ч, щ</span> and <span lang="ru">ц</span>, historical spelling/softness rules affect what you hear.</li>
+                    </ul>
+                </div>
+
+                <div class="modal-footer px-5 py-1 gr-aloha-soft-2 justify-content-center">
+                    <button type="button" class="btn-no-gr gr-btn-sunset-soft" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bundle included Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js "></script>
-    <script src="../assets/js/audioUtils.js"></script>
+    <script src="../assets/js/audioUtils.js "></script>
     <!-- Top-level code in a deferred script (not wrapped in a function) runs in order after HTML parsing 
        but before DOMContentLoaded.
     The defer attribute also preserves execution order (as they appear in HTML).
@@ -391,8 +479,8 @@
         -> In this case, the function would be undefined and throw an error.
         -> So the DOMContentLoaded wrappers are kept to be safe, but this may need to be investigated further.
          -->
-    <script src="../assets/js/navbar.js" defer></script>
-    <script src="../assets/js/site-search.js" defer></script>
+    <script src="../assets/js/navbar.js " defer></script>
+    <script src="../assets/js/site-search.js " defer></script>
 
     <script>
         (function() {
@@ -410,7 +498,7 @@
                 });
             }
 
-            // Add a speaker button with audio to any <li class="word-with-audio" data-text="...">
+            // Add a speaker button with audio to any element with class="word-with-audio " data-text="... ">
             function decorateWords() {
                 document.querySelectorAll('.word-with-audio').forEach(li => {
                     // Prevent duplicate buttons
@@ -420,7 +508,12 @@
                     const text = (li.dataset.text || li.textContent || '').trim();
                     if (!text) return;
 
-                    const btn = createAudioButton(text, '../assets/sound/male/words/');
+                    if (li.classList.contains('letter'))
+                        path = '../assets/sound/female/';
+                    else
+                        path = '../assets/sound/male/words/';
+
+                    const btn = createAudioButton(text, path);
                     li.prepend(btn);
                 });
             }
@@ -428,7 +521,7 @@
             // Run both decorators
             function decorateAll() {
                 decorateWords();
-                injectNavbar("#navbar-placeholder");
+                injectNavbar("#navbar-placeholder ");
                 initSiteSearch();
             }
 

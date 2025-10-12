@@ -1,0 +1,639 @@
+.bg-splash {
+    background: linear-gradient(97.26deg, rgb(255, 166, 2) 2.07%, rgb(219, 60, 0) 100%);
+}
+
+.korobka {
+    height: 55px;
+    width: 150px;
+    font-size: 20px;
+    border: solid;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px;
+    color: white;
+}
+
+.korobka:hover {
+    background-size: 200% 200%;
+    animation: gradient 2s ease infinite;
+}
+
+.badge {
+    height: 100%;
+    width: 90%;
+    font-size: 16px;
+    border: solid;
+    text-align: center;
+    border-radius: 30px;
+    border-color: rgb(255, 234, 0);
+    margin: 20px;
+    color: white;
+    font-weight: 200;
+    font-family: Comic Sans MS, Brush Script MT;
+    font-style: italic;
+}
+
+.gr-testing:hover,
+.badge:hover {
+    /* background-size: 200% 200%; */
+    animation: gradient 10s ease infinite;
+    filter: hue-rotate(220deg);
+}
+
+.gr-badge-korobka {
+    background: linear-gradient(to right, #fffcdc, #d9a7c7);
+}
+
+.btn-no-gr:hover,
+.gr-badge-korobka:hover {
+    background-size: 250% 250%;
+    animation: gradient 1s ease infinite;
+    filter: hue-rotate(240deg);
+    /* filter: invert(); */
+    /* filter: brightness(96); */
+}
+
+
+/*
+@keyframe <animation name> where animation name is defined in the CSS of the element with animation.
+keyframes % defines time lapse into animation, i.e. for a 15s animation 50% means 7.5 seconds into animation.
+In this case, because body is 400%, changing it's position moves the containing element (body) in the div, showing a different gradient and creating animation effect.
+Make 100% same as 0%
+*/
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.spacerDiv {
+    min-height: 20px;
+}
+
+.gr-testing {
+    background: linear-gradient(to right, #fffcdc, #d9a7c7);
+    min-height: 25vh;
+    filter: saturate(3);
+    filter: opacity(90%);
+    filter: sepia(50%);
+    filter: hue-rotate(30deg);
+    border: solid;
+    border-radius: 25% !important;
+    border-color: rgba(255, 234, 0, 0.642);
+    font-style: italic;
+}
+
+#badge-ribbon:after {
+    background: linear-gradient(to right, #FFD200, #F7971E);
+}
+
+.gr-purple-korobka {
+    background-image: linear-gradient( 97.26deg, rgb(255, 51, 85) 2.07%, rgb(37, 7, 107) 100%);
+}
+
+.gr-orange-korobka {
+    background: linear-gradient( 97.26deg, rgb(255, 166, 2) 2.07%, rgb(219, 60, 0) 100%);
+}
+
+.gr-green-korobka {
+    background: linear-gradient( 97.26deg, rgb(38, 137, 12) 2.07%, rgb(10, 163, 163) 100%);
+}
+
+.gr-steelblue-korobka {
+    background: linear-gradient( to right, rgb(2, 130, 130) 2.07%, rgb(37, 7, 107) 100%);
+}
+
+.gr-rastafari-korobka {
+    background: linear-gradient(to right, #FF0000, #FFF200, #1E9600);
+}
+
+.gr-wedding-korobka {
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+}
+
+.gr-sublime-korobka {
+    background: linear-gradient(to right, #6A82FB, #FC5C7D);
+}
+
+.gr-relax-red-korobka {
+    background: linear-gradient(to right, #b20a2c, #fffbd5);
+}
+
+.gr-summer-korobka {
+    background: linear-gradient(to right, #fdbb2d, #22c1c3);
+}
+
+.gr-broken-hearts-korobka {
+    background: linear-gradient(to right, #fffcdc, #d9a7c7);
+}
+
+.gr-meridian-korobka {
+    background: linear-gradient(to right, #45a247, #283c86);
+}
+
+.gr-gentle-korobka {
+    background: linear-gradient(to right, #FFFFFF, #EF3B36);
+}
+
+.gr-mello-korobka {
+    background: linear-gradient(to right, #8e44ad, #c0392b);
+}
+
+.gr-bang-korobka {
+    background: linear-gradient(to right, #78ffd6, #007991);
+}
+
+.gr-cellestial-korobka {
+    background: linear-gradient(to right, #1D2671, #C33764);
+}
+
+.gr-learning-korobka {
+    background: linear-gradient(to right, #FFD200, #F7971E);
+}
+
+.gr-crimson-korobka {
+    background: linear-gradient(to right, #6f0000, #200122);
+}
+
+.gr-periwinkle-korobka {
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+}
+
+.gr-honey-korobka {
+    background: linear-gradient(to right, #F8FFAE, #43C6AC);
+}
+
+.gr-steelrose-korobka {
+    background: linear-gradient(to right, #bfd8fd, #f3c4cf);
+}
+
+.gr-pravda-korobka {
+    background: linear-gradient(to right, #C5796D, #DBE6F6);
+}
+
+.gr-vices-korobka {
+    background: linear-gradient(to right, #EC6EAD, #3494E6);
+}
+
+.gr-sunset-korobka {
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+}
+
+.gr-radar-korobka {
+    background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+}
+
+.gr-azure-korobka {
+    background: linear-gradient(to right, #89fffd, #ef32d9);
+}
+
+.gr-sweet-korobka {
+    background: linear-gradient(to right, #FFC371, #FF5F6D);
+}
+
+.gr-transform-korobka {
+    background: linear-gradient(to right, #CB3066, #16BFFD);
+}
+
+.gr-pavlin-korobka {
+    background: linear-gradient(to right, #66ff00, #a80077);
+}
+
+.gr-aloha-korobka {
+    background: linear-gradient(to right, #db36a4, #f7ff00);
+}
+
+.gr-ukraine-korobka {
+    background: linear-gradient(to right, #FFF94C, #004FF9);
+}
+
+.gr-atlas-korobka {
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+}
+
+.gr-seashore-korobka {
+    background: linear-gradient(to right, #ffd194, #70e1f5);
+}
+
+.gr-vibe-korobka {
+    background: linear-gradient(to right, #061161, #780206);
+}
+
+.gr-howto-korobka {
+    background: linear-gradient(to top right, #2D81FC, #EB7256);
+}
+
+.gr-starfall-korobka {
+    background: linear-gradient(to right, #4B1248, #F0C27B);
+}
+
+.gr-googly-korobka {
+    background: linear-gradient(180deg, #0d6efd 0%, #6f42c1 50%, #10b981 100%);
+}
+
+
+/*
+https://colorgradient.dev/
+*/
+
+.gr-conic-korobka {
+    background-size: 100% 100%;
+    background-position: 0px 0px;
+    background-image: repeating-conic-gradient(from 16deg at 50% 50%, #C3C744FF 0%, #D69327FF 13%, #00FFFFFF 23%, #6D7676FF 30%, #00FFFFFF 41%, #FF0030FF 56%, #00FFFFFF 73%, #073AFFFF 81%, #00FFFFFF 88%);
+}
+
+.gr-conicice-korobka {
+    background-size: 100% 100%;
+    background-position: 0px 0px, 0px 0px;
+    background-image: repeating-conic-gradient(from 339deg at 52% 50%, #00FFF6FC 92%, #0080FF99 95%, #00FFFEFF 98%), radial-gradient(75% 75% at 32% 65%, #B03F4CFF 3%, #073AFFFF 100%);
+}
+
+.gr-carnival-korobka {
+    background-size: 100% 100%;
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+    background-image: repeating-conic-gradient(from 337deg at 26% 77%, #4905D2FF 61%, #B8A4C178 65%, #1F1624FC 70%, #14131394 70%, #0A5AA1FF 75%), radial-gradient(75% 75% at 25% 76%, #00FFFFFF 24%, #F7FF07FF 30%, #073AFFFF 36%, #FF071FFF 43%, #FF07F6FF 49%, #77FF07FF 59%, #B8A4C1FF 63%, #141313FC 68%, #E8F007FF 74%, #E33B3BFC 76%, #00FFFFB8 87%), repeating-radial-gradient(75% 75% at 175% -19%, #00FFFFFF 0%, #073AFFFF 2%, #FF07F6FF 4%);
+}
+
+.gr-crossover-korobka {
+    background: #563a93 linear-gradient(180deg, #37c8b7 0%, #4a72a1 22%, #563a93 75%, #9c72fb 100%) 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    color: #fff
+}
+
+.gr-conic-rotate-korobka korobka>.bg {
+    animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    1.66%,
+    3.33% {
+        transform: rotate(12deg);
+    }
+    4.99%,
+    6.66% {
+        transform: rotate(24deg);
+    }
+    8.32%,
+    9.99% {
+        transform: rotate(36deg);
+    }
+    11.65%,
+    13.32% {
+        transform: rotate(48deg);
+    }
+    14.98%,
+    16.65% {
+        transform: rotate(60deg);
+    }
+    18.31%,
+    19.98% {
+        transform: rotate(72deg);
+    }
+    21.65%,
+    23.31% {
+        transform: rotate(84deg);
+    }
+    24.98%,
+    26.65% {
+        transform: rotate(96deg);
+    }
+    28.31%,
+    29.98% {
+        transform: rotate(108deg);
+    }
+    31.65%,
+    33.33% {
+        transform: rotate(120deg);
+    }
+    34.98%,
+    36.65% {
+        transform: rotate(132deg);
+    }
+    38.33%,
+    39.98% {
+        transform: rotate(144deg);
+    }
+    41.65%,
+    43.33% {
+        transform: rotate(156deg);
+    }
+    44.98%,
+    46.65% {
+        transform: rotate(168deg);
+    }
+    48.33%,
+    50% {
+        transform: rotate(180deg);
+    }
+    51.65%,
+    53.33% {
+        transform: rotate(192deg);
+    }
+    54.99%,
+    56.65% {
+        transform: rotate(204deg);
+    }
+    58.33%,
+    59.99% {
+        transform: rotate(216deg);
+    }
+    61.65%,
+    63.33% {
+        transform: rotate(228deg);
+    }
+    64.99%,
+    66.66% {
+        transform: rotate(240deg);
+    }
+    68.33%,
+    69.99% {
+        transform: rotate(252deg);
+    }
+    71.66%,
+    73.33% {
+        transform: rotate(264deg);
+    }
+    74.99%,
+    76.66% {
+        transform: rotate(276deg);
+    }
+    78.33%,
+    79.99% {
+        transform: rotate(288deg);
+    }
+    81.66%,
+    83.33% {
+        transform: rotate(300deg);
+    }
+}
+
+
+/*
+This does not work
+The background cannot have spin applied to it, the workaround is to rotate a span inside a button
+*/
+
+.gr-conic-rotate-korobka>.bg {
+    background-size: 100% 100%;
+    background-position: 0px 0px;
+    background-image: repeating-conic-gradient(from 16deg at 50% 50%, #C3C744FF 0%, #D69327FF 13%, #00FFFFFF 23%, #6D7676FF 30%, #00FFFFFF 41%, #FF0030FF 56%, #00FFFFFF 73%, #073AFFFF 81%, #00FFFFFF 88%);
+    animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    1.66%,
+    3.33% {
+        transform: rotate(12deg);
+    }
+    4.99%,
+    6.66% {
+        transform: rotate(24deg);
+    }
+    8.32%,
+    9.99% {
+        transform: rotate(36deg);
+    }
+    11.65%,
+    13.32% {
+        transform: rotate(48deg);
+    }
+    14.98%,
+    16.65% {
+        transform: rotate(60deg);
+    }
+    18.31%,
+    19.98% {
+        transform: rotate(72deg);
+    }
+    21.65%,
+    23.31% {
+        transform: rotate(84deg);
+    }
+    24.98%,
+    26.65% {
+        transform: rotate(96deg);
+    }
+    28.31%,
+    29.98% {
+        transform: rotate(108deg);
+    }
+    31.65%,
+    33.33% {
+        transform: rotate(120deg);
+    }
+    34.98%,
+    36.65% {
+        transform: rotate(132deg);
+    }
+    38.33%,
+    39.98% {
+        transform: rotate(144deg);
+    }
+    41.65%,
+    43.33% {
+        transform: rotate(156deg);
+    }
+    44.98%,
+    46.65% {
+        transform: rotate(168deg);
+    }
+    48.33%,
+    50% {
+        transform: rotate(180deg);
+    }
+    51.65%,
+    53.33% {
+        transform: rotate(192deg);
+    }
+    54.99%,
+    56.65% {
+        transform: rotate(204deg);
+    }
+    58.33%,
+    59.99% {
+        transform: rotate(216deg);
+    }
+    61.65%,
+    63.33% {
+        transform: rotate(228deg);
+    }
+    64.99%,
+    66.66% {
+        transform: rotate(240deg);
+    }
+    68.33%,
+    69.99% {
+        transform: rotate(252deg);
+    }
+    71.66%,
+    73.33% {
+        transform: rotate(264deg);
+    }
+    74.99%,
+    76.66% {
+        transform: rotate(276deg);
+    }
+    78.33%,
+    79.99% {
+        transform: rotate(288deg);
+    }
+    81.66%,
+    83.33% {
+        transform: rotate(300deg);
+    }
+}
+
+.text-cutout--lg {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 5vw;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    display: block;
+    /* new line */
+    width: max-content;
+    /* shrink to text width */
+}
+
+.text-cutout {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 4vw;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    display: flexbox;
+    /* new line */
+    width: max-content;
+    /* shrink to text width */
+}
+
+.text-cutout--small {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 3vw;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    display: block;
+    /* new line */
+    width: max-content;
+    /* shrink to text width */
+}
+
+.text-cutout--small:hover,
+.text-cutout:hover {
+    background-size: 200% 200%;
+    animation: gradient 2s ease infinite;
+}
+
+
+/* Utility for all-caps headings */
+
+.caps {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    /* tweak: 0.02–0.1em depending on font/size */
+}
+
+.card,
+.card-title,
+.card-body,
+.card-header {
+    display: flex;
+    /* vertical centering */
+    justify-content: center;
+    /* horizontal centering */
+    text-align: center;
+    /* center multi-line text */
+    min-height: 3.5rem;
+    /* optional: guarantee some height */
+    padding: .75rem 1rem;
+    overflow: hidden;
+    /* nothing spills outside */
+}
+
+
+/*
+new 10/9/2025
+*/
+
+.bg-hue-16 {
+    filter: hue-rotate(320deg);
+}
+
+.bg-trans-100 {
+    background-color: transparent;
+}
+
+
+/* This applies not only to background but to all elements, so it makes the text muted */
+
+.bg-opacity-5 {
+    opacity: 0.5;
+}
+
+
+/* apply transperency - use for contrast between header and body, for example*/
+
+.gr-steelrose-soft-3 {
+    background: linear-gradient( to right, rgba(191, 216, 253, 0.3), /* #bfd8fd @ 30 % opacity */
+    rgba(243, 196, 207, 0.3)/* #f3c4cf @ 30 % opacity */
+    );
+}
+
+.gr-learning-soft-2 {
+    background: linear-gradient(to right, rgb(255, 210, 0, 0.2), rgb(247, 151, 30, 0.2));
+}
+
+.gr-seashore-soft-2 {
+    background: linear-gradient(to right, rgb(255, 209, 148, 0.2), rgb(112, 225, 245, 0.2));
+}
+
+.gr-sunset-soft-2 {
+    background: linear-gradient(to right, rgb(255, 106, 0, 0.2), rgb(238, 9, 121, 0.2));
+}
+
+.gr-aloha-soft-5 {
+    background: linear-gradient(to right, rgb(219, 54, 164, 0.5), rgb(247, 255, 0, 0.5));
+}
+
+.gr-aloha-soft-2 {
+    background: linear-gradient(to right, rgb(219, 54, 164, 0.2), rgb(247, 255, 0, 0.2));
+}
+
+.btn-no-gr {
+    letter-spacing: .02em;
+    border-radius: 10%;
+    padding: 0.4rem 1.8rem;
+    /* size the button */
+    font-weight: 500;
+    border: 2px solid yellow;
+    /* we’ll “see” through it */
+    font-size: 1.1rem;
+}
+
+.gr-btn-sunset {
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    color: white;
+}
+
+.gr-btn-sunset-soft {
+    background: linear-gradient(to right, rgb(255, 106, 0, 0.4), rgb(238, 9, 121, 0.4));
+    color: rgb(247, 255, 0, 0.8);
+    /* the border */
+}
