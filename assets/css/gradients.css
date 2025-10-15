@@ -496,6 +496,13 @@ The background cannot have spin applied to it, the workaround is to rotate a spa
     }
 }
 
+.gr-gpt-1 {
+    background: radial-gradient(640px 280px at 90% 10%, rgba(255, 200, 80, .18), transparent 60%), radial-gradient(520px 240px at 0% 100%, rgba(99, 102, 241, .16), transparent 62%), linear-gradient(135deg, #fff7e633, #e0e7ff33 50%, #fef3c733);
+}
+
+
+/* declare text cutout classes after the background classes */
+
 .text-cutout--lg {
     -webkit-background-clip: text;
     background-clip: text;
@@ -511,6 +518,7 @@ The background cannot have spin applied to it, the workaround is to rotate a spa
 
 .text-cutout {
     -webkit-background-clip: text;
+    /* needed for 3 layers of gradients, ignored if less */
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;

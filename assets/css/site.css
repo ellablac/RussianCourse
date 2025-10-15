@@ -859,3 +859,28 @@ ul.styled-list.diamond li:before {
     outline: 2px solid var(--nd-color);
     outline-offset: 2px;
 }
+
+
+/* TABLES */
+
+
+/* 
+    insert a separator between table rows, e.g.
+    <tr class="divider">
+        <td colspan="100%"></td>
+    </tr> 
+*/
+
+tr.divider>td {
+    padding: 0;
+    height: 12px;
+    /* space */
+    border: 0;
+    border-top: 2px solid #eee;
+    /* the line */
+    background: linear-gradient( 180deg, rgba(59, 130, 246, .16) 0%, rgba(59, 130, 246, .06) 100%);
+    /* soft blue fade */
+    /* subtle edges */
+    border-top: 1px solid rgba(59, 130, 246, .35);
+    border-bottom: 1px solid rgba(59, 130, 246, .20);
+}

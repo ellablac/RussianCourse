@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Word Genders (Род слов)</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Site styles -->
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <style>
+         :root {
+            --fem: #e85aa0;
+            /* soft pink */
+            --masc: #4b7bff;
+            /* soft blue */
+            --neut: #ffd65a;
+            /* soft yellow */
+            --bg1: radial-gradient(1200px 800px at 10% 10%, #f7f3ff 0%, transparent 60%), radial-gradient(1000px 800px at 90% 0%, #f1fbff 0%, transparent 65%), linear-gradient(180deg, #ffffff, #fbfbff 35%, #f8fbff 100%);
+        }
+        
+        body {
+            background: var(--bg1);
+            background-attachment: fixed;
+        }
+        
+        .page-header {
+            padding-top: 2.5rem;
+            padding-bottom: 1rem;
+        }
+        
+        .legend-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .25rem .5rem;
+            border-radius: 999px;
+            font-size: .9rem;
+            background: rgba(255, 255, 255, .75);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+        }
+        
+        .dot {
+            width: .75rem;
+            height: .75rem;
+            border-radius: 50%;
+            display: inline-block
+        }
+        
+        .dot.fem {
+            background: var(--fem)
+        }
+        
+        .dot.masc {
+            background: var(--masc)
+        }
+        
+        .dot.neut {
+            background: var(--neut)
+        }
+        
+        .gender-col h3 {
+            font-size: 1.1rem
+        }
+        
+        .ru {
+            font-size: 1.15rem;
+            font-weight: 600
+        }
+        
+        .ru.fem {
+            color: var(--fem)
+        }
+        
+        .ru.masc {
+            color: var(--masc)
+        }
+        
+        .ru.neut {
+            color: #b89800
+        }
+        
+        .soft-card {
+            border: 0;
+            border-radius: 1rem;
+            padding: 1rem 1.25rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .7)), radial-gradient(600px 400px at 20% 0%, rgba(232, 90, 160, .08), transparent 60%), radial-gradient(600px 400px at 80% 0%, rgba(75, 123, 255, .08), transparent 60%), radial-gradient(600px 400px at 50% 100%, rgba(255, 214, 90, .12), transparent 60%);
+            box-shadow: 0 8px 26px rgba(0, 0, 0, .06);
+        }
+        
+        .rule-list li {
+            margin-bottom: .35rem
+        }
+        
+        .practice-select {
+            min-width: 9rem
+        }
+        
+        .feedback-icon {
+            font-size: 1.1rem;
+            width: 1.5rem;
+            display: inline-flex;
+            justify-content: center
+        }
+        
+        .word-item {
+            align-items: center
+        }
+        
+        .sr-only {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container-lg">
+        <header class="page-header text-center">
+            <h2 class="text-gradient">Word Genders (Род слов)</h2>
+            <p class="text-muted mb-0">Russian has three grammatical genders: <strong>feminine</strong>, <strong>masculine</strong>, and <strong>neutral</strong> <span class="text-secondary">(also called <em>neuter</em>)</span>.</p>
+        </header>
+
+        <section class="mb-4">
+            <div class="soft-card">
+                <p class="mb-2">
+                    For <strong>living things</strong> (<em>animate nouns</em>), grammatical gender usually follows natural gender (e.g., <span class="ru fem word-with-audio" lang="ru" data-text="девочка">дево́чка</span> — girl → feminine;
+                    <span class="ru masc word-with-audio" lang="ru" data-text="мальчик">ма́льчик</span> — boy → masculine).
+                </p>
+                <p class="mb-0">
+                    For <strong>things</strong> (<em>inanimate nouns</em>), a gender is simply a grammatical property, usually determined by the noun’s ending. For example, <span class="ru fem word-with-audio" lang="ru" data-text="машина">маши́на</span> — car
+                    is feminine, while
+                    <span class="ru masc word-with-audio" lang="ru" data-text="цветок">цвето́к</span> — flower is masculine.  Knowing a noun’s gender matters because adjectives, pronouns, and past-tense verbs must agree with it and change form depending on the noun’s role in the sentence.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="soft-card">
+                <p class="mb-1">For most nouns the rule for determining a gender is straightforward.</p>  
+                <p>Let's play a detective 🕵️‍♀️ . Look at the examples below, and try to <em>deduce</em> the gender rules.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="legend-chip"><span class="dot fem"></span> Feminine</span>
+                    <span class="legend-chip"><span class="dot masc"></span> Masculine</span>
+                    <span class="legend-chip"><span class="dot neut"></span> Neutral</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Three columns of examples -->
+        <section class="mb-5">
+            <div class="row g-4">
+                <!-- Feminine -->
+                <div class="col-md-4 gender-col">
+                    <div class="soft-card h-100">
+                        <h3 class="mb-3">Feminine</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><span class="ru fem word-with-audio" lang="ru" data-text="комета">коме́та</span> — comet</li>
+                            <li class="mb-2"><span class="ru fem word-with-audio" lang="ru" data-text="инъекция">инъе́кция</span> — injection</li>
+                            <li class="mb-2"><span class="ru fem word-with-audio" lang="ru" data-text="идея">иде́я</span> — idea</li>
+                            <li class="mb-2"><span class="ru fem word-with-audio" lang="ru" data-text="маска">ма́ска</span> — mask</li>
+                            <li class="mb-2"><span class="ru fem word-with-audio" lang="ru" data-text="карта">ка́рта</span> — map</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Masculine -->
+                <div class="col-md-4 gender-col">
+                    <div class="soft-card h-100">
+                        <h3 class="mb-3">Masculine</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><span class="ru masc word-with-audio" lang="ru" data-text="космос">ко́смос</span> — cosmos/space</li>
+                            <li class="mb-2"><span class="ru masc word-with-audio" lang="ru" data-text="кот">кот</span> — cat (male)</li>
+                            <li class="mb-2"><span class="ru masc word-with-audio" lang="ru" data-text="атом">а́том</span> — atom</li>
+                            <li class="mb-2"><span class="ru masc word-with-audio" lang="ru" data-text="банк">банк</span> — bank</li>
+                            <li class="mb-2"><span class="ru masc word-with-audio" lang="ru" data-text="борщ">борщ</span> — borscht</li>
+                            <!-- example ending in -й -->
+                            <li class="mb-2"><span class="ru masc word-with-audio" lang="ru" data-text="музей">музе́й</span> — museum</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Neuter -->
+                <div class="col-md-4 gender-col">
+                    <div class="soft-card h-100">
+                        <h3 class="mb-3">Neutral (Neuter)</h3>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><span class="ru neut word-with-audio" lang="ru" data-text="метро">метро́</span> — metro/subway</li>
+                            <li class="mb-2"><span class="ru neut word-with-audio" lang="ru" data-text="счастье">сча́стье</span> — happiness</li>
+                            <li class="mb-2"><span class="ru neut word-with-audio" lang="ru" data-text="окно">окно́</span> — window</li>
+                            <li class="mb-2"><span class="ru neut word-with-audio" lang="ru" data-text="небо">не́бо</span> — sky</li>
+                            <!-- example ending in -ё -->
+                            <li class="mb-2"><span class="ru neut word-with-audio" lang="ru" data-text="жилье">жильё</span> — lodging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reveal the rule -->
+        <section class="mb-5">
+            <div class="soft-card">
+                <p class="mb-2 fw-semibold">Ready to reveal the rule?</p>
+                <p class="mb-3"><a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#ruleCollapse" role="button" aria-expanded="false" aria-controls="ruleCollapse">Click here to reveal the rule</a></p>
+                <div class="collapse" id="ruleCollapse">
+                    <div class="card card-body border-0" style="background: rgba(255,255,255,.75)">
+                        <h3 class="h5">How to tell a noun’s gender (some exceptions apply) </h3>
+                        <ul class="rule-list">
+                            <li><strong>Feminine</strong>: usually ends in <strong>-а</strong> / <strong>-я</strong>.</li>
+                            <li><strong>Masculine</strong>: ends in a consonant or <strong>-й</strong>.</li>
+                            <li><strong>Neutral (Neuter)</strong>: ends in <strong>-о</strong> / <strong>-е</strong> / <strong>-ё</strong>.</li>
+                        </ul>
+                        <div class="mt-3">
+                            <h4 class="h6">Notable exceptions</h4>
+                            <ul class="mb-2">
+                                <li><strong>Animate nouns</strong> (living beings) typically follow natural gender (e.g., <span class="ru fem word-with-audio" lang="ru" data-text="девочка">дево́чка</span> — feminine; <span class="ru masc word-with-audio" lang="ru"
+                                    data-text="мальчик">ма́льчик</span> — masculine).</li>
+                                <li><span class="ru masc word-with-audio" lang="ru" data-text="слуга">слуга́</span>, <span class="ru masc word-with-audio" lang="ru" data-text="дядя">дя́дя</span> → masculine (despite -а/-я)</li>
+                                <li><span class="ru masc word-with-audio" lang="ru" data-text="путь">путь</span> → masculine
+                                 but <span class="ru fem word-with-audio" lang="ru" data-text="роль">роль</span> → feminine
+</li>
+                                <li><span class="ru masc word-with-audio" lang="ru" data-text="кофе">ко́фе</span> → masculine (colloquial)</li>
+                                <li><button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myaModal">Neuter nouns ending in -мя</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animate vs Inanimate quick note -->
+        <section class="mb-5">
+            <div class="soft-card">
+                <h3 class="h5">Animate vs. Inanimate</h3>
+                <p class="mb-1">“<strong>Animate</strong>” is the standard grammar term (Russian: <em>одушевлённые</em>) for <em>living beings</em> (people and animals). “Inanimate” refers to non-living things. We’ll mostly determine gender from the noun ending for inanimate
+                    nouns.</p>
+                <p class="mb-0">A few animate nouns have forms that don’t look like you expect (e.g., some professions or nicknames), but their gender still follows the person’s natural gender in context.</p>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section class="mb-5">
+            <div class="soft-card">
+                <h2 class="h5 mb-3">Let’s practice more</h2>
+                <p class="mb-3">Pick the gender for each word. Instant feedback shows a ✅ or ❌.</p>
+
+                <div class="row g-3" id="practiceList" aria-live="polite" aria-atomic="true">
+                    <!-- Items injected by JS below for easy maintenance -->
+                </div>
+            </div>
+        </section>
+
+        <!-- -мя modal -->
+        <div class="modal fade" id="myaModal" tabindex="-1" aria-labelledby="myaModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myaModalLabel">Neuter nouns ending in -мя</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>These are neuter despite not ending in -о/-е/-ё. Common examples:</p>
+                        <ul class="mb-0">
+                            <li><span class="ru neut word-with-audio" lang="ru" data-text="время">вре́мя</span> — time</li>
+                            <li><span class="ru neut word-with-audio" lang="ru" data-text="имя">и́мя</span> — name</li>
+                            <li><span class="ru neut word-with-audio" lang="ru" data-text="пламя">пла́мя</span> — flame</li>
+                            <li><span class="ru neut word-with-audio" lang="ru" data-text="знамя">зна́мя</span> — banner</li>
+                            <li><span class="ru neut word-with-audio" lang="ru" data-text="семя">се́мя</span> — seed</li>
+                            <li class="text-muted">(Also: бре́мя, племя, стремя, те́мя, вы́мя)</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Practice words (keep easy / cognates where possible)
+        // gender: 'f' | 'm' | 'n'
+        const PRACTICE = [{
+                ru: 'коме́та',
+                dt: 'комета',
+                en: 'comet',
+                gender: 'f'
+            }, {
+                ru: 'иде́я',
+                dt: 'идея',
+                en: 'idea',
+                gender: 'f'
+            }, {
+                ru: 'маска',
+                dt: 'маска',
+                en: 'mask',
+                gender: 'f'
+            }, {
+                ru: 'ка́рта',
+                dt: 'карта',
+                en: 'map',
+                gender: 'f'
+            }, {
+                ru: 'ко́смос',
+                dt: 'космос',
+                en: 'cosmos/space',
+                gender: 'm'
+            }, {
+                ru: 'музе́й',
+                dt: 'музей',
+                en: 'museum',
+                gender: 'm'
+            }, {
+                ru: 'а́том',
+                dt: 'атом',
+                en: 'atom',
+                gender: 'm'
+            }, {
+                ru: 'банк',
+                dt: 'банк',
+                en: 'bank',
+                gender: 'm'
+            }, {
+                ru: 'борщ',
+                dt: 'борщ',
+                en: 'borscht',
+                gender: 'm'
+            }, {
+                ru: 'метро́',
+                dt: 'метро',
+                en: 'metro/subway',
+                gender: 'n'
+            }, {
+                ru: 'сча́стье',
+                dt: 'счастье',
+                en: 'happiness',
+                gender: 'n'
+            }, {
+                ru: 'окно́',
+                dt: 'окно',
+                en: 'window',
+                gender: 'n'
+            }, {
+                ru: 'не́бо',
+                dt: 'небо',
+                en: 'sky',
+                gender: 'n'
+            }, {
+                ru: 'жильё',
+                dt: 'жилье',
+                en: 'lodging',
+                gender: 'n'
+            },
+            // additional easy/cognate items
+            {
+                ru: 'рестора́н',
+                dt: 'ресторан',
+                en: 'restaurant',
+                gender: 'm'
+            }, {
+                ru: 'теа́тр',
+                dt: 'театр',
+                en: 'theatre',
+                gender: 'm'
+            }, {
+                ru: 'пицца',
+                dt: 'пицца',
+                en: 'pizza',
+                gender: 'f'
+            }, {
+                ru: 'радио',
+                dt: 'радио',
+                en: 'radio',
+                gender: 'n'
+            }, {
+                ru: 'кино́',
+                dt: 'кино',
+                en: 'cinema',
+                gender: 'n'
+            }, {
+                ru: 'мо́ре',
+                dt: 'море',
+                en: 'sea',
+                gender: 'n'
+            }
+        ];
+
+        const list = document.getElementById('practiceList');
+
+        function optionLabel(g) {
+            if (g === 'f') return 'Feminine';
+            if (g === 'm') return 'Masculine';
+            return 'Neutral (Neuter)';
+        }
+
+        function colorFor(g) {
+            if (g === 'f') return 'var(--fem)';
+            if (g === 'm') return 'var(--masc)';
+            return 'var(--neut)';
+        }
+
+        function buildItem(word, idx) {
+            const col = document.createElement('div');
+            col.className = 'col-md-6';
+
+            const row = document.createElement('div');
+            row.className = 'd-flex gap-3 word-item';
+
+            // Word block
+            const wordBlock = document.createElement('div');
+            wordBlock.innerHTML = `<div class="ru word-with-audio" lang="ru" data-text="${word.dt}">${word.ru}</div><div class="text-muted small">${word.en}</div>`;
+
+            // Select
+            const select = document.createElement('select');
+            select.className = 'form-select practice-select';
+            select.setAttribute('aria-label', 'Select gender');
+            select.innerHTML = `
+        <option value="" selected>Choose gender…</option>
+        <option value="f">Feminine</option>
+        <option value="m">Masculine</option>
+        <option value="n">Neutral (Neuter)</option>
+      `;
+
+            // Feedback
+            const fb = document.createElement('div');
+            fb.className = 'feedback-icon align-self-center';
+            fb.setAttribute('aria-live', 'polite');
+
+            select.addEventListener('change', () => {
+                const correct = select.value === word.gender;
+                fb.textContent = correct ? '✅' : '❌';
+                fb.setAttribute('aria-label', correct ? 'Correct' : 'Incorrect');
+
+                  // Set color only when correct; otherwise keep/reset to neutral
+                if (correct) {
+                    wordBlock.style.color = colorFor(word.gender);
+                }
+            });
+
+            row.appendChild(wordBlock);
+            row.appendChild(select);
+            row.appendChild(fb);
+            col.appendChild(row);
+            return col;
+        }
+
+        PRACTICE.forEach((w, i) => list.appendChild(buildItem(w, i)));
+    </script>
+</body>
+
+</html>

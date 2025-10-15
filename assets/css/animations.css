@@ -51,9 +51,10 @@ The form slides in from the top left corner*/
 either add hiding in js or think of a better way to animate on 
 bootsrap modal close*/
 
-.modal.hiding .modal-dialog.anim-zoom-max {
+
+/* .modal.hiding .modal-dialog.anim-zoom-max {
     animation: toCorner 1s ease forwards;
-}
+} */
 
 @keyframes toCorner {
     to {
