@@ -119,6 +119,7 @@
 </head>
 
 <body>
+    <div id="navbar-placeholder"></div>
     <main class="container-lg">
         <header class="page-header text-center">
             <h2 class="text-gradient">Word Genders (Род слов)</h2>
@@ -131,10 +132,11 @@
                     For <strong>living things</strong> (<em>animate nouns</em>), grammatical gender usually follows natural gender (e.g., <span class="ru fem word-with-audio" lang="ru" data-text="девочка">дево́чка</span> — girl → feminine;
                     <span class="ru masc word-with-audio" lang="ru" data-text="мальчик">ма́льчик</span> — boy → masculine).
                 </p>
-                <p class="mb-0">
-                    For <strong>things</strong> (<em>inanimate nouns</em>), a gender is simply a grammatical property, usually determined by the noun’s ending. For example, <span class="ru fem word-with-audio" lang="ru" data-text="машина">маши́на</span> — car
+                <p class="mb-2">
+                    For <strong>things</strong> (<em>inanimate nouns</em>), a gender is simply a grammatical property, usually determined by the noun’s ending. <br>For example, <span class="ru fem word-with-audio" lang="ru" data-text="машина">маши́на</span> — car
                     is feminine, while
-                    <span class="ru masc word-with-audio" lang="ru" data-text="цветок">цвето́к</span> — flower is masculine.  Knowing a noun’s gender matters because adjectives, pronouns, and past-tense verbs must agree with it and change form depending on the noun’s role in the sentence.
+                    <span class="ru masc word-with-audio" lang="ru" data-text="цветок">цвето́к</span> — flower is masculine.  
+                    <p class="mb-2">Knowing a noun’s gender matters because adjectives, pronouns, and past-tense verbs must agree with it and change form depending on the noun’s role in the sentence.</p>
                 </p>
             </div>
         </section>
@@ -217,9 +219,9 @@
                         <div class="mt-3">
                             <h4 class="h6">Notable exceptions</h4>
                             <ul class="mb-2">
-                                <li><strong>Animate nouns</strong> (living beings) typically follow natural gender (e.g., <span class="ru fem word-with-audio" lang="ru" data-text="девочка">дево́чка</span> — feminine; <span class="ru masc word-with-audio" lang="ru"
-                                    data-text="мальчик">ма́льчик</span> — masculine).</li>
-                                <li><span class="ru masc word-with-audio" lang="ru" data-text="слуга">слуга́</span>, <span class="ru masc word-with-audio" lang="ru" data-text="дядя">дя́дя</span> → masculine (despite -а/-я)</li>
+                                <li><strong>Animate nouns</strong> (living beings) typically follow natural gender, regardless of the word ending. (e.g., <span class="ru fem word-with-audio" lang="ru" data-text="мисс">мисс</span> (miss) — feminine; <span class="ru masc word-with-audio" lang="ru"
+                                    data-text="папа">па́па</span> (dad) — masculine).</li>
+                                <li><span class="ru masc word-with-audio" lang="ru" data-text="слуга">слуга́</span>, <span class="ru masc word-with-audio" lang="ru" data-text="судья">судья́</span> → masculine (despite -а/-я)</li>
                                 <li><span class="ru masc word-with-audio" lang="ru" data-text="путь">путь</span> → masculine
                                  but <span class="ru fem word-with-audio" lang="ru" data-text="роль">роль</span> → feminine
 </li>
@@ -284,6 +286,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/audioUtils.js"></script>
+    <script src="../assets/js/navbar.js" defer></script>
+    <script src="../assets/js/site-search.js " defer></script>
 
     <script>
         // Practice words (keep easy / cognates where possible)
@@ -299,7 +304,7 @@
                 en: 'idea',
                 gender: 'f'
             }, {
-                ru: 'маска',
+                ru: 'ма́ска',
                 dt: 'маска',
                 en: 'mask',
                 gender: 'f'
@@ -354,7 +359,7 @@
                 en: 'sky',
                 gender: 'n'
             }, {
-                ru: 'жильё',
+                ru: 'жильё́',
                 dt: 'жилье',
                 en: 'lodging',
                 gender: 'n'
@@ -371,12 +376,12 @@
                 en: 'theatre',
                 gender: 'm'
             }, {
-                ru: 'пицца',
+                ru: 'пи́цца',
                 dt: 'пицца',
                 en: 'pizza',
                 gender: 'f'
             }, {
-                ru: 'радио',
+                ru: 'ра́дио',
                 dt: 'радио',
                 en: 'radio',
                 gender: 'n'
@@ -453,6 +458,35 @@
         }
 
         PRACTICE.forEach((w, i) => list.appendChild(buildItem(w, i)));
+
+        function decorateWords() {
+            document.querySelectorAll(".word-with-audio").forEach((li) => {
+                // Prevent duplicate buttons
+                if (li.querySelector(".speak-btn")) return;
+
+                // Pull Russian text from data-text (preferred) or fallback to text content
+                    const text = (li.dataset.text || li.textContent || "").trim();
+                    if (!text) return;
+
+                    let path = "../assets/sound/male/words/";
+
+                    const btn = createAudioButton(text, path);
+                    li.prepend(btn);
+                });
+            }
+
+            // Run both decorators
+            function decorateAll() {
+                decorateWords();
+                injectNavbar("#navbar-placeholder");
+                initSiteSearch();
+            }
+
+        window.addEventListener("DOMContentLoaded", decorateAll);
+
+        
+    </script>
+
     </script>
 </body>
 
