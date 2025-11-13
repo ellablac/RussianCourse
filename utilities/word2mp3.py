@@ -1,3 +1,6 @@
+""" 
+   Main script to convert russian text to mp3 files using edge_tts.
+"""
 import asyncio, re
 import string
 import edge_tts

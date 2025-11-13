@@ -25,33 +25,58 @@ This is a beginner-friendly Russian language course designed for English speaker
 
 ## File Organization
 
-* **index.html**: Home page.
-* **lessons/**
+* **assets/**: files such as css, js, mp3, jpg that are used in more than one lessons
+  * css/
+    * alphabet.css
+    * animations.css
+    * gradients.css
+    * site.css
+  * html/
+    * navbar.html
+  * js/
+    * audioUtils.js
+    * navbar.js
+    * site-search.js
+  * json/
+    * search-index.json
+  * sound/ All sound files go here, even if used in one lesson only
+    * female/
+      * [mp3's with female voice of sounds related to alphabet]
+    * male/
+      * [mp3's with male voice of sounds related to alphabet]
+      * words/
+        * [mp3's with male voice of words and sentences]
 
-  * introduction.html
-  * lesson1.html
+* **lesson1/**
+  * assets/
+    * [images for this lesson]
+  * letters/
+    * l_17.html: utility html that plays a video and syncs with a separate audio
+  * [all html files for lesson 1]
 
-    * alphabet.html
-    * worksheets.html
-    * game.html
-  * lesson2.html
-  * lesson3.html
-  * lesson4.html
-  * lesson5.html
+* **lesson2/**
+  * genders.html
+  * key_diff.html
+
+* **pdf/**
+  * lesson 1/
+    * [pdf files]
+
 * **resources/**
+  * [html files used in the Resources page]
 
-  * images/
-  * audio/
-  * worksheets/
-* **css/**
+* **utilities/**: helper functions, tools.
+  * generate_sitemap.py
+  * text2speech.html
+  * word2mp3.py: convert text to speech
 
-  * styles.css
-* **js/**
-
-  * scripts.js
-* **utilities/**
-
-  * helper functions, tools.
+* index.html: Home page.
+* introduction.html
+* lessons.html
+* README.md
+* requirements.txt
+* sitemap.xml
+* techniques.html
 
 ## Development
 * To run python scripts, activate venv: source .venv/bin/activate
