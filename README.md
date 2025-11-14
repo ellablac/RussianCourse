@@ -39,7 +39,7 @@ This is a beginner-friendly Russian language course designed for English speaker
     * site-search.js
   * json/
     * search-index.json
-  * sound/ All sound files go here, even if used in one lesson only
+  * sound/: All sound files go here, even if used in one lesson only
     * female/
       * [mp3's with female voice of sounds related to alphabet]
     * male/

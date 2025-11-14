@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parts of Speech Mnemonic Builder</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Manrope:wght@600..800&display=swap" rel="stylesheet">
+
+    <!-- Shared site styles -->
+    <link rel="stylesheet" href="../assets/css/site.css" />
+
+    <style>
+        .ps-hero {
+            padding: 4rem 0 2rem;
+        }
+
+        .ps-card {
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            background: radial-gradient(circle at top left,
+                    rgba(13, 110, 253, 0.05),
+                    transparent 55%),
+                radial-gradient(circle at bottom right,
+                    rgba(16, 185, 129, 0.05),
+                    #ffffff 70%);
+        }
+
+        .ps-label {
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .sentence-display {
+            border-radius: 1rem;
+            border: 1px dashed rgba(148, 163, 184, 0.7);
+            padding: 1.25rem 1.5rem;
+            background: rgba(248, 250, 252, 0.85);
+            min-height: 3rem;
+        }
+
+        .sentence-display .placeholder {
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .tag-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            background: rgba(15, 23, 42, 0.04);
+            color: var(--muted);
+        }
+
+        .tag-pill span {
+            font-weight: 700;
+            margin-right: 0.3rem;
+        }
+
+        .hint-text {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .input-group-text {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../lessons.html">Lessons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../resources.html">Resources</a></li>
+                    <span class="nav-ink" aria-hidden="true"></span>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero hero--light text-center ps-hero">
+        <div class="container">
+            <div class="blue-ink-uppercase mb-2">Quick Grammar Helper</div>
+            <h1 class="display text-gradient mb-3">
+                Parts of Speech Mnemonic Builder
+            </h1>
+            <p class="lead max-w-700 mx-auto">
+                Build a tiny, vivid sentence to remember
+                <strong>Adjective – Noun – Verb</strong> (A&nbsp;N&nbsp;V).
+                For example: <em>"<b>A</b>dorable <strong>N</strong>iece <strong>V</strong>isited."</em>
+            </p>
+        </div>
+    </section>
+
+    <!-- Tool -->
+    <main class="container page-section">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9">
+                <div class="ps-card p-4 p-lg-5">
+
+                    <div class="mb-4">
+                        <h2 class="section-title h4 mb-2">How to use this tool</h2>
+                        <ul class="styled-list small mb-0">
+                            <li>Pick an <strong>adjective</strong>, <strong>noun</strong>, and <strong>verb</strong> from the dropdowns below.</li>
+                            <li>Each list starts with the letters you want to remember:
+                                <strong>A</strong>djective, <strong>N</strong>oun, <strong>V</strong>erb.
+                            </li>
+                            <li>Or choose <em>“(free style – add your own)”</em> and type a custom word in the box that appears.</li>
+                        </ul>
+                    </div>
+
+                    <div class="row g-3">
+                        <!-- Adjective (A) -->
+                        <div class="col-12 col-md-4">
+                            <div class="ps-label mb-1">Adjective (A)</div>
+                            <div class="hint-text mb-2">Describes a person or thing.</div>
+                            <div class="input-group">
+                                <span class="input-group-text">ADJ</span>
+                                <select class="form-select" id="adjSelect">
+                                    <option value="">Choose an adjective…</option>
+                                    <option value="annoying">annoying</option>
+                                    <option value="amazing">amazing</option>
+                                    <option value="angry">angry</option>
+                                    <option value="anxious">anxious</option>
+                                    <option value="awkward">awkward</option>
+                                    <option value="attractive">attractive</option>
+                                    <option value="abominable">abominable</option>
+                                    <option value="adorable">adorable</option>
+                                    <option value="aggressive">aggressive</option>
+                                    <option value="adventurous">adventurous</option>
+                                    <option value="artistic">artistic</option>
+                                    <option value="absent-minded">absent-minded</option>
+                                    <option value="average">average</option>
+                                    <option value="absurd">average</option>
+                                    <option value="arrogant">average</option>
+                                    <option value="average">awkward</option>
+                                    <option value="average">angelic</option>
+                                    <option value="athletic">athletic</option>
+                                    <option value="" data-custom="true" title="add your own">
+                                        (free style – add your own)
+                                    </option>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control mt-2 d-none" id="adjCustom"
+                                placeholder="Type your own adjective starting with A…">
+                        </div>
+
+                        <!-- Noun (N) -->
+                        <div class="col-12 col-md-4">
+                            <div class="ps-label mb-1">Noun (N)</div>
+                            <div class="hint-text mb-2">Person or thing.</div>
+                            <div class="input-group">
+                                <span class="input-group-text">NOUN</span>
+                                <select class="form-select" id="nounSelect">
+                                    <option value="">Choose a noun…</option>
+                                    <option value="niece">niece</option>
+                                    <option value="nephew">nephew</option>
+                                    <option value="neighbor">neighbor</option>
+                                    <option value="nanny">nurse</option>
+                                    <option value="nurse">nurse</option>
+                                    <option value="ninja">ninja</option>
+                                    <option value="novelist">novelist</option>
+                                    <option value="navigator">navigator</option>
+                                    <option value="nightingale">nightingale</option>
+                                    <option value="notebook">notebook</option>
+                                    <option value="necklace">necklace</option>
+                                    <option value="newbie">newbie</option>
+                                    <option value="nap">nap</option>
+                                    <option value="nose">nose</option>
+                                    <option value="noodle">noodle</option>
+                                    <option value="nut">nut</option>
+                                    <option value="nomad">nomad</option>
+                                    <option value="nacho">nacho</option>
+                                    <option value="nugget">nugget</option>
+                                    <option value="night">night</option>
+                                    <option value="narrator">narrator</option>
+                                    <option value="Nicole">Nicole</option>
+                                    <option value="Nicolas">Nicolas</option>
+
+
+
+                                    <option value="" data-custom="true" title="add your own">
+                                        (free style – add your own)
+                                    </option>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control mt-2 d-none" id="nounCustom"
+                                placeholder="Type your own noun starting with N…">
+                        </div>
+
+                        <!-- Verb (V) -->
+                        <div class="col-12 col-md-4">
+                            <div class="ps-label mb-1">Verb (V)</div>
+                            <div class="hint-text mb-2">Action word.</div>
+                            <div class="input-group">
+                                <span class="input-group-text">VERB</span>
+                                <select class="form-select" id="verbSelect">
+                                    <option value="">Choose a verb…</option>
+                                    <option value="vomited">vomited</option>
+                                    <option value="vanished">vanished</option>
+                                    <option value="visited">visited</option>
+                                    <option value="voted">voted</option>
+                                    <option value="volunteered">volunteered</option>
+                                    <option value="vacuumed">vacuumed</option>
+                                    <option value="vacationed">vacationed</option>
+                                    <option value="vibrated">vibrated</option>
+                                    <option value="ventured">ventured</option>
+                                    <option value="viewed">viewed</option>
+                                    <option value="vented">vented</option> 
+                                    <option value="vibed">vibed</option> 
+                                    <option value="vaporized">vaporized</option> 
+                                    <option value="vaccinated">vaccinated</option> 
+                                    <option value="validated">validated</option>
+                                    <option value="veered">veered</option>
+                                    <option value="vilified">vilified</option>
+
+                                    <option value="" data-custom="true" title="add your own">
+                                        (free style – add your own)
+                                    </option>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control mt-2 d-none" id="verbCustom"
+                                placeholder="Type your own verb starting with V…">
+                        </div>
+                    </div>
+
+                    <hr class="hair">
+
+                    <!-- Sentence display -->
+                    <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+                        <div class="ps-label mb-0">Your mnemonic sentence</div>
+                        <div class="d-flex gap-2">
+                            <span class="tag-pill"><span>A</span>adjective</span>
+                            <span class="tag-pill"><span>N</span>noun</span>
+                            <span class="tag-pill"><span>V</span>verb</span>
+                        </div>
+                    </div>
+
+                    <div class="sentence-display mt-1">
+                        <div id="mnemonicSentence" class="fs-4">
+                            <span class="placeholder">Pick some words (or add your own) to see your sentence here…</span>
+                        </div>
+                    </div>
+
+                    <p class="hint-text mt-3 mb-0">
+                        Tip: Create the <strong>silliest</strong> A–N–V sentence you can.
+                        The stronger the mental picture, the easier it is to remember.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        &copy; 2025 Sky4Tech, LLC
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Animated nav-ink -->
+    <script>
+        (function () {
+            const nav = document.getElementById('mainNav');
+            if (!nav) return;
+            const list = nav.querySelector('.navbar-nav');
+            if (!list) return;
+            const links = Array.from(list.querySelectorAll('.nav-link'));
+            const ink = nav.querySelector('.nav-ink');
+            if (!ink) return;
+
+            const active = list.querySelector('.nav-link.active') || links[0];
+
+            function moveInk(el) {
+                if (!el) return;
+                const rect = el.getBoundingClientRect();
+                const hostRect = list.getBoundingClientRect();
+                ink.style.left = (rect.left - hostRect.left) + 'px';
+                ink.style.width = rect.width + 'px';
+            }
+            moveInk(active);
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => moveInk(link));
+                link.addEventListener('focus', () => moveInk(link));
+            });
+            list.addEventListener('mouseleave', () => moveInk(active));
+            window.addEventListener('resize', () => moveInk(active));
+        })();
+    </script>
+
+    <!-- Mnemonic builder logic -->
+    <script>
+        const adjSelect = document.getElementById('adjSelect');
+        const nounSelect = document.getElementById('nounSelect');
+        const verbSelect = document.getElementById('verbSelect');
+
+        const adjCustom = document.getElementById('adjCustom');
+        const nounCustom = document.getElementById('nounCustom');
+        const verbCustom = document.getElementById('verbCustom');
+
+        const sentenceEl = document.getElementById('mnemonicSentence');
+
+        function isCustomOption(selectEl) {
+            const opt = selectEl.options[selectEl.selectedIndex];
+            return opt && opt.dataset && opt.dataset.custom === 'true';
+        }
+
+        function toggleCustom(selectEl, inputEl) {
+            if (isCustomOption(selectEl)) {
+                inputEl.classList.remove('d-none');
+                inputEl.focus();
+            } else {
+                inputEl.classList.add('d-none');
+            }
+        }
+
+        function getWord(selectEl, inputEl) {
+            if (isCustomOption(selectEl)) {
+                return inputEl.value.trim();
+            }
+            return (selectEl.value || '').trim();
+        }
+
+        function updateSentence() {
+            const adj = getWord(adjSelect, adjCustom);
+            const noun = getWord(nounSelect, nounCustom);
+            const verb = getWord(verbSelect, verbCustom);
+
+            const parts = [adj, noun, verb].filter(Boolean);
+            if (parts.length === 0) {
+                sentenceEl.innerHTML = '<span class="placeholder">Pick some words (or add your own) to see your sentence here…</span>';
+                return;
+            }
+            const sentence = parts.join(' ');
+            sentenceEl.textContent = sentence.charAt(0).toUpperCase() + sentence.slice(1) + '.';
+        }
+
+        adjSelect.addEventListener('change', () => {
+            toggleCustom(adjSelect, adjCustom);
+            updateSentence();
+        });
+        nounSelect.addEventListener('change', () => {
+            toggleCustom(nounSelect, nounCustom);
+            updateSentence();
+        });
+        verbSelect.addEventListener('change', () => {
+            toggleCustom(verbSelect, verbCustom);
+            updateSentence();
+        });
+
+        [adjCustom, nounCustom, verbCustom].forEach(input => {
+            input.addEventListener('input', updateSentence);
+        });
+
+        updateSentence();
+    </script>
+</body>
+
+</html>
