@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Video Clips + Russian Translation Practice</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    .page-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem 3rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .page-intro {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .clip-section {
+      margin-bottom: 2rem;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+      border: 1px solid #e0e4f0;
+    }
+
+    .clip-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .clip-header-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .clip-time-range {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+    .video-thumbnail {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-thumbnail::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.55));
+    }
+
+    .yt-label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+    }
+
+.custom-video {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #000;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.custom-thumb {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.play-button::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-35%, -50%);
+  border-style: solid;
+  border-width: 15px 0 15px 25px;
+  border-color: transparent transparent transparent white;
+}
+
+
+    .clip-instruction {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .card {
+      flex: 1 1 260px;
+      background: #f9fafc;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      border: 1px solid #e0e4f0;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-description {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 0.75rem;
+    }
+
+    .vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .vocab-table th,
+    .vocab-table td {
+      padding: 0.3rem 0.4rem;
+      border-bottom: 1px solid #e3e6f2;
+      vertical-align: top;
+    }
+
+    .vocab-table th {
+      text-align: left;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #777;
+    }
+
+    .vocab-rus {
+      font-weight: 600;
+    }
+
+    .vocab-note {
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    .examples-list {
+      padding-left: 1.1rem;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .examples-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .examples-list .label {
+      font-weight: 600;
+    }
+
+    .examples-list .ru {
+      color: #1c5097;
+    }
+
+    .examples-list .en {
+      color: #444;
+    }
+
+    .examples-note {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 600px) {
+      .clip-section {
+        padding: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-container">
+  <h1>“Gentelmen of Fortune” &mdash; Russian Listening and Translation</h1>
+  <p class="page-intro">
+    Click the clip in each section to play part of the YouTube video.
+    Then study the new vocabulary and example sentences, and discuss the translation.
+  </p>
+
+  <!-- =========================================================
+       SECTION 1 TEMPLATE – first 20 minutes of the video
+       (You can duplicate this <section> and change IDs/times
+       for more clips or different videos.)
+       ========================================================= -->
+  <section class="clip-section">
+    <div class="clip-header">
+      <div class="clip-header-title">
+        Section 1: Clip from 0:00–20:00
+      </div>
+      <div class="clip-time-range">
+        Video: 1971 &mdash; Gentelmen of Fortune (YouTube)
+      </div>
+    </div>
+
+
+    <div class="custom-video" 
+        data-src="https://www.youtube.com/embed/8tJPKSz6Gaw?rel=0&modestbranding=1">
+      
+      <img class="custom-thumb"
+          src="https://img.youtube.com/vi/XukcyHljlCE/hqdefault.jpg"
+          alt="Video Thumbnail">
+
+      <div class="play-button"></div>
+    </div>
+
+    <!-- VIDEO CLIP AREA -->
+
+
+    <p class="clip-instruction">
+      Watch this part of the video once without pausing. Then watch again and
+      focus on the words and phrases below. Try to catch them in the audio.
+    </p>
+
+    <div class="cards-row">
+      <!-- VOCABULARY CARD -->
+      <article class="card vocab-card">
+        <h3>New Vocabulary</h3>
+        <p class="card-description">
+          Replace these sample words with real vocabulary from this section of the video.
+          Use stress marks or transliteration if helpful for your class.
+        </p>
+
+        <table class="vocab-table">
+          <thead>
+            <tr>
+              <th>Russian</th>
+              <th>Transcription</th>
+              <th>English Meaning</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- EXAMPLE ROWS – edit / replace with your own words -->
+            <tr>
+              <td class="vocab-rus">наде́жда</td>
+              <td>[na-DYEZH-da]</td>
+              <td>hope</td>
+              <td class="vocab-note">Abstract noun; often used with “искать надежду”.</td>
+            </tr>
+            <tr>
+              <td class="vocab-rus">изме́нение</td>
+              <td>[iz-myé-nee-ye]</td>
+              <td>change</td>
+              <td class="vocab-note">Can mean a change or transformation.</td>
+            </tr>
+            <tr>
+              <td class="vocab-rus">по́иск</td>
+              <td>[PO-isk]</td>
+              <td>search, quest</td>
+              <td class="vocab-note">Related to the theme “Year in Search”.</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </article>
+
+
+  <section class="clip-section">
+    <div class="clip-header">
+      <div class="clip-header-title">
+        Section 2: Clip from 0:20–40:00
+      </div>
+      <div class="clip-time-range">
+        Video: 1971 &mdash; Gentelmen of Fortune (YouTube)
+      </div>
+    </div>
+
+
+
+
+    <div class="custom-video" 
+        data-src="https://www.youtube.com/embed/8tJPKSz6Gaw?start=1200&rel=0&modestbranding=1">
+      
+      <img class="custom-thumb"
+          src="https://img.youtube.com/vi/XukcyHljlCE/hqdefault.jpg"
+          alt="Video Thumbnail">
+
+      <div class="play-button"></div>
+    </div>
+
+    <div class="cards-row">
+      <!-- VOCABULARY CARD -->
+      <article class="card vocab-card">
+        <h3>New Vocabulary</h3>
+        <p class="card-description">
+          Replace these sample words with real vocabulary from this section of the video.
+          Use stress marks or transliteration if helpful for your class.
+        </p>
+
+        <table class="vocab-table">
+          <thead>
+            <tr>
+              <th>Russian</th>
+              <th>Transcription</th>
+              <th>English Meaning</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- EXAMPLE ROWS – edit / replace with your own words -->
+            <tr>
+              <td class="vocab-rus">наде́жда</td>
+              <td>[na-DYEZH-da]</td>
+              <td>hope</td>
+              <td class="vocab-note">Abstract noun; often used with “искать надежду”.</td>
+            </tr>
+            <tr>
+              <td class="vocab-rus">изме́нение</td>
+              <td>[iz-myé-nee-ye]</td>
+              <td>change</td>
+              <td class="vocab-note">Can mean a change or transformation.</td>
+            </tr>
+            <tr>
+              <td class="vocab-rus">по́иск</td>
+              <td>[PO-isk]</td>
+              <td>search, quest</td>
+              <td class="vocab-note">Related to the theme “Year in Search”.</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       TO ADD MORE SECTIONS:
+       1. Copy the entire <section class="clip-section">...</section>
+       2. Change:
+          - the heading (Section 2, times, etc.)
+          - data-start / data-end
+          - video-thumbnail background URL if using a different video
+          - vocab table and example sentences.
+       ========================================================= -->
+
+</div>
+
+<!--
+<script>
+  // Simple event delegation to handle any number of video thumbnails on the page
+  document.addEventListener("click", function (event) {
+    const thumb = event.target.closest(".video-thumbnail");
+    if (!thumb) return;
+
+    const wrapper = thumb.parentElement;
+    const videoId = thumb.dataset.videoId;
+    const start = thumb.dataset.start || 0;
+    const end = thumb.dataset.end || "";
+
+    // const src = `https://www.youtube.com/embed/${videoId}` +
+    //             `?start=${start}` +
+    //             (end ? `&end=${end}` : "") +
+    //             `&autoplay=1&rel=0&modestbranding=1`;
+
+    const src = `https://www.youtube.com/embed/${videoId}` +
+                `?start=${start}` +
+                (end ? `&end=${end}` : "") +
+                `&autoplay=1&rel=0&modestbranding=1`;
+
+
+
+    const iframe = document.createElement("iframe");
+    iframe.setAttribute("src", src);
+    iframe.setAttribute("title", "YouTube video player");
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute(
+      "allow",
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    );
+    // 👇 This line helps satisfy YouTube's referrer requirement
+    iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+    iframe.setAttribute("allowfullscreen", "true");
+    iframe.style.position = "absolute";
+    iframe.style.inset = "0";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+
+    thumb.remove();
+    wrapper.appendChild(iframe);
+  });
+</script>
+-->
+<script>
+document.addEventListener("click", function (e) {
+  const box = e.target.closest(".custom-video");
+  if (!box) return;
+
+  const src = box.dataset.src;
+  const iframe = document.createElement("iframe");
+
+  iframe.src = src;
+  iframe.allowFullscreen = true;
+  iframe.frameBorder = 0;
+  iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share";
+  iframe.style.position = "absolute";
+  iframe.style.inset = "0";
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+
+  box.innerHTML = ""; 
+  box.appendChild(iframe);
+});
+</script>
+</body>
+</html>
