@@ -78,43 +78,5 @@ function createAudioButton(text, audioPath = '../assets/sound/male/') {
     return btn;
 }
 
-/**
- * Attach overlay audio buttons to images with class `img-with-audio`.
- * This keeps per-page markup minimal; images should carry a `data-text` attribute
- * whose value maps to the mp3 filename (e.g. data-text="э?").
- */
-function attachImageAudio() {
-    if (typeof createAudioButton !== 'function') return;
-    document.querySelectorAll('img.img-with-audio').forEach(img => {
-        try {
-            // Avoid duplicate buttons
-            if (img.parentElement.querySelector('.speak-btn')) return;
-            const text = (img.dataset.text || '').trim();
-            if (!text) return;
 
-            // Ensure the image is wrapped by a positionable container
-            let wrapper = img.parentElement;
-            if (getComputedStyle(wrapper).position === 'static') {
-                const wrap = document.createElement('div');
-                wrap.className = 'position-relative d-inline-block';
-                wrapper.replaceChild(wrap, img);
-                wrap.appendChild(img);
-                wrapper = wrap;
-            }
 
-            const btn = createAudioButton(text, '../assets/sound/male/words/');
-            btn.classList.add('position-absolute', 'top-0', 'end-0', 'm-2', 'img-sound-btn');
-
-            wrapper.appendChild(btn);
-        } catch (e) {
-            // swallowing errors so other pages aren't impacted
-            console.warn('attachImageAudio error', e);
-        }
-    });
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', attachImageAudio);
-} else {
-    attachImageAudio();
-}

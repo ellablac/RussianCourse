@@ -19,19 +19,8 @@
 </head>
 
 <body>
-    <!-- Keep the site header/menu consistent with existing pages -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html"></a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="../lessons.html">Lessons</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../resources/resources.html">Resources</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
+
 
 
     <section class="text-center">
@@ -427,53 +416,21 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js "></script>
-    <script src="../assets/js/audioUtils.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js " defer></script>
+    <script src="../assets/js/audioUtils.js " defer></script>
+    <script src="../assets/js/navbar.js" defer></script>
+    <script src="../assets/js/site-search.js" defer></script>
+    <script src="../assets/js/lib.js " defer></script>
 
     <script>
-        (function() {
-            // Add a small speaker button to each alphabet row using the shared function
-            function decorateTable() {
-                document.querySelectorAll('.alphabet-table tbody tr').forEach(tr => {
-                    const cells = tr.querySelectorAll('td');
-                    if (cells.length < 3) return;
-                    const say = (cells[2].textContent || '').trim() || (cells[0].textContent || '').trim();
-                    if (!say) return;
-                    if (cells[0].querySelector('.speak-btn')) return;
-                    // Use the shared createAudioButton function
-                    const btn = createAudioButton(say, '../assets/sound/male/');
-                    cells[0].prepend(btn);
-                });
-            }
-
-            // Add a speaker button with audio to any <li class="word-with-audio " data-text="... ">
-            function decorateWords() {
-                document.querySelectorAll('.word-with-audio').forEach(li => {
-                    // Prevent duplicate buttons
-                    if (li.querySelector('.speak-btn')) return;
-
-                    // Pull Russian text from data-text (preferred) or fallback to text content
-                    const text = (li.dataset.text || li.textContent || '').trim();
-                    if (!text) return;
-
-                    const btn = createAudioButton(text, '../assets/sound/male/words/');
-                    li.prepend(btn);
-                });
-            }
-
-            // Run both decorators
-            function decorateAll() {
-                decorateTable();
-                decorateWords();
-            }
-
-            // Ensure buttons are added when voices are loaded or DOM is ready
-            const synth = window.speechSynthesis;
-            if (synth && typeof synth.onvoiceschanged !== 'undefined') {
-                synth.onvoiceschanged = decorateAll;
-            }
-            window.addEventListener('DOMContentLoaded', decorateAll);
-        })();
+        function init() {
+            decorateTable('../assets/sound/male/');
+            decorateWords('../assets/sound/male/words/');
+            decorateImages('../assets/sound/male/words/');
+            injectNavbar("#navbar-placeholder");
+            initSiteSearch();  
+        }
+        window.addEventListener('DOMContentLoaded', init);
     </script>
 
     <script>

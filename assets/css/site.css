@@ -884,3 +884,21 @@ tr.divider>td {
     border-top: 1px solid rgba(59, 130, 246, .35);
     border-bottom: 1px solid rgba(59, 130, 246, .20);
 }
+
+/* =========================
+   Vocabulary cards
+   ========================= */
+.vocab-card {
+  text-align: center;
+}
+
+/* =========================
+   Vocabulary card images
+   ========================= */
+.vocab-card img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
