@@ -16,8 +16,20 @@ function speak(text, lang = 'ru-RU') {
     u.lang = lang;
     u.rate = 0.9;
     const voices = synth.getVoices ? synth.getVoices() : [];
-    const ru = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('ru'));
-    if (ru) u.voice = ru;
+    const preferred = voices.find(v => {
+        const name = v.name ? v.name.toLowerCase() : '';
+        return name.includes('google') && name.includes('русский');
+    });
+    if (preferred) {
+        u.voice = preferred;
+        console.info('Speech voice selected:', preferred.name, preferred.lang || '');
+    } else {
+        const ru = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('ru'));
+        if (ru) {
+            u.voice = ru;
+            console.info('Speech voice selected:', ru.name, ru.lang || '');
+        }
+    }
     synth.cancel();
     synth.speak(u);
 }
