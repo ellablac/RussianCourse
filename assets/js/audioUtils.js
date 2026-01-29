@@ -2,6 +2,11 @@
  * Speak the given text in Russian using speech synthesis (Web Speech API).
  * Simple Text-to-speech API, no audio files needed. The quality of the russian
  * voice is not great. Currently used as a fallback if no audio file is found.
+ * 
+ * Update: Added logic to select better voices if available: Google Russian voice
+ * (Chrome) or Microsoft Svetlana Natural Online (Edge). These sound much better,
+ * but may not be available in all browsers. Using audio files is still preferred
+ * for robustness and portability.
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
  * @param {string} text - The text to speak.
  * @param {string} [lang='ru-RU'] - The language code for speech synthesis.
@@ -16,19 +21,24 @@ function speak(text, lang = 'ru-RU') {
     u.lang = lang;
     u.rate = 0.9;
     const voices = synth.getVoices ? synth.getVoices() : [];
-    const preferred = voices.find(v => {
+    const googleVoice = voices.find(v => {
         const name = v.name ? v.name.toLowerCase() : '';
         return name.includes('google') && name.includes('русский');
     });
-    if (preferred) {
-        u.voice = preferred;
-        console.info('Speech voice selected:', preferred.name, preferred.lang || '');
-    } else {
-        const ru = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('ru'));
-        if (ru) {
-            u.voice = ru;
-            console.info('Speech voice selected:', ru.name, ru.lang || '');
-        }
+    const svetlana = voices.find(v => {
+        const name = v.name ? v.name.toLowerCase() : '';
+        return (
+            name.includes('microsoft') &&
+            name.includes('svetlana') &&
+            name.includes('online') &&
+            name.includes('natural')
+        );
+    });
+    const ru = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('ru'));
+    const selected = googleVoice || svetlana || ru;
+    if (selected) {
+        u.voice = selected;
+        console.info('Speech voice selected:', selected.name, selected.lang || '');
     }
     synth.cancel();
     synth.speak(u);
