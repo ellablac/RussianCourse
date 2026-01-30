@@ -427,7 +427,7 @@
   .lesson-level { color: #444; margin-top: 6px; }
   .small { font-size: 0.92rem; color: #555; }
 
-  .story-part { border: 1px solid #e6e6e6; border-radius: 14px; padding: 14px; margin: 14px 0; }
+  .story-part { border: 1px solid #e6e6e6; border-radius: 14px; padding: 14px; margin: 28px 0; }
 
   /* Two-column layout: image left, buttons+text right */
   .story-row{
@@ -580,17 +580,6 @@
 
     document.addEventListener("keydown", (e) => {
       if (!popup.hidden && e.key === "Escape") closePopup();
-    });
-  })();
-
-  // "Play" buttons: expose text via data-play-text (hook to your existing audio system)
-  (function () {
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest(".btn-play");
-      if (!btn) return;
-      console.log("Play text:", btn.getAttribute("data-play-text"));
-      // Example hook:
-      // window.playLessonText(btn.getAttribute("data-play-text"));
     });
   })();
 
