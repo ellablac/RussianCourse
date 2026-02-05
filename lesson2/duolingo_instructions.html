@@ -10,39 +10,41 @@
 
   <style>
     :root{
-      --bg1:#0b1020;
-      --bg2:#101a3a;
-      --card:#0f1733cc;
-      --border:#ffffff1f;
-      --text:#eaf0ff;
-      --muted:#b9c3e6;
-      --accent:#8ae6ff;
-      --accent2:#caa6ff;
+      --bg1:#f6f7fb;
+      --bg2:#eef1f8;
+      --card:#ffffffcc;
+      --border:#1c27421a;
+      --text:#1c2433;
+      --muted:#5b667b;
+      --accent:#1f6feb;
+      --accent2:#ff7a59;
     }
     body{
       color:var(--text);
       background:
-        radial-gradient(1200px 600px at 20% 10%, #2a2f77 0%, transparent 60%),
-        radial-gradient(900px 700px at 80% 20%, #4a2d6f 0%, transparent 55%),
+        radial-gradient(1200px 600px at 20% 10%, #d8e5ff 0%, transparent 60%),
+        radial-gradient(900px 700px at 80% 20%, #ffe3d4 0%, transparent 55%),
         linear-gradient(160deg, var(--bg1), var(--bg2));
       min-height:100vh;
     }
     .hero{
       border:1px solid var(--border);
-      background: linear-gradient(135deg, #111a3d66, #1a0f2f66);
+      background: linear-gradient(135deg, #ffffffcc, #f5f7ffcc);
       backdrop-filter: blur(8px);
       border-radius: 1.25rem;
+      box-shadow: 0 10px 30px #0f1b3312;
     }
     .card-glass{
       border:1px solid var(--border);
       background: var(--card);
       backdrop-filter: blur(10px);
       border-radius: 1.25rem;
+      box-shadow: 0 8px 24px #0f1b3312;
     }
     .muted{ color: var(--muted); }
     .badge-soft{
       border:1px solid var(--border);
-      background: #ffffff10;
+      background: #f2f5ff;
       color: var(--text);
       font-weight: 600;
     }
@@ -60,27 +62,29 @@
       align-items:center;
       justify-content:center;
       border:1px solid var(--border);
-      background:#ffffff12;
+      background:#eef2ff;
       font-weight: 700;
       margin-right:.6rem;
       flex: 0 0 auto;
     }
     .screenshot{
-      border:1px dashed #ffffff4a;
+      border:1px dashed #a8b2c7;
       border-radius: 1rem;
-      background:#00000026;
+      background:#f8f9fd;
       padding: .75rem;
     }
     .screenshot img{
       width: 100%;
       height: auto;
+      max-width: 250px;
       border-radius: .8rem;
+      margin: 0 auto;
       display:block;
     }
     .callout{
       border-left: 4px solid var(--accent);
       padding: .8rem 1rem;
-      background: #ffffff10;
+      background: #f6f8ff;
       border-radius: .9rem;
     }
     .callout-warn{
@@ -90,7 +94,7 @@
       border-left-color:#7dffb3;
     }
     a{ color: var(--accent); }
-    a:hover{ color: #b6f2ff; }
+    a:hover{ color: #174ea6; }
     .toc a{
       text-decoration:none;
     }
@@ -98,15 +102,20 @@
       text-decoration: underline;
     }
     code, .kbd{
-      color: #e6e6ff;
+      color: #1e293b;
     }
     .kbd{
       border:1px solid var(--border);
-      background:#ffffff10;
+      background:#eef2ff;
       border-radius:.5rem;
       padding:.1rem .4rem;
       font-size:.95em;
     }
+    .text-xs{ 
+      font-size: .75rem; 
+    }
+
+  .hidden-temp{ display: none; }
   </style>
 </head>
 
@@ -121,7 +130,7 @@
             <span class="badge badge-soft rounded-pill px-3 py-2">Beginner-friendly</span>
           </div>
           <h1 class="display-6 mb-2">
-            Use <span class="grad-text">Duolingo</span> to reinforce our lessons
+            We will be using <span class="grad-text">Duolingo</span> to reinforce our lessons and for extra practice.
           </h1>
           <p class="muted mb-0">
             This page explains how to join our Duolingo classroom, complete assignments, and avoid common setup issues.
@@ -144,7 +153,7 @@
         </div>
         <div class="col-lg-4">
           <div class="callout callout-warn">
-            <strong>No credit card needed.</strong> Ignore upgrade prompts. Premium features are optional and not required for class.
+            <strong>Standard Duolingo accounts are <strong>free</strong>.</strong> Ignore upgrade prompts. Premium features are optional and not required for class.
           </div>
         </div>
       </div>
@@ -161,16 +170,18 @@
         <li><a href="#assignments">How to open and complete assignments</a></li>
         <li><a href="#premium">Upgrade prompts (what to do)</a></li>
         <li><a href="#existing">If you already have a Duolingo account</a></li>
-        <li><a href="#email-mismatch">Email mismatch options (read this carefully)</a></li>
+        <ul>
+          <li><a href="#email-mismatch">Email mismatch options</a></li>
+        </ul>
       </ul>
     </section>
 
     <!-- General directions -->
     <section id="general" class="card-glass p-4 mb-4">
-      <h2 class="h4 mb-3">General directions (free + easiest setup)</h2>
+      <h2 class="h4 mb-3">General directions (easiest setup)</h2>
 
       <p class="muted">
-        Duolingo is <strong>free</strong> to use. For the most seamless experience, please sign in using
+        For the most seamless experience, please sign in using
         <strong>“Continue with Google”</strong> (not just typing your Google email and making a separate password).
         That way you log in with the same Google account you already use, and you don’t have to remember two passwords.
       </p>
@@ -220,14 +231,12 @@
           </ol>
         </div>
 
-        <div class="col-lg-5">
+        <div class="col-lg-3 mx-lg-auto">
           <div class="screenshot">
-            <!-- Replace src with your real image path -->
-            <img src="images/duolingo-login-google-placeholder.png" alt="Screenshot placeholder: Duolingo login screen showing Continue with Google button">
-            <div class="small muted mt-2">
-              <strong>Screenshot:</strong> Example login screen with <em>Continue with Google</em>.
+            <img src="images/duolingo-login-google.jpg" alt="Screenshot : Duolingo login screen showing Continue with Google button">
+            <div class="text-xs muted mt-2">
+               Example login screen with <em>Continue with Google</em>.
               <br>
-              <span class="muted">Replace this image with your real screenshot when ready.</span>
             </div>
           </div>
         </div>
@@ -246,7 +255,7 @@
               <div>
                 <div class="fw-semibold">Select the course: <span class="grad-text">Russian</span></div>
                 <div class="muted">
-                  If Duolingo asks which language you want to learn, choose <strong>Russian</strong>.
+                  When Duolingo asks which language you want to learn, choose <strong>Russian</strong>.
                 </div>
               </div>
             </li>
@@ -254,10 +263,7 @@
             <li class="d-flex mb-3">
               <span class="step-num">2</span>
               <div>
-                <div class="fw-semibold">Choose your “base language” (optional)</div>
-                <div class="muted">
-                  Many students use English instructions. If you see a choice like “Russian for English speakers,” pick that.
-                </div>
+                <div class="fw-semibold">Choose your “base language”: <span class="grad-text">English</span></div>
               </div>
             </li>
 
@@ -286,8 +292,8 @@
           </ol>
         </div>
 
-        <div class="col-lg-5">
-          <div class="screenshot">
+        <div class="col-lg-3 mx-lg-auto">
+          <div class="screenshot hidden-temp">
             <!-- Replace src with your real image path -->
             <img src="images/duolingo-russian-course-placeholder.png" alt="Screenshot placeholder: Selecting Russian course / placement test prompt">
             <div class="small muted mt-2">
@@ -336,35 +342,22 @@
             <li class="d-flex mb-3">
               <span class="step-num">3</span>
               <div>
-                <div class="fw-semibold">Complete the assigned lesson(s)</div>
+                <div class="fw-semibold">Earn the assigned number of XP (points).</div>
                 <div class="muted">
-                  Do the required number of lessons or the required unit steps.
+                  Duolingo only lets me assign XP, but I can’t control which lessons you do. Try to do at least the assigned XP.
                   Your completion should be tracked automatically in Duolingo Classroom.
-                </div>
-              </div>
-            </li>
-
-            <li class="d-flex mb-0">
-              <span class="step-num">4</span>
-              <div>
-                <div class="fw-semibold">If the link opens the wrong account</div>
-                <div class="muted">
-                  That usually means you were signed into a different Google/Duolingo account.
-                  See <a href="#email-mismatch">Email mismatch options</a>.
                 </div>
               </div>
             </li>
           </ol>
         </div>
 
-        <div class="col-lg-5">
+        <div class="col-lg-3 mx-lg-auto">
           <div class="screenshot">
             <!-- Replace src with your real image path -->
-            <img src="images/duolingo-assignment-email-placeholder.png" alt="Screenshot placeholder: Duolingo assignment email">
-            <div class="small muted mt-2">
-              <strong>Screenshot:</strong> Example assignment email from Duolingo.
-              <br>
-              <span class="muted">Replace this image with your real screenshot when ready.</span>
+            <img src="images/duolingo-assignment.jpg" alt="Screenshot placeholder: Duolingo assignment email">
+            <div class="text-xs muted mt-2">
+              Example assignment email from Duolingo.
             </div>
           </div>
         </div>
@@ -377,7 +370,7 @@
 
       <div class="callout callout-warn">
         <strong>Ignore “Try Premium / Super Duolingo” prompts.</strong>
-        You never need to enter a credit card for our class.
+        You never need to enter a credit card to use duolingo in our class.
         Premium is only if <em>you personally</em> want extra features.
       </div>
 
@@ -386,11 +379,10 @@
           <ul class="mb-0">
             <li class="muted">If you see a pop-up, look for buttons like <strong>Not now</strong>, <strong>Maybe later</strong>, or an <strong>X</strong> in the corner.</li>
             <li class="muted">The free version is enough to complete all our assignments.</li>
-            <li class="muted">If you ever see something that looks like payment is required for an assignment, tell me. That is not expected.</li>
           </ul>
         </div>
-        <div class="col-lg-5">
-          <div class="screenshot">
+        <div class="col-lg-3 mx-lg-auto">
+          <div class="screenshot hidden-temp">
             <!-- Replace src with your real image path -->
             <img src="images/duolingo-upgrade-prompt-placeholder.png" alt="Screenshot placeholder: Duolingo premium upgrade prompt">
             <div class="small muted mt-2">
@@ -476,26 +468,19 @@
 
       <div class="mb-0 callout callout-warn">
         <h3 class="h6 mb-2">Option C (special case): “Change the Google Classroom email”</h3>
-        <div class="muted">
-          This is usually <strong>not possible</strong> for a student to do, and it’s not something I can simply “change” on my side.
-          Google Classroom identity is tied to your Google account.
+
           <ul class="mt-2 mb-0">
-            <li>If your class account is a <strong>school/work managed</strong> Google account, only the organization’s Google admin can rename or migrate it.</li>
-            <li>If you want to use a different Google account for class, the practical approach is usually: I can <strong>invite the other Google account</strong> to the class instead (and you join with that account).</li>
+            <li>If you want to use your duolingo email for our class, I can <strong>invite the other Google account</strong> to the class instead (and you join with that account).</li>
           </ul>
-          <div class="mt-2">
-            If you’re stuck, tell me which email you want to use for Duolingo, and we’ll pick the cleanest path.
-          </div>
-        </div>
       </div>
 
       <hr class="border-0 my-4" style="height:1px;background:var(--border);" />
 
       <div class="row g-3">
-        <div class="col-lg-5">
-          <div class="screenshot">
+        <div class="col-lg-3 hidden-temp mx-lg-auto">
+          <div class="screenshot hidden-temp">
             <!-- Replace src with your real image path -->
-            <img src="images/duolingo-account-settings-placeholder.png" alt="Screenshot placeholder: Duolingo account settings showing email">
+            <img src="images/duolingo-account-settings.jpg" alt="Screenshot: Duolingo account settings showing email">
             <div class="small muted mt-2">
               <strong>Screenshot:</strong> Where to find account/email settings (example).
               <br>
@@ -518,25 +503,12 @@
         <div>
           <div class="fw-semibold">Need help?</div>
           <div class="muted">
-            If anything looks confusing (wrong account, missing assignment, premium prompts), message me and include a screenshot of what you see.
+            If anything looks confusing let me know!
           </div>
-        </div>
-        <div class="text-md-end muted small">
-          Last updated: <span id="lastUpdated"></span>
         </div>
       </div>
     </footer>
   </main>
-
-  <script>
-    // Simple "last updated" stamp (client-side)
-    (function(){
-      const el = document.getElementById('lastUpdated');
-      if (!el) return;
-      const d = new Date();
-      el.textContent = d.toLocaleDateString(undefined, { year:'numeric', month:'long', day:'numeric' });
-    })();
-  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
