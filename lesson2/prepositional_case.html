@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prepositional Case (Предложный падеж)</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Shared site stylesheet -->
+  <link rel="stylesheet" href="../assets/css/site.css" />
+
+  <style>
+    :root {
+      --bg1: radial-gradient(1200px 800px at 10% 10%, #f7f3ff 0%, transparent 60%),
+        radial-gradient(1000px 800px at 90% 0%, #f1fbff 0%, transparent 65%),
+        linear-gradient(180deg, #ffffff, #fbfbff 35%, #f8fbff 100%);
+      --chip: rgba(255, 255, 255, .75);
+      --muted: rgba(0, 0, 0, .62);
+      --good: #198754;
+      --bad: #dc3545;
+      --accentA: rgba(168, 85, 247, .18);
+      --accentB: rgba(34, 197, 94, .16);
+      --accentC: rgba(255, 190, 100, .16);
+    }
+
+    body {
+      background: var(--bg1);
+      background-attachment: fixed;
+    }
+
+    .page-header {
+      padding-top: 2.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .soft-card {
+      border: 0;
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .72)),
+        radial-gradient(600px 400px at 18% 0%, var(--accentA), transparent 60%),
+        radial-gradient(600px 400px at 82% 0%, var(--accentB), transparent 60%),
+        radial-gradient(600px 400px at 50% 100%, var(--accentC), transparent 60%);
+      box-shadow: 0 8px 26px rgba(0, 0, 0, .06);
+    }
+
+    .legend-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      font-size: .92rem;
+      background: var(--chip);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+    }
+
+    .dot {
+      width: .75rem;
+      height: .75rem;
+      border-radius: 50%;
+      display: inline-block
+    }
+
+    .dot.where {
+      background: rgba(59, 130, 246, .9);
+    }
+
+    .dot.about {
+      background: rgba(168, 85, 247, .9);
+    }
+
+    .dot.form {
+      background: rgba(245, 158, 11, .9);
+    }
+
+    .ru {
+      font-size: 1.12rem;
+      font-weight: 650
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .pair-table th,
+    .pair-table td {
+      vertical-align: middle;
+    }
+
+    .ending {
+      font-weight: 800;
+      padding: .05rem .35rem;
+      border-radius: .5rem;
+      background: rgba(255, 255, 255, .7);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .05) inset;
+    }
+
+    .hint {
+      font-size: .95rem;
+      color: var(--muted);
+    }
+
+    .rule-box {
+      background: rgba(255, 255, 255, .35);
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid rgba(0, 0, 0, .06);
+    }
+
+    .practice-row {
+      border: 1px solid rgba(0, 0, 0, .06);
+      border-radius: 1rem;
+      padding: .75rem;
+      background: rgba(255, 255, 255, .55);
+    }
+
+    .practice-header {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      padding: 0 .25rem;
+    }
+
+    .feedback {
+      min-width: 2.2rem;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .sr-only {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden
+    }
+
+    /* keep long words from breaking layout */
+    ul,
+    ol,
+    li,
+    .ru {
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main class="container-lg">
+    <header class="page-header text-center">
+      <h2 class="text-gradient my-5">Prepositional Case (Предложный падеж)</h2>
+      <h3 class="mb-3">Today’s mission: notice the pattern, <span class="text-secondary">then name the rule</span> 🕵️‍♀️</h3>
+    </header>
+
+    <!-- 1) Reminder: words change endings -->
+    <section class="mb-4">
+      <div class="soft-card">
+        <p class="mb-2">
+          In Russian, words often <strong>change their endings</strong> depending on grammar.
+          This can happen because of:
+        </p>
+        <ul class="mb-2">
+          <li><strong>Tense</strong> (past / present / future)</li>
+          <li><strong>Number</strong> (singular / plural)</li>
+          <li><strong>Gender</strong> (masculine / feminine / neuter)</li>
+          <li><strong>Person</strong> (I / you / we / they)</li>
+          <li><strong>Case</strong> (the noun’s job in the sentence)</li>
+          <li>…and a few other categories</li>
+        </ul>
+        <p class="mb-0 hint">
+          Good news: you don’t need to know every rule right away. If you recognize the <em>base word</em>,
+          you can often guess the meaning from context.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2) What is a case? What is nominative? -->
+    <section class="mb-4">
+      <div class="soft-card">
+        <p class="mb-2">
+          One reason nouns (people/things) change endings is <strong>cases</strong>.
+          Russian has <strong>6 cases</strong>. The “default” case is the <strong>Nominative</strong> (Именительный).
+        </p>
+
+        <div class="row g-3 align-items-start">
+          <div class="col-lg-6">
+            <div class="rule-box">
+              <h4 class="h6 mb-2">Nominative = “default form”</h4>
+              <ul class="mb-2">
+                <li>Dictionary form of a noun</li>
+                <li>Often the <strong>subject</strong> of the sentence</li>
+              </ul>
+              <p class="mb-0 hint">
+                <strong>Subject</strong> = who/what performs the action or “what the sentence is about.”
+                <br>Example: <span class="ru" lang="ru">Ма́ма</span> is the subject in <span class="ru" lang="ru">Ма́ма здесь.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="rule-box">
+              <h4 class="h6 mb-2">Important note</h4>
+              <p class="mb-2">
+                In Russian, there is <strong>not always an explicit subject</strong>.
+              </p>
+              <ul class="mb-0">
+                <li><span class="ru" lang="ru">Хо́лодно.</span> = It’s cold. (no subject)</li>
+                <li><span class="ru" lang="ru">Мне ну́жно рабо́тать.</span> = I need to work. (no “I” as a subject)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) What is a preposition? -->
+    <section class="mb-4">
+      <div class="soft-card">
+        <p class="mb-2">
+          Today we look at the <strong>Prepositional case</strong> (Предложный падеж).
+        </p>
+        <p class="mb-2">
+          A <strong>preposition</strong> is a short word like:
+          <span class="ru" lang="ru">в</span> (in),
+          <span class="ru" lang="ru">на</span> (on/at),
+          <span class="ru" lang="ru">о / об</span> (about).
+          Prepositions often “invite” the next word to change its ending.
+        </p>
+
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="legend-chip"><span class="dot where"></span> Location: “Where?”</span>
+          <span class="legend-chip"><span class="dot about"></span> Topic: “About what?”</span>
+          <span class="legend-chip"><span class="dot form"></span> Form changes (endings)</span>
+        </div>
+
+        <hr class="my-3">
+
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <div class="rule-box">
+              <h4 class="h6 mb-2">1) Location (Where?)</h4>
+              <ul class="mb-0">
+                <li><span class="ru" lang="ru">Я в шко́л<span class="ending">е</span>.</span> (I’m at school.)</li>
+                <li><span class="ru" lang="ru">Кот на стол<span class="ending">е</span>.</span> (The cat is on the table.)</li>
+                <li><span class="ru" lang="ru">Мы в па́рк<span class="ending">е</span>.</span> (We’re in the park.)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="rule-box">
+              <h4 class="h6 mb-2">2) Topic (About what?)</h4>
+              <ul class="mb-0">
+                <li><span class="ru" lang="ru">Мы говори́м о ма́м<span class="ending">е</span>.</span> (We talk about mom.)</li>
+                <li><span class="ru" lang="ru">Я ду́маю о до́м<span class="ending">е</span>.</span> (I think about the house.)</li>
+                <li><span class="ru" lang="ru">О чём?</span> = About what?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-3 mb-0 hint">
+          You’ll often hear Prepositional with <strong>в / на</strong> (location) and <strong>о / об</strong> (topic).
+          The key is the ending change.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4) Detective: examples to deduce -->
+    <section class="mb-5">
+      <div class="soft-card">
+        <p class="mb-1">Let’s play detective 🕵️‍♀️.</p>
+        <p class="mb-3">Compare the <strong>Nominative</strong> (dictionary form) with the <strong>Prepositional</strong> (after a preposition). Try to <em>deduce</em> what changes.</p>
+
+        <div class="table-responsive">
+          <table class="table table-sm pair-table align-middle">
+            <thead>
+              <tr>
+                <th style="width: 30%">Nominative (И.п.)</th>
+                <th style="width: 35%">Preposition + Prepositional (П.п.)</th>
+                <th style="width: 35%">Simple meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="ru" lang="ru">шко́ла</span></td>
+                <td><span class="ru" lang="ru">в шко́л<span class="ending">е</span></span></td>
+                <td>in/at school</td>
+              </tr>
+              <tr>
+                <td><span class="ru" lang="ru">ма́ма</span></td>
+                <td><span class="ru" lang="ru">о ма́м<span class="ending">е</span></span></td>
+                <td>about mom</td>
+              </tr>
+              <tr>
+                <td><span class="ru" lang="ru">дом</span></td>
+                <td><span class="ru" lang="ru">в до́м<span class="ending">е</span></span></td>
+                <td>in the house</td>
+              </tr>
+              <tr>
+                <td><span class="ru" lang="ru">музе́й</span></td>
+                <td><span class="ru" lang="ru">в музе́<span class="ending">е</span></span></td>
+                <td>in the museum</td>
+              </tr>
+              <tr>
+                <td><span class="ru" lang="ru">о́кно</span></td>
+                <td><span class="ru" lang="ru">в окн<span class="ending">е</span></span></td>
+                <td>in the window (area)</td>
+              </tr>
+              <tr>
+                <td><span class="ru" lang="ru">мо́ре</span></td>
+                <td><span class="ru" lang="ru">на мо́р<span class="ending">е</span></span></td>
+                <td>at the sea</td>
+              </tr>
+              <tr>
+                <td><span class="ru" lang="ru">ночь</span></td>
+                <td><span class="ru" lang="ru">о но́ч<span class="ending">и</span></span></td>
+                <td>about the night</td>
+              </tr>
+              <tr>
+                <td><span class="ru" lang="ru">Росси́я</span></td>
+                <td><span class="ru" lang="ru">в Росси́<span class="ending">и</span></span></td>
+                <td>in Russia</td>
+              </tr>
+              <tr>
+                <td><span class="ru" lang="ru">ме́тро</span></td>
+                <td><span class="ru" lang="ru">в ме́тр<span class="ending">о</span></span></td>
+                <td>in the metro (no change)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mb-0 hint">
+          Question: do you mostly see <span class="ending">-е</span> or <span class="ending">-и</span>?
+          When does it stay the same?
+        </p>
+      </div>
+    </section>
+
+    <!-- 5) Reveal rule -->
+    <section class="mb-4">
+      <div class="soft-card">
+        <p class="text-center mb-2">
+          <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#ruleCollapse" role="button"
+            aria-expanded="false" aria-controls="ruleCollapse"
+            onclick="this.style.display='none'">
+            Click here to reveal the rule
+          </a>
+        </p>
+
+        <div class="collapse" id="ruleCollapse">
+          <div class="rule-box">
+            <h3 class="h5 text-gradient text-center mb-3">Prepositional case: the main pattern (singular)</h3>
+
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <div class="p-3 rounded-3" style="background: rgba(255,255,255,.55); border:1px solid rgba(0,0,0,.06);">
+                  <h4 class="h6 mb-2">Most common ending: <span class="ending">-е</span></h4>
+                  <ul class="mb-0">
+                    <li><strong>Feminine -а/-я</strong> → usually <span class="ending">-е</span>
+                      <br><span class="ru" lang="ru">школа → в школе</span>
+                    </li>
+                    <li><strong>Masculine consonant/-й</strong> → usually <span class="ending">-е</span>
+                      <br><span class="ru" lang="ru">дом → в доме</span>, <span class="ru" lang="ru">музей → в музее</span>
+                    </li>
+                    <li><strong>Neuter -о/-е</strong> → usually <span class="ending">-е</span>
+                      <br><span class="ru" lang="ru">окно → в окне</span>, <span class="ru" lang="ru">море → на море</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="p-3 rounded-3" style="background: rgba(255,255,255,.55); border:1px solid rgba(0,0,0,.06);">
+                  <h4 class="h6 mb-2">Common ending: <span class="ending">-и</span></h4>
+                  <ul class="mb-0">
+                    <li><strong>Feminine -ь</strong> → often <span class="ending">-и</span>
+                      <br><span class="ru" lang="ru">ночь → о ночи</span>
+                    </li>
+                    <li><strong>Nouns in -ия / -ие</strong> → often <span class="ending">-и</span>
+                      <br><span class="ru" lang="ru">Россия → в России</span>
+                      <br><span class="ru" lang="ru">здание → в здании</span> (example)
+                    </li>
+                    <li><strong>Some words don’t change</strong> (indeclinable)
+                      <br><span class="ru" lang="ru">метро → в метро</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3 p-3 rounded-3" style="background: rgba(255,255,255,.4); border:1px solid rgba(0,0,0,.06);">
+              <h4 class="h6 mb-2">Exception:</h4>
+              <p class="mb-0 hint">
+                A small set of masculine nouns sometimes uses <span class="ending">-у/-ю</span> for location:
+                <span class="ru" lang="ru">в лесу</span>, <span class="ru" lang="ru">в саду</span>, <span class="ru" lang="ru">на мосту</span>.
+                
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) Interactive practice -->
+    <section class="mb-5">
+      <div class="soft-card">
+        <h2 class="h5 mb-2">Interactive exercise</h2>
+        <p class="mb-3">
+          Type the correct form for the target case, then press <strong>Check</strong>.
+          <br><span class="hint">Tip: copy the exact spelling (including <span class="ru" lang="ru">ё</span> if shown).</span>
+        </p>
+
+        <div class="d-none d-flex flex-wrap gap-2 align-items-center mb-3">
+          <label class="legend-chip" for="caseMode">
+            <span class="dot form"></span>
+            Practice mode:
+          </label>
+
+          <select id="caseMode" class="form-select" style="max-width: 320px;">
+            <option value="prep" selected>Prepositional (П.п.) after a preposition</option>
+            <option value="nom">Nominative (И.п.) base form</option>
+          </select>
+
+          <button id="resetBtn" class="btn btn-outline-secondary btn-sm">Reset</button>
+        </div>
+
+        <div class="row g-3" id="practiceList" aria-live="polite" aria-atomic="true"></div>
+
+        <div class="mt-3 p-3 rounded-3" style="background: rgba(255,255,255,.35); border:1px solid rgba(0,0,0,.06);">
+          <p class="mb-1"><strong>Meaning-check questions</strong> (optional):</p>
+          <ul class="mb-0">
+            <li>What does <span class="ru" lang="ru">в школе</span> mean?</li>
+            <li>What does <span class="ru" lang="ru">о маме</span> mean?</li>
+            <li>What’s the difference between <span class="ru" lang="ru">дом</span> and <span class="ru" lang="ru">в доме</span>?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2025 Sky4Tech, LLC
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Navbar loader (your site) -->
+  <script src="../assets/js/navbar.js"></script>
+
+  <script>
+    // Practice dataset: keep it simple + common words
+    // Each item includes a "promptPreposition" for prep mode (so students see a natural phrase).
+    const ITEMS = [
+      { id: "school", nom: "школа", prep: "школе", promptPrep: "в ___", hint: "school (in/at)" },
+      { id: "mom", nom: "мама", prep: "маме", promptPrep: "о ___", hint: "mom (about)" },
+      { id: "home", nom: "дом", prep: "доме", promptPrep: "в ___", hint: "house (in)" },
+      { id: "park", nom: "парк", prep: "парке", promptPrep: "в ___", hint: "park (in)" },
+      { id: "museum", nom: "музей", prep: "музее", promptPrep: "в ___", hint: "museum (in)" },
+      { id: "window", nom: "окно", prep: "окне", promptPrep: "в ___", hint: "window (in)" },
+      { id: "sea", nom: "море", prep: "море", promptPrep: "на ___", hint: "sea (at)" },
+      { id: "night", nom: "ночь", prep: "ночи", promptPrep: "о ___", hint: "night (about)" },
+      { id: "russia", nom: "Россия", prep: "России", promptPrep: "в ___", hint: "Russia (in)" },
+      { id: "metro", nom: "метро", prep: "метро", promptPrep: "в ___", hint: "metro (in; no change)" },
+    ];
+
+    const practiceList = document.getElementById("practiceList");
+    const caseMode = document.getElementById("caseMode");
+    const resetBtn = document.getElementById("resetBtn");
+
+    function normalize(s) {
+      return (s || "")
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, " ");
+    }
+
+    function buildPractice() {
+      practiceList.innerHTML = "";
+
+      const headerRow = document.createElement("div");
+      headerRow.className = "col-12";
+      headerRow.innerHTML = `
+        <div class="row g-2 align-items-center practice-header">
+          <div class="col-lg-4">Given (base word)</div>
+          <div class="col-lg-4">Target</div>
+          <div class="col-lg-4">Your answer</div>
+        </div>
+      `;
+      practiceList.appendChild(headerRow);
+
+      ITEMS.forEach((it) => {
+        const row = document.createElement("div");
+        row.className = "col-12";
+
+        row.innerHTML = `
+          <div class="practice-row">
+            <div class="row g-2 align-items-center">
+              <div class="col-lg-4">
+                <div class="ru" lang="ru">${it.nom}</div>
+                <div class="hint">${it.hint}</div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="p-2 rounded-3" style="background: rgba(255,255,255,.45); border: 1px solid rgba(0,0,0,.06);">
+                  <span class="ru" lang="ru" data-target="prompt">${it.promptPrep}</span>
+                  <span class="muted"> / </span>
+                  <span class="ru" lang="ru" data-target="label"></span>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="d-flex gap-2 align-items-center">
+                  <input class="form-control" type="text" inputmode="text" autocomplete="off" spellcheck="false"
+                    placeholder="Type the correct form…" aria-label="Answer for ${it.nom}" data-id="${it.id}">
+                  <button class="btn btn-outline-primary" type="button" data-action="check" data-id="${it.id}">Check</button>
+                  <div class="feedback" aria-hidden="true" data-id="${it.id}"> </div>
+                </div>
+                <div class="sr-only" aria-live="polite" data-id="${it.id}-sr"></div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        practiceList.appendChild(row);
+      });
+
+      // Update target labels based on mode
+      updateModeUI();
+
+      // Wire buttons
+      practiceList.querySelectorAll('button[data-action="check"]').forEach(btn => {
+        btn.addEventListener("click", () => doCheck(btn.dataset.id));
+      });
+
+      // Enter key triggers check
+      practiceList.querySelectorAll('input[data-id]').forEach(inp => {
+        inp.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") doCheck(inp.dataset.id);
+        });
+      });
+    }
+
+    function updateModeUI() {
+      const mode = caseMode.value;
+
+      practiceList.querySelectorAll('[data-target="label"]').forEach((el, idx) => {
+        const it = ITEMS[idx];
+        if (mode === "prep") {
+          el.textContent = "(Prepositional)";
+        } else {
+          el.textContent = "(Nominative)";
+        }
+      });
+
+      practiceList.querySelectorAll('[data-target="prompt"]').forEach((el, idx) => {
+        const it = ITEMS[idx];
+        if (mode === "prep") {
+          el.textContent = it.promptPrep;
+        } else {
+          // In nominative mode, we don't need a preposition prompt.
+          el.textContent = "___";
+        }
+      });
+
+      // Clear feedback when switching modes
+      clearAllFeedback();
+    }
+
+    function clearAllFeedback() {
+      practiceList.querySelectorAll('.feedback').forEach(f => f.textContent = "");
+      practiceList.querySelectorAll('.sr-only[data-id$="-sr"]').forEach(s => s.textContent = "");
+    }
+
+    function doCheck(id) {
+      const mode = caseMode.value;
+      const it = ITEMS.find(x => x.id === id);
+      if (!it) return;
+
+      const input = practiceList.querySelector(`input[data-id="${id}"]`);
+      const fb = practiceList.querySelector(`.feedback[data-id="${id}"]`);
+      const sr = practiceList.querySelector(`.sr-only[data-id="${id}-sr"]`);
+
+      const guess = normalize(input.value);
+      const correct = normalize(mode === "prep" ? it.prep : it.nom);
+
+      if (!guess) {
+        fb.textContent = "…";
+        sr.textContent = "Please type an answer.";
+        return;
+      }
+
+      if (guess === correct) {
+        fb.textContent = "✅";
+        fb.style.color = "var(--good)";
+        sr.textContent = "Correct.";
+      } else {
+        fb.textContent = "❌";
+        fb.style.color = "var(--bad)";
+        sr.textContent = `Not quite. Correct answer is: ${mode === "prep" ? it.prep : it.nom}.`;
+      }
+    }
+
+    resetBtn.addEventListener("click", () => {
+      practiceList.querySelectorAll('input[data-id]').forEach(i => i.value = "");
+      clearAllFeedback();
+    });
+
+    caseMode.addEventListener("change", updateModeUI);
+
+    // initial
+    buildPractice();
+  </script>
+</body>
+
+</html>

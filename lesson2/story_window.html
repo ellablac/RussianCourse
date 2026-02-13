@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Assignment · Чудесный день</title>
+
+  <!-- Reuse your existing site styles if you have them -->
+  <link rel="stylesheet" href="site.css" />
+
+  <style>
+    /* Page layout (lightweight, compatible with your site.css) */
+    .container { max-width: 980px; margin: 0 auto; padding: 18px; }
+    .title { margin: 0 0 6px; }
+    .subtitle { margin: 0 0 18px; opacity: 0.85; }
+
+    .card { border: 1px solid rgba(0,0,0,0.12); border-radius: 14px; padding: 14px; margin: 14px 0; }
+    .small { font-size: 0.95rem; opacity: 0.9; }
+
+    /* Story parts: image + text (same feel as your Creation page) */
+    .story-part { border: 1px solid rgba(0,0,0,0.10); border-radius: 14px; padding: 14px; margin: 14px 0; }
+    .story-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+    figure { margin: 0; }
+    .story-img { width: 100%; height: auto; border-radius: 12px; display: block; }
+
+    .story-content { padding: 6px 4px; }
+    .story-controls { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 10px; }
+    .btn { border: 1px solid rgba(0,0,0,0.18); background: #fff; border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+    .story-ru p { margin: 8px 0; font-size: 1.05rem; }
+
+    /* Tooltip words */
+    .w {
+      position: relative;
+      border-bottom: 1px dotted rgba(0,0,0,0.45);
+      cursor: help;
+      white-space: nowrap;
+    }
+    .w:focus { outline: 2px solid rgba(0,0,0,0.2); outline-offset: 2px; border-radius: 4px; }
+    .w::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 8px);
+      z-index: 50;
+      width: max-content;
+      max-width: 260px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.18);
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.16);
+      font-size: 0.95rem;
+      line-height: 1.2;
+      opacity: 0;
+      transform: translateY(6px);
+      pointer-events: none;
+      transition: opacity 120ms ease, transform 120ms ease;
+    }
+    .w:hover::after, .w:focus::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* EN popup */
+    .en-popup { position: fixed; inset: 0; z-index: 9999; }
+    .en-popup__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
+    .en-popup__panel {
+      position: relative;
+      width: min(760px, 92vw);
+      margin: 10vh auto 0;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+    .en-popup__header { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid #eee; }
+    .en-popup__title { margin: 0; font-size: 1.05rem; }
+    .en-popup__close { border: 1px solid #ddd; background: #fff; border-radius: 10px; padding: 6px 10px; cursor: pointer; }
+    .en-popup__body { padding: 14px; font-size: 1.02rem; color: #222; }
+
+    /* Exercises */
+    .exercise h3 { margin-top: 0; }
+    .qa { margin: 10px 0; }
+    .qa label { display: block; margin: 10px 0 6px; font-weight: 600; }
+    .qa input[type="text"] { width: min(640px, 100%); padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.2); }
+    .choices { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .chip { border: 1px solid rgba(0,0,0,0.18); border-radius: 999px; padding: 8px 12px; background: #fff; cursor: pointer; }
+    .note { font-size: 0.95rem; opacity: 0.85; margin-top: 8px; }
+
+    @media (max-width: 760px) {
+      .story-row { grid-template-columns: 1fr; gap: 12px; }
+      .story-content { padding: 0; }
+      .w::after { max-width: 220px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1 class="title">Assignment</h1>
+    <p class="subtitle">
+      Most of the words in this story should feel familiar from the <b>Creation</b> story we read in class.
+    </p>
+
+    <section class="card">
+      <p class="small">
+        In this assignment, every important word has a tooltip. Hover your mouse (or tap on mobile) to see the
+        <b>base form</b> and its English meaning.
+      </p>
+      <p class="small">
+        Your job is to <b>read and translate</b> the story, and notice how words change.
+        Even if you don’t know all grammar rules yet, you can still understand the meaning if you recognize the base form.
+      </p>
+      <p class="small">
+        A word form can change because of things like:
+        tense (past/present/future), voice (active/passive), person (1st/2nd/3rd),
+        number (singular/plural), gender, case, and other grammatical categories.
+        Usually you can understand the meaning without knowing the exact reason for the change.
+      </p>
+    </section>
+
+    <h2>🌿 Чудесный день</h2>
+
+    <!-- Shared popup for EN translation (optional, keep consistent with your other pages) -->
+    <div id="enPopup" class="en-popup" hidden>
+      <div class="en-popup__backdrop" data-close="true"></div>
+      <div class="en-popup__panel" role="dialog" aria-modal="true" aria-labelledby="enPopupTitle">
+        <div class="en-popup__header">
+          <h3 id="enPopupTitle" class="en-popup__title">English</h3>
+          <button type="button" class="en-popup__close" data-close="true" aria-label="Close">×</button>
+        </div>
+        <div id="enPopupBody" class="en-popup__body"></div>
+      </div>
+    </div>
+
+    <!-- Part 1 -->
+    <article class="story-part" id="p1">
+      <h3>1</h3>
+
+      <div class="story-row">
+        <figure>
+          <img class="story-img" src="images/window_1" alt="Оля грустно" loading="lazy" />
+        </figure>
+
+        <div class="story-content">
+          <div class="story-controls">
+            <button type="button" class="btn btn-play" data-play-text="В нача́ле О́ле бы́ло гру́стно.">▶ Play</button>
+            <button type="button" class="btn btn-en" data-en="At first, Olya was sad.">EN</button>
+          </div>
+
+          <div class="story-ru">
+            <p>
+              В нача́ле О́ле
+              <span class="w" tabindex="0" data-tip="быть — to be">бы́ло</span>
+              гру́стно.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Part 2 -->
+    <article class="story-part" id="p2">
+      <h3>2</h3>
+
+      <div class="story-row">
+        <figure>
+          <img class="story-img" src="images/window_2" alt="Аня говорит" loading="lazy" />
+        </figure>
+
+        <div class="story-content">
+          <div class="story-controls">
+            <button type="button" class="btn btn-play" data-play-text="Сестра Оли А́ня сказа́ла: Посмотри́ в окно́.">▶ Play</button>
+            <button type="button" class="btn btn-en" data-en="Olya’s sister Anya said: “Look out the window.”">EN</button>
+          </div>
+
+          <div class="story-ru">
+            <p>
+              Сестра О́ли А́ня
+              <span class="w" tabindex="0" data-tip="сказать — to say">сказа́ла</span>:
+            </p>
+            <p>— <span class="w" tabindex="0" data-tip="смотреть — to look">Посмотри́</span> в окно́.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Part 3 -->
+    <article class="story-part" id="p3">
+      <h3>3</h3>
+
+      <div class="story-row">
+        <figure>
+          <img class="story-img" src="images/window_3" alt="Оля смотрит в окно" loading="lazy" />
+        </figure>
+
+        <div class="story-content">
+          <div class="story-controls">
+            <button type="button" class="btn btn-play"
+              data-play-text="О́ля посмотре́ла в окно́. Она́ уви́дела не́бо и зе́млю. В не́бе све́тило со́лнце. На земле́ она́ уви́дела расте́ния и живо́тных. Она́ уви́дела люде́й.">
+              ▶ Play
+            </button>
+            <button type="button" class="btn btn-en"
+              data-en="Olya looked out the window. She saw the sky and the earth. The sun was shining in the sky. On the earth she saw plants and animals. She saw people.">
+              EN
+            </button>
+          </div>
+
+          <div class="story-ru">
+            <p>
+              О́ля посмотре́ла в окно́.
+            </p>
+            <p>
+              Она́
+              <span class="w" tabindex="0" data-tip="видеть — to see">уви́дела</span>
+              не́бо и
+              <span class="w" tabindex="0" data-tip="земля — earth, land">зе́млю</span>.
+            </p>
+            <p>
+              В не́бе
+              <span class="w" tabindex="0" data-tip="светить — to shine">све́тило</span>
+              со́лнце.
+            </p>
+            <p>
+              На земле́ она́
+              <span class="w" tabindex="0" data-tip="видеть — to see">уви́дела</span>
+              расте́ния и
+              <span class="w" tabindex="0" data-tip="животное — animal">живо́тных</span>.
+            </p>
+            <p>
+              Она́
+              <span class="w" tabindex="0" data-tip="видеть — to see">уви́дела</span>
+              <span class="w" tabindex="0" data-tip="люди — people">люде́й</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Part 4 -->
+    <article class="story-part" id="p4">
+      <h3>4</h3>
+
+      <div class="story-row">
+        <figure>
+          <img class="story-img" src="images/window_4" alt="Оля улыбается" loading="lazy" />
+        </figure>
+
+        <div class="story-content">
+          <div class="story-controls">
+            <button type="button" class="btn btn-play" data-play-text="Лицо́ О́ли освети́ла улы́бка.">▶ Play</button>
+            <button type="button" class="btn btn-en" data-en="A smile lit up Olya’s face.">EN</button>
+          </div>
+
+          <div class="story-ru">
+            <p>
+              Лицо́ О́ли освети́ла улы́бка.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Part 5 -->
+    <article class="story-part" id="p5">
+      <h3>5</h3>
+
+      <div class="story-row">
+        <figure>
+          <img class="story-img" src="images/window_5" alt="Аня говорит: Слава Богу" loading="lazy" />
+        </figure>
+
+        <div class="story-content">
+          <div class="story-controls">
+            <button type="button" class="btn btn-play" data-play-text="А́ня сказа́ла: Сла́ва Бо́гу за э́тот чу́десный де́нь!">▶ Play</button>
+            <button type="button" class="btn btn-en" data-en="Anya said: “Glory to God for this wonderful day!”">EN</button>
+          </div>
+
+          <div class="story-ru">
+            <p>
+              А́ня
+              <span class="w" tabindex="0" data-tip="сказать — to say">сказа́ла</span>:
+            </p>
+            <p>— Сла́ва Бо́гу за э́тот чу́десный де́нь!</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- =========================
+         Exercises
+         ========================= -->
+    <section class="card exercise" id="exercises">
+      <h2>✍️ Упражне́ния</h2>
+      <p class="small">
+        After you read and translate the story, do the exercises below.
+      </p>
+
+      <!-- Exercise 1: Gender/Agreement transformation -->
+      <div class="qa">
+        <h3>1) Гра́мматика: два бра́та</h3>
+        <p class="small">
+          Change the story so it is about <b>two brothers</b>, not two sisters.
+          Replace: <b>Оля → Олег</b>, <b>Аня → Андрей</b>.
+          Fix the words that must change (gender/ending), for example: <i>гру́стно / гру́стен</i>, <i>сказа́ла / сказа́л</i>, etc.
+        </p>
+        <label for="rewrite">Напиши́те 3–5 предложе́ний (не весь текст):</label>
+        <input id="rewrite" type="text" placeholder="Например: В начале Олегу было..." />
+        <div class="note">Tip: you don’t need perfect grammar. Try to make it understandable.</div>
+      </div>
+
+      <!-- Exercise 2: Q&A (comprehension in RU) -->
+      <div class="qa">
+        <h3>2) Вопро́сы и отве́ты</h3>
+
+        <label>Кому́ бы́ло гру́стно?</label>
+        <div class="choices">
+          <button type="button" class="chip" data-fill="Оле">О́ле</button>
+          <button type="button" class="chip" data-fill="Ане">А́не</button>
+          <button type="button" class="chip" data-fill="людям">лю́дям</button>
+        </div>
+
+        <label>Что́ А́ня сказа́ла?</label>
+        <div class="choices">
+          <button type="button" class="chip" data-fill="Посмотри в окно.">— Посмотри́ в окно́.</button>
+          <button type="button" class="chip" data-fill="Иди домой.">— Иди́ домо́й.</button>
+          <button type="button" class="chip" data-fill="Читай книгу.">— Чита́й кни́гу.</button>
+        </div>
+
+        <label>Что́ О́ля уви́дела в не́бе?</label>
+        <div class="choices">
+          <button type="button" class="chip" data-fill="Солнце и птиц.">со́лнце и пти́ц</button>
+          <button type="button" class="chip" data-fill="Животных.">живо́тных</button>
+          <button type="button" class="chip" data-fill="Растения.">расте́ния</button>
+        </div>
+
+        <label>Что́ освети́ло лицо́ О́ли?</label>
+        <div class="choices">
+          <button type="button" class="chip" data-fill="Улыбка.">улы́бка</button>
+          <button type="button" class="chip" data-fill="Окно.">окно́</button>
+          <button type="button" class="chip" data-fill="Земля.">земля́</button>
+        </div>
+
+        <label>Что́ сказа́ла А́ня в конце́?</label>
+        <div class="choices">
+          <button type="button" class="chip" data-fill="Слава Богу за этот чудесный день!">Сла́ва Бо́гу за э́тот чу́десный де́нь!</button>
+          <button type="button" class="chip" data-fill="Спасибо.">Спасибо.</button>
+          <button type="button" class="chip" data-fill="До свидания.">До свида́ния.</button>
+        </div>
+
+        <div class="note">
+          Optional: answer out loud first, then write.
+        </div>
+      </div>
+
+      <!-- Suggested extra exercises -->
+      <div class="qa">
+        <h3>3) Други́е иде́и (вы́бери 1–2)</h3>
+        <ul>
+          <li><b>Find the forms:</b> underline all forms of <i>видеть</i> and <i>сказать</i>. Write the base verbs: <i>видеть</i>, <i>сказать</i>.</li>
+          <li><b>Word order:</b> put these words in order: “Оля / в окно / посмотрела”.</li>
+          <li><b>Picture match:</b> for each image, write one simple sentence: “Это небо.” “Это земля.” etc.</li>
+          <li><b>Change one detail:</b> change “солнце” to “луна”. What must change in the sentence?</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // EN popup wiring
+    (function () {
+      const popup = document.getElementById("enPopup");
+      const body = document.getElementById("enPopupBody");
+
+      function openPopup(text) {
+        body.textContent = text;
+        popup.hidden = false;
+        document.body.style.overflow = "hidden";
+      }
+      function closePopup() {
+        popup.hidden = true;
+        body.textContent = "";
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e) => {
+        const enBtn = e.target.closest(".btn-en");
+        if (enBtn) {
+          openPopup(enBtn.getAttribute("data-en") || "");
+          return;
+        }
+        if (e.target && e.target.getAttribute && e.target.getAttribute("data-close") === "true") {
+          closePopup();
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!popup.hidden && e.key === "Escape") closePopup();
+      });
+    })();
+
+    // Play buttons: hook into your existing audio system if desired
+    (function () {
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".btn-play");
+        if (!btn) return;
+        console.log("Play text:", btn.getAttribute("data-play-text"));
+        // Example hook:
+        // window.playLessonText(btn.getAttribute("data-play-text"));
+      });
+    })();
+
+    // Exercise chips: fill the nearest input (if you add one), or copy to clipboard as a helper
+    (function () {
+      document.addEventListener("click", async (e) => {
+        const chip = e.target.closest(".chip");
+        if (!chip) return;
+        const text = chip.getAttribute("data-fill") || chip.textContent.trim();
+
+        // If there is a focused input, fill it. Otherwise copy to clipboard.
+        const active = document.activeElement;
+        if (active && active.tagName === "INPUT" && active.type === "text") {
+          active.value = text;
+          active.dispatchEvent(new Event("input", { bubbles: true }));
+          return;
+        }
+
+        try {
+          await navigator.clipboard.writeText(text);
+          chip.textContent = "✅ скопи́ровано";
+          setTimeout(() => (chip.textContent = text), 900);
+        } catch {
+          // If clipboard not available, do nothing.
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
