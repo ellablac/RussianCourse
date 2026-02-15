@@ -122,34 +122,34 @@
 <body>
   <header class="container py-4">
     <div class="hero p-4 p-md-5">
-      <div class="d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-between">
-        <div>
-          <div class="d-flex flex-wrap gap-2 mb-2">
-            <span class="badge badge-soft rounded-pill px-3 py-2">Duolingo + Our Russian Course</span>
-            <span class="badge badge-soft rounded-pill px-3 py-2">Free</span>
-            <span class="badge badge-soft rounded-pill px-3 py-2">Beginner-friendly</span>
-          </div>
-          <h1 class="display-6 mb-2">
-            We will be using <span class="grad-text">Duolingo</span> to reinforce our lessons and for extra practice.
-          </h1>
-          <p class="muted mb-0">
-            This page explains how to join our Duolingo classroom, complete assignments, and avoid common setup issues.
-          </p>
-        </div>
-        <div class="text-md-end">
-          <div class="muted small">Quick tip</div>
-          <div class="fs-5 fw-semibold">Sign in with Google ✅</div>
-          <div class="muted small">So you don’t have to remember two passwords.</div>
-        </div>
+      <div class="d-flex flex-wrap gap-3 justify-content-start">
+        <span class="badge badge-soft rounded-pill px-3 py-2">Duolingo + Our Russian Course</span>
+        <span class="badge badge-soft rounded-pill px-3 py-2">Free</span>
+        <span class="badge badge-soft rounded-pill px-3 py-2">Beginner-friendly</span>
       </div>
+      <div class = "text-center mt-5">
+        <h1 class="display-6 mb-2">
+          Starting out with <span class="grad-text">Duolingo</span>.
+        </h1>
+        <p class="muted mb-0">
+          We will be using Duolingo to reinforce our lessons and for extra practice.<br>
+          This page explains how to join our Duolingo classroom and avoid common setup issues.
+        </p>
+      </div>
+
+
 
       <hr class="border-0 my-4" style="height:1px;background:var(--border);" />
 
       <div class="row g-3">
         <div class="col-lg-8">
           <div class="callout callout-ok">
-            <strong>What you’ll see:</strong> When I assign Duolingo work, you’ll receive an <strong>email from Duolingo</strong> with a link to the assignment (Duolingo Classroom).
+  
+          <div class="muted small">Quick tip</div>
+          <div class="fs-5 fw-semibold">Sign in with Google ✅</div>
+          <div class="muted small">So you don’t have to remember two passwords.</div>
           </div>
+
         </div>
         <div class="col-lg-4">
           <div class="callout callout-warn">
@@ -164,16 +164,23 @@
     <!-- Table of contents -->
     <section class="card-glass p-4 mb-4 toc">
       <h2 class="h4 mb-3">Contents</h2>
-      <ul class="mb-0">
-        <li><a href="#general">General directions (recommended for everyone)</a></li>
-        <li><a href="#language">Set the language + placement test vs. starting from the beginning</a></li>
-        <li><a href="#assignments">How to open and complete assignments</a></li>
-        <li><a href="#premium">Upgrade prompts (what to do)</a></li>
-        <li><a href="#existing">If you already have a Duolingo account</a></li>
-        <ul>
-          <li><a href="#email-mismatch">Email mismatch options</a></li>
-        </ul>
-      </ul>
+      <div class="row g-2">
+        <div class="col-md-6">
+          <ul class="mb-0">
+            <li><a href="#general">General directions (recommended for everyone)</a></li>
+            <li><a href="#language">Set the language + placement test vs. starting from the beginning</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <ul class="mb-0">
+            <li><a href="#existing">If you already have a Duolingo account</a></li>
+            <ul>      
+              <li><a href="#email-mismatch">Email mismatch options</a></li>  
+            </ul>      
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- General directions -->
@@ -311,90 +318,6 @@
       </div>
     </section>
 
-    <!-- Assignments -->
-    <section id="assignments" class="card-glass p-4 mb-4">
-      <h2 class="h4 mb-3">How to open and complete assignments</h2>
-
-      <div class="row g-3">
-        <div class="col-lg-7">
-          <ol class="list-unstyled mb-0">
-            <li class="d-flex mb-3">
-              <span class="step-num">1</span>
-              <div>
-                <div class="fw-semibold">Check your email for the assignment</div>
-                <div class="muted">
-                  When I assign work, you’ll receive an email from Duolingo with the assignment link.
-                  Open it on your phone or computer.
-                </div>
-              </div>
-            </li>
-
-            <li class="d-flex mb-3">
-              <span class="step-num">2</span>
-              <div>
-                <div class="fw-semibold">Click the assignment link</div>
-                <div class="muted">
-                  The link should open Duolingo (app or web). If prompted, sign in with Google.
-                </div>
-              </div>
-            </li>
-
-            <li class="d-flex mb-3">
-              <span class="step-num">3</span>
-              <div>
-                <div class="fw-semibold">Earn the assigned number of XP (points).</div>
-                <div class="muted">
-                  Duolingo only lets me assign XP, but I can’t control which lessons you do. Try to do at least the assigned XP.
-                  Your completion should be tracked automatically in Duolingo Classroom.
-                </div>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <div class="col-lg-3 mx-lg-auto">
-          <div class="screenshot">
-            <!-- Replace src with your real image path -->
-            <img src="images/duolingo-assignment.jpg" alt="Screenshot placeholder: Duolingo assignment email">
-            <div class="text-xs muted mt-2">
-              Example assignment email from Duolingo.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Premium prompts -->
-    <section id="premium" class="card-glass p-4 mb-4">
-      <h2 class="h4 mb-3">Upgrade prompts (what to do)</h2>
-
-      <div class="callout callout-warn">
-        <strong>Ignore “Try Premium / Super Duolingo” prompts.</strong>
-        You never need to enter a credit card to use duolingo in our class.
-        Premium is only if <em>you personally</em> want extra features.
-      </div>
-
-      <div class="row g-3 mt-2">
-        <div class="col-lg-7">
-          <ul class="mb-0">
-            <li class="muted">If you see a pop-up, look for buttons like <strong>Not now</strong>, <strong>Maybe later</strong>, or an <strong>X</strong> in the corner.</li>
-            <li class="muted">The free version is enough to complete all our assignments.</li>
-          </ul>
-        </div>
-        <div class="col-lg-3 mx-lg-auto">
-          <div class="screenshot hidden-temp">
-            <!-- Replace src with your real image path -->
-            <img src="images/duolingo-upgrade-prompt-placeholder.png" alt="Screenshot placeholder: Duolingo premium upgrade prompt">
-            <div class="small muted mt-2">
-              <strong>Screenshot:</strong> Example premium upgrade prompt (close it).
-              <br>
-              <span class="muted">Replace this image with your real screenshot when ready.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Existing account -->
     <section id="existing" class="card-glass p-4 mb-4">
       <h2 class="h4 mb-3">If you already have a Duolingo account</h2>
@@ -454,12 +377,11 @@
         <div class="muted">
           Choose this if you want to keep your existing progress and you’re able to update the email on your Duolingo account.
           <ol class="mt-2">
-            <li>Open Duolingo settings (Profile / Account settings).</li>
-            <li>Look for <strong>Email</strong> or <strong>Account</strong> settings.</li>
+            <li>Open Duolingo settings (More -> Settings -> Profile).</li>
             <li>Change the email to match your class Google account email.</li>
             <li>Then open the assignment email and join/continue.</li>
           </ol>
-          <div class="callout callout-warn mt-3 mb-0">
+          <div class="mt-3 mb-0">
             <strong>Important:</strong> Do this <em>before</em> enrolling in our Duolingo classroom (before opening the assignment link),
             to reduce the chance of creating a duplicate account.
           </div>
@@ -501,11 +423,17 @@
     <footer class="card-glass p-4">
       <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2">
         <div>
+          After you’re set up, read additional <a href="duolingo_instructions.html">Duolingo Instructions</a>. 
+        </div>
+        
+        <div>
           <div class="fw-semibold">Need help?</div>
           <div class="muted">
             If anything looks confusing let me know!
           </div>
         </div>
+
+
       </div>
     </footer>
   </main>

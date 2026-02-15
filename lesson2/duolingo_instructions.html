@@ -12,6 +12,7 @@
     :root{
       --bg1:#ffffff;
       --bg2:#ffc80033;
+      --bg3: #88e21922;
       --card:#ffffffe6;
       --border:#4b4b4b33;
       --text:#4b4b4b;
@@ -24,10 +25,14 @@
     }
     body{
       color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 20% 10%, #89e21955 0%, transparent 60%),
-        radial-gradient(900px 700px at 80% 20%, #ffc80055 0%, transparent 55%),
-        linear-gradient(160deg, var(--bg1), var(--bg2));
+  background:
+    repeating-linear-gradient(
+      160deg,
+      #eaffc7 0%,
+      #fff2a69d 25%,
+      #eaffc7 50%
+
+    );
       min-height:100vh;
     }
     a{ color: var(--accent); }
@@ -64,25 +69,50 @@
     .callout.ok{ border-left-color: var(--ok); }
     .callout strong{ color: var(--text); }
 
-    /* screenshot cards */
-    .shot{
-      border:1px dashed rgba(17, 24, 39, .22);
-      border-radius: 1rem;
-      background:#ffffffb3;
-      padding: .75rem;
-    }
-    .shot img{
-      width: 100%;
-      height: auto;
-      border-radius: .85rem;
-      display:block;
-    }
-    .shot .cap{
-      font-size: .9rem;
-      color: var(--muted);
-      margin-top: .55rem;
-      line-height: 1.25rem;
-    }
+/* screenshot cards */
+.shot{
+  border: 1px solid rgba(17, 24, 39, 0.15);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.08);
+  padding: .85rem;
+  background: linear-gradient(180deg, var(--bg2) 0%, var(--bg3) 100%);
+  
+  margin: 0 auto; /* center horizontally */
+  flex: 1 1 300px; /* allow to grow and shrink, but start at 300px */
+  display: flex;
+  flex-direction: column;
+}
+
+.shot-md{
+  max-width: min(300px, 100%); /* cap at 300px, but never exceed container */
+}
+
+.shot-lg{
+  max-width: min(500px, 100%); 
+}
+.shot img{
+  display: block;
+  height: auto;
+  max-width: min(280px, 100%); /* cap at 280px, but never exceed container */
+  margin: 0 auto; /* center */
+  border-radius: .75rem;
+}
+.shot .cap{
+  margin-top: .7rem;
+  padding-top: .6rem;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+  font-size: .92rem;
+  color: var(--muted);
+  line-height: 1.3rem;
+}
+
+.shot img.img-small{
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
 
     /* TOC */
     .toc a{
@@ -128,7 +158,7 @@
       <div class="d-flex flex-column gap-3">
         <div class = "text-center">
 
-          <h1 class="display-6 fw-bold mb-2 text-center">
+          <h1 class="display-6 fw-bold text-center">
             <span class="grad-text">Duolingo Instructions</span>
           </h1>
           <p class="mb-0">
@@ -139,18 +169,12 @@
             <a href="duolingo_starting_out.html">Starting Out with Duolingo</a>
           </p>
         </div>
-        <div>
-          <div class="callout warn mb-0">
-            <strong>Important:</strong> Sign in with <strong>Continue with Google</strong> <em>before</em> enrolling, using the same Google account you use for class.
-
-          </div>
-        </div>
       </div>
 
-      <hr class="border-0 my-4" style="height:1px;background:var(--border);" />
+      <hr class="border-0 my-2" style="height:1px;background:var(--border);" />
 
       <div class="row g-3">
-        <div class="col-lg-10">
+        <div class="col-lg-9">
           <div class="callout warn">
 
             <strong>Important:</strong> 
@@ -159,14 +183,15 @@
                   Sign in with <strong>Continue with Google</strong> <em>before</em> enrolling, using the same Google account you use for class.
                 </li>
                 <li>
-                  Standard Duolingo Accounts are <strong>free.</strong> You never need to use Paid features or add a credit card for our class. Read <a href="#freepaid"></a>for more details.
+                  Standard Duolingo Accounts are <strong>free.</strong> You never need to use Paid features or add a credit card for this class. 
+                  Read <a href="#freepaid"> How to ignore upgrade prompts </a>for more details.
                 </li>    
           </ul>
           </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-3">
           <div class="callout">
-            <strong>Consistency wins.</strong> 10 XP a day for 7 days beats 100 XP once and then nothing.
+            <strong>Consistency wins.</strong> Earning 10 XP most days for a month is better than 300 XP once and then nothing.
           </div>
         </div>
       </div>
@@ -182,14 +207,15 @@
         <div class="col-md-6">
           <ul class="mb-0 compact">
             <li><a href="#structure">How Duolingo is organized</a></li>
-            <li><a href="#lessons">Lessons + earning XP</a></li>
+            <li><a href="#lessons">Completing assignments and earning XP's</a></li>
+            <li><a href="#hearts">Practicing to earn hearts</a></li>
           </ul>
         </div>
         <div class="col-md-6">
           <ul class="mb-0 compact">
-            <li><a href="#hearts">Hearts, mistakes, and practice</a></li>
-            <li><a href="#leaderboard">Leaderboard + XP goals</a></li>
-            <li><a href="#freepaid">Free vs paid (detailed)</a></li>
+            <li><a href="#leaderboard">Leaderboard </a></li>
+            <li><a href="#freepaid">How to ignore upgrade prompts and avoid excessive ads</a></li>
+            <li><a href="#settings">Adjusting notifications</a></li>
           </ul>
         </div>
       </div>
@@ -198,96 +224,130 @@
     <!-- 1) Structure -->
     <section id="structure" class="card-glass p-4 mb-4">
       <div class="row g-3 align-items-start">
-        <div class="col-lg-7">
-          <h2 class="h4 mb-2">1) How Duolingo is organized</h2>
-          <p class="muted mb-3">
-            Duolingo content is unlocked in a sequence. You move forward step by step.
-          </p>
-
+        <div class="col-lg-12">
+          <h2 class="h4 mb-4">1) How Duolingo is organized</h2>
           <div class="callout">
             <strong>Structure:</strong>
             <ul class="mb-0 compact">
-              <li><strong>Course</strong> → Russian</li>
-              <li><strong>Sections</strong> → big parts of the course</li>
-              <li><strong>Units</strong> → groups of related topics</li>
-              <li><strong>Lessons</strong> → short activities you complete</li>
+              <li><strong>Course</strong> → Russian, Spanish, etc.</li>
+              <li><strong>Sections</strong> → big parts of the course, Russian course has 4 sections</li>
+              <li><strong>Units</strong> → each section is divided into units</li>
+              <li><strong>Lessons</strong> → each unit contains lessons, they are short activities such as reading, listening, writing, and sometimes speaking. You complete lessons to earn points </li>
             </ul>
           </div>
 
-          <p class="muted mt-3 mb-0">
-            <strong>Tip:</strong> If you don’t see future content yet, it usually means you haven’t completed enough of the current unit. That’s normal.
+          <p class="muted mt-1 mb-0">
+            <strong>Tip:</strong> If you don’t see all content in the screenshots below, it is because Duolingo is showing only the completed lessons in each unit. That’s normal.
           </p>
         </div>
+      </div>
+      <div class="row g-3 mt-3 align-items-stretch">
+        <!-- image 1 -->
+        <div class="col-lg-4 d-flex">
+          <div class="shot shot-md">
+            <p><strong> Course Selection</strong> is on the main page under the icon that looks like a flag:</p>
+            <img src="images/duolingo-course-selection.jpg" alt="Duolingo Language Selection(screenshot)">
+          </div>
+        </div>
 
-        <div class="col-lg-5">
-          <div class="shot">
-            <!-- Replace with your real screenshot -->
-            <img src="images/duolingo-path-sections-units.png" alt="Duolingo course path showing sections and units (screenshot)">
-            <div class="cap">
-              <strong>Screenshot:</strong> Course path (Sections → Units).<br>
-              File suggestion: <code>images/duolingo-path-sections-units.png</code>
-            </div>
+        <!-- image 2 -->
+        <div class="col-lg-4 d-flex">
+          <div class="shot shot-md">
+            <p><strong>Sections.</strong> This image shows four sections in the Russian course.
+               Completing a section unlocks the next one. 
+               Clicking "Review" shows the units in that section, 
+               and "See Details" lists the grammar concepts it covers.
+            </p>
+            <img src="images/duolingo_sections.jpg" alt="Duolingo course path showing sections(screenshot)">
+          </div>
+        </div>
+
+        <!-- image 3 -->
+        <div class="col-lg-4 d-flex">
+          <div class="shot shot-md">
+          <p><strong>Units and lessons.</strong> 
+            This shows the first two units in Section 1. 
+            Lessons look like stepping stones with a white checkmark inside. 
+            The trophy is a review, and reaching a chest rewards you with gems. 
+            Each unit has a "Guidebook" with key phrases for that unit.
+          </p>
+
+            <img src="images/duolingo_units.jpg" alt="Duolingo course path showing units(screenshot)">
           </div>
         </div>
       </div>
+
     </section>
 
     <!-- 2) Lessons + XP -->
     <section id="lessons" class="card-glass p-4 mb-4">
       <div class="row g-3 align-items-start">
-        <div class="col-lg-7">
-          <h2 class="h4 mb-2">2) Lessons + earning XP</h2>
-          <p class="muted mb-3">
-            A lesson is a short set of exercises (reading, listening, writing, sometimes speaking).
+
+          <h2 class="h4 mb-2">2) Completing assignments and earning XP's</h2>
+
+
+      <div class="row g-3">
+        <div class="col-lg-12">
+          <p class = "mb-3">
+           When I assign work, you’ll receive an email from Duolingo with the assignment link.
           </p>
+           <ol class="mb-0">
 
-          <div class="callout ok">
-            <strong>You earn XP by:</strong>
-            <ul class="mb-0 compact">
-              <li>Completing <strong>new lessons</strong></li>
-              <li><strong>Reviewing</strong> lessons you already did</li>
-              <li>Doing <strong>practice</strong> lessons</li>
-            </ul>
-          </div>
+            <li class="mb-2">
+                Click the assignment link, you may need to sign in with Google if you haven’t already. This will take you to the assigned lesson or review.
+            </li>
 
-          <p class="muted mt-3 mb-0">
-            XP per lesson can vary, but many lessons are around <strong>~10 XP</strong>. Don’t worry about the exact number.
-          </p>
-        </div>
+            <li class="mb-2">
 
-        <div class="col-lg-5">
-          <div class="shot">
-            <!-- Replace with your real screenshot -->
-            <img src="images/duolingo-lesson-in-progress.png" alt="Duolingo lesson in progress (screenshot)">
-            <div class="cap">
-              <strong>Screenshot:</strong> A lesson in progress.<br>
-              File suggestion: <code>images/duolingo-lesson-in-progress.png</code>
-            </div>
-          </div>
+                <div>Earn the XPs .</div>
+                <div class="muted">
+                  Duolingo only lets me assign XP, but I can’t control which lessons you do. Try to do at least the assigned XP.
+                  Your completion should be tracked automatically in Duolingo Classroom.
+                </div>
+
+            </li>
+          </ol>
         </div>
       </div>
+
+      <div class="callout ok">
+        <strong>XP's are points (experience points). You earn XP by:</strong>
+        <ul class="mb-0 compact">
+          <li>Completing <strong>new lessons</strong></li>
+          <li><strong>Reviewing</strong> lessons you already did</li>
+          <li>Doing <strong>practice</strong> lessons</li>
+        </ul>
+      </div>
+
+      <p class="muted mt-3 mb-0">
+        XP per lesson can vary, but many lessons are about <strong>~10 XP</strong>. 
+      </p>
+
     </section>
 
     <!-- 3) Hearts -->
     <section id="hearts" class="card-glass p-4 mb-4">
       <div class="row g-3 align-items-start">
         <div class="col-lg-7">
-          <h2 class="h4 mb-2">3) Hearts, mistakes, and practice</h2>
-          <p class="muted mb-3">
-            Hearts are Duolingo’s way to encourage careful learning. Mistakes are expected.
+          <h2 class="h4 mb-2">3) Practicing to earn hearts</h2>
+          <p class="mb-2">
+            When you make  a mistake, you loose a heart. Once you run out of hearts, 
+            the lesson is over and you must earn more hearts to continue progressing
+            through the course. However, you can continue learning by practicing old
+            material. This will not only allow you to earn hearts and XPs, but also help 
+            you review and reinforce what you’ve learned.  
           </p>
 
           <div class="callout warn">
-            <strong>When you run low on hearts, Duolingo may offer:</strong>
-            <ul class="mb-0 compact">
-              <li>Use <strong>gems</strong> to refill hearts</li>
+            <strong>When you run out of hearts and gems, Duolingo will offer:</strong>
+            <ul class="mt-2 mb-0 compact">
               <li><strong>Practice to earn a heart</strong> (recommended)</li>
-              <li>Paid options (“extra life”, premium prompts)</li>
+              <li>Paid options ("Super", "free trial", premium prompts)</li>
             </ul>
           </div>
 
           <div class="callout ok mt-3">
-            <strong>For this class:</strong> Choose <strong>Practice to earn a heart</strong>.
+            I recommend choosing  <strong>Practice to earn a heart</strong>.
             <div class="muted mt-2">
               If you couldn’t finish a lesson, you need the extra practice anyway. Practice restores hearts and helps you move forward.
             </div>
@@ -295,13 +355,14 @@
         </div>
 
         <div class="col-lg-5">
-          <div class="shot">
-            <!-- Replace with your real screenshot -->
-            <img src="images/duolingo-hearts-practice-option.png" alt="Hearts screen showing practice option (screenshot)">
-            <div class="cap">
-              <strong>Screenshot:</strong> Hearts screen (choose practice).<br>
-              File suggestion: <code>images/duolingo-hearts-practice-option.png</code>
-            </div>
+          <div class="shot shot-lg">
+            <strong>When you run out of hearts: </strong>
+            <ul>
+              <li>Close any upgrade prompts that appear</li>
+              <li>Click on the ❤️ in the upper right corner of the screen</li>
+              <li>Choose "Practice to earn a heart"</li>
+            </ul>
+            <img src="images/duolingo-hearts.jpg" alt="Hearts screen showing practice option (screenshot)">
           </div>
         </div>
       </div>
@@ -311,35 +372,19 @@
     <section id="leaderboard" class="card-glass p-4 mb-4">
       <div class="row g-3 align-items-start">
         <div class="col-lg-7">
-          <h2 class="h4 mb-2">4) Leaderboard + XP goals</h2>
-          <p class="muted mb-3">
-            After you complete at least one assignment/lesson, you will appear on the class leaderboard.
+          <h2 class="h4 mb-2">4) Leaderboard </h2>
+          <p class="mb-3">
+            After you complete at least one assignment or lesson, you'll see our class' leaderboard in the right panel.
+            Leaderboard resets every week, so you can start fresh and compete for the top spot each week.
+            When you click on the leaderboard, you can see how many XP's each student has earned that week.
           </p>
-
-          <div class="callout">
-            <strong>Leaderboard basics:</strong>
-            <ul class="mb-0 compact">
-              <li>Shows <strong>our class</strong> and each student’s <strong>XP total</strong></li>
-              <li>XP reflects <strong>activity</strong> (not perfection)</li>
-              <li>Reviewing old material still earns XP</li>
-            </ul>
-          </div>
-
-          <div class="callout ok mt-3">
-            <strong>Goal:</strong> I will assign XP goals, and you can earn as many XP as you want.
-            <div class="muted mt-2">
-              The key is <strong>consistent practice</strong>. For example, <strong>10 XP a day for 7 days</strong> is better than <strong>100 XP in one day</strong> and then nothing.
-            </div>
-          </div>
         </div>
 
         <div class="col-lg-5">
-          <div class="shot">
-            <!-- Replace with your real screenshot -->
-            <img src="images/duolingo-class-leaderboard.png" alt="Class leaderboard showing XP totals (screenshot)">
+          <div class="shot shot-lg">
+            <img src="images/duolingo-leaderboard.jpg" alt="Class leaderboard showing XP totals (screenshot)">
             <div class="cap">
-              <strong>Screenshot:</strong> Class leaderboard (XP totals).<br>
-              File suggestion: <code>images/duolingo-class-leaderboard.png</code>
+              <strong>Screenshot:</strong> Class leaderboard (XP totals).
             </div>
           </div>
         </div>
@@ -348,51 +393,89 @@
 
     <!-- 5) Free vs Paid -->
     <section id="freepaid" class="card-glass p-4 mb-4">
-      <div class="row g-3 align-items-start">
-        <div class="col-lg-7">
-          <h2 class="h4 mb-2">Free vs paid (what you need to know)</h2>
-
-          <div class="callout ok mb-3">
-            <strong>You can complete everything for this class for free.</strong>
-            You do not need to enter a credit card.
-          </div>
-
-          <p class="muted mb-2">
-            Duolingo will sometimes show upgrade prompts (Super/Premium). That is normal marketing.
-          </p>
-
-          <div class="callout">
-            <strong>Free version includes:</strong>
-            <ul class="mb-0 compact">
-              <li>All assigned lessons</li>
-              <li>XP and leaderboard participation</li>
-              <li>Practice lessons (including practice to earn hearts)</li>
-              <li>Progress through sections and units</li>
-            </ul>
-          </div>
-
-          <div class="callout warn mt-3">
-            <strong>Paid features (optional):</strong>
-            <ul class="mb-0 compact">
-              <li>Unlimited hearts / fewer restrictions</li>
-              <li>Fewer ads and extra convenience features</li>
-              <li>Occasional “extra life” style prompts</li>
-            </ul>
-            <div class="muted mt-2">
+      <div class="row g-3 align-items-stretch">
+        <h2 class="h4 mb-2">5) How to ignore upgrade prompts and avoid excessive ads</h2>
+        <div class="col-lg-6 d-flex">
+          <div class="shot shot-lg">
+            <div class="callout ok mb-3">
+              <strong>You can complete everything for this class for free.</strong>
+              You do not need to enter a credit card.
+              <div class="mt-2">
               If you see an upgrade screen, look for <strong>Not now</strong>, <strong>Maybe later</strong>, or an <strong>X</strong> and continue.
               Only pay if you personally want premium features for your own use.
+              </div>
             </div>
+
+            <div class="mb-2"><strong> Example upsell prompt (close it):</strong></div>
+            <img class = "img-small" src="images/duolingo_upgrade_prompt.jpg
+            " alt="Premium upsell screen (screenshot)">
+
+            <div class="muted mt-2">
+              <strong>Paid features include:</strong>
+              <ul class="mb-0 compact">
+                <li>Unlimited hearts / fewer restrictions</li>
+                <li>Fewer ads</li>
+              </ul>
+            </div>
+
           </div>
         </div>
 
-        <div class="col-lg-5">
-          <div class="shot">
-            <!-- Replace with your real screenshot -->
-            <img src="images/duolingo-premium-upsell.png" alt="Premium upsell screen (screenshot)">
-            <div class="cap">
-              <strong>Screenshot:</strong> Premium upsell prompt (close it).<br>
-              File suggestion: <code>images/duolingo-premium-upsell.png</code>
+        <div class="col-lg-6 d-flex">
+          <div class="shot shot-lg">
+            <div class="callout ok mb-3">
+              <strong>Mobile app ads.</strong>
+              You can install duolingo app on your phone, but the mobile app version 
+              of Duolingo shows distractive ads after each lesson.
+              At the time of this writing, the web version of Duolingo ads are much less intrusive.
+              You can use Duolingo in a web browser on either a computer or mobile devices.
+              <div class="mt-2">
+                Go to <a href="https://www.duolingo.com">duolingo.com</a>  in your browser. On your phone, you’ll see a prompt like the screenshot below.
+                Choose <em>Continue in Browser</em> instead of opening the app.
+              </div>
             </div>
+            <img class = "img-small" src="images/duolingo_mobile.jpg
+            " alt="Continue in browser prompt on mobile (screenshot)">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) Adjusting notifications  -->
+    <section id="settings" class="card-glass p-4 mb-4">
+      <div class="row g-3 align-items-stretch">
+        <h2 class="h4 mb-2">6) Adjusting Notifications</h2>
+        <div class="mb-3">
+          Duolingo can be a bit overzealous with reminder emails that push daily practice.  
+          <br>You can turn off anything you find distracting in your account settings.
+        </div>
+        <div class="col-lg-4 d-flex">
+          <div class="shot shot-md">
+            <div class="cap mb-2">
+              In the bottom left of the Duolingo website, 
+              click More -> Settings -> Notifications/Preferences. <hr>
+            </div>
+              <img src="images/duolingo_settings.jpg
+            " alt="Settings screen  (screenshot)">
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-flex">
+          <div class="shot shot-md">
+
+            <img  src="images/duolingo_notifications.jpg
+            " alt="Continue in browser prompt on mobile (screenshot)">
+
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-flex">
+          <div class="shot shot-md">
+
+            <img src="images/duolingo_preferences.jpg
+            " alt="Preferences screen  (screenshot)">
+
           </div>
         </div>
       </div>
@@ -404,25 +487,13 @@
         <div>
           <div class="fw-semibold">Need help?</div>
           <div class="muted">
-            If something looks confusing, take a screenshot and message me. Include what device you’re using (phone or computer).
+            If you have any questions about using Duolingo, please ask in our class' discussion forum or email me directly.
           </div>
-        </div>
-        <div class="text-md-end muted small">
-          Last updated: <span id="lastUpdated"></span>
         </div>
       </div>
     </footer>
 
   </main>
-
-  <script>
-    (function(){
-      const el = document.getElementById('lastUpdated');
-      if (!el) return;
-      const d = new Date();
-      el.textContent = d.toLocaleDateString(undefined, { year:'numeric', month:'long', day:'numeric' });
-    })();
-  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
