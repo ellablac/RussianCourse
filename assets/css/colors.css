@@ -1,0 +1,113 @@
+/* Card look */
+
+.ink-card {
+    border: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: #0b1220;
+    box-shadow: 0 8px 30px rgba(12, 18, 32, .08);
+    position: relative;
+    isolation: isolate;
+}
+
+.ink-card .card-body {
+    padding: 1.25rem 1.25rem;
+}
+
+.more-link {
+    font-weight: 600;
+}
+/* Glowing gradient palettes (unique per card) */
+
+
+.ink-apricot-sky {
+    background: radial-gradient(780px 340px at 92% 8%, rgba(255, 200, 80, .22), transparent 60%), radial-gradient(720px 320px at 0% 100%, rgba(0, 176, 255, .18), transparent 62%), radial-gradient(600px 260px at 30% 10%, rgba(255, 120, 120, .14), transparent 65%), linear-gradient(135deg, #fde68a33, #93c5fd33 50%, #fecaca33);
+    border-color: rgba(255, 200, 80, .55);
+}
+
+
+.ink-cotton-candy {
+    background: radial-gradient(820px 360px at 88% 12%, rgba(236, 72, 153, .20), transparent 60%), radial-gradient(720px 340px at 8% 100%, rgba(59, 130, 246, .16), transparent 62%), radial-gradient(540px 220px at 50% 0%, rgba(255, 221, 87, .18), transparent 65%), linear-gradient(135deg, #fbcfe833, #c7d2fe33 50%, #fef3c733);
+    border-color: rgba(236, 72, 153, .50);
+}
+
+
+.ink-mint-citrus {
+    background: radial-gradient(820px 340px at 92% 8%, rgba(16, 185, 129, .20), transparent 60%), radial-gradient(760px 320px at 0% 100%, rgba(245, 158, 11, .18), transparent 62%), radial-gradient(520px 220px at 20% 0%, rgba(255, 99, 132, .14), transparent 65%), linear-gradient(135deg, #6ee7b733, #fde68a33 50%, #bfdbfe33);
+    border-color: rgba(16, 185, 129, .55);
+}
+
+
+.ink-sunset {
+    background: radial-gradient(780px 320px at 88% 10%, rgba(59, 130, 246, .20), transparent 60%), radial-gradient(740px 320px at 0% 100%, rgba(239, 68, 68, .18), transparent 62%), radial-gradient(520px 220px at 60% 0%, rgba(255, 215, 99, .16), transparent 65%), linear-gradient(135deg, #93c5fd33, #fecaca33 50%, #fef9c333);
+    border-color: rgba(59, 130, 246, .50);
+}
+
+
+.ink-jungle-book {
+    background: radial-gradient(820px 340px at 90% 8%, rgba(168, 85, 247, .20), transparent 60%), radial-gradient(760px 320px at 0% 100%, rgba(34, 197, 94, .18), transparent 62%), radial-gradient(540px 220px at 40% 0%, rgba(255, 190, 100, .16), transparent 65%), linear-gradient(135deg, #c4b5fd33, #86efac33 52%, #fde68a33);
+    border-color: rgba(168, 85, 247, .50);
+}
+
+.ink-jungle-book-soft {
+    background: radial-gradient(820px 340px at 90% 8%, rgba(168, 85, 247, .08), transparent 62%),
+    radial-gradient(760px 320px at 0% 100%, rgba(34, 197, 94, .05), transparent 64%),
+    radial-gradient(540px 220px at 40% 0%, rgba(255, 190, 100, .06), transparent 66%),
+    linear-gradient(135deg, #d8b4fe1a, #fde68a1a 55%, #fbcfe81a),
+    linear-gradient(0deg, rgba(255,255,255,0.55), rgba(255,255,255,0.55));
+    border-color: rgba(168, 85, 247, .22);
+
+}
+
+
+.ink-peach-sherbet {
+    background: radial-gradient(820px 360px at 85% 12%, rgba(255, 154, 118, .20), transparent 60%), radial-gradient(760px 340px at 0% 100%, rgba(99, 102, 241, .18), transparent 62%), radial-gradient(520px 220px at 50% 0%, rgba(255, 235, 130, .18), transparent 65%), linear-gradient(135deg, #fecaca33, #c7d2fe33 50%, #fff3b033);
+    border-color: rgba(255, 154, 118, .55);
+}
+
+.ink-card {
+    border: 3px solid transparent;
+    border-radius: 1rem;
+}
+        
+/* Title: centered, bolder, a touch larger, subtle emphasis bar */
+
+.ink-card .card-title {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.35rem;
+    letter-spacing: .02em;
+    margin-bottom: .5rem;
+}
+
+.ink-card .card-title::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin: .4rem auto 0;
+    border-radius: 2px;
+    background: currentColor;
+    opacity: .25;
+}
+
+
+/* backgrounds  */
+.bkg-sunset {
+  background:
+    radial-gradient(55% 70% at 15% 45%, rgba(59, 130, 246, .18), transparent 60%),
+    radial-gradient(55% 70% at 50% 45%, rgba(239, 68, 68, .16), transparent 62%),
+    radial-gradient(55% 70% at 85% 45%, rgba(255, 215, 99, .14), transparent 65%),
+    linear-gradient(
+        90deg, 
+        #93c5fd33 0%, 
+        #fecaca33 25%, 
+        #fef9c333 50%,
+        #fecaca33 75%,
+        #93c5fd33 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 120%;
+  background-position: center top;
+  height: auto;
+  min-height: 100%;
+}

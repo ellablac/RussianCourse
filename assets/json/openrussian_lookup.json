@@ -1,0 +1,22 @@
+{
+  "count": 1,
+  "results": [
+    {
+      "query": "свидетельствовал",
+      "found": true,
+      "word": "свидетельствовал",
+      "word_stressed": "свиде'тельствовал",
+      "base_form": "свиде'тельствовать",
+      "pos": "verb",
+      "translation": [
+        "witness",
+        "testify",
+        "give evidence",
+        "be evidence"
+      ],
+      "example_ru": "Она свиде'тельствовала против него.",
+      "example_en": "She testified against him.",
+      "source": "openrussian.org suggestions"
+    }
+  ]
+}

@@ -85,8 +85,6 @@ body {
 
 
 /* --- Sticky footer layout (keeps footer at the bottom on short pages) --- */
-
-
 /* body {
     min-height: 100vh;
     display: flex;
@@ -378,6 +376,8 @@ hr.hair {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    line-height: 1.2;
+    padding: 0.05em 0;
 }
 
 .glass-2 {
@@ -623,11 +623,10 @@ a.deep-dive:hover {
 .max-w-700 {
     max-width: 700px;
 }
-
+/* Space evenly without extra margin on the first item */
 .space-y-2>*+* {
     margin-top: 1rem;
 }
-
 .space-y-3>*+* {
     margin-top: 1.5rem;
 }
@@ -720,6 +719,28 @@ ul.styled-list.diamond li:before {
     margin-right: 0.5em;
     /* space after the bullet */
 }
+
+ul.styled-list.circle li:before {
+    content: "⚪";
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-right: 0.5em;
+}
+
+.semi-transparent-bg {
+  /* White background with 20% opacity */
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.transparent-bg {
+  /* White background with 20% opacity */
+  background-color: rgba(255, 255, 255, 0.01) !important;
+  border:none !important;
+  box-shadow:none !important;
+
+}
+
 
 .callout {
     border-left: 4px solid;
@@ -901,4 +922,9 @@ tr.divider>td {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+.transparent-background {
+  /* White background with 50% opacity */
+  background-color: rgba(255, 255, 255, 0.1);
 }

@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verb Conjugation – Present Tense (Russian)</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Shared site stylesheet -->
+
+  <link rel="stylesheet" href="../assets/css/site.css" />
+    <link rel="stylesheet" href="../assets/css/colors.css" />
+
+
+  <meta name="description" content="Russian verb conjugation basics: present tense endings, 1st vs 2nd conjugation, and interactive practice." />
+
+  <style>
+    /* Tiny, page-scoped tweaks only */
+    .max-w-860 { max-width: 860px; }
+
+    .hero-pad { padding-top: 2.2rem; padding-bottom: 1.1rem; }
+
+    .soft-card {
+      border: 1px solid rgba(60, 124, 251, 0.35) ;
+      border-radius: 1rem;
+      padding: 1.1rem 1.25rem;
+      /* background: linear-gradient(135deg, rgba(255,255,255,.5), rgba(255,255,255,.4)),
+        radial-gradient(800px 380px at 10% 0%, rgba(99,102,241,.06), transparent 60%),
+        radial-gradient(760px 360px at 90% 0%, rgba(16,185,129,.06), transparent 62%),
+        radial-gradient(700px 340px at 50% 100%, rgba(245,158,11,.07), transparent 62%); */
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    }
+
+
+  .compare-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(251, 146, 60, 0.35) ;
+    box-shadow: 0 10px 28px rgba(12, 18, 32, .10);
+    background:
+      radial-gradient(820px 340px at 90% 8%, rgba(168, 85, 247, .18), transparent 60%),
+      radial-gradient(760px 320px at 0% 100%, rgba(34, 197, 94, .14), transparent 62%),
+      radial-gradient(540px 220px at 40% 0%, rgba(255, 190, 100, .14), transparent 65%),
+      linear-gradient(135deg, #c4b5fd22, #86efac22 52%, #fde68a22);
+  }
+
+  table.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 1rem;
+    overflow:hidden;
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: 0.35rem 0.6rem;           /* tighter */
+    line-height: 1.15;                 /* tighter */
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(2, 6, 23, 0.10);
+  }
+
+  /* Column borders (clear separators) */
+  .compare-table th:not(:last-child),
+  .compare-table td:not(:last-child) {
+    border-right: 1px solid rgba(2, 6, 23, 0.12);
+  }
+
+  .compare-table thead th {
+    font-weight: 900;
+    /* background:
+      linear-gradient(135deg, rgba(13,110,253,.14), rgba(111,66,193,.12) 52%, rgba(16,185,129,.12)); */
+        background: linear-gradient(180deg, #d0ebea5d 0%, #f9d5c298 50%, #d0ebea5d 100%);
+        text-align:center;
+
+      color: #0b1220;
+  }
+
+  /* Subtle zebra for readability */
+  .compare-table tbody tr:nth-child(even) td {
+    background: rgba(255,255,255,0.1);
+  }
+
+  /* Highlighting rules per your request */
+  .p {                 /* pronouns: same color in both languages */
+    color: #0d6efd;
+    font-weight: 800;
+  }
+
+  .verb {              /* verb stem/base: black */
+    color: #0b1220;
+    font-weight: 600;
+  }
+
+  .end {               /* ending only: bright */
+    color: #ee0979;
+    font-weight: 900;
+  }
+
+.person-col {
+  color: rgba(11, 18, 32, 0.55);
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+  .compare-table code {
+    font-size: 1.02em;
+    background: transparent;
+    padding: 0;
+  }
+
+  .note {
+    margin-top: 0.5rem;
+    color: rgba(11, 18, 32, 0.78);
+    font-size: 0.95rem;
+  }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .22rem .55rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .ending {
+      font-weight: 800;
+      letter-spacing: .01em;
+      padding: .1rem .35rem;
+      border-radius: .5rem;
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(0,0,0,.06);
+      white-space: nowrap;
+    }
+
+    .poem {
+      white-space: pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: rgba(255,255,255,.7);
+      border: 1px dashed rgba(0,0,0,.18);
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+
+    .practice-row {
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 1rem;
+      padding: .85rem .95rem;
+      background: rgba(255,255,255,.70);
+    }
+
+    .feedback {
+      min-width: 1.6rem;
+      display: inline-flex;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    /* Better wrapping for long links */
+    a { overflow-wrap: anywhere; }
+
+    html { height: auto; }
+    body.bkg-sunset {
+    height: auto;
+    min-height: 100vh;
+    }
+
+    
+
+  </style>
+</head>
+
+<body class = "bkg-sunset">
+  <!-- Shared navbar injection -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Header -->
+  <header class="text-center hero">
+    <div class="container">
+      <h5 class="blue-ink">Lesson • Grammar</h5>
+      <h2 class="text-gradient">Verb Conjugation (Present Tense)</h2>
+      <p class="lead max-w-860 mx-auto">
+        A Russian verb in the present tense can take up to <strong>six different endings</strong>, depending on who is doing the action.
+      </p>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+
+<section class="card soft-card ink-jungle-book-soft pb-5">
+  <p>
+  In English, the verb usually stays the same (except “he/she/it <span class="verb">reads</span>”).
+  In Russian, the <span class="end">ending</span> tells you who is doing the action.
+  Take a look at the table below and notice how much the verb “to read” changes in Russian compared to English.
+</p>
+<div class="compare-wrap" >
+  <table class="compare-table transparent-bg">
+
+    <thead>
+      <tr>
+        <th style="width:26%">Person</th>
+        <th style="width:37%">English</th>
+        <th style="width:37%">Russian</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="divider">
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <td class="person-col">
+          <span>
+            Dictionary form
+            <button
+              type="button"
+              class="note-dot"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-html="true"
+              data-bs-title="Dictionary form is the basic, neutral form of a word. For verbs it is also called the <em>infinitive</em>. It does not show who does the action (I/you/we). This is the form you usually see in dictionaries. Example: читать = ‘to read’, писать = ‘to write’."
+              aria-label="Dictionary form info"
+            >i</button>
+          </span>
+        </td>
+        <td><code><span class="verb">to read</span></code></td>
+        <td><code><span class="verb">чит</span><span class="end">ать</span></code></td>
+      </tr>
+      <tr class="divider">
+        <td colspan="3"></td>
+      </tr>
+
+      <tr>
+        <td class="person-col">1st singular</td>
+        <td><code><span class="p">I</span> <span class="verb">read</span></code></td>
+        <td><code><span class="p">я</span> <span class="verb">чита</span><span class="end">ю</span></code></td>
+      </tr>
+
+      <tr>
+        <td class="person-col">2nd singular</td>
+        <td><code><span class="p">you</span> <span class="verb">read</span></code></td>
+        <td><code><span class="p">ты</span> <span class="verb">чита</span><span class="end">ешь</span></code></td>
+      </tr>
+
+      <tr>
+        <td class="person-col">3rd singular</td>
+        <td><code><span class="p">he / she / it</span> <span class="verb">reads</span></code></td>
+        <td><code><span class="p">он / она / оно</span> <span class="verb">чита</span><span class="end">ет</span></code></td>
+      </tr>
+
+      <tr>
+        <td class="person-col">1st plural</td>
+        <td><code><span class="p">we</span> <span class="verb">read</span></code></td>
+        <td><code><span class="p">мы</span> <span class="verb">чита</span><span class="end">ем</span></code></td>
+      </tr>
+
+      <tr>
+        <td class="person-col">2nd plural / polite</td>
+        <td><code><span class="p">you</span> <span class="verb">read</span></code></td>
+        <td><code><span class="p">вы</span> <span class="verb">чита</span><span class="end">ете</span></code></td>
+      </tr>
+
+      <tr>
+        <td class="person-col">3rd plural</td>
+        <td><code><span class="p">they</span> <span class="verb">read</span></code></td>
+        <td><code><span class="p">они</span> <span class="verb">чита</span><span class="end">ют</span></code></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+</section>
+
+
+    <!-- Big idea -->
+    <section class="card soft-card ink-jungle-book-soft mt-5 py-3">
+      <div class="card-header text-gradient text-center ">
+        <h3 class="h5 mb-2 text-center ">Two groups of verbs</h3>
+      </div>
+
+      <div class="card-body p-4 ">
+        <p class="m-2">
+          Russian verbs belong to <strong>two main conjugation groups</strong>.
+          Each group has its own predictable set of endings in the present tense.
+        </p>
+        <p class="mb-2">
+          To determine the correct set of verb endings, we need to know which of the two groups the verb belongs to. 
+          Look at the ending of the dictionary form of the verb.
+            <ul class="mb-0">
+              <li>
+                If the ending is <strong>-ить</strong>, it is usually <strong>2nd conjugation</strong>.
+              </li>
+              <li>
+                Otherwise, it is usually <strong>1st conjugation</strong> (the endings <strong>-ать, -ять, -еть, -оть, -уть, -ыть.</strong>)
+              </li>
+            </ul>
+        </p>
+
+        <div class="compare-wrap">
+          <table class="compare-table transparent-bg">
+            <thead class="table-light">
+              <tr>
+                <th>1st conjugation</th>
+                <th>2nd conjugation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul class="mb-0 styled-list small transparent-bg">
+                    <li class="word-with-audio" data-text="читать" lang="ru">читать</li>
+                    <li class="word-with-audio" data-text="работать" lang="ru">работать</li>
+                    <li class="word-with-audio" data-text="знать" lang="ru">знать</li>
+                    <li class="word-with-audio" data-text="ждать" lang="ru">ждать</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul class="mb-0 styled-list small transparent-bg">
+                    <li class="word-with-audio" data-text="говорить" lang="ru">говорить</li>
+                    <li class="word-with-audio" data-text="любить" lang="ru">любить</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Endings tables -->
+    <section class="card soft-card ink-jungle-book-soft mt-5 py-3">
+      <div class="card-header text-gradient text-center ">
+        <h3 class="h5 mb-2 text-center ">Two groups = two “ending sets”</h3>
+      </div>
+      <div class="card-body p-4 ">
+        <p class="mb-3">
+          Once you know the conjugation, you can choose the correct personal endings.
+          Most verbs follow one of these patterns in the present tense:
+        </p>
+        <div class="compare-wrap">
+          <table class="compare-table transparent-bg">
+            <thead class="table-light">
+              <tr>
+                <th style="width: 18%">Person</th>
+                <th style="width: 41%">1st conjugation<br> (-ать, -еть, -уть...)</th>
+                <th style="width: 41%">2nd conjugation<br> (-ить)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>я</strong></td>
+                <td><span>-у / -ю</span></td>
+                <td><span>-у / -ю</span></td>
+              </tr>
+              <tr>
+                <td><strong>ты</strong></td>
+                <td><span>-ешь</span></td>
+                <td><span>-ишь</span></td>
+              </tr>
+              <tr>
+                <td><strong>он / она / оно</strong></td>
+                <td><span>-ет</span></td>
+                <td><span>-ит</span></td>
+              </tr>
+              <tr>
+                <td><strong>мы</strong></td>
+                <td><span>-ем</span></td>
+                <td><span>-им</span></td>
+              </tr>
+              <tr>
+                <td><strong>вы</strong></td>
+                <td><span>-ете</span></td>
+                <td><span>-ите</span></td>
+              </tr>
+              <tr>
+                <td><strong>они</strong></td>
+                <td><span>-ут / -ют</span></td>
+                <td><span>-ат / -ят</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-muted small mb-0">
+          Note: the exact letters can vary a little (у/ю, ут/ют, ат/ят) depending on the final consonant of the verb stem.
+        </p>
+      </div>
+    </section>
+
+    <!-- Examples (two columns) -->
+    <section class="card soft-card ink-jungle-book-soft mt-5 py-3">
+      <div class="card-header text-gradient text-center ">
+        <h3 class="h5 mb-2 text-center">Verb Conjugation</h3>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <div class="soft-card h-100">
+            <h3 class="h5 text-gradient text-center mb-3">Example: 
+
+              <span class="word-with-audio" data-text="читать" lang="ru"><strong>читать</strong></span> → 1st conjugation:
+</h3>
+            <ul class="mb-0 styled-list small">
+              <li class="word-with-audio" data-text="я читаю" lang="ru">я читаю</li>
+              <li class="word-with-audio" data-text="ты читаешь" lang="ru">ты читаешь</li>
+              <li class="word-with-audio" data-text="он читает" lang="ru">он читает</li>
+              <li class="word-with-audio" data-text="мы читаем" lang="ru">мы читаем</li>
+              <li class="word-with-audio" data-text="вы читаете" lang="ru">вы читаете</li>
+              <li class="word-with-audio" data-text="они читают" lang="ru">они читают</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="soft-card h-100">
+            <h3 class="h5 text-gradient text-center mb-3">Example: 
+
+              <span class="word-with-audio" data-text="говорить" lang="ru"><strong>говорить</strong></span> → 2nd conjugation:
+            </h3>
+            <ul class="mb-0 styled-list small">
+              <li class="word-with-audio" data-text="я говорю" lang="ru">я говорю</li>
+              <li class="word-with-audio" data-text="ты говоришь" lang="ru">ты говоришь</li>
+              <li class="word-with-audio" data-text="он говорит" lang="ru">он говорит</li>
+              <li class="word-with-audio" data-text="мы говорим" lang="ru">мы говорим</li>
+              <li class="word-with-audio" data-text="вы говорите" lang="ru">вы говорите</li>
+              <li class="word-with-audio" data-text="они говорят" lang="ru">они говорят</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- The rhyme from the doc -->
+    <section class="my-5">
+      <div class="soft-card max-w-860 mx-auto">
+        <h3 class="h5 text-gradient text-center mb-3">A rhyme to practice endings</h3>
+        <p class="mb-2">Read it slowly. Notice how each line “tags” the subject with a matching verb ending.</p>
+        <div class="poem" lang="ru">
+Я читаю в темноте,
+А ты пишешь на компе.
+Райан мечтает об обеде,
+Анна едет на мопеде.
+Мы работаем так дружно,
+Вы нам скажете, как нужно.
+Они думают о нас,
+Когда мы приходим в класс.
+        </div>
+        <p class="text-muted small mt-2 mb-0">(Как мы любим Русский класс)</p>
+      </div>
+    </section>
+
+    <!-- Practice: choose ending -->
+    <section class="my-5">
+      <div class="soft-card max-w-860 mx-auto">
+        <h3 class="h5 text-gradient text-center mb-3">Practice: pick the correct form</h3>
+        <p class="mb-3">
+          Choose the correct present-tense form. Instant feedback shows ✅ or ❌.
+          (If audio files don’t exist yet, the button will use browser TTS as a fallback.)
+        </p>
+
+        <div class="d-grid gap-3" id="practice"></div>
+
+        <p class="text-muted small mt-3 mb-0">
+          Notes:
+          Verbs conjugate,
+          Nouns decline.
+          Change the ending,
+          And you’ll be fine.
+          Same word, new ending, 
+          Every time.
+          Learn the pattern
+          And make it fun.
+        </p>
+
+      </div>
+    </section>
+
+    <footer class="site-footer">&copy; 2025 Sky4Tech, LLC</footer>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Shared JS -->
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/site-search.js"></script>
+  <script src="../assets/js/audioUtils.js"></script>
+  <script src="../assets/js/lib.js"></script>
+
+  <script>
+    function init() {
+      // Add a speaker button with audio to any <li class="word-with-audio" data-text="...">
+        decorateWords('../assets/sound/male/words/');
+        injectNavbar("#navbar-placeholder");
+        }
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+  <script>
+
+    //  Practice widget
+    (function () {
+      const items = [
+        {
+          prompt: 'я ____ (читать)',
+          answer: 'читаю',
+          options: ['читаю','читает','читаем']
+        },
+        {
+          prompt: 'ты ____ (говорить)',
+          answer: 'говоришь',
+          options: ['говоришь','говорите','говорят']
+        },
+        {
+          prompt: 'он ____ (работать)',
+          answer: 'работает',
+          options: ['работаю','работает','работают']
+        },
+        {
+          prompt: 'мы ____ (ждать)',
+          answer: 'ждём',
+          options: ['ждём','ждёт','ждут']
+        },
+        {
+          prompt: 'вы ____ (знать)',
+          answer: 'знаете',
+          options: ['знают','знаете','знаешь']
+        },
+        {
+          prompt: 'они ____ (любить)',
+          answer: 'любят',
+          options: ['любят','любим','любите']
+        },
+      ];
+
+      const mount = document.getElementById('practice');
+      if (!mount) return;
+
+      function makeRow(item, idx) {
+        const row = document.createElement('div');
+        row.className = 'practice-row';
+
+        const q = document.createElement('div');
+        q.className = 'd-flex flex-wrap align-items-center justify-content-between gap-2';
+
+        const left = document.createElement('div');
+        left.innerHTML = `<strong>${idx + 1}.</strong> <span lang="ru">${item.prompt}</span>`;
+
+        const right = document.createElement('div');
+        right.className = 'd-flex align-items-center gap-2';
+
+        const sel = document.createElement('select');
+        sel.className = 'form-select form-select-sm';
+        sel.style.minWidth = '12rem';
+        sel.innerHTML = `<option value="" selected disabled>Choose…</option>` +
+          item.options.map(o => `<option value="${o}">${o}</option>`).join('');
+
+        const icon = document.createElement('span');
+        icon.className = 'feedback';
+        icon.setAttribute('aria-live','polite');
+
+        const sayBtn = createAudioButton(item.answer, '../assets/sound/male/words/');
+
+        sel.addEventListener('change', () => {
+          const ok = sel.value === item.answer;
+          icon.textContent = ok ? '✅' : '❌';
+          sel.classList.toggle('is-valid', ok);
+          sel.classList.toggle('is-invalid', !ok);
+        });
+
+        right.appendChild(sel);
+        right.appendChild(icon);
+        right.appendChild(sayBtn);
+
+        q.appendChild(left);
+        q.appendChild(right);
+
+        row.appendChild(q);
+        return row;
+      }
+
+      items.forEach((it, i) => mount.appendChild(makeRow(it, i)));
+    })();
+  </script>
+
+  <!-- Initialize bootstrap tooltips -->
+  <script>
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+    new bootstrap.Tooltip(el);
+  });
+</script>
+</body>
+
+</html>

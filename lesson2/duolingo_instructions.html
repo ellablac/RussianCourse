@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,49 +10,58 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    :root{
-      --bg1:#ffffff;
-      --bg2:#ffc80033;
+    :root {
+      --bg1: #ffffff;
+      --bg2: #ffc80033;
       --bg3: #88e21922;
-      --card:#ffffffe6;
-      --border:#4b4b4b33;
-      --text:#4b4b4b;
-      --muted:#4b4b4b99;
-      --accent:#388001;
-      --accent2:#ffc800;
-      --warn:#ff9600;
-      --ok:#58cc02;
-      --accent3:#89e219;
+      --card: #ffffffe6;
+      --border: #4b4b4b33;
+      --text: #4b4b4b;
+      --muted: #4b4b4b99;
+      --accent: #388001;
+      --accent2: #ffc800;
+      --warn: #ff9600;
+      --ok: #58cc02;
+      --accent3: #89e219;
     }
-    body{
-      color:var(--text);
-  background:
-    repeating-linear-gradient(
-      160deg,
-      #eaffc7 0%,
-      #fff2a69d 25%,
-      #eaffc7 50%
 
-    );
-      min-height:100vh;
+    body {
+      color: var(--text);
+      background:
+        repeating-linear-gradient(160deg,
+          #eaffc7 0%,
+          #fff2a69d 25%,
+          #eaffc7 50%);
+      min-height: 100vh;
     }
-    a{ color: var(--accent); }
-    a:hover{ color: #58a700; }
 
-    .hero{
-      border:1px solid var(--border);
+    a {
+      color: var(--accent);
+    }
+
+    a:hover {
+      color: #58a700;
+    }
+
+    .hero {
+      border: 1px solid var(--border);
       background: linear-gradient(135deg, #ffffffe6, #89e2191f);
       backdrop-filter: blur(8px);
       border-radius: 1.25rem;
     }
-    .card-glass{
-      border:1px solid var(--border);
+
+    .card-glass {
+      border: 1px solid var(--border);
       background: var(--card);
       backdrop-filter: blur(10px);
       border-radius: 1.25rem;
     }
-    .muted{ color: var(--muted); }
-    .grad-text{
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .grad-text {
       background: linear-gradient(90deg, var(--accent), var(--accent3), var(--accent2));
       -webkit-background-clip: text;
       background-clip: text;
@@ -59,73 +69,90 @@
     }
 
     /* callouts */
-    .callout{
+    .callout {
       border-left: 4px solid var(--accent);
       padding: .9rem 1rem;
       background: #ffffffd9;
       border-radius: 1rem;
     }
-    .callout.warn{ border-left-color: var(--warn); }
-    .callout.ok{ border-left-color: var(--ok); }
-    .callout strong{ color: var(--text); }
 
-/* screenshot cards */
-.shot{
-  border: 1px solid rgba(17, 24, 39, 0.15);
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.08);
-  padding: .85rem;
-  background: linear-gradient(180deg, var(--bg2) 0%, var(--bg3) 100%);
-  
-  margin: 0 auto; /* center horizontally */
-  flex: 1 1 300px; /* allow to grow and shrink, but start at 300px */
-  display: flex;
-  flex-direction: column;
-}
+    .callout.warn {
+      border-left-color: var(--warn);
+    }
 
-.shot-md{
-  max-width: min(300px, 100%); /* cap at 300px, but never exceed container */
-}
+    .callout.ok {
+      border-left-color: var(--ok);
+    }
 
-.shot-lg{
-  max-width: min(500px, 100%); 
-}
-.shot img{
-  display: block;
-  height: auto;
-  max-width: min(280px, 100%); /* cap at 280px, but never exceed container */
-  margin: 0 auto; /* center */
-  border-radius: .75rem;
-}
-.shot .cap{
-  margin-top: .7rem;
-  padding-top: .6rem;
-  border-top: 1px solid rgba(17, 24, 39, 0.08);
-  font-size: .92rem;
-  color: var(--muted);
-  line-height: 1.3rem;
-}
+    .callout strong {
+      color: var(--text);
+    }
 
-.shot img.img-small{
-  max-width: 200px;
-  width: auto;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}
+    /* screenshot cards */
+    .shot {
+      border: 1px solid rgba(17, 24, 39, 0.15);
+      border-radius: 1rem;
+      box-shadow: 0 6px 20px rgba(17, 24, 39, 0.08);
+      padding: .85rem;
+      background: linear-gradient(180deg, var(--bg2) 0%, var(--bg3) 100%);
+
+      margin: 0 auto;
+      /* center horizontally */
+      flex: 1 1 300px;
+      /* allow to grow and shrink, but start at 300px */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shot-md {
+      max-width: min(300px, 100%);
+      /* cap at 300px, but never exceed container */
+    }
+
+    .shot-lg {
+      max-width: min(500px, 100%);
+    }
+
+    .shot img {
+      display: block;
+      height: auto;
+      max-width: min(280px, 100%);
+      /* cap at 280px, but never exceed container */
+      margin: 0 auto;
+      /* center */
+      border-radius: .75rem;
+    }
+
+    .shot .cap {
+      margin-top: .7rem;
+      padding-top: .6rem;
+      border-top: 1px solid rgba(17, 24, 39, 0.08);
+      font-size: .92rem;
+      color: var(--muted);
+      line-height: 1.3rem;
+    }
+
+    .shot img.img-small {
+      max-width: 200px;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
 
     /* TOC */
-    .toc a{
+    .toc a {
       text-decoration: none;
     }
-    .toc a:hover{
+
+    .toc a:hover {
       text-decoration: underline;
     }
 
     /* small UI pills */
-    .pill{
-      border:1px solid var(--border);
-      background:#ffffffd9;
+    .pill {
+      border: 1px solid var(--border);
+      background: #ffffffd9;
       color: var(--text);
       border-radius: 999px;
       padding: .3rem .7rem;
@@ -134,20 +161,39 @@
     }
 
     /* compact lists */
-    ul.compact li{ margin-bottom: .35rem; }
+    ul.compact li {
+      margin-bottom: .35rem;
+    }
 
     /* print friendliness */
-    @media print{
-      body{ background: #fff; color:#111; }
-      .hero, .card-glass, .callout, .shot{
-        background:#fff !important;
-        color:#111 !important;
-        border:1px solid #ccc !important;
-        backdrop-filter:none !important;
+    @media print {
+      body {
+        background: #fff;
+        color: #111;
       }
-      .muted{ color:#333 !important; }
-      a{ color:#0066cc !important; }
-      .grad-text{ color:#111 !important; background:none !important; }
+
+      .hero,
+      .card-glass,
+      .callout,
+      .shot {
+        background: #fff !important;
+        color: #111 !important;
+        border: 1px solid #ccc !important;
+        backdrop-filter: none !important;
+      }
+
+      .muted {
+        color: #333 !important;
+      }
+
+      a {
+        color: #0066cc !important;
+      }
+
+      .grad-text {
+        color: #111 !important;
+        background: none !important;
+      }
     }
   </style>
 </head>
@@ -156,13 +202,13 @@
   <header class="container py-4">
     <div class="hero p-4 p-md-5">
       <div class="d-flex flex-column gap-3">
-        <div class = "text-center">
+        <div class="text-center">
 
           <h1 class="display-6 fw-bold text-center">
             <span class="grad-text">Duolingo Instructions</span>
           </h1>
           <p class="mb-0">
-            This page explains how Duolingo works <strong>once you’ve enrolled in class and completed setup</strong>.
+            This page explains how Duolingo works <strong>once you've enrolled in class and completed setup</strong>.
           </p>
           <p class="mt-2">
             Need help setting up or enrolling? Read:
@@ -177,21 +223,24 @@
         <div class="col-lg-9">
           <div class="callout warn">
 
-            <strong>Important:</strong> 
-              <ul class="my-1 compact">
-                <li>
-                  Sign in with <strong>Continue with Google</strong> <em>before</em> enrolling, using the same Google account you use for class.
-                </li>
-                <li>
-                  Standard Duolingo Accounts are <strong>free.</strong> You never need to use Paid features or add a credit card for this class. 
-                  Read <a href="#freepaid"> How to ignore upgrade prompts </a>for more details.
-                </li>    
-          </ul>
+            <strong>Important:</strong>
+            <ul class="my-1 compact">
+              <li>
+                Sign in with <strong>Continue with Google</strong> <em>before</em> enrolling, using the same Google
+                account you use for class.
+              </li>
+              <li>
+                Standard Duolingo Accounts are <strong>free.</strong> You never need to use Paid features or add a
+                credit card for this class.
+                Read <a href="#freepaid">How to ignore upgrade prompts</a> for more details.
+              </li>
+            </ul>
           </div>
         </div>
         <div class="col-lg-3">
           <div class="callout">
-            <strong>Consistency wins.</strong> Earning 10 XP most days for a month is better than 300 XP once and then nothing.
+            <strong>Consistency wins.</strong> Earning 10 XP most days for a month is better than 300 XP once and then
+            nothing.
           </div>
         </div>
       </div>
@@ -207,7 +256,7 @@
         <div class="col-md-6">
           <ul class="mb-0 compact">
             <li><a href="#structure">How Duolingo is organized</a></li>
-            <li><a href="#lessons">Completing assignments and earning XP's</a></li>
+            <li><a href="#lessons">Completing assignments and earning XP</a></li>
             <li><a href="#hearts">Practicing to earn hearts</a></li>
           </ul>
         </div>
@@ -229,15 +278,17 @@
           <div class="callout">
             <strong>Structure:</strong>
             <ul class="mb-0 compact">
-              <li><strong>Course</strong> → Russian, Spanish, etc.</li>
-              <li><strong>Sections</strong> → big parts of the course, Russian course has 4 sections</li>
-              <li><strong>Units</strong> → each section is divided into units</li>
-              <li><strong>Lessons</strong> → each unit contains lessons, they are short activities such as reading, listening, writing, and sometimes speaking. You complete lessons to earn points </li>
+              <li><strong>Course</strong> -> Russian, Spanish, etc.</li>
+              <li><strong>Sections</strong> -> big parts of the course, Russian course has 4 sections</li>
+              <li><strong>Units</strong> -> each section is divided into units</li>
+              <li><strong>Lessons</strong> -> each unit contains lessons. They are short activities such as reading,
+                listening, writing, and sometimes speaking. You complete lessons to earn points </li>
             </ul>
           </div>
 
           <p class="muted mt-1 mb-0">
-            <strong>Tip:</strong> If you don’t see all content in the screenshots below, it is because Duolingo is showing only the completed lessons in each unit. That’s normal.
+            <strong>Tip:</strong> If you don't see all content in the screenshots below, it is because Duolingo is
+            showing only the completed lessons in each unit. That's normal.
           </p>
         </div>
       </div>
@@ -245,7 +296,7 @@
         <!-- image 1 -->
         <div class="col-lg-4 d-flex">
           <div class="shot shot-md">
-            <p><strong> Course Selection</strong> is on the main page under the icon that looks like a flag:</p>
+            <p><strong>Course Selection</strong> is on the main page under the icon that looks like a flag:</p>
             <img src="images/duolingo-course-selection.jpg" alt="Duolingo Language Selection(screenshot)">
           </div>
         </div>
@@ -254,9 +305,9 @@
         <div class="col-lg-4 d-flex">
           <div class="shot shot-md">
             <p><strong>Sections.</strong> This image shows four sections in the Russian course.
-               Completing a section unlocks the next one. 
-               Clicking "Review" shows the units in that section, 
-               and "See Details" lists the grammar concepts it covers.
+              Completing a section unlocks the next one.
+              Clicking "Review" shows the units in that section,
+              and "See Details" lists the grammar concepts it covers.
             </p>
             <img src="images/duolingo_sections.jpg" alt="Duolingo course path showing sections(screenshot)">
           </div>
@@ -265,12 +316,12 @@
         <!-- image 3 -->
         <div class="col-lg-4 d-flex">
           <div class="shot shot-md">
-          <p><strong>Units and lessons.</strong> 
-            This shows the first two units in Section 1. 
-            Lessons look like stepping stones with a white checkmark inside. 
-            The trophy is a review, and reaching a chest rewards you with gems. 
-            Each unit has a "Guidebook" with key phrases for that unit.
-          </p>
+            <p><strong>Units and lessons.</strong>
+              This shows the first two units in Section 1.
+              Lessons look like stepping stones with a white checkmark inside.
+              The trophy is a review, and reaching a chest rewards you with gems.
+              Each unit has a "Guidebook" with key phrases for that unit.
+            </p>
 
             <img src="images/duolingo_units.jpg" alt="Duolingo course path showing units(screenshot)">
           </div>
@@ -282,28 +333,31 @@
     <!-- 2) Lessons + XP -->
     <section id="lessons" class="card-glass p-4 mb-4">
       <div class="row g-3 align-items-start">
-
-          <h2 class="h4 mb-2">2) Completing assignments and earning XP's</h2>
-
+        <div class="col-lg-12">
+          <h2 class="h4 mb-2">2) Completing assignments and earning XP</h2>
+        </div>
+      </div>
 
       <div class="row g-3">
         <div class="col-lg-12">
-          <p class = "mb-3">
-           When I assign work, you’ll receive an email from Duolingo with the assignment link.
+          <p class="mb-3">
+            When I assign work, you'll receive an email from Duolingo with the assignment link.
           </p>
-           <ol class="mb-0">
+          <ol class="mb-0">
 
             <li class="mb-2">
-                Click the assignment link, you may need to sign in with Google if you haven’t already. This will take you to the assigned lesson or review.
+              Click the assignment link. You may need to sign in with Google if you haven't already. This will take
+              you to the assigned lesson or review.
             </li>
 
             <li class="mb-2">
 
-                <div>Earn the XPs .</div>
-                <div class="muted">
-                  Duolingo only lets me assign XP, but I can’t control which lessons you do. Try to do at least the assigned XP.
-                  Your completion should be tracked automatically in Duolingo Classroom.
-                </div>
+              <div>Earn the XP.</div>
+              <div class="muted">
+                Duolingo only lets me assign XP, but I can't control which lessons you do. Try to do at least the
+                assigned XP.
+                Your completion should be tracked automatically in Duolingo Classroom.
+              </div>
 
             </li>
           </ol>
@@ -311,7 +365,7 @@
       </div>
 
       <div class="callout ok">
-        <strong>XP's are points (experience points). You earn XP by:</strong>
+        <strong>XP are short for points (experience points). You earn XP by:</strong>
         <ul class="mb-0 compact">
           <li>Completing <strong>new lessons</strong></li>
           <li><strong>Reviewing</strong> lessons you already did</li>
@@ -320,7 +374,7 @@
       </div>
 
       <p class="muted mt-3 mb-0">
-        XP per lesson can vary, but many lessons are about <strong>~10 XP</strong>. 
+        XP per lesson can vary, but many lessons are about <strong>~10 XP</strong>.
       </p>
 
     </section>
@@ -331,11 +385,11 @@
         <div class="col-lg-7">
           <h2 class="h4 mb-2">3) Practicing to earn hearts</h2>
           <p class="mb-2">
-            When you make  a mistake, you loose a heart. Once you run out of hearts, 
+            When you make a mistake, you lose a heart. Once you run out of hearts,
             the lesson is over and you must earn more hearts to continue progressing
             through the course. However, you can continue learning by practicing old
-            material. This will not only allow you to earn hearts and XPs, but also help 
-            you review and reinforce what you’ve learned.  
+            material. This will not only allow you to earn hearts and XP, but also help
+            you review and reinforce what you've learned.
           </p>
 
           <div class="callout warn">
@@ -347,9 +401,10 @@
           </div>
 
           <div class="callout ok mt-3">
-            I recommend choosing  <strong>Practice to earn a heart</strong>.
+            I recommend choosing <strong>Practice to earn a heart</strong>.
             <div class="muted mt-2">
-              If you couldn’t finish a lesson, you need the extra practice anyway. Practice restores hearts and helps you move forward.
+              If you couldn't finish a lesson, you need the extra practice anyway. Practice restores hearts and helps
+              you move forward.
             </div>
           </div>
         </div>
@@ -359,7 +414,7 @@
             <strong>When you run out of hearts: </strong>
             <ul>
               <li>Close any upgrade prompts that appear</li>
-              <li>Click on the ❤️ in the upper right corner of the screen</li>
+              <li>Click on the heart icon in the upper right corner of the screen</li>
               <li>Choose "Practice to earn a heart"</li>
             </ul>
             <img src="images/duolingo-hearts.jpg" alt="Hearts screen showing practice option (screenshot)">
@@ -376,7 +431,7 @@
           <p class="mb-3">
             After you complete at least one assignment or lesson, you'll see our class' leaderboard in the right panel.
             Leaderboard resets every week, so you can start fresh and compete for the top spot each week.
-            When you click on the leaderboard, you can see how many XP's each student has earned that week.
+            When you click on the leaderboard, you can see how many XP each student has earned that week.
           </p>
         </div>
 
@@ -393,23 +448,23 @@
 
     <!-- 5) Free vs Paid -->
     <section id="freepaid" class="card-glass p-4 mb-4">
+    <h2 class="h4 mb-3">5) How to ignore upgrade prompts and avoid excessive ads</h2>
+
       <div class="row g-3 align-items-stretch">
-        <h2 class="h4 mb-2">5) How to ignore upgrade prompts and avoid excessive ads</h2>
         <div class="col-lg-6 d-flex">
           <div class="shot shot-lg">
             <div class="callout ok mb-3">
               <strong>You can complete everything for this class for free.</strong>
               You do not need to enter a credit card.
               <div class="mt-2">
-              If you see an upgrade screen, look for <strong>Not now</strong>, <strong>Maybe later</strong>, or an <strong>X</strong> and continue.
-              Only pay if you personally want premium features for your own use.
+                If you see an upgrade screen, look for <strong>Not now</strong>, <strong>Maybe later</strong>, or an
+                <strong>X</strong> and continue.
+                Only pay if you personally want premium features for your own use.
               </div>
             </div>
 
             <div class="mb-2"><strong> Example upsell prompt (close it):</strong></div>
-            <img class = "img-small" src="images/duolingo_upgrade_prompt.jpg
-            " alt="Premium upsell screen (screenshot)">
-
+            <img class="img-small" src="images/duolingo_upgrade_prompt.jpg" alt="Premium upsell screen (screenshot)">
             <div class="muted mt-2">
               <strong>Paid features include:</strong>
               <ul class="mb-0 compact">
@@ -425,17 +480,18 @@
           <div class="shot shot-lg">
             <div class="callout ok mb-3">
               <strong>Mobile app ads.</strong>
-              You can install duolingo app on your phone, but the mobile app version 
-              of Duolingo shows distractive ads after each lesson.
+              You can install the Duolingo app on your phone, but the mobile app version
+              of Duolingo shows distracting ads after each lesson.
               At the time of this writing, the web version of Duolingo ads are much less intrusive.
-              You can use Duolingo in a web browser on either a computer or mobile devices.
+              You can use the web version on either a computer or mobile devices.
               <div class="mt-2">
-                Go to <a href="https://www.duolingo.com">duolingo.com</a>  in your browser. On your phone, you’ll see a prompt like the screenshot below.
+                Go to <a href="https://www.duolingo.com">duolingo.com</a> in your browser. On your phone, you'll see a
+                prompt like the screenshot below.
                 Choose <em>Continue in Browser</em> instead of opening the app.
               </div>
             </div>
-            <img class = "img-small" src="images/duolingo_mobile.jpg
-            " alt="Continue in browser prompt on mobile (screenshot)">
+            <img class="img-small" src="images/duolingo_mobile.jpg"
+              alt="Continue in browser prompt on mobile (screenshot)">
 
           </div>
         </div>
@@ -444,28 +500,28 @@
 
     <!-- 6) Adjusting notifications  -->
     <section id="settings" class="card-glass p-4 mb-4">
+      <h2 class="h4 mb-2">6) Adjusting Notifications</h2>
+      <div class="mb-3">
+        Duolingo can be a bit overzealous with reminder emails that push daily practice.
+        <br>You can turn off anything you find distracting in your account settings.
+      </div>
       <div class="row g-3 align-items-stretch">
-        <h2 class="h4 mb-2">6) Adjusting Notifications</h2>
-        <div class="mb-3">
-          Duolingo can be a bit overzealous with reminder emails that push daily practice.  
-          <br>You can turn off anything you find distracting in your account settings.
-        </div>
+
         <div class="col-lg-4 d-flex">
           <div class="shot shot-md">
             <div class="cap mb-2">
-              In the bottom left of the Duolingo website, 
-              click More -> Settings -> Notifications/Preferences. <hr>
+              In the bottom left of the Duolingo website,
+              click More -> Settings -> Notifications/Preferences.
+              <hr>
             </div>
-              <img src="images/duolingo_settings.jpg
-            " alt="Settings screen  (screenshot)">
+            <img src="images/duolingo_settings.jpg" alt="Settings screen  (screenshot)">
           </div>
         </div>
 
         <div class="col-lg-4 d-flex">
           <div class="shot shot-md">
 
-            <img  src="images/duolingo_notifications.jpg
-            " alt="Continue in browser prompt on mobile (screenshot)">
+            <img src="images/duolingo_notifications.jpg" alt="Notifications screen (screenshot)">
 
           </div>
         </div>
@@ -473,8 +529,7 @@
         <div class="col-lg-4 d-flex">
           <div class="shot shot-md">
 
-            <img src="images/duolingo_preferences.jpg
-            " alt="Preferences screen  (screenshot)">
+            <img src="images/duolingo_preferences.jpg" alt="Preferences screen  (screenshot)">
 
           </div>
         </div>
@@ -487,7 +542,8 @@
         <div>
           <div class="fw-semibold">Need help?</div>
           <div class="muted">
-            If you have any questions about using Duolingo, please ask in our class' discussion forum or email me directly.
+            If you have any questions about using Duolingo, please ask in our class' discussion forum or email me
+            directly.
           </div>
         </div>
       </div>
@@ -497,4 +553,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

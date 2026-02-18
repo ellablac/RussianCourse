@@ -1,0 +1,302 @@
+{
+  "query": "свидетельствовал",
+  "found": true,
+  "word_stressed": null,
+  "lemma": null,
+  "base_form": null,
+  "pos": null,
+  "translation": null,
+  "example_ru": null,
+  "example_en": null,
+  "source": "openrussian.org suggestions",
+  "raw": {
+    "result": {
+      "term": "свидетельствовал",
+      "number": null,
+      "words": [
+        {
+          "word": {
+            "id": 3618,
+            "ru": "свиде'тельствовать",
+            "type": "verb",
+            "rank": null,
+            "tls": [["witness"], ["testify", "give evidence", "be evidence"]],
+            "tls2": [
+              {
+                "translation": ["witness"],
+                "examples": []
+              },
+              {
+                "translation": ["testify", "give evidence", "be evidence"],
+                "examples": []
+              }
+            ],
+            "verb": {
+              "aspect": "imperfective",
+              "partners2": [
+                {
+                  "id": 19428,
+                  "accented": "засвиде'тельствовать"
+                }
+              ]
+            },
+            "tags": []
+          },
+          "forms": [
+            {
+              "ru": "свиде'тельствовал",
+              "type": "ru_verb_past_m"
+            },
+            {
+              "ru": "свиде'тельствовала",
+              "type": "ru_verb_past_f"
+            },
+            {
+              "ru": "свиде'тельствовало",
+              "type": "ru_verb_past_n"
+            }
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "id": 38483,
+          "ru": "Она свиде'тельствовала против него.",
+          "links": [
+            {
+              "start": 4,
+              "length": 18,
+              "word": {
+                "id": 3618,
+                "word": "свиде'тельствовать"
+              }
+            },
+            {
+              "start": 23,
+              "length": 6,
+              "word": {
+                "id": 417,
+                "word": "про'тив"
+              }
+            }
+          ],
+          "tl": "She testified against him."
+        },
+        {
+          "id": 246522,
+          "ru": "Кра'сная зудящая сыпь на ко'же Мэри свиде'тельствовала о том, что у неё ветря'нка.",
+          "links": [
+            {
+              "start": 0,
+              "length": 8,
+              "word": {
+                "id": 286,
+                "word": "кра'сный"
+              }
+            },
+            {
+              "start": 9,
+              "length": 7,
+              "word": {
+                "id": 69106,
+                "word": "зудя'щий"
+              }
+            },
+            {
+              "start": 22,
+              "length": 2,
+              "word": {
+                "id": 5,
+                "word": "на"
+              }
+            },
+            {
+              "start": 25,
+              "length": 5,
+              "word": {
+                "id": 822,
+                "word": "ко'жа"
+              }
+            },
+            {
+              "start": 31,
+              "length": 4,
+              "word": {
+                "id": 13307,
+                "word": "мэ'ри"
+              }
+            },
+            {
+              "start": 36,
+              "length": 18,
+              "word": {
+                "id": 3618,
+                "word": "свиде'тельствовать"
+              }
+            },
+            {
+              "start": 55,
+              "length": 1,
+              "word": {
+                "id": 33,
+                "word": "о"
+              }
+            },
+            {
+              "start": 62,
+              "length": 3,
+              "word": {
+                "id": 7,
+                "word": "что"
+              }
+            },
+            {
+              "start": 66,
+              "length": 1,
+              "word": {
+                "id": 20,
+                "word": "у"
+              }
+            },
+            {
+              "start": 72,
+              "length": 9,
+              "word": {
+                "id": 35392,
+                "word": "ветря'нка"
+              }
+            }
+          ],
+          "tl": "The red, itchy rash on Mary's skin was a telltale sign that she had chicken pox."
+        },
+        {
+          "id": 256192,
+          "ru": "Мо'крое пальто' свиде'тельствовало, что он был снаружи.",
+          "links": [
+            {
+              "start": 0,
+              "length": 7,
+              "word": {
+                "id": 1001,
+                "word": "мо'крый"
+              }
+            },
+            {
+              "start": 8,
+              "length": 7,
+              "word": {
+                "id": 1932,
+                "word": "пальто'"
+              }
+            },
+            {
+              "start": 16,
+              "length": 18,
+              "word": {
+                "id": 3618,
+                "word": "свиде'тельствовать"
+              }
+            },
+            {
+              "start": 36,
+              "length": 3,
+              "word": {
+                "id": 7,
+                "word": "что"
+              }
+            },
+            {
+              "start": 43,
+              "length": 3,
+              "word": {
+                "id": 9,
+                "word": "быть"
+              }
+            },
+            {
+              "start": 47,
+              "length": 7,
+              "word": {
+                "id": 4613,
+                "word": "снару'жи"
+              }
+            }
+          ],
+          "tl": "His wet coat was evidence that he had been outside."
+        },
+        {
+          "id": 257711,
+          "ru": "Жена' Тома свиде'тельствовала против него.",
+          "links": [
+            {
+              "start": 0,
+              "length": 5,
+              "word": {
+                "id": 213,
+                "word": "жена'"
+              }
+            },
+            {
+              "start": 6,
+              "length": 4,
+              "word": {
+                "id": 4501,
+                "word": "том"
+              }
+            },
+            {
+              "start": 11,
+              "length": 18,
+              "word": {
+                "id": 3618,
+                "word": "свиде'тельствовать"
+              }
+            },
+            {
+              "start": 30,
+              "length": 6,
+              "word": {
+                "id": 417,
+                "word": "про'тив"
+              }
+            }
+          ],
+          "tl": "Tom's wife testified against him."
+        },
+        {
+          "id": 257713,
+          "ru": "Том свиде'тельствовал против Мэри.",
+          "links": [
+            {
+              "start": 4,
+              "length": 17,
+              "word": {
+                "id": 3618,
+                "word": "свиде'тельствовать"
+              }
+            },
+            {
+              "start": 22,
+              "length": 6,
+              "word": {
+                "id": 417,
+                "word": "про'тив"
+              }
+            },
+            {
+              "start": 29,
+              "length": 4,
+              "word": {
+                "id": 13307,
+                "word": "мэ'ри"
+              }
+            }
+          ],
+          "tl": "Tom testified against Mary."
+        }
+      ],
+      "singles": []
+    },
+    "error": null
+  }
+}
