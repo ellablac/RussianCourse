@@ -3,11 +3,9 @@
 OpenRussian lookup CLI.
 Usage:
   python utilities/openrussian_api.py word
-  Multiple words
   python utilities/openrussian_api.py word1 word2 --out assets/json/openrussian_lookup.json
-  From a file (one word per line)
   python utilities/openrussian_api.py --in assets/json/vocabulary.txt --out assets/json/openrussian_lookup.json
-  To see raw API response in browser: https://api.openrussian.org/suggestions?q=мама
+  python utilities/openrussian_api.py --in assets/json/vocabulary.json --out assets/json/openrussian_lookup.json
 """
 
 from __future__ import annotations
@@ -82,6 +80,36 @@ def fetch_suggestions(word: str) -> Any:
         return json.load(resp)
 
 
+def fetch_base_info(bare: str) -> Tuple[Optional[int], Optional[Any]]:
+    url = f"{API_BASE}/api/words?bare={urllib.parse.quote(bare)}"
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=DEFAULT_TIMEOUT) as resp:
+        raw = json.load(resp)
+
+    result = raw.get("result") if isinstance(raw, dict) else None
+    words = result.get("words") if isinstance(result, dict) else None
+    if not isinstance(words, list) or not words:
+        return None, None
+
+    chosen = None
+    for w in words:
+        if not isinstance(w, dict):
+            continue
+        if w.get("bare") == bare or w.get("word") == bare or w.get("ru") == bare:
+            chosen = w
+            break
+    if not chosen:
+        chosen = words[0] if isinstance(words[0], dict) else None
+    if not chosen:
+        return None, None
+
+    rank = chosen.get("rank")
+    level = chosen.get("level")
+    if isinstance(rank, str) and rank.isdigit():
+        rank = int(rank)
+    return rank if isinstance(rank, int) else None, level
+
+
 def build_response(query: str, raw: Any) -> Dict[str, Any]:
     result = raw.get("result") if isinstance(raw, dict) else None
     if not isinstance(result, dict):
@@ -143,6 +171,14 @@ def build_response(query: str, raw: Any) -> Dict[str, Any]:
 
 
 def _read_words(path: str) -> List[str]:
+    if path.lower().endswith(".json"):
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+            data = json.load(f)
+        if isinstance(data, dict) and isinstance(data.get("words"), list):
+            return [w for w in data["words"] if isinstance(w, str) and w.strip()]
+        if isinstance(data, list):
+            return [w for w in data if isinstance(w, str) and w.strip()]
+
     words: List[str] = []
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
@@ -173,9 +209,31 @@ def main() -> None:
         parser.error("Provide at least one word or --in file.")
 
     results: List[Dict[str, Any]] = []
+    seen_bare: set[str] = set()
+
     for w in targets:
         raw = fetch_suggestions(w)
-        results.append(build_response(w, raw))
+        res = build_response(w, raw)
+        if not res.get("found") or not res.get("base_form"):
+            print(f"reject: {w} (no valid response)")
+            continue
+
+        base_form = res["base_form"]
+        base_bare = _normalize_query(base_form)
+        if base_bare in seen_bare:
+            continue
+
+        rank, level = fetch_base_info(base_bare)
+        if rank is not None and rank > 1000:
+            print(f"reject: {base_form} (rank {rank} > 1000)")
+            continue
+
+        res["word"] = base_form
+        res["word_stressed"] = base_form
+        res["rank"] = rank
+        res["level"] = level
+        results.append(res)
+        seen_bare.add(base_bare)
 
     payload = {"count": len(results), "results": results}
     with open(args.out, "w", encoding="utf-8") as f:

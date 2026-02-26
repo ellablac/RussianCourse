@@ -1,22 +1,4502 @@
 {
-  "count": 1,
+  "count": 250,
   "results": [
     {
-      "query": "свидетельствовал",
+      "query": "а",
       "found": true,
-      "word": "свидетельствовал",
-      "word_stressed": "свиде'тельствовал",
-      "base_form": "свиде'тельствовать",
+      "word": "а",
+      "word_stressed": "а",
+      "base_form": "а",
+      "pos": "other",
+      "translation": [
+        "and (as contrast)"
+      ],
+      "example_ru": "А-а, давай поторопи'сь. Мы так опозда'ем! Давай, я завяжу' тебе шнурки'.",
+      "example_en": "Oooh, get a move on. We'll end up late! Come on, I'll tie your shoelaces for you.",
+      "source": "openrussian.org suggestions",
+      "rank": 9,
+      "level": "A2"
+    },
+    {
+      "query": "английский",
+      "found": true,
+      "word": "англи'йский",
+      "word_stressed": "англи'йский",
+      "base_form": "англи'йский",
+      "pos": "adjective",
+      "translation": [
+        "English",
+        "British"
+      ],
+      "example_ru": "Например, тебе нра'вится англи'йский?",
+      "example_en": "For example, do you like English?",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "ая",
+      "found": true,
+      "word": "неэффекти'вный",
+      "word_stressed": "неэффекти'вный",
+      "base_form": "неэффекти'вный",
+      "pos": "adjective",
+      "translation": [
+        "ineffective"
+      ],
+      "example_ru": "Ая скло'нна всё переводи'ть в кра'йности.",
+      "example_en": "Aya tends to carry things to extremes.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "б",
+      "found": true,
+      "word": "бы",
+      "word_stressed": "бы",
+      "base_form": "бы",
+      "pos": "other",
+      "translation": [
+        "would (be able to)"
+      ],
+      "example_ru": "Лу'чше б тебе уже нача'ть.",
+      "example_en": "You'd better start now.",
+      "source": "openrussian.org suggestions",
+      "rank": 28,
+      "level": "B1"
+    },
+    {
+      "query": "банк",
+      "found": true,
+      "word": "банк",
+      "word_stressed": "банк",
+      "base_form": "банк",
+      "pos": "noun",
+      "translation": [
+        "bank (financial establishment)"
+      ],
+      "example_ru": "Я иду' в банк.",
+      "example_en": "I'm going to the bank.",
+      "source": "openrussian.org suggestions",
+      "rank": 663,
+      "level": "B2"
+    },
+    {
+      "query": "бежать",
+      "found": true,
+      "word": "бежа'ть",
+      "word_stressed": "бежа'ть",
+      "base_form": "бежа'ть",
       "pos": "verb",
       "translation": [
-        "witness",
-        "testify",
-        "give evidence",
-        "be evidence"
+        "to run"
       ],
-      "example_ru": "Она свиде'тельствовала против него.",
-      "example_en": "She testified against him.",
-      "source": "openrussian.org suggestions"
+      "example_ru": "Он не мог бежа'ть очень быстро.",
+      "example_en": "He couldn't run very fast.",
+      "source": "openrussian.org suggestions",
+      "rank": 420,
+      "level": "B1"
+    },
+    {
+      "query": "би́ть",
+      "found": true,
+      "word": "бить",
+      "word_stressed": "бить",
+      "base_form": "бить",
+      "pos": "verb",
+      "translation": [
+        "to beat",
+        "hit",
+        "strike",
+        "to chime",
+        "to clap"
+      ],
+      "example_ru": "Разреша'лось всё: можно бы'ло пина'ть проти'вника, ста'вить ему подно'жки, бить его и куса'ть.",
+      "example_en": "Everything was allowed: You could kick, trip, hit, or bite your opponent.",
+      "source": "openrussian.org suggestions",
+      "rank": 706,
+      "level": "B2"
+    },
+    {
+      "query": "бо́г",
+      "found": true,
+      "word": "бог",
+      "word_stressed": "бог",
+      "base_form": "бог",
+      "pos": "noun",
+      "translation": [
+        "God",
+        "god"
+      ],
+      "example_ru": "Челове'к предполага'ет, а Бог располага'ет.",
+      "example_en": "Man plans things, but the gods decide.",
+      "source": "openrussian.org suggestions",
+      "rank": 237,
+      "level": "B1"
+    },
+    {
+      "query": "большая",
+      "found": true,
+      "word": "бо'льший",
+      "word_stressed": "бо'льший",
+      "base_form": "бо'льший",
+      "pos": "adjective",
+      "translation": [
+        "greater",
+        "larger",
+        "bigger",
+        "more",
+        "most"
+      ],
+      "example_ru": "У меня большая колле'кция ма'рок.",
+      "example_en": "I have a large collection of stamps.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "большое",
+      "found": true,
+      "word": "большо'й",
+      "word_stressed": "большо'й",
+      "base_form": "большо'й",
+      "pos": "adjective",
+      "translation": [
+        "big",
+        "large",
+        "great",
+        "important",
+        "grown-up"
+      ],
+      "example_ru": "Большо'е спасибо!",
+      "example_en": "Thank you very much.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "бра́та",
+      "found": true,
+      "word": "брат",
+      "word_stressed": "брат",
+      "base_form": "брат",
+      "pos": "noun",
+      "translation": [
+        "brother"
+      ],
+      "example_ru": "Твоего' бра'та зову'т Алексей?",
+      "example_en": "Is your brother's name Aleksej?",
+      "source": "openrussian.org suggestions",
+      "rank": 334,
+      "level": "A2"
+    },
+    {
+      "query": "бы́ли",
+      "found": true,
+      "word": "быть",
+      "word_stressed": "быть",
+      "base_form": "быть",
+      "pos": "verb",
+      "translation": [
+        "to be",
+        "(present tense) 'есть'  - there is",
+        "there are",
+        "has been"
+      ],
+      "example_ru": "Мои' часы бы'ли украдены.",
+      "example_en": "I had my watch stolen.",
+      "source": "openrussian.org suggestions",
+      "rank": 7,
+      "level": "B1"
+    },
+    {
+      "query": "в",
+      "found": true,
+      "word": "в",
+      "word_stressed": "в",
+      "base_form": "в",
+      "pos": "other",
+      "translation": [
+        "in",
+        "at",
+        "on",
+        "within",
+        "to",
+        "into",
+        "for"
+      ],
+      "example_ru": "В ко'мнате стоят крова'ти, привинченные к полу. На них сидя'т и лежа'т лю'ди в си'них больни'чных хала'тах и по-старинному в колпака'х. Э'то — сумасше'дшие.",
+      "example_en": "There are bedsteads screwed to the floor. Men in blue hospital dressing-gowns, and wearing nightcaps in the old style, are sitting and lying on them. These are the lunatics.",
+      "source": "openrussian.org suggestions",
+      "rank": 2,
+      "level": "A2"
+    },
+    {
+      "query": "ва́ши",
+      "found": true,
+      "word": "ваш",
+      "word_stressed": "ваш",
+      "base_form": "ваш",
+      "pos": "pronoun",
+      "translation": [
+        "your",
+        "yours"
+      ],
+      "example_ru": "Сда'йте ваши рабо'ты.",
+      "example_en": "Give your papers in.",
+      "source": "openrussian.org suggestions",
+      "rank": 134,
+      "level": null
+    },
+    {
+      "query": "вас",
+      "found": true,
+      "word": "вы",
+      "word_stressed": "вы",
+      "base_form": "вы",
+      "pos": "pronoun",
+      "translation": [
+        "you (plural)",
+        "you (formal)"
+      ],
+      "example_ru": "Я не буду вас сего'дня больше ни о чем спра'шивать.",
+      "example_en": "I won't ask you anything else today.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A1"
+    },
+    {
+      "query": "ве́чер",
+      "found": true,
+      "word": "ве'чер",
+      "word_stressed": "ве'чер",
+      "base_form": "ве'чер",
+      "pos": "noun",
+      "translation": [
+        "evening"
+      ],
+      "example_ru": "Э'то был ти'хий зи'мний ве'чер.",
+      "example_en": "It was a quiet winter evening.",
+      "source": "openrussian.org suggestions",
+      "rank": 217,
+      "level": "B1"
+    },
+    {
+      "query": "весь",
+      "found": true,
+      "word": "весь",
+      "word_stressed": "весь",
+      "base_form": "весь",
+      "pos": "pronoun",
+      "translation": [
+        "all",
+        "whole",
+        "entire",
+        "all gone (no more left)"
+      ],
+      "example_ru": "Кто будет убира'ть весь э'тот беспоря'док?",
+      "example_en": "Who's going to clear up all this mess?",
+      "source": "openrussian.org suggestions",
+      "rank": 10,
+      "level": "B1"
+    },
+    {
+      "query": "веще́й",
+      "found": true,
+      "word": "вещь",
+      "word_stressed": "вещь",
+      "base_form": "вещь",
+      "pos": "noun",
+      "translation": [
+        "thing",
+        "things",
+        "belongings",
+        "clothes",
+        "work"
+      ],
+      "example_ru": "Челове'к — ме'ра всех вещей.",
+      "example_en": "Man is the measure of all things.",
+      "source": "openrussian.org suggestions",
+      "rank": 518,
+      "level": "A2"
+    },
+    {
+      "query": "видеть",
+      "found": true,
+      "word": "ви'деть",
+      "word_stressed": "ви'деть",
+      "base_form": "ви'деть",
+      "pos": "verb",
+      "translation": [
+        "to see"
+      ],
+      "example_ru": "Я не хочу' тебя больше ви'деть.",
+      "example_en": "I never want to see you again.",
+      "source": "openrussian.org suggestions",
+      "rank": 80,
+      "level": "A2"
+    },
+    {
+      "query": "во́семь",
+      "found": true,
+      "word": "во'семь",
+      "word_stressed": "во'семь",
+      "base_form": "во'семь",
+      "pos": "other",
+      "translation": [
+        "eight",
+        "8"
+      ],
+      "example_ru": "Один, два, три, четыре, пять, шесть, семь, восемь, девять, десять.",
+      "example_en": "One, two, three, four, five, six, seven, eight, nine, ten.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A2"
+    },
+    {
+      "query": "вопро́сы",
+      "found": true,
+      "word": "вопро'с",
+      "word_stressed": "вопро'с",
+      "base_form": "вопро'с",
+      "pos": "noun",
+      "translation": [
+        "question",
+        "matter",
+        "issue",
+        "problem"
+      ],
+      "example_ru": "Еди'нственные поле'зные отве'ты - те, кото'рые поднима'ют но'вые вопро'сы.",
+      "example_en": "The only useful answers are those that raise new questions.",
+      "source": "openrussian.org suggestions",
+      "rank": 161,
+      "level": "A2"
+    },
+    {
+      "query": "вре́мя",
+      "found": true,
+      "word": "вре'мя",
+      "word_stressed": "вре'мя",
+      "base_form": "вре'мя",
+      "pos": "noun",
+      "translation": [
+        "time",
+        "times",
+        "tense",
+        "weather"
+      ],
+      "example_ru": "Я не зна'ю, будет ли у меня вре'мя.",
+      "example_en": "I don't know if I'll have time.",
+      "source": "openrussian.org suggestions",
+      "rank": 46,
+      "level": "A2"
+    },
+    {
+      "query": "все",
+      "found": true,
+      "word": "все",
+      "word_stressed": "все",
+      "base_form": "все",
+      "pos": "other",
+      "translation": [
+        "all",
+        "everybody",
+        "the whole (of)",
+        "Everything"
+      ],
+      "example_ru": "Все ло'шади живо'тные, но не все живо'тные - ло'шади.",
+      "example_en": "All horses are animals, but not all animals are horses.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A2"
+    },
+    {
+      "query": "встре́чи",
+      "found": true,
+      "word": "встре'ча",
+      "word_stressed": "встре'ча",
+      "base_form": "встре'ча",
+      "pos": "noun",
+      "translation": [
+        "meeting",
+        "reception",
+        "match",
+        "meet",
+        "appointment"
+      ],
+      "example_ru": "Я с нетерпе'нием жду наше'й встре'чи, когда я в сле'дующий раз прие'ду в твой го'род.",
+      "example_en": "I'm looking forward to meeting with you the next time I visit your town.",
+      "source": "openrussian.org suggestions",
+      "rank": 566,
+      "level": "B1"
+    },
+    {
+      "query": "г",
+      "found": true,
+      "word": "год",
+      "word_stressed": "год",
+      "base_form": "год",
+      "pos": "noun",
+      "translation": [
+        "year"
+      ],
+      "example_ru": "Г-н Ванг из Китая.",
+      "example_en": "Mr Wang is from China.",
+      "source": "openrussian.org suggestions",
+      "rank": 39,
+      "level": "A2"
+    },
+    {
+      "query": "ге́ний",
+      "found": true,
+      "word": "ге'ний",
+      "word_stressed": "ге'ний",
+      "base_form": "ге'ний",
+      "pos": "noun",
+      "translation": [
+        "genius"
+      ],
+      "example_ru": "То, что он ге'ний, очевидно всем.",
+      "example_en": "It's obvious to everyone that he's a genius.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "го́род",
+      "found": true,
+      "word": "го'род",
+      "word_stressed": "го'род",
+      "base_form": "го'род",
+      "pos": "noun",
+      "translation": [
+        "city",
+        "town"
+      ],
+      "example_ru": "Го'род подве'ргся бомбардиро'вке вра'жеских самолётов.",
+      "example_en": "The city was bombed by enemy planes.",
+      "source": "openrussian.org suggestions",
+      "rank": 128,
+      "level": "A2"
+    },
+    {
+      "query": "говори́м",
+      "found": true,
+      "word": "говори'мый",
+      "word_stressed": "говори'мый",
+      "base_form": "говори'мый",
+      "pos": "adjective",
+      "translation": [
+        "spoken",
+        "speakable",
+        "utterable"
+      ],
+      "example_ru": "Э'кстренное сообще'ние: не'сколько со'тен лет назад лю'ди говори'ли не так, как мы говори'м сейчас.",
+      "example_en": "Newsflash: People a couple of hundred years ago didn't speak the same as we do.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "говорит",
+      "found": true,
+      "word": "говори'ть",
+      "word_stressed": "говори'ть",
+      "base_form": "говори'ть",
+      "pos": "verb",
+      "translation": [
+        "to speak",
+        "to talk",
+        "to suggest"
+      ],
+      "example_ru": "Моя' ма'ма говори'т по-английски недостаточно хорошо.",
+      "example_en": "My mom doesn't speak English very well.",
+      "source": "openrussian.org suggestions",
+      "rank": 43,
+      "level": "A1"
+    },
+    {
+      "query": "голубой",
+      "found": true,
+      "word": "голубо'й",
+      "word_stressed": "голубо'й",
+      "base_form": "голубо'й",
+      "pos": "noun",
+      "translation": [
+        "gay"
+      ],
+      "example_ru": "Мэри хо'чет покра'сить свою' маши'ну в ярко-голубой цвет.",
+      "example_en": "Mary wants to paint her car bright blue.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "готов",
+      "found": true,
+      "word": "гото'вый",
+      "word_stressed": "гото'вый",
+      "base_form": "гото'вый",
+      "pos": "adjective",
+      "translation": [
+        "ready",
+        "prepared",
+        "ready",
+        "inclined",
+        "willing",
+        "finished",
+        "readymade"
+      ],
+      "example_ru": "Я готов тебе помочь.",
+      "example_en": "I'm ready to help you.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "гру́стен",
+      "found": true,
+      "word": "гру'стный",
+      "word_stressed": "гру'стный",
+      "base_form": "гру'стный",
+      "pos": "adjective",
+      "translation": [
+        "sad",
+        "sorrowful"
+      ],
+      "example_ru": "Я был скорее зол, чем гру'стен.",
+      "example_en": "I was more angry than sad.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "д",
+      "found": true,
+      "word": "да",
+      "word_stressed": "да",
+      "base_form": "да",
+      "pos": "other",
+      "translation": [
+        "yes",
+        "but",
+        "and"
+      ],
+      "example_ru": "Все лю'ди рожда'ются свобо'дными и ра'вными в своем досто'инстве и права'х. Они наделены ра'зумом и со'вестью и до'лжны поступа'ть в отноше'нии друг дру'га в ду'хе бра'тства.",
+      "example_en": "All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.",
+      "source": "openrussian.org suggestions",
+      "rank": 38,
+      "level": "A1"
+    },
+    {
+      "query": "два",
+      "found": true,
+      "word": "два",
+      "word_stressed": "два",
+      "base_form": "два",
+      "pos": "other",
+      "translation": [
+        "two",
+        "2"
+      ],
+      "example_ru": "Возмо'жность подо'бной це'пи собы'тий — один раз на два миллио'на полётов, то есть один раз в два ме'сяца при ны'нешнем у'ровне возду'шного сообще'ния.",
+      "example_en": "The probability of this chain of events all happening at once is one in 2 million flights - about once every two months at current levels of air traffic.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A2"
+    },
+    {
+      "query": "де́вочка",
+      "found": true,
+      "word": "де'вочка",
+      "word_stressed": "де'вочка",
+      "base_form": "де'вочка",
+      "pos": "noun",
+      "translation": [
+        "girl",
+        "little girl",
+        "girlie"
+      ],
+      "example_ru": "«Кто э'та де'вочка?» — «Э'то Кейко».",
+      "example_en": "Who is that girl? \"That's Keiko.\"",
+      "source": "openrussian.org suggestions",
+      "rank": 461,
+      "level": "B1"
+    },
+    {
+      "query": "де́нь",
+      "found": true,
+      "word": "день",
+      "word_stressed": "день",
+      "base_form": "день",
+      "pos": "noun",
+      "translation": [
+        "day",
+        "daytime",
+        "afternoon",
+        "early evening"
+      ],
+      "example_ru": "Сего'дня 18 ию'ня, и э'то день рожде'ния Мюриэл!",
+      "example_en": "Today is June 18th and it is Muiriel's birthday!",
+      "source": "openrussian.org suggestions",
+      "rank": 68,
+      "level": "A2"
+    },
+    {
+      "query": "дед",
+      "found": true,
+      "word": "дед",
+      "word_stressed": "дед",
+      "base_form": "дед",
+      "pos": "noun",
+      "translation": [
+        "grandfather",
+        "old man",
+        "forefathers"
+      ],
+      "example_ru": "Иногда мой дед говори'т сам с собой, когда он остаётся один.",
+      "example_en": "Sometimes my grandfather talks to himself when left alone.",
+      "source": "openrussian.org suggestions",
+      "rank": 775,
+      "level": "B2"
+    },
+    {
+      "query": "дела",
+      "found": true,
+      "word": "де'ло",
+      "word_stressed": "де'ло",
+      "base_form": "де'ло",
+      "pos": "noun",
+      "translation": [
+        "business",
+        "work",
+        "matter",
+        "concern",
+        "affair",
+        "thing",
+        "action",
+        "act",
+        "art",
+        "science",
+        "truth",
+        "really",
+        "honestly"
+      ],
+      "example_ru": "Нельзя де'лать два дела одновременно.",
+      "example_en": "You can't do two things at once.",
+      "source": "openrussian.org suggestions",
+      "rank": 56,
+      "level": "B1"
+    },
+    {
+      "query": "для",
+      "found": true,
+      "word": "для",
+      "word_stressed": "для",
+      "base_form": "для",
+      "pos": "other",
+      "translation": [
+        "for (the benefit of)",
+        "to"
+      ],
+      "example_ru": "Мы у'чимся не для жи'зни, а для шко'лы.",
+      "example_en": "We don't study for life, but for school.",
+      "source": "openrussian.org suggestions",
+      "rank": 33,
+      "level": "A2"
+    },
+    {
+      "query": "до",
+      "found": true,
+      "word": "до",
+      "word_stressed": "до",
+      "base_form": "до",
+      "pos": "other",
+      "translation": [
+        "to (direction)",
+        "to (distance)",
+        "before",
+        "until",
+        "up to (limit)"
+      ],
+      "example_ru": "Скалола'зы добрались до верши'ны до наступле'ния темноты'.",
+      "example_en": "The mountain climbers reached the summit before dark.",
+      "source": "openrussian.org suggestions",
+      "rank": 42,
+      "level": "A2"
+    },
+    {
+      "query": "до́брое",
+      "found": true,
+      "word": "до'брый",
+      "word_stressed": "до'брый",
+      "base_form": "до'брый",
+      "pos": "adjective",
+      "translation": [
+        "good",
+        "kind"
+      ],
+      "example_ru": "До'брое у'тро!",
+      "example_en": "Morning!",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "до́м",
+      "found": true,
+      "word": "дом",
+      "word_stressed": "дом",
+      "base_form": "дом",
+      "pos": "noun",
+      "translation": [
+        "house",
+        "home",
+        "house-hold"
+      ],
+      "example_ru": "Где твой дом? – \"Он вон там\".",
+      "example_en": "Where is your house? \"It is over there.\"",
+      "source": "openrussian.org suggestions",
+      "rank": 86,
+      "level": "A1"
+    },
+    {
+      "query": "доктор",
+      "found": true,
+      "word": "до'ктор",
+      "word_stressed": "до'ктор",
+      "base_form": "до'ктор",
+      "pos": "noun",
+      "translation": [
+        "doctor of Philosophy",
+        "doctor",
+        "physician"
+      ],
+      "example_ru": "До'ктор Уайт был нашим перево'дчиком.",
+      "example_en": "Dr. White acted as our interpreter.",
+      "source": "openrussian.org suggestions",
+      "rank": 628,
+      "level": "B1"
+    },
+    {
+      "query": "домо́й",
+      "found": true,
+      "word": "домо'й",
+      "word_stressed": "домо'й",
+      "base_form": "домо'й",
+      "pos": "other",
+      "translation": [
+        "homeward",
+        "home",
+        "to one's home"
+      ],
+      "example_ru": "Я позвоню' им за'втра, когда верну'сь домой.",
+      "example_en": "I’ll call them tomorrow when I return home.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "друг",
+      "found": true,
+      "word": "друг",
+      "word_stressed": "друг",
+      "base_form": "друг",
+      "pos": "noun",
+      "translation": [
+        "friend"
+      ],
+      "example_ru": "Они слишком за'няты скло'ками друг с другом, чтобы ду'мать об о'бщих идеа'лах.",
+      "example_en": "They are too busy fighting against each other to care for common ideals.",
+      "source": "openrussian.org suggestions",
+      "rank": 83,
+      "level": "A2"
+    },
+    {
+      "query": "ду́маю",
+      "found": true,
+      "word": "ду'мать",
+      "word_stressed": "ду'мать",
+      "base_form": "ду'мать",
+      "pos": "verb",
+      "translation": [
+        "to think",
+        "to consider"
+      ],
+      "example_ru": "Ду'маю, лу'чше вести себя воспитанно.",
+      "example_en": "I think it is best not to be impolite.",
+      "source": "openrussian.org suggestions",
+      "rank": 93,
+      "level": "A2"
+    },
+    {
+      "query": "его",
+      "found": true,
+      "word": "его'",
+      "word_stressed": "его'",
+      "base_form": "его'",
+      "pos": "pronoun",
+      "translation": [
+        "his"
+      ],
+      "example_ru": "Его друзья' поки'нули его.",
+      "example_en": "He was deserted by his friends.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "едет",
+      "found": true,
+      "word": "е'хать",
+      "word_stressed": "е'хать",
+      "base_form": "е'хать",
+      "pos": "verb",
+      "translation": [
+        "to go (by horse or vehicle)",
+        "drive",
+        "ride",
+        "to travel",
+        "to move (from a place)"
+      ],
+      "example_ru": "Э'тот авто'бус е'дет в Минск.",
+      "example_en": "This bus is going to Minsk.",
+      "source": "openrussian.org suggestions",
+      "rank": 439,
+      "level": "A2"
+    },
+    {
+      "query": "ел",
+      "found": true,
+      "word": "есть",
+      "word_stressed": "есть",
+      "base_form": "есть",
+      "pos": "verb",
+      "translation": [
+        "to eat",
+        "to have"
+      ],
+      "example_ru": "Ты когда-то ещё ел тако'й вку'сный суп?",
+      "example_en": "Have you ever tasted such a good soup?",
+      "source": "openrussian.org suggestions",
+      "rank": 62,
+      "level": "A1"
+    },
+    {
+      "query": "ж",
+      "found": true,
+      "word": "ж",
+      "word_stressed": "ж",
+      "base_form": "ж",
+      "pos": "other",
+      "translation": [
+        "then"
+      ],
+      "example_ru": "Что ж, э'то сойдёт на вре'мя.",
+      "example_en": "Well, it'll do for the time being.",
+      "source": "openrussian.org suggestions",
+      "rank": 274,
+      "level": "B1"
+    },
+    {
+      "query": "ждать",
+      "found": true,
+      "word": "ждать",
+      "word_stressed": "ждать",
+      "base_form": "ждать",
+      "pos": "verb",
+      "translation": [
+        "to wait",
+        "to expect",
+        "to await"
+      ],
+      "example_ru": "Я могу' только ждать.",
+      "example_en": "I can only wait.",
+      "source": "openrussian.org suggestions",
+      "rank": 185,
+      "level": "A2"
+    },
+    {
+      "query": "же",
+      "found": true,
+      "word": "же",
+      "word_stressed": "же",
+      "base_form": "же",
+      "pos": "other",
+      "translation": [
+        "same",
+        "again",
+        "already"
+      ],
+      "example_ru": "Когда двое де'лают одно и то же, э'то не одно и то же.",
+      "example_en": "When two are doing the same thing, it is not the same.",
+      "source": "openrussian.org suggestions",
+      "rank": 19,
+      "level": "B1"
+    },
+    {
+      "query": "жив",
+      "found": true,
+      "word": "живо'й",
+      "word_stressed": "живо'й",
+      "base_form": "живо'й",
+      "pos": "adjective",
+      "translation": [
+        "alive",
+        "live"
+      ],
+      "example_ru": "Один из близнецо'в жив, но второй у'мер.",
+      "example_en": "One of the twins is alive, but the other is dead.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "живо́тные",
+      "found": true,
+      "word": "живо'тный",
+      "word_stressed": "живо'тный",
+      "base_form": "живо'тный",
+      "pos": "adjective",
+      "translation": [
+        "animal"
+      ],
+      "example_ru": "Ко'ни — поле'зные живо'тные.",
+      "example_en": "Horses are useful animals.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "живут",
+      "found": true,
+      "word": "жить",
+      "word_stressed": "жить",
+      "base_form": "жить",
+      "pos": "verb",
+      "translation": [
+        "to live"
+      ],
+      "example_ru": "Они живу'т неподалёку.",
+      "example_en": "They live nearby.",
+      "source": "openrussian.org suggestions",
+      "rank": 103,
+      "level": "A1"
+    },
+    {
+      "query": "з",
+      "found": true,
+      "word": "за",
+      "word_stressed": "за",
+      "base_form": "за",
+      "pos": "other",
+      "translation": [
+        "behind",
+        "at (location)",
+        "at (direction)",
+        "for (in support of)",
+        "for (mistake for)",
+        "for (reason)",
+        "for (duration)",
+        "following after",
+        "chasing after",
+        "over (a certain age)",
+        "beyond",
+        "on the far side of",
+        "out of (location)"
+      ],
+      "example_ru": "Мне нужно знать, зачем ты здесь.",
+      "example_en": "I need to know why you're here.",
+      "source": "openrussian.org suggestions",
+      "rank": 17,
+      "level": "B1"
+    },
+    {
+      "query": "звезда",
+      "found": true,
+      "word": "звезда'",
+      "word_stressed": "звезда'",
+      "base_form": "звезда'",
+      "pos": "noun",
+      "translation": [
+        "star",
+        "famous person",
+        "name of service module on the International Space Station"
+      ],
+      "example_ru": "Лу'чше но'вая еда', чем но'вая звезда'.",
+      "example_en": "The discovery of a new type of meal contributes more to humankind than the discovery of a new star.",
+      "source": "openrussian.org suggestions",
+      "rank": 803,
+      "level": "B2"
+    },
+    {
+      "query": "здание",
+      "found": true,
+      "word": "зда'ние",
+      "word_stressed": "зда'ние",
+      "base_form": "зда'ние",
+      "pos": "noun",
+      "translation": [
+        "building"
+      ],
+      "example_ru": "Зда'ние спра'ва — э'то шко'ла.",
+      "example_en": "The building on the right side is a school.",
+      "source": "openrussian.org suggestions",
+      "rank": 966,
+      "level": "B2"
+    },
+    {
+      "query": "здесь",
+      "found": true,
+      "word": "здесь",
+      "word_stressed": "здесь",
+      "base_form": "здесь",
+      "pos": "other",
+      "translation": [
+        "here",
+        "with us",
+        "in this country",
+        "about it",
+        "in it",
+        "at this point"
+      ],
+      "example_ru": "О, здесь ба'бочка!",
+      "example_en": "Oh, there's a butterfly!",
+      "source": "openrussian.org suggestions",
+      "rank": 94,
+      "level": "A1"
+    },
+    {
+      "query": "здра́вствуйте",
+      "found": true,
+      "word": "здра'вствуйте",
+      "word_stressed": "здра'вствуйте",
+      "base_form": "здра'вствуйте",
+      "pos": "other",
+      "translation": [
+        "hello"
+      ],
+      "example_ru": "Здравствуйте!",
+      "example_en": "Hello.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "зе́млю",
+      "found": true,
+      "word": "земля'",
+      "word_stressed": "земля'",
+      "base_form": "земля'",
+      "pos": "noun",
+      "translation": [
+        "earth",
+        "land"
+      ],
+      "example_ru": "Когда Вин Ди'зель отжима'ется, он не поднима'ет себя, а опуска'ет Зе'млю.",
+      "example_en": "When Vin Diesel does pushups, he's not pushing himself up - he's pushing the Earth down.",
+      "source": "openrussian.org suggestions",
+      "rank": 137,
+      "level": "B1"
+    },
+    {
+      "query": "зелёный",
+      "found": true,
+      "word": "зелёный",
+      "word_stressed": "зелёный",
+      "base_form": "зелёный",
+      "pos": "noun",
+      "translation": [
+        "green"
+      ],
+      "example_ru": "Пепперберг мо'жет показа'ть Алексу два предме'та (например, зелёный и кра'сный квадра'т) и спроси'ть: «в чём ра'зница?»",
+      "example_en": "Pepperberg can show Alex two objects (for example, a green square and a red square) and ask, \"What's different?\"",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "зимние",
+      "found": true,
+      "word": "зи'мний",
+      "word_stressed": "зи'мний",
+      "base_form": "зи'мний",
+      "pos": "adjective",
+      "translation": [
+        "Winter"
+      ],
+      "example_ru": "Зи'мние ви'ды спо'рта очень популя'рны в наше'й стране'.",
+      "example_en": "Winter sports are very popular in our country.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "знаете",
+      "found": true,
+      "word": "знать",
+      "word_stressed": "знать",
+      "base_form": "знать",
+      "pos": "verb",
+      "translation": [
+        "to know",
+        "be aware",
+        "be acquainted",
+        "it seems"
+      ],
+      "example_ru": "Вы зна'ете столи'цу Бельгии?",
+      "example_en": "Do you know the capital of Belgium?",
+      "source": "openrussian.org suggestions",
+      "rank": 40,
+      "level": "A2"
+    },
+    {
+      "query": "знак",
+      "found": true,
+      "word": "знак",
+      "word_stressed": "знак",
+      "base_form": "знак",
+      "pos": "noun",
+      "translation": [
+        "sign",
+        "token",
+        "symbol",
+        "mark",
+        "omen",
+        "signal"
+      ],
+      "example_ru": "Молча'ние — знак согла'сия.",
+      "example_en": "Silence implies consent.",
+      "source": "openrussian.org suggestions",
+      "rank": 941,
+      "level": "B2"
+    },
+    {
+      "query": "зову́т",
+      "found": true,
+      "word": "зову'т",
+      "word_stressed": "зову'т",
+      "base_form": "зову'т",
+      "pos": "other",
+      "translation": [
+        "to be called (= name is)"
+      ],
+      "example_ru": "Меня зову'т Джек.",
+      "example_en": "My name is Jack.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A1"
+    },
+    {
+      "query": "и",
+      "found": true,
+      "word": "и",
+      "word_stressed": "и",
+      "base_form": "и",
+      "pos": "other",
+      "translation": [
+        "and",
+        "also",
+        "too"
+      ],
+      "example_ru": "Все лю'ди рожда'ются свобо'дными и ра'вными в своем досто'инстве и права'х. Они наделены ра'зумом и со'вестью и до'лжны поступа'ть в отноше'нии друг дру'га в ду'хе бра'тства.",
+      "example_en": "All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.",
+      "source": "openrussian.org suggestions",
+      "rank": 1,
+      "level": "A1"
+    },
+    {
+      "query": "и́ли",
+      "found": true,
+      "word": "и'ли",
+      "word_stressed": "и'ли",
+      "base_form": "и'ли",
+      "pos": "other",
+      "translation": [
+        "or"
+      ],
+      "example_ru": "Или я ошиба'юсь, или ты.",
+      "example_en": "Either you or I am in the wrong.",
+      "source": "openrussian.org suggestions",
+      "rank": 44,
+      "level": "A1"
+    },
+    {
+      "query": "и́мя",
+      "found": true,
+      "word": "и'мя",
+      "word_stressed": "и'мя",
+      "base_form": "и'мя",
+      "pos": "noun",
+      "translation": [
+        "name",
+        "first name",
+        "reputation",
+        "noun"
+      ],
+      "example_ru": "У него стра'нное и'мя.",
+      "example_en": "He has a strange name.",
+      "source": "openrussian.org suggestions",
+      "rank": 246,
+      "level": "B1"
+    },
+    {
+      "query": "иван",
+      "found": true,
+      "word": "иван-ча'й",
+      "word_stressed": "иван-ча'й",
+      "base_form": "иван-ча'й",
+      "pos": "noun",
+      "translation": [
+        "willow-herb",
+        "fireweed"
+      ],
+      "example_ru": "Иван Мазепа не был преда'телем.",
+      "example_en": "Ivan Mazepa wasn't a traitor.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "иванов",
+      "found": true,
+      "word": "ива'новский",
+      "word_stressed": "ива'новский",
+      "base_form": "ива'новский",
+      "pos": "adjective",
+      "translation": [
+        "Ivanovo",
+        "related to Ivanovo",
+        "Ivanovo-based",
+        "related to Saint John's day",
+        "related to Midsummer"
+      ],
+      "example_ru": "Нынче поутру зашел ко мне до'ктор; его и'мя Вернер, но он ру'сский. Что тут удиви'тельного? Я знал одного Иванова, кото'рый был не'мец.",
+      "example_en": "The doctor dropped in to see me this morning. His name is Werner, but he is a Russian. There is nothing surprising in that. I once knew an Ivanov who was a German.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "игра",
+      "found": true,
+      "word": "игра'",
+      "word_stressed": "игра'",
+      "base_form": "игра'",
+      "pos": "noun",
+      "translation": [
+        "play",
+        "game"
+      ],
+      "example_ru": "Э'то игра' слов.",
+      "example_en": "This is a pun.",
+      "source": "openrussian.org suggestions",
+      "rank": 644,
+      "level": "B1"
+    },
+    {
+      "query": "иде́и",
+      "found": true,
+      "word": "иде'я",
+      "word_stressed": "иде'я",
+      "base_form": "иде'я",
+      "pos": "noun",
+      "translation": [
+        "idea",
+        "notion",
+        "concept"
+      ],
+      "example_ru": "Я против э'той иде'и.",
+      "example_en": "I have to oppose this idea.",
+      "source": "openrussian.org suggestions",
+      "rank": 677,
+      "level": "B2"
+    },
+    {
+      "query": "иди",
+      "found": true,
+      "word": "идти'",
+      "word_stressed": "идти'",
+      "base_form": "идти'",
+      "pos": "verb",
+      "translation": [
+        "to go",
+        "to walk",
+        "suit"
+      ],
+      "example_ru": "Иди' ме'дленнее.",
+      "example_en": "Walk more slowly.",
+      "source": "openrussian.org suggestions",
+      "rank": 82,
+      "level": "A2"
+    },
+    {
+      "query": "им",
+      "found": true,
+      "word": "он",
+      "word_stressed": "он",
+      "base_form": "он",
+      "pos": "pronoun",
+      "translation": [
+        "he"
+      ],
+      "example_ru": "Я позвоню' им за'втра, когда верну'сь домой.",
+      "example_en": "I’ll call them tomorrow when I return home.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A1"
+    },
+    {
+      "query": "именительный",
+      "found": true,
+      "word": "имени'тельный",
+      "word_stressed": "имени'тельный",
+      "base_form": "имени'тельный",
+      "pos": "adjective",
+      "translation": [
+        "nominative"
+      ],
+      "example_ru": "В лати'нском языке' шесть падеже'й: имени'тельный, роди'тельный, да'тельный, вини'тельный, отложительный и зва'тельный.",
+      "example_en": "In Latin, there are six cases: nominative, genitive, dative, accusative, ablative, and vocative.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "интересная",
+      "found": true,
+      "word": "интере'сный",
+      "word_stressed": "интере'сный",
+      "base_form": "интере'сный",
+      "pos": "adjective",
+      "translation": [
+        "interesting"
+      ],
+      "example_ru": "Э'то очень интере'сная кни'га.",
+      "example_en": "This is a very interesting book.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "информация",
+      "found": true,
+      "word": "информа'ция",
+      "word_stressed": "информа'ция",
+      "base_form": "информа'ция",
+      "pos": "noun",
+      "translation": [
+        "information"
+      ],
+      "example_ru": "Мир меня'ет коммуника'ция, а не информа'ция.",
+      "example_en": "What changes the world is communication, not information.",
+      "source": "openrussian.org suggestions",
+      "rank": 699,
+      "level": "B2"
+    },
+    {
+      "query": "искать",
+      "found": true,
+      "word": "иска'ть",
+      "word_stressed": "иска'ть",
+      "base_form": "иска'ть",
+      "pos": "verb",
+      "translation": [
+        "to look for",
+        "search",
+        "seek",
+        "to sue (law)"
+      ],
+      "example_ru": "Мне не хотелось бы ду'мать, что однажды мне придется иска'ть сло'во \"виагра\" в Википедии.",
+      "example_en": "I don't want to imagine ever looking up \"Viagra\" on Wikipedia.",
+      "source": "openrussian.org suggestions",
+      "rank": 392,
+      "level": "A2"
+    },
+    {
+      "query": "ите",
+      "found": true,
+      "word": "итерати'вный",
+      "word_stressed": "итерати'вный",
+      "base_form": "итерати'вный",
+      "pos": "adjective",
+      "translation": [
+        "iterative"
+      ],
+      "example_ru": null,
+      "example_en": null,
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "й",
+      "found": true,
+      "word": "йог",
+      "word_stressed": "йог",
+      "base_form": "йог",
+      "pos": "noun",
+      "translation": [
+        "yogi"
+      ],
+      "example_ru": "Нью-Йорк — са'мый большо'й го'род на све'те.",
+      "example_en": "New York is the world's biggest city.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "йо́гурт",
+      "found": true,
+      "word": "йо'гурт",
+      "word_stressed": "йо'гурт",
+      "base_form": "йо'гурт",
+      "pos": "noun",
+      "translation": [
+        "yoghurt",
+        "yogurt"
+      ],
+      "example_ru": "У э'того йо'гурта стра'нный вкус.",
+      "example_en": "This yogurt tastes strange.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "йо́да",
+      "found": true,
+      "word": "йод",
+      "word_stressed": "йод",
+      "base_form": "йод",
+      "pos": "noun",
+      "translation": [
+        "iodine"
+      ],
+      "example_ru": null,
+      "example_en": null,
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "к",
+      "found": true,
+      "word": "к",
+      "word_stressed": "к",
+      "base_form": "к",
+      "pos": "other",
+      "translation": [
+        "towards",
+        "to",
+        "by (time)",
+        "for the purpose of"
+      ],
+      "example_ru": "Кроме того', стреми'тельные измене'ния, кото'рые появи'лись в наше вре'мя в свя'зи с глобализа'цией, привели' к тому, что мно'гие мусульма'не ста'ли счита'ть за'пад вражде'бным к исла'мским тради'циям.",
+      "example_en": "Moreover, the sweeping change brought by modernity and globalization led many Muslims to view the West as hostile to the traditions of Islam.",
+      "source": "openrussian.org suggestions",
+      "rank": 14,
+      "level": "A2"
+    },
+    {
+      "query": "ка́к",
+      "found": true,
+      "word": "как",
+      "word_stressed": "как",
+      "base_form": "как",
+      "pos": "other",
+      "translation": [
+        "how",
+        "what",
+        "like",
+        "as",
+        "because"
+      ],
+      "example_ru": "Он всегда говори'т, как будто зна'ет, как ему поступа'ть, но никогда не зна'ешь, как он будет де'йствовать в крити'ческой ситуа'ции.",
+      "example_en": "He always talks as though he knows how to handle himself but you never know how he'll act when the chips are down.",
+      "source": "openrussian.org suggestions",
+      "rank": 11,
+      "level": "A2"
+    },
+    {
+      "query": "ка́рта",
+      "found": true,
+      "word": "ка'рта",
+      "word_stressed": "ка'рта",
+      "base_form": "ка'рта",
+      "pos": "noun",
+      "translation": [
+        "card",
+        "map",
+        ""
+      ],
+      "example_ru": "На стене виси'т ка'рта.",
+      "example_en": "There's a map on the wall.",
+      "source": "openrussian.org suggestions",
+      "rank": 836,
+      "level": "B2"
+    },
+    {
+      "query": "класс",
+      "found": true,
+      "word": "класс",
+      "word_stressed": "класс",
+      "base_form": "класс",
+      "pos": "noun",
+      "translation": [
+        "class",
+        "form",
+        "class-room"
+      ],
+      "example_ru": "Э'то не класс.",
+      "example_en": "It's not a class.",
+      "source": "openrussian.org suggestions",
+      "rank": 559,
+      "level": "B1"
+    },
+    {
+      "query": "кни́гу",
+      "found": true,
+      "word": "кни'га",
+      "word_stressed": "кни'га",
+      "base_form": "кни'га",
+      "pos": "noun",
+      "translation": [
+        "book",
+        "volume"
+      ],
+      "example_ru": "Возьми' кни'гу и прочита'й её!",
+      "example_en": "Take a book and read it.",
+      "source": "openrussian.org suggestions",
+      "rank": 220,
+      "level": "B1"
+    },
+    {
+      "query": "когда",
+      "found": true,
+      "word": "когда'",
+      "word_stressed": "когда'",
+      "base_form": "когда'",
+      "pos": "other",
+      "translation": [
+        "when",
+        "while",
+        "as"
+      ],
+      "example_ru": "Когда-нибудь я обязательно пое'ду во Фра'нцию, просто пока не зна'ю когда.",
+      "example_en": "Sometime I'll definitely visit France. I just don't know exactly when.",
+      "source": "openrussian.org suggestions",
+      "rank": 35,
+      "level": "A2"
+    },
+    {
+      "query": "комната",
+      "found": true,
+      "word": "ко'мната",
+      "word_stressed": "ко'мната",
+      "base_form": "ко'мната",
+      "pos": "noun",
+      "translation": [
+        "room"
+      ],
+      "example_ru": "У тебя есть со'бственная ко'мната?",
+      "example_en": "Do you have your own room?",
+      "source": "openrussian.org suggestions",
+      "rank": 214,
+      "level": "A2"
+    },
+    {
+      "query": "кому́",
+      "found": true,
+      "word": "кто",
+      "word_stressed": "кто",
+      "base_form": "кто",
+      "pos": "pronoun",
+      "translation": [
+        "who?",
+        "who"
+      ],
+      "example_ru": "Тебе ничего не остаётся, кроме того', как дове'риться кому-либо.",
+      "example_en": "All you can do is trust in someone.",
+      "source": "openrussian.org suggestions",
+      "rank": 36,
+      "level": "A1"
+    },
+    {
+      "query": "конце",
+      "found": true,
+      "word": "коне'ц",
+      "word_stressed": "коне'ц",
+      "base_form": "коне'ц",
+      "pos": "noun",
+      "translation": [
+        "end",
+        "ending"
+      ],
+      "example_ru": "В конце' концо'в она так и не перезвони'ла.",
+      "example_en": "She didn't telephone after all.",
+      "source": "openrussian.org suggestions",
+      "rank": 127,
+      "level": "B1"
+    },
+    {
+      "query": "красивая",
+      "found": true,
+      "word": "краси'вый",
+      "word_stressed": "краси'вый",
+      "base_form": "краси'вый",
+      "pos": "adjective",
+      "translation": [
+        "beautiful",
+        "handsome"
+      ],
+      "example_ru": "Я зна'ю, что она краси'вая.",
+      "example_en": "I know she's pretty.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "краткое",
+      "found": true,
+      "word": "кра'ткий",
+      "word_stressed": "кра'ткий",
+      "base_form": "кра'ткий",
+      "pos": "adjective",
+      "translation": [
+        "brief",
+        "concise",
+        "short"
+      ],
+      "example_ru": "Докуме'нт я не чита'л, но прочёл его кра'ткое изложе'ние.",
+      "example_en": "I didn't read the paper, but I read the abstract.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "края",
+      "found": true,
+      "word": "край",
+      "word_stressed": "край",
+      "base_form": "край",
+      "pos": "noun",
+      "translation": [
+        "edge (border, end)",
+        "brim",
+        "brink",
+        "side",
+        "line",
+        "region",
+        "krai",
+        "land",
+        "territory"
+      ],
+      "example_ru": "У пла'тья есть шнуро'к завязывающий боковые края.",
+      "example_en": "The dress have drawstring side hem .",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "крыша",
+      "found": true,
+      "word": "кры'ша",
+      "word_stressed": "кры'ша",
+      "base_form": "кры'ша",
+      "pos": "noun",
+      "translation": [
+        "roof"
+      ],
+      "example_ru": "В Нидерландах есть обы'чай, что, когда при постро'йке дома дошли' до наивы'сшей то'чки, и кры'ша гото'ва к кла'дке черепи'цы, хозя'ин угоща'ет строи'телей так называемым «черепи'чным пи'вом», чтобы э'то отпра'здновать. На коньке' крыши ставится флаг. Если хозя'ин скупо'й и отка'зывается угости'ть рабо'тников, ста'вят не флаг, а метлу'.",
+      "example_en": "In the Netherlands, it is the custom that, when during the construction of a house the highest point has been reached and the roof is ready for tiling, the client treats the construction workers to so-called \"tile beer\" to celebrate this. A flag is then placed on the ridge of the house. If the client is too stingy to treat, not a flag, but a broom is placed.",
+      "source": "openrussian.org suggestions",
+      "rank": 869,
+      "level": "B2"
+    },
+    {
+      "query": "ку́рс",
+      "found": true,
+      "word": "курс",
+      "word_stressed": "курс",
+      "base_form": "курс",
+      "pos": "noun",
+      "translation": [
+        "course",
+        "policy",
+        "rate of exchange"
+      ],
+      "example_ru": "Како'й сего'дня обме'нный курс?",
+      "example_en": "What is the exchange rate today?",
+      "source": "openrussian.org suggestions",
+      "rank": 989,
+      "level": "B2"
+    },
+    {
+      "query": "л",
+      "found": true,
+      "word": "ли",
+      "word_stressed": "ли",
+      "base_form": "ли",
+      "pos": "other",
+      "translation": [
+        "whether",
+        "if",
+        "interrogative particle (placed after the first word in a sentence or phrase)"
+      ],
+      "example_ru": "Дом пти'цы - лес, дом рыбы - река', дом пчелы' - цвето'к, дом дете'й - Китай. Мы с де'тства любим нашу ро'дину, так же, как пти'чки лю'бят лес, ры'бки лю'бят ре'ку, пчёлки лю'бят цветы'.",
+      "example_en": "The birds' home is in the forest, the fish's home is in the river, the bees' home is in the flowers, and the little children's is in China. We love our motherland from the time we're little, as the birds love the forest, the fish love the river, and the bees love the flowers.",
+      "source": "openrussian.org suggestions",
+      "rank": 74,
+      "level": "B1"
+    },
+    {
+      "query": "ле",
+      "found": true,
+      "word": "лес",
+      "word_stressed": "лес",
+      "base_form": "лес",
+      "pos": "noun",
+      "translation": [
+        "woods",
+        "forest",
+        "timber",
+        "lumber (singular only)",
+        "scaffolding",
+        "(plural only)",
+        "much",
+        "many (figurative)"
+      ],
+      "example_ru": "Ма'ленький ого'нь в лесу' мо'жет легко распространи'ться и быстро стать огро'мным пожа'ром.",
+      "example_en": "A small forest fire can easily spread and quickly become a great conflagration.",
+      "source": "openrussian.org suggestions",
+      "rank": 263,
+      "level": "B1"
+    },
+    {
+      "query": "лицо",
+      "found": true,
+      "word": "лицо'",
+      "word_stressed": "лицо'",
+      "base_form": "лицо'",
+      "pos": "noun",
+      "translation": [
+        "face",
+        "the right side",
+        "person",
+        "face to face",
+        "entity",
+        "first-person (view)",
+        "person",
+        "individual"
+      ],
+      "example_ru": "В э'том де'ле, если у вас будет угрю'мое лицо', к вам не приду'т покупа'тели.",
+      "example_en": "In this line of work, if you make a grim face the customers won't come.",
+      "source": "openrussian.org suggestions",
+      "rank": 96,
+      "level": "A2"
+    },
+    {
+      "query": "лю́ди",
+      "found": true,
+      "word": "лю'ди ",
+      "word_stressed": "лю'ди ",
+      "base_form": "лю'ди ",
+      "pos": "noun",
+      "translation": [
+        "people",
+        "humans",
+        "men",
+        "servants"
+      ],
+      "example_ru": "Мно'гие лю'ди пишут о свое'й обы'денной жи'зни.",
+      "example_en": "Most people write about their daily life.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "лю́дям",
+      "found": true,
+      "word": "челове'к",
+      "word_stressed": "челове'к",
+      "base_form": "челове'к",
+      "pos": "noun",
+      "translation": [
+        "person",
+        "human",
+        "human being",
+        "people (collective)",
+        "guy (colloquial)"
+      ],
+      "example_ru": "Если бы мир не был таки'м, каков он сейчас, я мог бы доверя'ть лю'дям.",
+      "example_en": "If the world weren't in the shape it is now, I could trust anyone.",
+      "source": "openrussian.org suggestions",
+      "rank": 26,
+      "level": "A1"
+    },
+    {
+      "query": "любим",
+      "found": true,
+      "word": "люби'мый",
+      "word_stressed": "люби'мый",
+      "base_form": "люби'мый",
+      "pos": "adjective",
+      "translation": [
+        "favorite",
+        "favourite",
+        "beloved",
+        "loved",
+        "adored"
+      ],
+      "example_ru": "Так как мы любим Вас, мы обновля'ем Татоэбу, чтобы Вам бы'ло удо'бнее с ней рабо'тать. Ви'дите? Мы любим вас, так ведь?",
+      "example_en": "Because we love you, we are updating Tatoeba to bring you a better user experience. See? We love you huh?",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "любите",
+      "found": true,
+      "word": "люби'ть",
+      "word_stressed": "люби'ть",
+      "base_form": "люби'ть",
+      "pos": "verb",
+      "translation": [
+        "love"
+      ],
+      "example_ru": "Любите ваших однокла'ссников! Любите ваших роди'телей! Любите вашу страну'!",
+      "example_en": "Have love for your classmates! Have love for your parents! Have love for your country!",
+      "source": "openrussian.org suggestions",
+      "rank": 177,
+      "level": "A1"
+    },
+    {
+      "query": "ма́ло",
+      "found": true,
+      "word": "ма'ло",
+      "word_stressed": "ма'ло",
+      "base_form": "ма'ло",
+      "pos": "adverb",
+      "translation": [
+        "little",
+        "few",
+        "a little bit",
+        "too little",
+        "too few"
+      ],
+      "example_ru": "В стака'не оста'лось мало воды.",
+      "example_en": "There is little water left in the glass.",
+      "source": "openrussian.org suggestions",
+      "rank": 362,
+      "level": "A2"
+    },
+    {
+      "query": "ма́льчик",
+      "found": true,
+      "word": "ма'льчик",
+      "word_stressed": "ма'льчик",
+      "base_form": "ма'льчик",
+      "pos": "noun",
+      "translation": [
+        "boy",
+        "lad",
+        "apprentice"
+      ],
+      "example_ru": "Что э'то за ма'льчик там пла'вает?",
+      "example_en": "Who is the boy that is swimming over there?",
+      "source": "openrussian.org suggestions",
+      "rank": 301,
+      "level": "B1"
+    },
+    {
+      "query": "ма́м",
+      "found": true,
+      "word": "ма'ма",
+      "word_stressed": "ма'ма",
+      "base_form": "ма'ма",
+      "pos": "noun",
+      "translation": [
+        "mom",
+        "mama",
+        "mommy",
+        "mummy"
+      ],
+      "example_ru": "Мам, я хочу', чтобы ты купи'ла мне грана'т!",
+      "example_en": "Mommy, I want you to buy me a garnet!",
+      "source": "openrussian.org suggestions",
+      "rank": 295,
+      "level": "A2"
+    },
+    {
+      "query": "маленькие",
+      "found": true,
+      "word": "ма'ленький",
+      "word_stressed": "ма'ленький",
+      "base_form": "ма'ленький",
+      "pos": "adjective",
+      "translation": [
+        "little",
+        "small",
+        "short",
+        "trifling",
+        "petty"
+      ],
+      "example_ru": "Э'ти зда'ния ма'ленькие по сравне'нию с небоскрёбами в Нью-Йорке.",
+      "example_en": "The buildings are small in comparison with the skyscrapers in New York.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "мать",
+      "found": true,
+      "word": "мать",
+      "word_stressed": "мать",
+      "base_form": "мать",
+      "pos": "noun",
+      "translation": [
+        "mother"
+      ],
+      "example_ru": "Его мать волну'ется о нём.",
+      "example_en": "His mother is worried about him.",
+      "source": "openrussian.org suggestions",
+      "rank": 202,
+      "level": "A2"
+    },
+    {
+      "query": "маша",
+      "found": true,
+      "word": "Ма'ша",
+      "word_stressed": "Ма'ша",
+      "base_form": "Ма'ша",
+      "pos": "noun",
+      "translation": [
+        "Mary (name)",
+        "Masha (name)"
+      ],
+      "example_ru": "Маша мечта'ет устро'ить револю'цию, но стесня'ется.",
+      "example_en": "Masha dreams of starting a revolution, but is too shy.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "маши́на",
+      "found": true,
+      "word": "маши'на",
+      "word_stressed": "маши'на",
+      "base_form": "маши'на",
+      "pos": "noun",
+      "translation": [
+        "car",
+        "machine",
+        "machinery",
+        "engine",
+        "mechanism"
+      ],
+      "example_ru": "Стира'льная маши'на - замеча'тельное изобрете'ние.",
+      "example_en": "The washing machine is a wonderful invention.",
+      "source": "openrussian.org suggestions",
+      "rank": 150,
+      "level": "A2"
+    },
+    {
+      "query": "меня",
+      "found": true,
+      "word": "я",
+      "word_stressed": "я",
+      "base_form": "я",
+      "pos": "pronoun",
+      "translation": [
+        "I",
+        "me",
+        "myself"
+      ],
+      "example_ru": "Если вы не зна'ли меня с э'той стороны, то вы вообще меня не зна'ли.",
+      "example_en": "If you didn't know me that way then you simply didn't know me.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A1"
+    },
+    {
+      "query": "метр",
+      "found": true,
+      "word": "метр",
+      "word_stressed": "метр",
+      "base_form": "метр",
+      "pos": "noun",
+      "translation": [
+        "metre",
+        "metre measure ruler",
+        "master"
+      ],
+      "example_ru": "Ей принадлежи'т мирово'й реко'рд в бе'ге на сто метров.",
+      "example_en": "She holds the world record for the hundred meters.",
+      "source": "openrussian.org suggestions",
+      "rank": 686,
+      "level": "B2"
+    },
+    {
+      "query": "мил",
+      "found": true,
+      "word": "ми'лый",
+      "word_stressed": "ми'лый",
+      "base_form": "ми'лый",
+      "pos": "adjective",
+      "translation": [
+        "dear",
+        "sweet",
+        "cute"
+      ],
+      "example_ru": "Америка - э'то очень ми'лое ме'сто, если вы находитесь здесь с це'лью зарабо'тать де'ньги.",
+      "example_en": "America is a lovely place to be, if you are here to earn money.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "мир",
+      "found": true,
+      "word": "мир",
+      "word_stressed": "мир",
+      "base_form": "мир",
+      "pos": "noun",
+      "translation": [
+        "world",
+        "peace"
+      ],
+      "example_ru": "Если бы мир не был таки'м, каков он сейчас, я мог бы доверя'ть лю'дям.",
+      "example_en": "If the world weren't in the shape it is now, I could trust anyone.",
+      "source": "openrussian.org suggestions",
+      "rank": 151,
+      "level": "B1"
+    },
+    {
+      "query": "мо́ре",
+      "found": true,
+      "word": "мо'ре",
+      "word_stressed": "мо'ре",
+      "base_form": "мо'ре",
+      "pos": "noun",
+      "translation": [
+        "sea",
+        "ocean"
+      ],
+      "example_ru": "Потом, когда они вы'шли, на на'бережной не бы'ло ни души, го'род со свои'ми кипари'сами име'л совсем мёртвый вид, но мо'ре ещё шуме'ло и би'лось о берег.",
+      "example_en": "Afterwards when they went out there was not a soul on the sea-front. The town with its cypresses had quite a deathlike air, but the sea still broke noisily on the shore.",
+      "source": "openrussian.org suggestions",
+      "rank": 505,
+      "level": "B1"
+    },
+    {
+      "query": "мои",
+      "found": true,
+      "word": "мой",
+      "word_stressed": "мой",
+      "base_form": "мой",
+      "pos": "pronoun",
+      "translation": [
+        "my",
+        "mine",
+        "my people"
+      ],
+      "example_ru": "Мои' поздравле'ния.",
+      "example_en": "Congratulations!",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "мол",
+      "found": true,
+      "word": "мол",
+      "word_stressed": "мол",
+      "base_form": "мол",
+      "pos": "expression",
+      "translation": [
+        "(colloquial) supposedly was said/they say"
+      ],
+      "example_ru": "Э'тот сыр изготовлен из овечьего молока'.",
+      "example_en": "That cheese is made from sheep's milk.",
+      "source": "openrussian.org suggestions",
+      "rank": 907,
+      "level": "B2"
+    },
+    {
+      "query": "москва",
+      "found": true,
+      "word": "Москва'",
+      "word_stressed": "Москва'",
+      "base_form": "Москва'",
+      "pos": "noun",
+      "translation": [
+        "Moscow",
+        "Moskva River"
+      ],
+      "example_ru": "Москва' не сразу стро'илась.",
+      "example_en": "Rome was not built in a day.",
+      "source": "openrussian.org suggestions",
+      "rank": 205,
+      "level": "B1"
+    },
+    {
+      "query": "музе́й",
+      "found": true,
+      "word": "музе'й",
+      "word_stressed": "музе'й",
+      "base_form": "музе'й",
+      "pos": "noun",
+      "translation": [
+        "museum"
+      ],
+      "example_ru": "Где вход в музе'й?",
+      "example_en": "Where is the entrance to the museum?",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "мы",
+      "found": true,
+      "word": "мы",
+      "word_stressed": "мы",
+      "base_form": "мы",
+      "pos": "pronoun",
+      "translation": [
+        "we"
+      ],
+      "example_ru": "Мы ви'дим ве'щи не таки'ми, каки'е они есть, а таки'ми, каковы' мы са'ми.",
+      "example_en": "We don't see things as they are, but as we are.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A1"
+    },
+    {
+      "query": "мягкий",
+      "found": true,
+      "word": "мя'гкий",
+      "word_stressed": "мя'гкий",
+      "base_form": "мя'гкий",
+      "pos": "adjective",
+      "translation": [
+        "soft",
+        "tender",
+        "mild"
+      ],
+      "example_ru": "В Япо'нии мя'гкий кли'мат.",
+      "example_en": "Japan has a mild climate.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "н",
+      "found": true,
+      "word": "не",
+      "word_stressed": "не",
+      "base_form": "не",
+      "pos": "other",
+      "translation": [
+        "not"
+      ],
+      "example_ru": "Г-н Ванг из Китая.",
+      "example_en": "Mr Wang is from China.",
+      "source": "openrussian.org suggestions",
+      "rank": 3,
+      "level": "A1"
+    },
+    {
+      "query": "на",
+      "found": true,
+      "word": "на",
+      "word_stressed": "на",
+      "base_form": "на",
+      "pos": "other",
+      "translation": [
+        "on (place)",
+        "during",
+        "on (day/week)",
+        "on (means of transport)",
+        "to (direction)",
+        "onto",
+        "upon (direction)",
+        "against (something)",
+        "at (location)",
+        "for",
+        "by (specify the extent of the difference)"
+      ],
+      "example_ru": "Нажми'те на изображе'ние и вы'берите расположе'ние. Нажми'те на «Откры'ть», чтобы откры'ть изображе'ние. Нажми'те на «Вы'ход», чтобы вы'йти из програ'ммы. Опция «Расположе'ние» позволя'ет вы'брать режи'м пока'за изображе'ния.",
+      "example_en": "Open an image and select an image layout. Click \"Open\" for opening an image. Click \"Quit\" for quitting the program. \"Image Layout\" feature allows you to view in any layout.",
+      "source": "openrussian.org suggestions",
+      "rank": 4,
+      "level": "A2"
+    },
+    {
+      "query": "наде́жда",
+      "found": true,
+      "word": "наде'жда",
+      "word_stressed": "наде'жда",
+      "base_form": "наде'жда",
+      "pos": "noun",
+      "translation": [
+        "hope"
+      ],
+      "example_ru": "Наде'жда, а не страх — гла'вный созида'тельный при'нцип в челове'ческих дела'х.",
+      "example_en": "Hope, not fear, is the creative principle in human affairs.",
+      "source": "openrussian.org suggestions",
+      "rank": 694,
+      "level": "B2"
+    },
+    {
+      "query": "написал",
+      "found": true,
+      "word": "написа'ть",
+      "word_stressed": "написа'ть",
+      "base_form": "написа'ть",
+      "pos": "verb",
+      "translation": [
+        "to write",
+        "to text",
+        "to paint"
+      ],
+      "example_ru": "Он написа'л письмо'.",
+      "example_en": "He wrote a letter.",
+      "source": "openrussian.org suggestions",
+      "rank": 279,
+      "level": "B1"
+    },
+    {
+      "query": "например",
+      "found": true,
+      "word": "наприме'р",
+      "word_stressed": "наприме'р",
+      "base_form": "наприме'р",
+      "pos": "other",
+      "translation": [
+        "for example",
+        "for instance"
+      ],
+      "example_ru": "Например, тебе нра'вится англи'йский?",
+      "example_en": "For example, do you like English?",
+      "source": "openrussian.org suggestions",
+      "rank": 358,
+      "level": "B1"
+    },
+    {
+      "query": "нача́ле",
+      "found": true,
+      "word": "нача'ло",
+      "word_stressed": "нача'ло",
+      "base_form": "нача'ло",
+      "pos": "noun",
+      "translation": [
+        "beginning",
+        "commencement",
+        "start",
+        "onset",
+        "source",
+        "origin",
+        "(in plural) principles",
+        "basis",
+        "basics",
+        "command",
+        "authority"
+      ],
+      "example_ru": "Мой оте'ц вернётся в нача'ле сле'дующего ме'сяца.",
+      "example_en": "My father will return at the beginning of next month.",
+      "source": "openrussian.org suggestions",
+      "rank": 971,
+      "level": "B2"
+    },
+    {
+      "query": "не́бе",
+      "found": true,
+      "word": "не'бо",
+      "word_stressed": "не'бо",
+      "base_form": "не'бо",
+      "pos": "noun",
+      "translation": [
+        "sky",
+        "heaven",
+        "firmament",
+        "air"
+      ],
+      "example_ru": "В не'бе сия'ли бесчи'сленные звёзды.",
+      "example_en": "Countless stars were twinkling in the sky.",
+      "source": "openrussian.org suggestions",
+      "rank": 321,
+      "level": "B1"
+    },
+    {
+      "query": "нес",
+      "found": true,
+      "word": "нести'",
+      "word_stressed": "нести'",
+      "base_form": "нести'",
+      "pos": "verb",
+      "translation": [
+        "to carry",
+        "bear",
+        "bring",
+        "to lay eggs",
+        "to talk"
+      ],
+      "example_ru": "Быть мо'жет, я несча'стлив, но я не собира'юсь убива'ть себя.",
+      "example_en": "I'd be unhappy, but I wouldn't kill myself.",
+      "source": "openrussian.org suggestions",
+      "rank": 845,
+      "level": "B2"
+    },
+    {
+      "query": "несколько",
+      "found": true,
+      "word": "не'сколько",
+      "word_stressed": "не'сколько",
+      "base_form": "не'сколько",
+      "pos": "other",
+      "translation": [
+        "some",
+        "a few",
+        "several"
+      ],
+      "example_ru": "Я полага'ю, э'то будет вы'глядеть не'сколько иначе, когда ты поду'маешь об э'том в долгосро'чном пла'не.",
+      "example_en": "I suppose it's different when you think about it over the long term.",
+      "source": "openrussian.org suggestions",
+      "rank": 129,
+      "level": "A2"
+    },
+    {
+      "query": "нет",
+      "found": true,
+      "word": "нет",
+      "word_stressed": "нет",
+      "base_form": "нет",
+      "pos": "other",
+      "translation": [
+        "no",
+        "not",
+        "not any",
+        "there isn't (any)"
+      ],
+      "example_ru": "Соба'ки не уме'ют разгова'ривать, но глаза у пёсика как будто сказа'ли: \"Нет, у меня нет дома\".",
+      "example_en": "Dogs can't speak, but it appeared as if the eyes of the dog said, \"No, I don't have a home.\"",
+      "source": "openrussian.org suggestions",
+      "rank": 49,
+      "level": "A1"
+    },
+    {
+      "query": "ни",
+      "found": true,
+      "word": "ни",
+      "word_stressed": "ни",
+      "base_form": "ни",
+      "pos": "other",
+      "translation": [
+        "neither",
+        "no"
+      ],
+      "example_ru": "Ни с того' ни с сего моя' мать запе'ла.",
+      "example_en": "All of a sudden, my mother began to sing.",
+      "source": "openrussian.org suggestions",
+      "rank": 50,
+      "level": "B1"
+    },
+    {
+      "query": "но́вый",
+      "found": true,
+      "word": "но'вый",
+      "word_stressed": "но'вый",
+      "base_form": "но'вый",
+      "pos": "adjective",
+      "translation": [
+        "new"
+      ],
+      "example_ru": "Нет, э'то не мой но'вый бойфренд.",
+      "example_en": "No, he's not my new boyfriend.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "но́ч",
+      "found": true,
+      "word": "ночь",
+      "word_stressed": "ночь",
+      "base_form": "ночь",
+      "pos": "noun",
+      "translation": [
+        "night"
+      ],
+      "example_ru": "Почему-то по ноча'м я бодрее.",
+      "example_en": "For some reason I feel more alive at night.",
+      "source": "openrussian.org suggestions",
+      "rank": 152,
+      "level": "A2"
+    },
+    {
+      "query": "нового́дняя",
+      "found": true,
+      "word": "нового'дний",
+      "word_stressed": "нового'дний",
+      "base_form": "нового'дний",
+      "pos": "adjective",
+      "translation": [
+        "New Year’s"
+      ],
+      "example_ru": null,
+      "example_en": null,
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "нос",
+      "found": true,
+      "word": "нос",
+      "word_stressed": "нос",
+      "base_form": "нос",
+      "pos": "noun",
+      "translation": [
+        "nose",
+        "beak",
+        "head",
+        "prow",
+        "bow of a ship"
+      ],
+      "example_ru": "Не суй нос не в своё де'ло.",
+      "example_en": "Mind your own business.",
+      "source": "openrussian.org suggestions",
+      "rank": 413,
+      "level": "B1"
+    },
+    {
+      "query": "нь",
+      "found": true,
+      "word": "Нью-Де'ли",
+      "word_stressed": "Нью-Де'ли",
+      "base_form": "Нью-Де'ли",
+      "pos": "noun",
+      "translation": [
+        "New Delhi"
+      ],
+      "example_ru": "Нью-Йорк — са'мый большо'й го'род на све'те.",
+      "example_en": "New York is the world's biggest city.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "о",
+      "found": true,
+      "word": "о",
+      "word_stressed": "о",
+      "base_form": "о",
+      "pos": "other",
+      "translation": [
+        "about",
+        "of",
+        "on",
+        "against",
+        "over"
+      ],
+      "example_ru": "Но мы зна'ем многое о его хара'ктере, благодаря пи'сьмам и за'писям, кото'рые он оста'вил, а также расска'зам о нём други'х люде'й.",
+      "example_en": "But we do know many things about his character, thanks to letters and notebooks he left behind and other people's stories about him.",
+      "source": "openrussian.org suggestions",
+      "rank": 25,
+      "level": "A2"
+    },
+    {
+      "query": "о́чень",
+      "found": true,
+      "word": "о'чень",
+      "word_stressed": "о'чень",
+      "base_form": "о'чень",
+      "pos": "adverb",
+      "translation": [
+        "very",
+        "very much",
+        "greatly"
+      ],
+      "example_ru": "Ле'тние дни мо'гут быть очень-очень жа'ркими.",
+      "example_en": "Summer days can be very, very hot.",
+      "source": "openrussian.org suggestions",
+      "rank": 73,
+      "level": "A1"
+    },
+    {
+      "query": "об",
+      "found": true,
+      "word": "об",
+      "word_stressed": "об",
+      "base_form": "об",
+      "pos": "other",
+      "translation": [
+        "about",
+        "concerning"
+      ],
+      "example_ru": "Я полага'ю, э'то будет вы'глядеть не'сколько иначе, когда ты поду'маешь об э'том в долгосро'чном пла'не.",
+      "example_en": "I suppose it's different when you think about it over the long term.",
+      "source": "openrussian.org suggestions",
+      "rank": 112,
+      "level": "B1"
+    },
+    {
+      "query": "один",
+      "found": true,
+      "word": "оди'н",
+      "word_stressed": "оди'н",
+      "base_form": "оди'н",
+      "pos": "other",
+      "translation": [
+        "one",
+        "1",
+        "alone"
+      ],
+      "example_ru": "Возмо'жность подо'бной це'пи собы'тий — один раз на два миллио'на полётов, то есть один раз в два ме'сяца при ны'нешнем у'ровне возду'шного сообще'ния.",
+      "example_en": "The probability of this chain of events all happening at once is one in 2 million flights - about once every two months at current levels of air traffic.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A2"
+    },
+    {
+      "query": "окн",
+      "found": true,
+      "word": "окно'",
+      "word_stressed": "окно'",
+      "base_form": "окно'",
+      "pos": "noun",
+      "translation": [
+        "window",
+        "casement-window",
+        "window-sill",
+        "gap",
+        "opening",
+        "port",
+        "slot"
+      ],
+      "example_ru": "Мэри оста'вила сестру', чтобы помы'ть окна.",
+      "example_en": "Mary left her sister to clean the windows.",
+      "source": "openrussian.org suggestions",
+      "rank": 200,
+      "level": "B1"
+    },
+    {
+      "query": "она",
+      "found": true,
+      "word": "она'",
+      "word_stressed": "она'",
+      "base_form": "она'",
+      "pos": "pronoun",
+      "translation": [
+        "she"
+      ],
+      "example_ru": "Несмотря на то, что она вы'росла в Япо'нии, она свободно говори'т по-английски.",
+      "example_en": "Even though she grew up in Japan, she speaks fluent English.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A1"
+    },
+    {
+      "query": "они",
+      "found": true,
+      "word": "они'",
+      "word_stressed": "они'",
+      "base_form": "они'",
+      "pos": "pronoun",
+      "translation": [
+        "they"
+      ],
+      "example_ru": "У неё есть па'рень, с кото'рым они встреча'ются со ста'ршей шко'лы, но ей кажется, что их отноше'ния ста'ли просто привы'чкой, и ей они всё ме'ньше нра'вятся.",
+      "example_en": "She has a boyfriend she's been going out with since high school but feels their relationship has become a matter of habit and is increasingly dissatisfied.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A1"
+    },
+    {
+      "query": "оно",
+      "found": true,
+      "word": "оно'",
+      "word_stressed": "оно'",
+      "base_form": "оно'",
+      "pos": "pronoun",
+      "translation": [
+        "it"
+      ],
+      "example_ru": "Один раз в жи'зни я делаю хоро'шее де'ло... И оно бесполезно.",
+      "example_en": "For once in my life I'm doing a good deed... And it is useless.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A1"
+    },
+    {
+      "query": "отве́т",
+      "found": true,
+      "word": "отве'т",
+      "word_stressed": "отве'т",
+      "base_form": "отве'т",
+      "pos": "noun",
+      "translation": [
+        "answer"
+      ],
+      "example_ru": "Э'то мой отве'т!",
+      "example_en": "That's my answer!",
+      "source": "openrussian.org suggestions",
+      "rank": 383,
+      "level": "B1"
+    },
+    {
+      "query": "п",
+      "found": true,
+      "word": "по",
+      "word_stressed": "по",
+      "base_form": "по",
+      "pos": "other",
+      "translation": [
+        "along",
+        "down",
+        "through",
+        "across",
+        "around",
+        "about",
+        "under",
+        "for",
+        "on",
+        "by the means of",
+        "on",
+        "hit or punch somewhere",
+        "after a certain age",
+        "to (indicating to the end or limit of an object)",
+        "on the subject of",
+        "on",
+        "on (weekdays, specific part of a day)"
+      ],
+      "example_ru": "Мужчи'на реши'л подожда'ть на ста'нции, пока не придёт его жена'.",
+      "example_en": "The man decided to wait at the station until his wife came.",
+      "source": "openrussian.org suggestions",
+      "rank": 12,
+      "level": "B1"
+    },
+    {
+      "query": "па́па",
+      "found": true,
+      "word": "па'па",
+      "word_stressed": "па'па",
+      "base_form": "па'па",
+      "pos": "noun",
+      "translation": [
+        "dad",
+        "father",
+        "Pope"
+      ],
+      "example_ru": "Па'па купи'л мне фотоаппара'т.",
+      "example_en": "Dad bought me a camera.",
+      "source": "openrussian.org suggestions",
+      "rank": 963,
+      "level": "A2"
+    },
+    {
+      "query": "писал",
+      "found": true,
+      "word": "писа'ть",
+      "word_stressed": "писа'ть",
+      "base_form": "писа'ть",
+      "pos": "verb",
+      "translation": [
+        "to write",
+        "to text",
+        "to paint"
+      ],
+      "example_ru": "Я писал письма всё у'тро.",
+      "example_en": "I had been writing letters all that morning.",
+      "source": "openrussian.org suggestions",
+      "rank": 206,
+      "level": "B1"
+    },
+    {
+      "query": "по́сле",
+      "found": true,
+      "word": "по'сле",
+      "word_stressed": "по'сле",
+      "base_form": "по'сле",
+      "pos": "other",
+      "translation": [
+        "after",
+        "afterwards",
+        "later"
+      ],
+      "example_ru": "Ты за'нят в воскресе'нье после полу'дня?",
+      "example_en": "Are you busy on Sunday afternoon?",
+      "source": "openrussian.org suggestions",
+      "rank": 88,
+      "level": "A2"
+    },
+    {
+      "query": "пожа́луйста",
+      "found": true,
+      "word": "пожа'луйста",
+      "word_stressed": "пожа'луйста",
+      "base_form": "пожа'луйста",
+      "pos": "other",
+      "translation": [
+        "please",
+        "you are welcome",
+        "here you go"
+      ],
+      "example_ru": "Пожалуйста, не плачь.",
+      "example_en": "Please don't cry.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "пожаловать",
+      "found": true,
+      "word": "пожа'ловать",
+      "word_stressed": "пожа'ловать",
+      "base_form": "пожа'ловать",
+      "pos": "verb",
+      "translation": [
+        "to give",
+        "grant",
+        "bestow",
+        "to come",
+        "visit",
+        "or call on someone"
+      ],
+      "example_ru": "Добро пожа'ловать в Япо'нию.",
+      "example_en": "Welcome to Japan.",
+      "source": "openrussian.org suggestions",
+      "rank": 769,
+      "level": "B2"
+    },
+    {
+      "query": "пока",
+      "found": true,
+      "word": "пока'",
+      "word_stressed": "пока'",
+      "base_form": "пока'",
+      "pos": "other",
+      "translation": [
+        "bye (informal)",
+        "while",
+        "in the meantime",
+        "so far",
+        "for now",
+        "until",
+        "until now"
+      ],
+      "example_ru": "Когда-нибудь я обязательно пое'ду во Фра'нцию, просто пока не зна'ю когда.",
+      "example_en": "Sometime I'll definitely visit France. I just don't know exactly when.",
+      "source": "openrussian.org suggestions",
+      "rank": 133,
+      "level": "A2"
+    },
+    {
+      "query": "показа́ть",
+      "found": true,
+      "word": "показа'ть",
+      "word_stressed": "показа'ть",
+      "base_form": "показа'ть",
+      "pos": "verb",
+      "translation": [
+        "to show",
+        "to display",
+        "to reveal",
+        "to point",
+        "to depose",
+        "to testify against"
+      ],
+      "example_ru": "Я не зна'ю, как показа'ть э'то, поскольку э'то и так вполне ясно.",
+      "example_en": "I don't know how to demonstrate it, since it's too obvious!",
+      "source": "openrussian.org suggestions",
+      "rank": 331,
+      "level": "B1"
+    },
+    {
+      "query": "пол",
+      "found": true,
+      "word": "пол",
+      "word_stressed": "пол",
+      "base_form": "пол",
+      "pos": "noun",
+      "translation": [
+        "floor",
+        "ground",
+        "sex",
+        "gender",
+        "half"
+      ],
+      "example_ru": "Ва'за упа'ла на пол и разби'лась.",
+      "example_en": "The vase fell to the floor and shattered.",
+      "source": "openrussian.org suggestions",
+      "rank": 225,
+      "level": "B1"
+    },
+    {
+      "query": "после́дний",
+      "found": true,
+      "word": "после'дний",
+      "word_stressed": "после'дний",
+      "base_form": "после'дний",
+      "pos": "adjective",
+      "translation": [
+        "last",
+        "latest",
+        "recent",
+        "final",
+        "ultimate",
+        "definitive",
+        "latter",
+        "(colloquial) worst"
+      ],
+      "example_ru": "После'дний челове'к, кото'рому я рассказа'л свою' иде'ю, реши'л, что я сумасше'дший.",
+      "example_en": "The last person I told my idea to thought I was nuts.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "посмотре́ла",
+      "found": true,
+      "word": "посмотре'ть",
+      "word_stressed": "посмотре'ть",
+      "base_form": "посмотре'ть",
+      "pos": "verb",
+      "translation": [
+        "look",
+        "watch"
+      ],
+      "example_ru": "Она посмотре'ла на меня с подозре'нием.",
+      "example_en": "She gave me the fish eye.",
+      "source": "openrussian.org suggestions",
+      "rank": 188,
+      "level": "B1"
+    },
+    {
+      "query": "потому",
+      "found": true,
+      "word": "потому'",
+      "word_stressed": "потому'",
+      "base_form": "потому'",
+      "pos": "other",
+      "translation": [
+        "because"
+      ],
+      "example_ru": "Э'то потому, что ты де'вушка.",
+      "example_en": "It's because you're a girl.",
+      "source": "openrussian.org suggestions",
+      "rank": 105,
+      "level": "B1"
+    },
+    {
+      "query": "почему",
+      "found": true,
+      "word": "почему'",
+      "word_stressed": "почему'",
+      "base_form": "почему'",
+      "pos": "other",
+      "translation": [
+        "Why? How come?"
+      ],
+      "example_ru": "Почему-то по ноча'м я бодрее.",
+      "example_en": "For some reason I feel more alive at night.",
+      "source": "openrussian.org suggestions",
+      "rank": 104,
+      "level": "A2"
+    },
+    {
+      "query": "поэ́т",
+      "found": true,
+      "word": "поэ'т",
+      "word_stressed": "поэ'т",
+      "base_form": "поэ'т",
+      "pos": "noun",
+      "translation": [
+        "poet"
+      ],
+      "example_ru": "Аллен — поэ'т.",
+      "example_en": "Allen is a poet.",
+      "source": "openrussian.org suggestions",
+      "rank": 760,
+      "level": "B2"
+    },
+    {
+      "query": "пою",
+      "found": true,
+      "word": "петь",
+      "word_stressed": "петь",
+      "base_form": "петь",
+      "pos": "verb",
+      "translation": [
+        "sing"
+      ],
+      "example_ru": "Нет, я не пою'.",
+      "example_en": "No, I don't sing.",
+      "source": "openrussian.org suggestions",
+      "rank": 750,
+      "level": "B2"
+    },
+    {
+      "query": "пра́вильно",
+      "found": true,
+      "word": "пра'вильно",
+      "word_stressed": "пра'вильно",
+      "base_form": "пра'вильно",
+      "pos": "adverb",
+      "translation": [
+        "right",
+        "rightly",
+        "correctly",
+        "regularly",
+        "properly"
+      ],
+      "example_ru": "Нелегко реша'ть, что правильно, а что нет, но прихо'дится э'то де'лать.",
+      "example_en": "It is a difficult task, choosing what is \"right\" or \"wrong\", but you have to do it.",
+      "source": "openrussian.org suggestions",
+      "rank": 863,
+      "level": "A1"
+    },
+    {
+      "query": "пра́вильный",
+      "found": true,
+      "word": "пра'вильный",
+      "word_stressed": "пра'вильный",
+      "base_form": "пра'вильный",
+      "pos": "adjective",
+      "translation": [
+        "correct",
+        "true",
+        "right",
+        "regular",
+        "proper",
+        "straight",
+        "level"
+      ],
+      "example_ru": "Пове'рь мне, э'то правильный путь.",
+      "example_en": "Believe me, this is the right way.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "правосла́вное",
+      "found": true,
+      "word": "правосла'вный",
+      "word_stressed": "правосла'вный",
+      "base_form": "правосла'вный",
+      "pos": "adjective",
+      "translation": [
+        "orthodox"
+      ],
+      "example_ru": null,
+      "example_en": null,
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "предложный",
+      "found": true,
+      "word": "предло'жный",
+      "word_stressed": "предло'жный",
+      "base_form": "предло'жный",
+      "pos": "adjective",
+      "translation": [
+        "prepositional"
+      ],
+      "example_ru": null,
+      "example_en": null,
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "приходим",
+      "found": true,
+      "word": "приходи'ть",
+      "word_stressed": "приходи'ть",
+      "base_form": "приходи'ть",
+      "pos": "verb",
+      "translation": [
+        "to arrive",
+        "come"
+      ],
+      "example_ru": "Мы прихо'димся друг дру'гу бра'том и сестро'й.",
+      "example_en": "We are brother and sister.",
+      "source": "openrussian.org suggestions",
+      "rank": 450,
+      "level": "B1"
+    },
+    {
+      "query": "пти́ц",
+      "found": true,
+      "word": "пти'ца",
+      "word_stressed": "пти'ца",
+      "base_form": "пти'ца",
+      "pos": "noun",
+      "translation": [
+        "bird"
+      ],
+      "example_ru": "В па'рке много таки'х птиц.",
+      "example_en": "There are many such birds in the park.",
+      "source": "openrussian.org suggestions",
+      "rank": 958,
+      "level": "B2"
+    },
+    {
+      "query": "путь",
+      "found": true,
+      "word": "путь",
+      "word_stressed": "путь",
+      "base_form": "путь",
+      "pos": "noun",
+      "translation": [
+        "way",
+        "track",
+        "path"
+      ],
+      "example_ru": "Пра'ктика — путь к соверше'нству.",
+      "example_en": "Practice makes perfect.",
+      "source": "openrussian.org suggestions",
+      "rank": 266,
+      "level": "B1"
+    },
+    {
+      "query": "р",
+      "found": true,
+      "word": "раз",
+      "word_stressed": "раз",
+      "base_form": "раз",
+      "pos": "noun",
+      "translation": [
+        "time",
+        "one",
+        "once",
+        "if",
+        "since"
+      ],
+      "example_ru": "Разгова'ривать с ним — всё равно что с ка'менной стено'й.",
+      "example_en": "You may as well talk to a stone wall as to him.",
+      "source": "openrussian.org suggestions",
+      "rank": 63,
+      "level": "A2"
+    },
+    {
+      "query": "рабо́тать",
+      "found": true,
+      "word": "рабо'тать",
+      "word_stressed": "рабо'тать",
+      "base_form": "рабо'тать",
+      "pos": "verb",
+      "translation": [
+        "work",
+        "operate",
+        "open",
+        "function"
+      ],
+      "example_ru": "Э'то займёт у меня слишком много вре'мени, чтобы объясни'ть, почему э'то не будет рабо'тать.",
+      "example_en": "It would take me too much time to explain to you why it's not going to work.",
+      "source": "openrussian.org suggestions",
+      "rank": 163,
+      "level": "A2"
+    },
+    {
+      "query": "работа",
+      "found": true,
+      "word": "рабо'та",
+      "word_stressed": "рабо'та",
+      "base_form": "рабо'та",
+      "pos": "noun",
+      "translation": [
+        "work",
+        "working",
+        "job"
+      ],
+      "example_ru": "Э'та рабо'та не окупа'ется.",
+      "example_en": "This work doesn't pay.",
+      "source": "openrussian.org suggestions",
+      "rank": 118,
+      "level": "A1"
+    },
+    {
+      "query": "рели́гиозный",
+      "found": true,
+      "word": "религио'зный",
+      "word_stressed": "религио'зный",
+      "base_form": "религио'зный",
+      "pos": "adjective",
+      "translation": [
+        "religious",
+        "pious"
+      ],
+      "example_ru": "Я глубоко религио'зный челове'к и ве'рю в жизнь после сме'рти.",
+      "example_en": "I'm a deeply religious man and believe in life after death.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "род",
+      "found": true,
+      "word": "род",
+      "word_stressed": "род",
+      "base_form": "род",
+      "pos": "noun",
+      "translation": [
+        "generation",
+        "birth",
+        "origin",
+        "stock",
+        "family",
+        "race",
+        "kin",
+        "(taxonomy) genus",
+        "sort",
+        "kind",
+        "genre",
+        "style",
+        "branch",
+        "(grammar) gender",
+        "class"
+      ],
+      "example_ru": "Наша и'стинная национа'льность - челове'ческий род.",
+      "example_en": "Our true nationality is mankind.",
+      "source": "openrussian.org suggestions",
+      "rank": 695,
+      "level": "B2"
+    },
+    {
+      "query": "роль",
+      "found": true,
+      "word": "роль",
+      "word_stressed": "роль",
+      "base_form": "роль",
+      "pos": "noun",
+      "translation": [
+        "role"
+      ],
+      "example_ru": "Ограничивающая роль, кото'рую некогда игра'ло о'бщество, исчеза'ет, и взро'слые всё неохотнее руга'ют чужи'х дете'й, когда те не слу'шаются.",
+      "example_en": "The restraining role that the community once played is losing its force as adults become reluctant to reprimand other people's unruly children.",
+      "source": "openrussian.org suggestions",
+      "rank": 744,
+      "level": "B2"
+    },
+    {
+      "query": "роман",
+      "found": true,
+      "word": "рома'н",
+      "word_stressed": "рома'н",
+      "base_form": "рома'н",
+      "pos": "noun",
+      "translation": [
+        "novel",
+        "romance",
+        "love affair"
+      ],
+      "example_ru": "Ты уже дочита'л рома'н?",
+      "example_en": "Have you finished reading the novel?",
+      "source": "openrussian.org suggestions",
+      "rank": 738,
+      "level": "B2"
+    },
+    {
+      "query": "росси",
+      "found": true,
+      "word": "Росси'я",
+      "word_stressed": "Росси'я",
+      "base_form": "Росси'я",
+      "pos": "noun",
+      "translation": [
+        "Russia"
+      ],
+      "example_ru": "Наша компа'ния планирует постро'ить в России но'вый хими'ческий заво'д.",
+      "example_en": "Our company is planning to build a new chemical plant in Russia.",
+      "source": "openrussian.org suggestions",
+      "rank": 201,
+      "level": "A1"
+    },
+    {
+      "query": "рост",
+      "found": true,
+      "word": "рост",
+      "word_stressed": "рост",
+      "base_form": "рост",
+      "pos": "noun",
+      "translation": [
+        "growth (in a living organism)",
+        "growth (in quantity, prices, etc)",
+        "height"
+      ],
+      "example_ru": "Рост населе'ния стал в стране' большо'й пробле'мой.",
+      "example_en": "The increase in population has become a serious problem in the country.",
+      "source": "openrussian.org suggestions",
+      "rank": 796,
+      "level": "B2"
+    },
+    {
+      "query": "русский",
+      "found": true,
+      "word": "ру'сский",
+      "word_stressed": "ру'сский",
+      "base_form": "ру'сский",
+      "pos": "noun",
+      "translation": [
+        "Russian man"
+      ],
+      "example_ru": "Я не уйгу'р. Я ру'сский.",
+      "example_en": "I'm not Uyghur. I'm Russian.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "рыба",
+      "found": true,
+      "word": "ры'ба",
+      "word_stressed": "ры'ба",
+      "base_form": "ры'ба",
+      "pos": "noun",
+      "translation": [
+        "fish"
+      ],
+      "example_ru": "Я не настоя'щая ры'ба; я всего лишь плю'шевая игру'шка.",
+      "example_en": "I'm not a real fish, I'm just a mere plushy.",
+      "source": "openrussian.org suggestions",
+      "rank": 956,
+      "level": "B2"
+    },
+    {
+      "query": "ряд",
+      "found": true,
+      "word": "ряд",
+      "word_stressed": "ряд",
+      "base_form": "ряд",
+      "pos": "noun",
+      "translation": [
+        "row",
+        "number",
+        "series",
+        "line"
+      ],
+      "example_ru": "Она разложи'ла компакт-диски на полке в ряд.",
+      "example_en": "She put her CDs in a row on the shelf.",
+      "source": "openrussian.org suggestions",
+      "rank": 165,
+      "level": "B1"
+    },
+    {
+      "query": "с",
+      "found": true,
+      "word": "с",
+      "word_stressed": "с",
+      "base_form": "с",
+      "pos": "other",
+      "translation": [
+        "with",
+        "from",
+        "in the course of",
+        "since",
+        "off",
+        "remove from",
+        "against",
+        "about (indicating approximate time or number)"
+      ],
+      "example_ru": "Вы вдвоём до'лжны отнести' де'душке корзи'нку я'блок, - сказа'ла ма'ма. - Ты возьмёшься с одной стороны, ты - с друго'й. Вот так и пойдёте.",
+      "example_en": "The two of you need to take the basket of apples over to your grandfather, the mother said. \"You will grab it from one side, and you - from the other. And that's how you'll set out.\"",
+      "source": "openrussian.org suggestions",
+      "rank": 8,
+      "level": "A1"
+    },
+    {
+      "query": "саду",
+      "found": true,
+      "word": "сад",
+      "word_stressed": "сад",
+      "base_form": "сад",
+      "pos": "noun",
+      "translation": [
+        "garden"
+      ],
+      "example_ru": "Если бы бы'ло немного тепле'е, мы могли' бы вы'пить ча'ю в са'ду.",
+      "example_en": "We could have our tea in the garden, were it a little warmer.",
+      "source": "openrussian.org suggestions",
+      "rank": 903,
+      "level": "B2"
+    },
+    {
+      "query": "све́та",
+      "found": true,
+      "word": "свет",
+      "word_stressed": "свет",
+      "base_form": "свет",
+      "pos": "noun",
+      "translation": [
+        "light",
+        "world",
+        "high society"
+      ],
+      "example_ru": "Из-за того', что ско'рость све'та выше ско'рости зву'ка, некоторые лю'ди блистательно вы'глядят пе'ред тем, как глупо звуча'т.",
+      "example_en": "It is because light travels faster than sound that some people look brilliant before sounding stupid.",
+      "source": "openrussian.org suggestions",
+      "rank": 196,
+      "level": "B1"
+    },
+    {
+      "query": "святой",
+      "found": true,
+      "word": "свято'й",
+      "word_stressed": "свято'й",
+      "base_form": "свято'й",
+      "pos": "noun",
+      "translation": [
+        "saint",
+        "holy one"
+      ],
+      "example_ru": "Христофор Колумб нашёл однажды Свято'й Грааль, но вы'бросил его, потому что ему не понра'вился цвет.",
+      "example_en": "Christopher Columbus once found the Holy Grail but threw it out because he didn't like the color.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "седьмо́го",
+      "found": true,
+      "word": "седьмо'й",
+      "word_stressed": "седьмо'й",
+      "base_form": "седьмо'й",
+      "pos": "adjective",
+      "translation": [
+        "seventh"
+      ],
+      "example_ru": "Сейчас двадцать минут седьмо'го.",
+      "example_en": "It's twenty past six.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "семь",
+      "found": true,
+      "word": "семь",
+      "word_stressed": "семь",
+      "base_form": "семь",
+      "pos": "other",
+      "translation": [
+        "seven",
+        "7"
+      ],
+      "example_ru": "В Ло'ндоне сейчас семь.",
+      "example_en": "It is seven in London now.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A2"
+    },
+    {
+      "query": "семья",
+      "found": true,
+      "word": "семья'",
+      "word_stressed": "семья'",
+      "base_form": "семья'",
+      "pos": "noun",
+      "translation": [
+        "family"
+      ],
+      "example_ru": "И хотя ее больше нет с нами, я зна'ю, что моя' ба'бушка наблюда'ет за мной, также как и моя' семья', кото'рая сде'лала меня тем, кто я есть. Мне не хвата'ет их в э'тот ве'чер. Я зна'ю, что мой долг пе'ред ними невозможно оплати'ть. Мое'й сестре' Ма'йе, мое'й сестре' Альме, всем остальны'м мои'м бра'тьям и сестрам, огро'мное вам спасибо за ту подде'ржку, кото'рую вы мне оказа'ли.",
+      "example_en": "And while she's no longer with us, I know my grandmother's watching, along with the family that made me who I am. I miss them tonight. I know that my debt to them is beyond measure. To my sister Maya, my sister Alma, all my other brothers and sisters, thank you so much for all the support that you've given me. I'm grateful to them.",
+      "source": "openrussian.org suggestions",
+      "rank": 402,
+      "level": "A2"
+    },
+    {
+      "query": "сестра",
+      "found": true,
+      "word": "сестра'",
+      "word_stressed": "сестра'",
+      "base_form": "сестра'",
+      "pos": "noun",
+      "translation": [
+        "sister",
+        "nurse"
+      ],
+      "example_ru": "Моя' сестра' слишком маленькая, чтобы ходи'ть в шко'лу.",
+      "example_en": "My sister is too young to go to school.",
+      "source": "openrussian.org suggestions",
+      "rank": 807,
+      "level": "A2"
+    },
+    {
+      "query": "сесть",
+      "found": true,
+      "word": "сесть",
+      "word_stressed": "сесть",
+      "base_form": "сесть",
+      "pos": "verb",
+      "translation": [
+        "to sit down"
+      ],
+      "example_ru": "Позвони' мне в четыре. Мне надо сесть на пе'рвый по'езд.",
+      "example_en": "Call me at four; I must take the first train.",
+      "source": "openrussian.org suggestions",
+      "rank": 270,
+      "level": "B1"
+    },
+    {
+      "query": "синий",
+      "found": true,
+      "word": "си'ний",
+      "word_stressed": "си'ний",
+      "base_form": "си'ний",
+      "pos": "adjective",
+      "translation": [
+        "blue",
+        "deep blue",
+        "indigo",
+        "drunk"
+      ],
+      "example_ru": "Си'ний спорти'вный автомоби'ль взвизгнув затормози'л.",
+      "example_en": "The blue sports car came to a screeching halt.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "скажете",
+      "found": true,
+      "word": "сказа'ть",
+      "word_stressed": "сказа'ть",
+      "base_form": "сказа'ть",
+      "pos": "verb",
+      "translation": [
+        "to say",
+        "to tell",
+        "to speak",
+        "to talk"
+      ],
+      "example_ru": "Вы ви'дели наши музе'и? Что вы о них ска'жете?",
+      "example_en": "Have you seen our museums? What do you think about them?",
+      "source": "openrussian.org suggestions",
+      "rank": 20,
+      "level": "A2"
+    },
+    {
+      "query": "ско́рой",
+      "found": true,
+      "word": "ско'рый",
+      "word_stressed": "ско'рый",
+      "base_form": "ско'рый",
+      "pos": "adjective",
+      "translation": [
+        "quick",
+        "fast",
+        "swift",
+        "near",
+        "forthcoming",
+        "(rail transport) express"
+      ],
+      "example_ru": "Отпра'вьте маши'ну ско'рой по'мощи.",
+      "example_en": "Please send an ambulance.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "скопи́ровано",
+      "found": true,
+      "word": "скопи'рованный",
+      "word_stressed": "скопи'рованный",
+      "base_form": "скопи'рованный",
+      "pos": "adjective",
+      "translation": [
+        "copied"
+      ],
+      "example_ru": null,
+      "example_en": null,
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "сла́ва",
+      "found": true,
+      "word": "сла'ва",
+      "word_stressed": "сла'ва",
+      "base_form": "сла'ва",
+      "pos": "noun",
+      "translation": [
+        "glory",
+        "fame",
+        "renown"
+      ],
+      "example_ru": "Сла'ва бо'гу.",
+      "example_en": "Thank God.",
+      "source": "openrussian.org suggestions",
+      "rank": 837,
+      "level": "B2"
+    },
+    {
+      "query": "славим",
+      "found": true,
+      "word": "славимый",
+      "word_stressed": "славимый",
+      "base_form": "славимый",
+      "pos": "adjective",
+      "translation": [
+        "glorified",
+        "praised",
+        "celebrated"
+      ],
+      "example_ru": null,
+      "example_en": null,
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "слов",
+      "found": true,
+      "word": "сло'во",
+      "word_stressed": "сло'во",
+      "base_form": "сло'во",
+      "pos": "noun",
+      "translation": [
+        "word",
+        "speech",
+        "promise",
+        "word"
+      ],
+      "example_ru": "У меня нет слов.",
+      "example_en": "I am speechless.",
+      "source": "openrussian.org suggestions",
+      "rank": 90,
+      "level": "A2"
+    },
+    {
+      "query": "смотреть",
+      "found": true,
+      "word": "смотре'ть",
+      "word_stressed": "смотре'ть",
+      "base_form": "смотре'ть",
+      "pos": "verb",
+      "translation": [
+        "to look",
+        "to watch"
+      ],
+      "example_ru": "Я стал ста'рше, поэтому я стал смотре'ть на ве'щи по-другому.",
+      "example_en": "I got older, and so I started looking at things differently.",
+      "source": "openrussian.org suggestions",
+      "rank": 107,
+      "level": "A2"
+    },
+    {
+      "query": "снача́ла",
+      "found": true,
+      "word": "снача'ла",
+      "word_stressed": "снача'ла",
+      "base_form": "снача'ла",
+      "pos": "other",
+      "translation": [
+        "firstly",
+        "at first",
+        "all over again",
+        "afresh"
+      ],
+      "example_ru": "Сначала мы поеди'м, потом пойдём.",
+      "example_en": "First we'll eat, and then we'll go.",
+      "source": "openrussian.org suggestions",
+      "rank": 463,
+      "level": "B1"
+    },
+    {
+      "query": "снег",
+      "found": true,
+      "word": "снег",
+      "word_stressed": "снег",
+      "base_form": "снег",
+      "pos": "noun",
+      "translation": [
+        "snow"
+      ],
+      "example_ru": "Идёт снег.",
+      "example_en": "It's been snowing.",
+      "source": "openrussian.org suggestions",
+      "rank": 436,
+      "level": "A2"
+    },
+    {
+      "query": "со́здал",
+      "found": true,
+      "word": "созда'ть",
+      "word_stressed": "созда'ть",
+      "base_form": "созда'ть",
+      "pos": "verb",
+      "translation": [
+        "to create"
+      ],
+      "example_ru": "Бог создал челове'ка по своему' подо'бию.",
+      "example_en": "God created man in his own image.",
+      "source": "openrussian.org suggestions",
+      "rank": 709,
+      "level": "B2"
+    },
+    {
+      "query": "со́лнце",
+      "found": true,
+      "word": "со'лнце",
+      "word_stressed": "со'лнце",
+      "base_form": "со'лнце",
+      "pos": "noun",
+      "translation": [
+        "sun"
+      ],
+      "example_ru": "К тому вре'мени, как со'лнце ся'дет, мы дойдём до места назначе'ния.",
+      "example_en": "By the time the sun sets, we will arrive at the destination.",
+      "source": "openrussian.org suggestions",
+      "rank": 373,
+      "level": "A2"
+    },
+    {
+      "query": "совсе́м",
+      "found": true,
+      "word": "совсе'м",
+      "word_stressed": "совсе'м",
+      "base_form": "совсе'м",
+      "pos": "other",
+      "translation": [
+        "entirely",
+        "totally",
+        "completely",
+        "quite",
+        "at all"
+      ],
+      "example_ru": "Я не худо'жник. Я совсем не гожу'сь для э'того.",
+      "example_en": "I am not an artist. I never had the knack for it.",
+      "source": "openrussian.org suggestions",
+      "rank": 156,
+      "level": "B1"
+    },
+    {
+      "query": "союз",
+      "found": true,
+      "word": "сою'з",
+      "word_stressed": "сою'з",
+      "base_form": "сою'з",
+      "pos": "noun",
+      "translation": [
+        "union",
+        "alliance",
+        "Union",
+        "league",
+        "agreement",
+        "conjunction"
+      ],
+      "example_ru": "Литва' вхо'дит в Европе'йский сою'з.",
+      "example_en": "Lithuania is joining the European Union.",
+      "source": "openrussian.org suggestions",
+      "rank": 683,
+      "level": "B2"
+    },
+    {
+      "query": "спаси́бо",
+      "found": true,
+      "word": "спаси'бо",
+      "word_stressed": "спаси'бо",
+      "base_form": "спаси'бо",
+      "pos": "other",
+      "translation": [
+        "thanks",
+        "thank you"
+      ],
+      "example_ru": "Спасибо за то, что наконец объясни'ли, почему лю'ди принима'ют меня за идио'та.",
+      "example_en": "Thanks for having explained to me at last why people take me for an idiot.",
+      "source": "openrussian.org suggestions",
+      "rank": 748,
+      "level": "A1"
+    },
+    {
+      "query": "стал",
+      "found": true,
+      "word": "стать",
+      "word_stressed": "стать",
+      "base_form": "стать",
+      "pos": "verb",
+      "translation": [
+        "to become",
+        "to begin to",
+        "be",
+        "to stand",
+        "to become",
+        "get",
+        "grow",
+        "to take to"
+      ],
+      "example_ru": "Я стал ста'рше, поэтому я стал смотре'ть на ве'щи по-другому.",
+      "example_en": "I got older, and so I started looking at things differently.",
+      "source": "openrussian.org suggestions",
+      "rank": 51,
+      "level": "B1"
+    },
+    {
+      "query": "стол",
+      "found": true,
+      "word": "стол",
+      "word_stressed": "стол",
+      "base_form": "стол",
+      "pos": "noun",
+      "translation": [
+        "table"
+      ],
+      "example_ru": "Она купи'ла ста'рый стол почти задаром.",
+      "example_en": "She bought the old table for next to nothing.",
+      "source": "openrussian.org suggestions",
+      "rank": 149,
+      "level": "A2"
+    },
+    {
+      "query": "сча́стье",
+      "found": true,
+      "word": "сча'стье",
+      "word_stressed": "сча'стье",
+      "base_form": "сча'стье",
+      "pos": "noun",
+      "translation": [
+        "happiness",
+        "luck",
+        "good fortune"
+      ],
+      "example_ru": "Настоящее сча'стье состои'т в том, чтобы жела'ть ма'лого.",
+      "example_en": "True happiness consists of desiring little.",
+      "source": "openrussian.org suggestions",
+      "rank": 591,
+      "level": "B1"
+    },
+    {
+      "query": "сын",
+      "found": true,
+      "word": "сын",
+      "word_stressed": "сын",
+      "base_form": "сын",
+      "pos": "noun",
+      "translation": [
+        "son",
+        "child",
+        "(poetic plural) sons"
+      ],
+      "example_ru": "Племя'нник — э'то сын чьего-либо бра'та или сестры'.",
+      "example_en": "A nephew is a son of one's brother or sister.",
+      "source": "openrussian.org suggestions",
+      "rank": 265,
+      "level": "A2"
+    },
+    {
+      "query": "сыры",
+      "found": true,
+      "word": "сыро'й",
+      "word_stressed": "сыро'й",
+      "base_form": "сыро'й",
+      "pos": "adjective",
+      "translation": [
+        "uncooked",
+        "raw",
+        "damp",
+        "crude"
+      ],
+      "example_ru": "Я ищу' сы'ры.",
+      "example_en": "I am looking for the cheeses.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "сыт",
+      "found": true,
+      "word": "сы'тый",
+      "word_stressed": "сы'тый",
+      "base_form": "сы'тый",
+      "pos": "adjective",
+      "translation": [
+        "be satisfied",
+        "being full"
+      ],
+      "example_ru": "Я сыт по го'рло её ворча'нием.",
+      "example_en": "I'm fed up with her grumbling.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "т",
+      "found": true,
+      "word": "тот",
+      "word_stressed": "тот",
+      "base_form": "тот",
+      "pos": "pronoun",
+      "translation": [
+        "that"
+      ],
+      "example_ru": "2, 4, 6 и т. д. - чётные числа.",
+      "example_en": "Two, four, six, etc. are even numbers.",
+      "source": "openrussian.org suggestions",
+      "rank": 6,
+      "level": "B1"
+    },
+    {
+      "query": "так",
+      "found": true,
+      "word": "так",
+      "word_stressed": "так",
+      "base_form": "так",
+      "pos": "other",
+      "translation": [
+        "so",
+        "thus",
+        "like this",
+        "this way",
+        "then",
+        "exactly how"
+      ],
+      "example_ru": "Тебе лу'чше не пить так много ко'фе так поздно.",
+      "example_en": "You'd better not drink too much coffee so late at night.",
+      "source": "openrussian.org suggestions",
+      "rank": 18,
+      "level": "A2"
+    },
+    {
+      "query": "твёрдый",
+      "found": true,
+      "word": "твёрдый",
+      "word_stressed": "твёрдый",
+      "base_form": "твёрдый",
+      "pos": "adjective",
+      "translation": [
+        "hard",
+        "solid",
+        "stable",
+        "firm",
+        "strong",
+        "steadfast",
+        ""
+      ],
+      "example_ru": "Он - твёрдый оре'шек.",
+      "example_en": "He is a tough cookie.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "тебя",
+      "found": true,
+      "word": "ты",
+      "word_stressed": "ты",
+      "base_form": "ты",
+      "pos": "pronoun",
+      "translation": [
+        "you"
+      ],
+      "example_ru": "Когда я впервые уви'дел тебя, я перепу'тал тебя с твое'й сестро'й.",
+      "example_en": "I mistook you for your sister when I first saw you.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A1"
+    },
+    {
+      "query": "темнота",
+      "found": true,
+      "word": "темнота'",
+      "word_stressed": "темнота'",
+      "base_form": "темнота'",
+      "pos": "noun",
+      "translation": [
+        "the dark/darkness"
+      ],
+      "example_ru": "Темнота' не скры'ла э'то.",
+      "example_en": "The darkness has not overcome it.",
+      "source": "openrussian.org suggestions",
+      "rank": 911,
+      "level": "B2"
+    },
+    {
+      "query": "тень",
+      "found": true,
+      "word": "тень",
+      "word_stressed": "тень",
+      "base_form": "тень",
+      "pos": "noun",
+      "translation": [
+        "shade",
+        "shadow",
+        "silhouette (ghost, phantom)",
+        "hint (vestige)"
+      ],
+      "example_ru": "И'стина сжига'ет и уничтожа'ет все стихи'и, показывая, что они лишь тень ее.",
+      "example_en": "Truth burns and destroys all elements, showing that they are merely its shadow.",
+      "source": "openrussian.org suggestions",
+      "rank": 840,
+      "level": "B2"
+    },
+    {
+      "query": "тишина",
+      "found": true,
+      "word": "тишина'",
+      "word_stressed": "тишина'",
+      "base_form": "тишина'",
+      "pos": "noun",
+      "translation": [
+        "silence"
+      ],
+      "example_ru": "Для мно'гих америка'нцев тишина' неую'тна, и то, что разгово'р замолка'ет, они воспринима'ют как сигна'л к тому, что нужно нача'ть говори'ть.",
+      "example_en": "Many Americans are uncomfortable with silence, and they tend to regard silence in a conversation as a signal that they need to start talking.",
+      "source": "openrussian.org suggestions",
+      "rank": 951,
+      "level": "B2"
+    },
+    {
+      "query": "то́же",
+      "found": true,
+      "word": "то'же",
+      "word_stressed": "то'же",
+      "base_form": "то'же",
+      "pos": "other",
+      "translation": [
+        "also",
+        "as well",
+        "too"
+      ],
+      "example_ru": "В Эшленде вода тоже есть.",
+      "example_en": "There's water in Ashland, too.",
+      "source": "openrussian.org suggestions",
+      "rank": 87,
+      "level": "A1"
+    },
+    {
+      "query": "трех",
+      "found": true,
+      "word": "трёхногий",
+      "word_stressed": "трёхногий",
+      "base_form": "трёхногий",
+      "pos": "adjective",
+      "translation": [
+        "three-legged"
+      ],
+      "example_ru": "Некоторые иду'т шко'льными гру'ппами, но большинство' идет в гру'ппах из двух или трех.",
+      "example_en": "Some go in groups organized by their schools, but most go in twos and threes.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "трёх",
+      "found": true,
+      "word": "три",
+      "word_stressed": "три",
+      "base_form": "три",
+      "pos": "noun",
+      "translation": [
+        "three",
+        "3"
+      ],
+      "example_ru": "При сме'шивании трёх основных цвето'в получа'ется чёрный.",
+      "example_en": "Mixture of the three primary colors creates black.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A2"
+    },
+    {
+      "query": "тюль",
+      "found": true,
+      "word": "тюль",
+      "word_stressed": "тюль",
+      "base_form": "тюль",
+      "pos": "noun",
+      "translation": [
+        "tulle",
+        "net curtain"
+      ],
+      "example_ru": "Я люблю' тюльпа'ны.",
+      "example_en": "I like tulips.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "у",
+      "found": true,
+      "word": "у",
+      "word_stressed": "у",
+      "base_form": "у",
+      "pos": "other",
+      "translation": [
+        "(possession)",
+        "by",
+        "at (place)",
+        "with",
+        "from (take, borrow)"
+      ],
+      "example_ru": "Как громко ни кричи' \"У-у!\", в во'лка не преврати'шься.",
+      "example_en": "Regardless how loud you scream \"Oo-oo!\", you won't turn into a wolf.",
+      "source": "openrussian.org suggestions",
+      "rank": 15,
+      "level": "A1"
+    },
+    {
+      "query": "у́м",
+      "found": true,
+      "word": "ум",
+      "word_stressed": "ум",
+      "base_form": "ум",
+      "pos": "noun",
+      "translation": [
+        "the mind"
+      ],
+      "example_ru": "На ум ему приходи'ли стра'нные мы'сли.",
+      "example_en": "He was thinking strange thoughts.",
+      "source": "openrussian.org suggestions",
+      "rank": 608,
+      "level": "B1"
+    },
+    {
+      "query": "у́тро",
+      "found": true,
+      "word": "у'тро",
+      "word_stressed": "у'тро",
+      "base_form": "у'тро",
+      "pos": "noun",
+      "translation": [
+        "morning"
+      ],
+      "example_ru": "Когда я учи'лся в сре'дней шко'ле, я встава'л в 6:00 ка'ждое у'тро.",
+      "example_en": "Back in high school, I got up at 6 a.m. every morning.",
+      "source": "openrussian.org suggestions",
+      "rank": 215,
+      "level": "B1"
+    },
+    {
+      "query": "уви́дела",
+      "found": true,
+      "word": "уви'деть",
+      "word_stressed": "уви'деть",
+      "base_form": "уви'деть",
+      "pos": "verb",
+      "translation": [
+        "to see"
+      ],
+      "example_ru": "Её глаза засия'ли от сча'стья, когда она уви'дела, что мать не разозли'лась на неё.",
+      "example_en": "Her eyes shone with joy when she saw that her mother was not mad at her.",
+      "source": "openrussian.org suggestions",
+      "rank": 143,
+      "level": "B1"
+    },
+    {
+      "query": "угол",
+      "found": true,
+      "word": "у'гол",
+      "word_stressed": "у'гол",
+      "base_form": "у'гол",
+      "pos": "noun",
+      "translation": [
+        "corner",
+        "angle",
+        "dwelling",
+        "quarters"
+      ],
+      "example_ru": "За'гнанная в у'гол же'ртва — са'мая опа'сная.",
+      "example_en": "Cornered prey is the most dangerous kind.",
+      "source": "openrussian.org suggestions",
+      "rank": 426,
+      "level": "B1"
+    },
+    {
+      "query": "улы́бка",
+      "found": true,
+      "word": "улы'бка",
+      "word_stressed": "улы'бка",
+      "base_form": "улы'бка",
+      "pos": "noun",
+      "translation": [
+        "smile"
+      ],
+      "example_ru": "Её улы'бка выража'ла её благода'рность.",
+      "example_en": "Her smile expressed her thanks.",
+      "source": "openrussian.org suggestions",
+      "rank": 795,
+      "level": "B2"
+    },
+    {
+      "query": "улыбается",
+      "found": true,
+      "word": "улыба'ться",
+      "word_stressed": "улыба'ться",
+      "base_form": "улыба'ться",
+      "pos": "verb",
+      "translation": [
+        "smile"
+      ],
+      "example_ru": "Мне нра'вится, как она улыба'ется.",
+      "example_en": "I like the way she smiles.",
+      "source": "openrussian.org suggestions",
+      "rank": 600,
+      "level": "B1"
+    },
+    {
+      "query": "учатся",
+      "found": true,
+      "word": "учи'ться",
+      "word_stressed": "учи'ться",
+      "base_form": "учи'ться",
+      "pos": "verb",
+      "translation": [
+        "to study"
+      ],
+      "example_ru": "Некоторые дети у'чатся пла'вать до того', как им испо'лнится год.",
+      "example_en": "Some babies learn to swim even before they are one year old.",
+      "source": "openrussian.org suggestions",
+      "rank": 881,
+      "level": "B2"
+    },
+    {
+      "query": "ходить",
+      "found": true,
+      "word": "ходи'ть",
+      "word_stressed": "ходи'ть",
+      "base_form": "ходи'ть",
+      "pos": "verb",
+      "translation": [
+        "go",
+        "walk",
+        "move",
+        "pass"
+      ],
+      "example_ru": "Здесь очень опасно ходи'ть но'чью.",
+      "example_en": "There is a lot of danger in walking around here at night.",
+      "source": "openrussian.org suggestions",
+      "rank": 239,
+      "level": "B1"
+    },
+    {
+      "query": "хоро́шо",
+      "found": true,
+      "word": "хорошо'",
+      "word_stressed": "хорошо'",
+      "base_form": "хорошо'",
+      "pos": "adverb",
+      "translation": [
+        "it is good",
+        "it is pleasant",
+        "well",
+        "good"
+      ],
+      "example_ru": "Моя' ма'ма говори'т по-английски недостаточно хорошо.",
+      "example_en": "My mom doesn't speak English very well.",
+      "source": "openrussian.org suggestions",
+      "rank": 138,
+      "level": "A1"
+    },
+    {
+      "query": "цвето́к",
+      "found": true,
+      "word": "цвето'к",
+      "word_stressed": "цвето'к",
+      "base_form": "цвето'к",
+      "pos": "noun",
+      "translation": [
+        "flower",
+        "blossom"
+      ],
+      "example_ru": "Како'й краси'вый цвето'к!",
+      "example_en": "What a beautiful flower!",
+      "source": "openrussian.org suggestions",
+      "rank": 813,
+      "level": "B2"
+    },
+    {
+      "query": "це́нтр",
+      "found": true,
+      "word": "центр",
+      "word_stressed": "центр",
+      "base_form": "центр",
+      "pos": "noun",
+      "translation": [
+        "center",
+        "centre"
+      ],
+      "example_ru": "Пло'щадь Ры'нок — истори'ческий центр города.",
+      "example_en": "Rynok Square is the historic centre of the city.",
+      "source": "openrussian.org suggestions",
+      "rank": 561,
+      "level": "B1"
+    },
+    {
+      "query": "ч",
+      "found": true,
+      "word": "что",
+      "word_stressed": "что",
+      "base_form": "что",
+      "pos": "pronoun",
+      "translation": [
+        "what",
+        "that"
+      ],
+      "example_ru": "Чита'й ежедневно что-то, что никто друго'й не чита'ет. Ду'май ежедневно о чём-то, о чём никто друго'й не ду'мает. Де'лай ежедневно что-то, на что ни у кого друго'го не хва'тит глу'пости. На ра'зуме плохо ска'зывается постоя'нное единогла'сие.",
+      "example_en": "Read, every day, something no one else is reading. Think, every day, something no one else is thinking. Do, every day, something no one else would be silly enough to do. It is bad for the mind to be always part of unanimity.",
+      "source": "openrussian.org suggestions",
+      "rank": 5,
+      "level": "A1"
+    },
+    {
+      "query": "чем",
+      "found": true,
+      "word": "чем",
+      "word_stressed": "чем",
+      "base_form": "чем",
+      "pos": "other",
+      "translation": [
+        "than",
+        "instead of",
+        "rather"
+      ],
+      "example_ru": "Э'тот о'пыт убежда'ет меня в том, что партнёрство между исла'мом и Америкой должно быть основано на том, чем исла'м явля'ется, а не на том, чем не явля'ется. И я счита'ю э'то ча'стью мое'й отве'тственности как президе'нта Соединённых Шта'тов — боро'ться против негати'вных стереоти'пов об исла'ме, где бы они ни появи'лись.",
+      "example_en": "That experience guides my conviction that partnership between America and Islam must be based on what Islam is, not what it isn't. And I consider it part of my responsibility as President of the United States to fight against negative stereotypes of Islam wherever they appear.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A2"
+    },
+    {
+      "query": "чита́й",
+      "found": true,
+      "word": "чита'ть",
+      "word_stressed": "чита'ть",
+      "base_form": "чита'ть",
+      "pos": "verb",
+      "translation": [
+        "read"
+      ],
+      "example_ru": "Не чита'й на хо'ду.",
+      "example_en": "Do not read while walking.",
+      "source": "openrussian.org suggestions",
+      "rank": 282,
+      "level": "A2"
+    },
+    {
+      "query": "читаем",
+      "found": true,
+      "word": "чита'емый",
+      "word_stressed": "чита'емый",
+      "base_form": "чита'емый",
+      "pos": "adjective",
+      "translation": [
+        "something which is being read"
+      ],
+      "example_ru": "На уро'ке англи'йского мы иногда сиди'м в кру'ге и разгова'риваем о кни'ге, кото'рую чита'ем.",
+      "example_en": "In English class, sometimes we sit in a circle to talk about a book we are reading.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "чу́десный",
+      "found": true,
+      "word": "чуде'сный",
+      "word_stressed": "чуде'сный",
+      "base_form": "чуде'сный",
+      "pos": "adjective",
+      "translation": [
+        "miraculous",
+        "wonderful",
+        "lovely"
+      ],
+      "example_ru": "Она сде'лала мне чуде'сный пода'рок.",
+      "example_en": "She gave me a wonderful present.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "ш",
+      "found": true,
+      "word": "шаг",
+      "word_stressed": "шаг",
+      "base_form": "шаг",
+      "pos": "noun",
+      "translation": [
+        "step",
+        "pace",
+        "stride",
+        "tread",
+        "footsteps"
+      ],
+      "example_ru": "Если ты будешь повторя'ть одну и ту же шу'тку двести пятьдесят шесть раз, она набьёт всем оско'мину.",
+      "example_en": "If you repeat a joke two hundred fifty six times, it will set everybody’s teeth on edge.",
+      "source": "openrussian.org suggestions",
+      "rank": 349,
+      "level": "B1"
+    },
+    {
+      "query": "шесть",
+      "found": true,
+      "word": "шесть",
+      "word_stressed": "шесть",
+      "base_form": "шесть",
+      "pos": "other",
+      "translation": [
+        "six",
+        "6"
+      ],
+      "example_ru": "Принима'йте э'то лекарство раз в шесть часо'в.",
+      "example_en": "Take this medicine every six hours.",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": "A2"
+    },
+    {
+      "query": "шко́л",
+      "found": true,
+      "word": "шко'ла",
+      "word_stressed": "шко'ла",
+      "base_form": "шко'ла",
+      "pos": "noun",
+      "translation": [
+        "school",
+        "schoolhouse",
+        "academy",
+        "university"
+      ],
+      "example_ru": "Когда я учи'лся в сре'дней шко'ле, я встава'л в 6:00 ка'ждое у'тро.",
+      "example_en": "Back in high school, I got up at 6 a.m. every morning.",
+      "source": "openrussian.org suggestions",
+      "rank": 363,
+      "level": "B1"
+    },
+    {
+      "query": "ы",
+      "found": true,
+      "word": "нало'говый",
+      "word_stressed": "нало'говый",
+      "base_form": "нало'говый",
+      "pos": "adjective",
+      "translation": [
+        "tax"
+      ],
+      "example_ru": "Ух ты-ы-ы!",
+      "example_en": "Waaaa...",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "ый",
+      "found": true,
+      "word": "напу'ганный",
+      "word_stressed": "напу'ганный",
+      "base_form": "напу'ганный",
+      "pos": "adjective",
+      "translation": [
+        "frightened",
+        "horrified"
+      ],
+      "example_ru": null,
+      "example_en": null,
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "ь",
+      "found": true,
+      "word": "коро'вий",
+      "word_stressed": "коро'вий",
+      "base_form": "коро'вий",
+      "pos": "adjective",
+      "translation": [
+        "cow (adj)"
+      ],
+      "example_ru": null,
+      "example_en": null,
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
+    },
+    {
+      "query": "э́то",
+      "found": true,
+      "word": "э'то",
+      "word_stressed": "э'то",
+      "base_form": "э'то",
+      "pos": "other",
+      "translation": [
+        "this is",
+        "that is"
+      ],
+      "example_ru": "Я не могу' сказа'ть ей э'то сейчас. Э'то уже не так просто.",
+      "example_en": "I can't tell her now. It's not that simple anymore.",
+      "source": "openrussian.org suggestions",
+      "rank": 13,
+      "level": "A1"
+    },
+    {
+      "query": "э́тот",
+      "found": true,
+      "word": "э'тот",
+      "word_stressed": "э'тот",
+      "base_form": "э'тот",
+      "pos": "pronoun",
+      "translation": [
+        "this"
+      ],
+      "example_ru": "Ду'маю, у меня есть тео'рия на э'тот счёт.",
+      "example_en": "I think I have a theory about that.",
+      "source": "openrussian.org suggestions",
+      "rank": 22,
+      "level": "B1"
+    },
+    {
+      "query": "этаж",
+      "found": true,
+      "word": "эта'ж",
+      "word_stressed": "эта'ж",
+      "base_form": "эта'ж",
+      "pos": "noun",
+      "translation": [
+        "floor",
+        "storey"
+      ],
+      "example_ru": "На пя'том этаже' нет горя'чей воды, а на пе'рвом есть.",
+      "example_en": "There's no hot water on the fourth floor, but there is on the ground floor.",
+      "source": "openrussian.org suggestions",
+      "rank": 767,
+      "level": "B2"
+    },
+    {
+      "query": "ясно",
+      "found": true,
+      "word": "я'сно",
+      "word_stressed": "я'сно",
+      "base_form": "я'сно",
+      "pos": "adverb",
+      "translation": [
+        "clearly"
+      ],
+      "example_ru": "Если взгляну'ть на текст пе'сни, ясно, что он на самом де'ле ничего не значит.",
+      "example_en": "If you look at the lyrics, they don't really mean much.",
+      "source": "openrussian.org suggestions",
+      "rank": 514,
+      "level": "B1"
+    },
+    {
+      "query": "ём",
+      "found": true,
+      "word": "ёмкий",
+      "word_stressed": "ёмкий",
+      "base_form": "ёмкий",
+      "pos": "adjective",
+      "translation": [
+        "capacious",
+        "succinct"
+      ],
+      "example_ru": "Как рассчита'ть ёмкость конденса'тора?",
+      "example_en": "How does one calculate the capacitance of a capacitor?",
+      "source": "openrussian.org suggestions",
+      "rank": null,
+      "level": null
     }
   ]
 }

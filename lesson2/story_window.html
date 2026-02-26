@@ -21,11 +21,11 @@
     .story-part { border: 1px solid rgba(0,0,0,0.10); border-radius: 14px; padding: 14px; margin: 14px 0; }
     .story-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
     figure { margin: 0; }
-    .story-img { width: 100%; height: auto; border-radius: 12px; display: block; }
+    .story-img { width: 100%; max-width: 50%; height: auto; border-radius: 12px; display: block; margin: 0 auto; }
 
     .story-content { padding: 6px 4px; }
     .story-controls { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 10px; }
-    .btn { border: 1px solid rgba(0,0,0,0.18); background: #fff; border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+    .btn-play, .btn-en { border: 1px solid rgba(0,0,0,0.18); background: #fff; border-radius: 10px; padding: 8px 12px; cursor: pointer; }
     .story-ru p { margin: 8px 0; font-size: 1.05rem; }
 
     /* Tooltip words */
@@ -97,7 +97,7 @@
 
 <body>
   <main class="container">
-    <h1 class="title">Assignment</h1>
+    <h1 class="title">Чудесный день (A Wonderful Day)</h1>
     <p class="subtitle">
       Most of the words in this story should feel familiar from the <b>Creation</b> story we read in class.
     </p>
@@ -139,13 +139,13 @@
 
       <div class="story-row">
         <figure>
-          <img class="story-img" src="images/window_1" alt="Оля грустно" loading="lazy" />
+          <img class="story-img" src="images/anya_story_1.png" alt="Оля грустно" loading="lazy" />
         </figure>
 
         <div class="story-content">
           <div class="story-controls">
-            <button type="button" class="btn btn-play" data-play-text="В нача́ле О́ле бы́ло гру́стно.">▶ Play</button>
-            <button type="button" class="btn btn-en" data-en="At first, Olya was sad.">EN</button>
+            <button type="button" class="btn-play word-with-audio" data-text="В нача́ле О́ле бы́ло гру́стно."/button>
+            <button type="button" class="btn-en" data-en="At first, Olya was sad.">Translate</button>
           </div>
 
           <div class="story-ru">
@@ -165,13 +165,13 @@
 
       <div class="story-row">
         <figure>
-          <img class="story-img" src="images/window_2" alt="Аня говорит" loading="lazy" />
+          <img class="story-img" src="images/anya_story_9.png" alt="Аня говорит" loading="lazy" />
         </figure>
 
         <div class="story-content">
           <div class="story-controls">
-            <button type="button" class="btn btn-play" data-play-text="Сестра Оли А́ня сказа́ла: Посмотри́ в окно́.">▶ Play</button>
-            <button type="button" class="btn btn-en" data-en="Olya’s sister Anya said: “Look out the window.”">EN</button>
+            <button type="button" class="btn-play word-with-audio" data-text="Сестра Оли А́ня сказа́ла: Посмотри́ в окно́."/button>
+            <button type="button" class="btn-en" data-en="Olya’s sister Anya said: “Look out the window.”">Translate</button>
           </div>
 
           <div class="story-ru">
@@ -191,18 +191,18 @@
 
       <div class="story-row">
         <figure>
-          <img class="story-img" src="images/window_3" alt="Оля смотрит в окно" loading="lazy" />
+          <img class="story-img" src="images/anya_story_2.png" alt="Оля смотрит в окно" loading="lazy" />
         </figure>
 
         <div class="story-content">
           <div class="story-controls">
-            <button type="button" class="btn btn-play"
-              data-play-text="О́ля посмотре́ла в окно́. Она́ уви́дела не́бо и зе́млю. В не́бе све́тило со́лнце. На земле́ она́ уви́дела расте́ния и живо́тных. Она́ уви́дела люде́й.">
-              ▶ Play
+            <button type="button" class="btn-play word-with-audio"
+              data-text="О́ля посмотре́ла в окно́. Она́ уви́дела не́бо и зе́млю. В не́бе свети́ло со́лнце. На земле́ она́ уви́дела расте́ния и живо́тных. Она́ уви́дела люде́й.">
+
             </button>
-            <button type="button" class="btn btn-en"
+            <button type="button" class="btn-en"
               data-en="Olya looked out the window. She saw the sky and the earth. The sun was shining in the sky. On the earth she saw plants and animals. She saw people.">
-              EN
+              Translate
             </button>
           </div>
 
@@ -243,13 +243,13 @@
 
       <div class="story-row">
         <figure>
-          <img class="story-img" src="images/window_4" alt="Оля улыбается" loading="lazy" />
+          <img class="story-img" src="images/anya_story_7.png" alt="Оля улыбается" loading="lazy" />
         </figure>
 
         <div class="story-content">
           <div class="story-controls">
-            <button type="button" class="btn btn-play" data-play-text="Лицо́ О́ли освети́ла улы́бка.">▶ Play</button>
-            <button type="button" class="btn btn-en" data-en="A smile lit up Olya’s face.">EN</button>
+            <button type="button" class="btn-play word-with-audio" data-text="Лицо́ О́ли освети́ла улы́бка."/button>
+            <button type="button" class="btn-en" data-en="A smile lit up Olya’s face.">Translate</button>
           </div>
 
           <div class="story-ru">
@@ -267,13 +267,13 @@
 
       <div class="story-row">
         <figure>
-          <img class="story-img" src="images/window_5" alt="Аня говорит: Слава Богу" loading="lazy" />
+          <img class="story-img" src="images/anya_story_6.png" alt="Аня говорит: Слава Богу" loading="lazy" />
         </figure>
 
         <div class="story-content">
           <div class="story-controls">
-            <button type="button" class="btn btn-play" data-play-text="А́ня сказа́ла: Сла́ва Бо́гу за э́тот чу́десный де́нь!">▶ Play</button>
-            <button type="button" class="btn btn-en" data-en="Anya said: “Glory to God for this wonderful day!”">EN</button>
+            <button type="button" class="btn-play word-with-audio" data-text="А́ня сказа́ла: Сла́ва Бо́гу за э́тот чу́десный де́нь!"/button>
+            <button type="button" class="btn-en" data-en="Anya said: “Glory to God for this wonderful day!”">Translate</button>
           </div>
 
           <div class="story-ru">
@@ -366,6 +366,14 @@
     </section>
   </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Shared JS -->
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/site-search.js"></script>
+  <script src="../assets/js/audioUtils.js"></script>
+  <script src="../assets/js/lib.js"></script>
+
   <script>
     // EN popup wiring
     (function () {
@@ -404,9 +412,10 @@
       document.addEventListener("click", (e) => {
         const btn = e.target.closest(".btn-play");
         if (!btn) return;
-        console.log("Play text:", btn.getAttribute("data-play-text"));
+        const text = btn.getAttribute("data-text") || btn.getAttribute("data-play-text") || "";
+        console.log("Play text:", text);
         // Example hook:
-        // window.playLessonText(btn.getAttribute("data-play-text"));
+        // window.playLessonText(text);
       });
     })();
 
@@ -434,6 +443,14 @@
         }
       });
     })();
+  </script>
+    <script>
+    function init() {
+      // Add a speaker button with audio to any <li class="word-with-audio" data-text="...">
+        decorateWords('../assets/sound/male/words/');
+        injectNavbar("#navbar-placeholder");
+        }
+    document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>
