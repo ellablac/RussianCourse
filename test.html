@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Lyrics + YouTube</title>
+  <style>
+    :root {
+      --gap: 14px;
+      --border: 1px solid rgba(0,0,0,.12);
+      --radius: 14px;
+      --bg: #0b0d12;
+      --panel: rgba(255,255,255,.06);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.65);
+      --accent: rgba(120, 180, 255, .95);
+      --accent2: rgba(255, 200, 120, .95);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% 20%, rgba(120,180,255,.18), transparent 60%),
+                  radial-gradient(1000px 600px at 80% 30%, rgba(255,200,120,.12), transparent 55%),
+                  var(--bg);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      padding: 14px 18px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    header b { color: var(--text); font-weight: 600; }
+
+    .app {
+      height: calc(100vh - 44px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap);
+      padding: 14px 18px 18px;
+    }
+
+    /* Left side: two stacked scroll panes */
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+      min-height: 0; /* critical for nested scroll areas */
+    }
+
+    .pane {
+      border: var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+      overflow: auto;
+      padding: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+
+    /* Ratio: top ~ 3/4, bottom ~ 1/4 */
+    .pane.top { flex: 3; min-height: 0; }
+    .pane.bottom { flex: 1; min-height: 0; }
+
+    .title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .title h1 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 650;
+      letter-spacing: .2px;
+    }
+    .title .hint {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* Lyrics word styling */
+    .lyrics {
+      line-height: 1.9;
+      font-size: 18px;
+    }
+    .w {
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 10px;
+      transition: transform .06s ease, background .15s ease, color .15s ease;
+      display: inline-block;
+      margin: 1px 0;
+    }
+    .w:hover {
+      background: rgba(120,180,255,.16);
+      color: rgba(255,255,255,.98);
+      transform: translateY(-1px);
+    }
+    .w:active { transform: translateY(0px) scale(.99); }
+
+    .linebreak { display: block; height: 6px; }
+
+    /* Bottom “translation tray” */
+    .trayTop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .selected {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .selected b { color: var(--text); font-weight: 650; }
+
+    button {
+      border: var(--border);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      padding: 7px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    button:hover { background: rgba(255,255,255,.12); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      border: var(--border);
+      background: rgba(0,0,0,.18);
+      padding: 7px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      gap: 8px;
+      align-items: baseline;
+      max-width: 100%;
+    }
+    .chip .ru { font-weight: 700; }
+    .chip .en { color: var(--muted); }
+    .chip .sep { color: rgba(255,255,255,.35); }
+
+    /* Right side: responsive video area */
+    .right {
+      border: var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .videoWrap {
+      /* keeps 16:9, fills available height nicely */
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      flex: 0 0 auto;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .rightFooter {
+      padding: 12px 14px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: var(--border);
+      overflow: auto;
+    }
+
+    /* Mobile fallback: stack */
+    @media (max-width: 900px) {
+      body { overflow: auto; height: auto; }
+      .app { height: auto; grid-template-columns: 1fr; }
+      .left { min-height: 520px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <b>Interactive Russian lyrics</b> (click a Russian word → it appears below with English)
+  </header>
+
+  <main class="app">
+    <!-- LEFT -->
+    <section class="left">
+      <div class="pane top">
+        <div class="title">
+          <h1>Агузарова Жанна — «Чудесная страна»</h1>
+          <div class="hint">Tip: click words (even repeated ones)</div>
+        </div>
+        <div id="lyrics" class="lyrics" aria-label="Lyrics"></div>
+      </div>
+
+      <div class="pane bottom">
+        <div class="trayTop">
+          <div class="selected" id="selectedText">
+            Selected: <b>—</b> <span style="color: rgba(255,255,255,.35)">|</span> <span>—</span>
+          </div>
+          <button id="clearBtn" type="button">Clear</button>
+        </div>
+        <div id="chips" class="chips" aria-label="Selected words"></div>
+      </div>
+    </section>
+
+    <!-- RIGHT -->
+    <section class="right">
+      <div class="videoWrap">
+        <!-- Slightly cleaned embed URL (the "si=..." param is optional). -->
+        <iframe
+          src="https://www.youtube.com/embed/IBx2pB1Lvzs?rel=0&modestbranding=1"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="rightFooter">
+        Video is on the right. Lyrics and word tray are on the left. Both left panes are scrollable.
+        <br><br>
+        If you later want “pause video when a word is clicked,” we can add the YouTube IFrame API (needs <code>enablejsapi=1</code> + a bit more JS).
+      </div>
+    </section>
+  </main>
+
+  <script>
+    /**
+     * Minimal “click word -> show translation” demo.
+     * - We render each word as a clickable <span class="w">.
+     * - Each span has data-ru and data-en.
+     * - On click, we append a “chip” to the bottom tray.
+     */
+
+    // Your lyrics (kept exactly as lines)
+    const LYRICS = [
+      "Недавно гостила",
+      "В Чудесной стране,",
+      "Там плещутся рифы",
+      "В янтарной волне,",
+      "В тенистых садах там",
+      "Застыли века,",
+      "И цвета фламинго",
+      "Плывут облака."
+    ];
+
+    // Tiny A1-ish glossary for THIS excerpt (edit freely)
+    const DICT = {
+      "Недавно": "recently",
+      "гостила": "visited (stayed as a guest)",
+      "В": "in / to",
+      "в": "in / to",
+      "Чудесной": "wonderful",
+      "стране": "country / land",
+      "Там": "there",
+      "там": "there",
+      "плещутся": "splash",
+      "рифы": "reefs",
+      "янтарной": "amber",
+      "волне": "wave",
+      "тенистых": "shady",
+      "садах": "gardens",
+      "Застыли": "froze / stood still",
+      "века": "centuries / ages",
+      "И": "and",
+      "и": "and",
+      "цвета": "color",
+      "фламинго": "flamingo",
+      "Плывут": "float",
+      "облака": "clouds"
+    };
+
+    const lyricsEl = document.getElementById("lyrics");
+    const chipsEl = document.getElementById("chips");
+    const selectedEl = document.getElementById("selectedText");
+    const clearBtn = document.getElementById("clearBtn");
+
+    function normalizeWord(raw) {
+      // Strip basic punctuation for dictionary lookup, but keep original display.
+      return raw.replace(/[.,!?:;—–"“”()«»]/g, "");
+    }
+
+    function getTranslation(ruWord) {
+      const key = normalizeWord(ruWord);
+      return DICT[key] || "(add translation)";
+    }
+
+    function setSelected(ru, en) {
+      selectedEl.innerHTML = `Selected: <b>${escapeHtml(ru)}</b> <span style="color: rgba(255,255,255,.35)">|</span> <span>${escapeHtml(en)}</span>`;
+    }
+
+    function addChip(ru, en) {
+      const chip = document.createElement("div");
+      chip.className = "chip";
+      chip.innerHTML = `
+        <span class="ru">${escapeHtml(ru)}</span>
+        <span class="sep">→</span>
+        <span class="en">${escapeHtml(en)}</span>
+      `;
+      chipsEl.appendChild(chip);
+      // scroll bottom tray to newest item (nice when it overflows)
+      chip.scrollIntoView({ block: "nearest", inline: "nearest" });
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function renderLyrics() {
+      lyricsEl.innerHTML = "";
+
+      // Add a small “header line” (optional)
+      const header = document.createElement("div");
+      header.style.color = "rgba(255,255,255,.72)";
+      header.style.fontSize = "13px";
+      header.style.marginBottom = "10px";
+      header.textContent = "Click any word below:";
+      lyricsEl.appendChild(header);
+
+      for (const line of LYRICS) {
+        // Split by spaces but keep punctuation attached for display
+        const words = line.split(/\s+/);
+
+        for (let i = 0; i < words.length; i++) {
+          const ru = words[i];
+
+          const span = document.createElement("span");
+          span.className = "w";
+          span.textContent = ru;
+
+          const en = getTranslation(ru);
+          span.dataset.ru = ru;
+          span.dataset.en = en;
+
+          span.addEventListener("click", () => {
+            setSelected(span.dataset.ru, span.dataset.en);
+            addChip(span.dataset.ru, span.dataset.en);
+          });
+
+          lyricsEl.appendChild(span);
+
+          // Add a normal space after each word (except line end)
+          if (i < words.length - 1) {
+            lyricsEl.appendChild(document.createTextNode(" "));
+          }
+        }
+
+        // Line break
+        const br = document.createElement("span");
+        br.className = "linebreak";
+        lyricsEl.appendChild(br);
+      }
+    }
+
+    clearBtn.addEventListener("click", () => {
+      chipsEl.innerHTML = "";
+      setSelected("—", "—");
+    });
+
+    renderLyrics();
+    setSelected("—", "—");
+  </script>
+
+    <script src="/assets/js/lib.js"></script>
+</body>
+</html>

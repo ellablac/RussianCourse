@@ -38,6 +38,8 @@
     - When needed explain side effects, pre- and post-conditions. 
 - Use type hints wherever the language supports them.
 - Add inline comments whenever logic is not immediately obvious, especially to explain *why* something is done.
+- Do not delete, rewrite, or refactor existing comments unless the corresponding code block is being modified and the comment must be updated or can be improved.
+- Update README when architecture changes.
 
 ## Naming conventions
 
@@ -68,10 +70,9 @@
 
 - Keep JavaScript modular and focused.
 - Avoid large, monolithic functions.
-- Avoid unnamed functions and implicit parameters.
-- Prefer JavaScript constructs that are easily understandable by programmers familiar with other languages.
+- Prefer JavaScript patterns that are easily understood by programmers coming from other languages. Avoid IIFEs, anonymous functions, and implicit parameters unless they are clearly necessary.
 - Comment edge cases and non-obvious logic.
-  - Place the overview comment at the top of the file.
+- Place the overview comment at the top of the file.
 
 ## JSON instructions
 

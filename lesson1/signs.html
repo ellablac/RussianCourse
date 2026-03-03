@@ -324,67 +324,8 @@
         </section>
         <hr class="hair ">
 
-    </main>
-
-    <footer class="site-footer text-center py-3 ">
-        &copy; <span id="y "></span> Sky4Tech, LLC
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js "></script>
-    <script src="../assets/js/audioUtils.js "></script>
-
-    <script>
-        (function() {
-            // Add a small speaker button to each alphabet row using the shared function
-            function decorateTable() {
-                document.querySelectorAll('.alphabet-table tbody tr').forEach(tr => {
-                    const cells = tr.querySelectorAll('td');
-                    if (cells.length < 3) return;
-                    const say = (cells[2].textContent || '').trim() || (cells[0].textContent || '').trim();
-                    if (!say) return;
-                    if (cells[0].querySelector('.speak-btn')) return;
-                    // Use the shared createAudioButton function
-                    const btn = createAudioButton(say, '../assets/sound/male/');
-                    cells[0].prepend(btn);
-                });
-            }
-
-            // Add a speaker button with audio to any <li class="word-with-audio " data-text="... ">
-            function decorateWords() {
-                document.querySelectorAll('.word-with-audio').forEach(li => {
-                    // Prevent duplicate buttons
-                    if (li.querySelector('.speak-btn')) return;
-
-                    // Pull Russian text from data-text (preferred) or fallback to text content
-                    const text = (li.dataset.text || li.textContent || '').trim();
-                    if (!text) return;
-
-                    const btn = createAudioButton(text, '../assets/sound/male/words/');
-                    li.prepend(btn);
-                });
-            }
-
-            // Run both decorators
-            function decorateAll() {
-                decorateTable();
-                decorateWords();
-            }
-
-            // Ensure buttons are added when voices are loaded or DOM is ready
-            const synth = window.speechSynthesis;
-            if (synth && typeof synth.onvoiceschanged !== 'undefined') {
-                synth.onvoiceschanged = decorateAll;
-            }
-            window.addEventListener('DOMContentLoaded', decorateAll);
-        })();
-    </script>
-
-    <script>
-        // Set current year in footer
-        document.getElementById("y ").textContent = new Date().getFullYear();
-    </script>
-
+    </main><!-- Scripts -->
+    <script src="/assets/js/lib.js"></script>
 </body>
 
 </html>

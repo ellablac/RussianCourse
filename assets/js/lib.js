@@ -1,5 +1,76 @@
 /** Library of shared Javascript functions for the website */
 
+/**
+ * Creates the standard site footer.
+ * @returns {HTMLFooterElement}
+ */
+function createSiteFooter() {
+    const footer = document.createElement('footer');
+    footer.className = 'site-footer text-center py-3';
+
+    const copy = document.createTextNode('\u00a9 ');
+    const yearSpan = document.createElement('span');
+    yearSpan.id = 'y';
+    yearSpan.textContent = String(new Date().getFullYear());
+    const tail = document.createTextNode(' Sky4Tech, LLC');
+
+    footer.append(copy, yearSpan, tail);
+    return footer;
+}
+
+/**
+ * Inserts the Fair Use note when the page hosts external videos.
+ * @param {HTMLElement} footer
+ * @returns {void}
+ */
+function insertFairUseNoteIfNeeded(footer) {
+    if (!document.querySelector('main.external-video')) return;
+    if (footer.querySelector('.fair-use-note')) return;
+
+    const note = document.createElement('div');
+    note.className = 'fair-use-note';
+    note.textContent =
+        'This site is an educational resource. All embedded videos are the property of their respective owners and are used here for instructional analysis under Fair Use (17 U.S.C. \u00a7 107).';
+
+    footer.insertBefore(note, footer.firstChild);
+}
+
+/**
+ * Ensures the site footer exists unless the page opts out with body.no-footer.
+ * @returns {void}
+ */
+function ensureSiteFooter() {
+    if (document.body && document.body.classList.contains('no-footer')) return;
+
+    const existingFooter = document.querySelector('.site-footer');
+    const footer = existingFooter || createSiteFooter();
+
+    if (!existingFooter) {
+        const main = document.querySelector('main');
+        if (main && typeof main.insertAdjacentElement === 'function') {
+            main.insertAdjacentElement('afterend', footer);
+        } else {
+            document.body.appendChild(footer);
+        }
+    }
+
+    insertFairUseNoteIfNeeded(footer);
+}
+
+/**
+ * Initializes footer creation after DOM is ready.
+ * @returns {void}
+ */
+function initSiteFooter() {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSiteFooter);
+        return;
+    }
+    ensureSiteFooter();
+}
+
+initSiteFooter();
+
 // Add a speaker button with audio to any <li class="word-with-audio" data-text="...">
 function decorateWords(audioPath = '../assets/sound/male/words/') {
     document.querySelectorAll('.word-with-audio').forEach(li => {
