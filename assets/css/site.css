@@ -122,6 +122,8 @@ hr.hair {
     -webkit-backdrop-filter: saturate(140%) blur(10px);
     backdrop-filter: saturate(140%) blur(10px);
     border-bottom: 1px solid var(--line);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 
 .navbar-brand {
@@ -142,7 +144,7 @@ hr.hair {
     text-transform: uppercase;
     letter-spacing: .06em;
     color: var(--ink-soft);
-    padding: .4rem .6rem;
+    padding: .3rem .5rem;
     border-radius: .5rem;
     z-index: 0;
     overflow: hidden;
@@ -191,7 +193,8 @@ hr.hair {
 .navbar .form-control {
     border-radius: 20px 0 0 20px;
     border: 1px solid #ced4da;
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.9rem;
 }
 
 .navbar .btn-gradient {
@@ -201,7 +204,8 @@ hr.hair {
     /* teal → peach */
     color: #fff;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.9rem;
     transition: opacity .2s ease;
 }
 

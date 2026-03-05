@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="google" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Interactive Lyrics + YouTube (Pause on Click)</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -13,12 +14,8 @@
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 20% 20%, rgba(120,180,255,.18), transparent 60%),
-        radial-gradient(1000px 600px at 80% 30%, rgba(255,200,120,.12), transparent 55%),
-        var(--bg);
       height:100vh;
-      overflow:hidden;
+      /* overflow:hidden; */
     }
 
     header{
@@ -28,6 +25,25 @@
     }
     header b{color:var(--text); font-weight:650;}
 
+    .subtitle-green {color: rgba(120, 200, 255, 0.95); font-size: 14px; margin: 4px 0 0;   }
+    .title-accent { color: rgba(120, 200, 255, 0.95); }
+    .title-rest { color: var(--text); font-weight: 400; }
+    .rank-green { color: #4fe08e; }
+    .rank-blue { color: #74b3ff; }
+    .rank-yellow { color: #f2d36f; }
+    .rank-label { color: rgba(255, 255, 255, 0.55); }
+
+    .grad-text {
+      background: linear-gradient(90deg, #6edbff 0%, #86c6ff 40%, #6aa4ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow:
+        0 0 10px rgba(120, 200, 255, 0.75),
+        0 0 22px rgba(120, 200, 255, 0.5),
+        0 0 44px rgba(120, 200, 255, 0.3);
+    }
+
     .app{
       height:calc(100vh - 44px);
       display:grid;
@@ -35,15 +51,6 @@
       gap:var(--gap);
       padding:14px 18px 18px;
     }
-
-    /* .pane{
-      border:var(--border);
-      background:var(--panel);
-      border-radius:var(--radius);
-      overflow:auto;
-      padding:14px;
-      box-shadow:0 10px 30px rgba(0,0,0,.22);
-    } */
 
     /* LEFT: video */
     .videoPanel{
@@ -127,17 +134,17 @@
     }
 
 /* Two-column layout: Russian (left) + English (right) */
-.lineRow{
+/* .lineRow{
   display:grid;
   grid-template-columns: 1fr 0.95fr;
   gap: 12px;
   align-items:start;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-radius: 12px;
   background: rgba(0,0,0,.10);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   border: 1px solid rgba(255,255,255,.06);
-}
+} */
 .ruCell{
   font-size: 17px;
   line-height: 1.6;
@@ -162,25 +169,42 @@
     grid-template-columns: 1fr;
   }
 }
-/* One “line block”: Russian clickable words + English line under it */
+/* Two-column layout: Russian (left) + English (right) */
 .lineRow{
-  padding: 8px 10px;              /* more compact */
-  border-radius: 12px;
+display:grid;
+  grid-template-columns: 1fr 0.95fr;
+  /* gap: 12px; */
+  align-items:start;
+  padding: 3px 3px;              /* more compact */
+  border-radius: 6px;
   background: rgba(0,0,0,.10);
-  margin-bottom: 8px;             /* tighter */
+  margin-bottom: 3px;             /* tighter */
   border: 1px solid rgba(255,255,255,.06);
   position: relative;     /* needed for glow overlay */
   --fill: 0;              /* percent 0..100, set by JS */
 }
 
-/* Active line: outline + soft breathing glow */
-.lineRow.active {
-  outline: 2px solid rgba(120,180,255,.25);
-  box-shadow: 0 0 18px rgba(120,180,255,.08);
+/* Russian content wrapper: shrink-wrap to the last letter */
+.ruContent{
+  display: inline-block;   /* shrink-wrap */
+  max-width: 100%;         /* still wrap on small screens */
+  position: relative;      /* needed for glow overlay */
+  border-radius: 12px;     /* match your row rounding */
+  --fill: 0;               /* percent 0..100, set by JS */
+  padding: 0 6px;
 }
 
-/* Progressive karaoke fill + subtle glow trail */
-.lineRow.active::before {
+/* Active highlight (now applied only to Russian text width) */
+.ruContent.active{
+  outline: 1px solid rgba(120,200,255,.8);
+  box-shadow:
+    0 0 12px rgba(120,200,255,.65),
+    0 0 28px rgba(120,200,255,.35),
+    0 0 60px rgba(120,200,255,.2);
+}
+
+/* Progressive karaoke fill + subtle glow trail (only over Russian text area) */
+.ruContent.active::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -190,17 +214,18 @@
   /* Fill up to --fill, plus a thin glowing "head" at the edge */
   background:
     linear-gradient(to right,
-      rgba(120,180,255,.12) 0%,
-      rgba(120,180,255,.12) calc(var(--fill) * 1%),
+      rgba(120,200,255,.28) 0%,
+      rgba(120,200,255,.28) calc(var(--fill) * 1%),
       rgba(120,180,255,.00) calc(var(--fill) * 1%)
     ),
     linear-gradient(to right,
       rgba(120,180,255,0) calc(var(--fill) * 1% - 8px),
-      rgba(120,180,255,.22) calc(var(--fill) * 1%),
+      rgba(120,200,255,.45) calc(var(--fill) * 1%),
       rgba(120,180,255,0) calc(var(--fill) * 1% + 8px)
     );
 
-  filter: blur(0.2px);
+  box-shadow: 0 0 14px rgba(120,200,255,.35);
+  filter: blur(1.2px) saturate(1.4);
 }
     .ruLine{
       font-size: 17px;
@@ -263,7 +288,7 @@
     .legend code{
       color: rgba(255,255,255,.75);
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 10.5px;
+      font-size: var(--fs-60);
     }
 
     /* ✅ Stack at <= 992px */
@@ -276,9 +301,16 @@
 </head>
 
 <body class="theme-dark">
-  <header>
-    <b>Interactive Russian lyrics</b> (click a word → video pauses, word goes to notes)
+  <div id="navbar-placeholder"></div>
+  <header class="text-center mb-4">
+        <div class="container">
+            <h2><span class="grad-text">Жанна Агузарова — "Чудéсная страна́"</span></h2>
+            <p class="subtitle-green">
+                Zhanna Aguzarova - "A Wonderful Country."
+            </p>
+        </div>
   </header>
+
 
   <main class="app">
 
@@ -299,24 +331,34 @@
     <section class="textPanel">
       <div class="pane top">
         <div class="title">
-          <h1>Агузарова Жанна — «Чудéсная страна́»</h1>
+            <h1>
+              <span class="title-accent">Interactive Lyrics</span><span class="title-rest"> - click a word to add to Notes</span>
+            </h1>
           <div class="titleRight">
-            <button id="toggleTransBtn" type="button" aria-pressed="true">Hide translation</button>
+            <button id="toggleTransBtn" type="button" class="btn-neon" aria-pressed="true">Show translation</button>
           </div>
         </div>
 
-        <div id="lyrics" class="lyrics" aria-label="Lyrics"></div>
+        <div id="lyrics" class="lyrics translations-hidden" aria-label="Lyrics"></div>
       </div>
 
       <div class="pane bottom">
         <div class="trayTop">
-          <!-- No "Selected:" label anymore -->
-          <div class="selected" id="selectedText">
-            <b>—</b> (—) (<span class="base">—</span>) <span class="arrow">→</span> <span>—</span>
-          </div>
+          <div class="title">
+            <h1>
+              <span class="title-accent">Notes</span>
+            </h1>
+            </div>
+          
           <div class="btns">
             <button id="resumeBtn" type="button" disabled>Resume video</button>
             <button id="clearBtn" type="button">Clear notes</button>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#posLegendModal">
+              POS legend
+            </button>
           </div>
         </div>
 
@@ -327,19 +369,6 @@
           spellcheck="false"
           aria-label="Notes (editable)"></div>
 
-        <!-- POS legend trigger -->
-        <div class="legend" aria-label="Parts of Speech (POS)">
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-light"
-            data-bs-toggle="modal"
-            data-bs-target="#posLegendModal">
-            Click for POS legend
-          </button>
-          <div class="miniTip">
-            Shown in notes like <code>(v)</code>.
-          </div>
-        </div>
       </div>
     </section>
 
@@ -395,6 +424,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/lib.js"></script>
+  <script src="../assets/js/navbar.js" defer></script>
+  <script src="../assets/js/site-search.js" defer></script>
   <script type="module">
     /**
      * UI behavior:
@@ -410,7 +441,7 @@
 
     // ----- Lyrics with stress (lines) -----
     const LYRICS = [
-      "Недáвно гости́ла",
+      "Неда́вно гости́ла",
       "В Чуде́сной стране́,",
       "Там пле́щутся ри́фы",
       "В янта́рной волне́,",
@@ -419,7 +450,7 @@
       "И цве́та флами́нго",
       "Плыву́т облака́.",
 
-      "В гора́х изумру́дных",
+      "В холма́х изумру́дных",
       "Сверка́ет река́,",
       "Как ска́зка, прекра́сна,",
       "Как сон, глубока́.",
@@ -445,7 +476,7 @@
       "And the colors of flamingos",
       "Clouds swim.",
 
-      "In emerald mountains",
+      "In emerald hills",
       "A river gleams,",
       "Beautiful like a fairy tale,",
       "Deep like a dream,",
@@ -465,27 +496,35 @@
      * Example placeholder values: REPLACE with real timestamps.
      */
     const TIMELINE = [
-  { t: 0.5,  line: 0 },
-  { t: 3.2,  line: 1 },
-  { t: 6.0,  line: 2 },
-  { t: 8.5,  line: 3 },
-  { t: 11.2, line: 4 },
-  { t: 14.0, line: 5 },
-  { t: 17.0, line: 6 },
-  { t: 20.0, line: 7 },
-
-  { t: 24.0, line: 8 },
-  { t: 27.0, line: 9 },
-  { t: 30.0, line: 10 },
-  { t: 33.0, line: 11 },
-  { t: 36.0, line: 12 },
-  { t: 39.0, line: 13 },
-  { t: 42.0, line: 14 },
-
-  { t: 47.0, line: 15 },
-  { t: 51.0, line: 16 },
-  { t: 55.0, line: 17 },
-  { t: 59.0, line: 18 }
+  { t: 31.0,  line: 0 },
+  { t: 33.0,  line: 1 },
+  { t: 35.0,  line: -1 },
+  { t: 36.0,  line: 2 },
+  { t: 39.0,  line: 3 },
+  { t: 41.0,  line: -1 },
+  { t: 42.0, line: 4 },
+  { t: 44.0, line: 5 },
+  { t: 46.0,  line: -1 },
+  { t: 48.0, line: 6 }, // и света фламинго
+  { t: 50.0, line: 7 },
+  { t: 52.0, line: -1 },
+  { t: 54.0, line: 8 },
+  { t: 56.0, line: 9 },
+  { t: 57.0, line: -1 },
+  { t: 59.0, line: 10 },
+  { t: 61.0, line: 11 },
+  { t: 63.0, line: -1 }, 
+  { t: 64.0, line: 12 },
+  { t: 66.0, line: 13 }, 
+  { t: 69.0, line: -1 },
+  { t: 70.0, line: 14 }, //достать золотистою
+  { t: 73.0, line: 15 }, //Пеной волны
+  { t: 75.0, line: -1 }, 
+  { t: 76.0, line: 16 },
+  { t: 79.0, line: 17 },
+  { t: 81.0, line: -1 },
+  { t: 82.0, line: 18 },
+  { t: 84.0, line: 19 },
 ];
     /**
      * Dictionary format:
@@ -493,89 +532,89 @@
      * value: { stressed, base, en, pos }
      * base includes stress.
      */
-    const DICT = {
-      "Недавно": { stressed: "Недáвно", base: "недáвно", en: "recently", pos: "adv" },
-      "гостила": { stressed: "гости́ла", base: "гости́ть", en: "visited (as a guest)", pos: "v" },
+  const DICT = {
+    "Недавно": { stressed: "Недáвно", base: "недáвно", en: "recently", pos: "adv", rank: 1400 },
+    "гостила": { stressed: "гости́ла", base: "гости́ть", en: "visited (as a guest)", pos: "v", rank: 3200 },
 
-      "В": { stressed: "В", base: "в", en: "in / to", pos: "prep" },
-      "в": { stressed: "в", base: "в", en: "in / to", pos: "prep" },
+    "В": { stressed: "В", base: "в", en: "in / to", pos: "prep", rank: 3 },
+    "в": { stressed: "в", base: "в", en: "in / to", pos: "prep", rank: 3 },
 
-      "Чудесной": { stressed: "Чуде́сной", base: "чуде́сный", en: "wonderful", pos: "adj" },
-      "стране": { stressed: "стране́", base: "страна́", en: "country / land", pos: "n" },
+    "Чудесной": { stressed: "Чуде́сной", base: "чуде́сный", en: "wonderful", pos: "adj", rank: 2300 },
+    "стране": { stressed: "стране́", base: "страна́", en: "country / land", pos: "n", rank: 450 },
 
-      "Там": { stressed: "Там", base: "там", en: "there", pos: "adv" },
-      "там": { stressed: "там", base: "там", en: "there", pos: "adv" },
+    "Там": { stressed: "Там", base: "там", en: "there", pos: "adv", rank: 120 },
+    "там": { stressed: "там", base: "там", en: "there", pos: "adv", rank: 120 },
 
-      "плещутся": { stressed: "пле́щутся", base: "пле́скаться", en: "splash", pos: "v" },
-      "рифы": { stressed: "ри́фы", base: "риф", en: "reefs", pos: "n" },
+    "плещутся": { stressed: "пле́щутся", base: "пле́скаться", en: "splash", pos: "v", rank: 6800 },
+    "рифы": { stressed: "ри́фы", base: "риф", en: "reefs", pos: "n", rank: 7600 },
 
-      "янтарной": { stressed: "янта́рной", base: "янта́рный", en: "amber", pos: "adj" },
-      "волне": { stressed: "волне́", base: "волна́", en: "wave", pos: "n" },
+    "янтарной": { stressed: "янта́рной", base: "янта́рный", en: "amber", pos: "adj", rank: 5400 },
+    "волне": { stressed: "волне́", base: "волна́", en: "wave", pos: "n", rank: 2400 },
 
-      "тенистых": { stressed: "тени́стых", base: "тени́стый", en: "shady", pos: "adj" },
-      "садах": { stressed: "сада́х", base: "сад", en: "gardens", pos: "n" },
+    "тенистых": { stressed: "тени́стых", base: "тени́стый", en: "shady", pos: "adj", rank: 7100 },
+    "садах": { stressed: "сада́х", base: "сад", en: "gardens", pos: "n", rank: 1800 },
 
-      "Застыли": { stressed: "засты́ли", base: "засты́ть", en: "froze / stood still", pos: "v" },
-      "века": { stressed: "века́", base: "век", en: "centuries / ages", pos: "n" },
+    "застыли": { stressed: "засты́ли", base: "засты́ть", en: "froze / stood still", pos: "v", rank: 4200 },
+    "века": { stressed: "века́", base: "век", en: "centuries / ages", pos: "n", rank: 700 },
 
-      "И": { stressed: "И", base: "и", en: "and", pos: "conj" },
-      "и": { stressed: "и", base: "и", en: "and", pos: "conj" },
+    "И": { stressed: "И", base: "и", en: "and", pos: "conj", rank: 2 },
+    "и": { stressed: "и", base: "и", en: "and", pos: "conj", rank: 2 },
 
-      "цвета": { stressed: "цве́та", base: "цвет", en: "color", pos: "n" },
-      "фламинго": { stressed: "флами́нго", base: "флами́нго", en: "flamingo", pos: "n" },
+    "цвета": { stressed: "цве́та", base: "цвет", en: "color", pos: "n", rank: 900 },
+    "фламинго": { stressed: "флами́нго", base: "флами́нго", en: "flamingo", pos: "n", rank: 9000 },
 
-      "Плывут": { stressed: "плыву́т", base: "плы́ть", en: "float", pos: "v" },
-      "облака": { stressed: "облака́", base: "о́блако", en: "clouds", pos: "n" },
+    "Плывут": { stressed: "Плыву́т", base: "плы́ть", en: "float", pos: "v", rank: 2100 },
+    "облака": { stressed: "облака́", base: "о́блако", en: "clouds", pos: "n", rank: 1500 },
 
-      "горах": { stressed: "гора́х", base: "гора́", en: "mountains", pos: "n" },
-      "изумрудных": { stressed: "изумру́дных", base: "изумру́дный", en: "emerald", pos: "adj" },
-      "Сверкает": { stressed: "сверка́ет", base: "сверка́ть", en: "shines", pos: "v" },
-      "река": { stressed: "река́", base: "река́", en: "river", pos: "n" },
+    "холмах": { stressed: "холма́х", base: "холм", en: "hills", pos: "n", rank: 4200 },
+    "изумрудных": { stressed: "изумру́дных", base: "изумру́дный", en: "emerald", pos: "adj", rank: 7800 },
+    "Сверкает": { stressed: "Сверка́ет", base: "сверка́ть", en: "shines", pos: "v", rank: 4500 },
+    "река": { stressed: "река́", base: "река́", en: "river", pos: "n", rank: 800 },
 
-      "Как": { stressed: "Как", base: "как", en: "like / as", pos: "adv" },
-      "сказка": { stressed: "ска́зка", base: "ска́зка", en: "fairy tale", pos: "n" },
-      "прекрасна": { stressed: "прекра́сна", base: "прекра́сный", en: "beautiful", pos: "adj" },
-      "сон": { stressed: "сон", base: "сон", en: "dream", pos: "n" },
-      "глубока": { stressed: "глубока́", base: "глубо́кий", en: "deep", pos: "adj" },
+    "Как": { stressed: "Как", base: "как", en: "like / as", pos: "adv", rank: 40 },
+    "сказка": { stressed: "ска́зка", base: "ска́зка", en: "fairy tale", pos: "n", rank: 2600 },
+    "прекрасна": { stressed: "прекра́сна", base: "прекра́сный", en: "beautiful", pos: "adj", rank: 1700 },
+    "сон": { stressed: "сон", base: "сон", en: "dream", pos: "n", rank: 1300 },
+    "глубока": { stressed: "глубока́", base: "глубо́кий", en: "deep", pos: "adj", rank: 1400 },
 
-      "хочется": { stressed: "хо́чется", base: "хоте́ться", en: "wants / feels like", pos: "v" },
-      "ей": { stressed: "е́й", base: "она́", en: "to her", pos: "pron" },
+    "хочется": { stressed: "хо́чется", base: "хоте́ться", en: "wants / feels like", pos: "v", rank: 600 },
+    "ей": { stressed: "е́й", base: "она́", en: "to her", pos: "pron", rank: 35 },
 
-      "До": { stressed: "До", base: "до", en: "up to / until", pos: "prep" },
-      "до": { stressed: "до", base: "до", en: "up to / until", pos: "prep" },
+    "До": { stressed: "До", base: "до", en: "up to / until", pos: "prep", rank: 25 },
+    "до": { stressed: "до", base: "до", en: "up to / until", pos: "prep", rank: 25 },
 
-      "блестящей": { stressed: "блестя́щей", base: "блестя́щий", en: "shining", pos: "adj" },
-      "луны": { stressed: "луны́", base: "луна́", en: "moon", pos: "n" },
+    "блестящей": { stressed: "блестя́щей", base: "блестя́щий", en: "shining", pos: "adj", rank: 4000 },
+    "луны": { stressed: "луны́", base: "луна́", en: "moon", pos: "n", rank: 1200 },
 
-      "Достать": { stressed: "доста́ть", base: "доста́ть", en: "reach", pos: "v" },
-      "достать": { stressed: "доста́ть", base: "доста́ть", en: "reach", pos: "v" },
+    "Достать": { stressed: "Доста́ть", base: "доста́ть", en: "reach", pos: "v", rank: 900 },
+    "достать": { stressed: "доста́ть", base: "доста́ть", en: "reach", pos: "v", rank: 900 },
 
-      "золотистою": { stressed: "золоти́стою", base: "золоти́стый", en: "golden", pos: "adj" },
-      "пеной": { stressed: "пе́ной", base: "пе́на", en: "foam", pos: "n" },
-      "волны": { stressed: "волны́", base: "волна́", en: "wave", pos: "n" },
+    "золотистою": { stressed: "золоти́стою", base: "золоти́стый", en: "golden", pos: "adj", rank: 5200 },
+    "Пеной": { stressed: "Пе́ной", base: "пе́на", en: "foam", pos: "n", rank: 4100 },
+    "волны": { stressed: "волны́", base: "волна́", en: "wave", pos: "n", rank: 2400 },
 
-      "Меня": { stressed: "Меня́", base: "я", en: "me", pos: "pron" },
-      "меня": { stressed: "меня́", base: "я", en: "me", pos: "pron" },
+    "Меня": { stressed: "Меня́", base: "я", en: "me", pos: "pron", rank: 10 },
+    "меня": { stressed: "меня́", base: "я", en: "me", pos: "pron", rank: 10 },
 
-      "ты": { stressed: "ты", base: "ты", en: "you", pos: "pron" },
-      "поймёшь": { stressed: "поймёшь", base: "поня́ть", en: "understand", pos: "v" },
+    "ты": { stressed: "ты", base: "ты", en: "you", pos: "pron", rank: 30 },
+    "поймёшь": { stressed: "поймёшь", base: "поня́ть", en: "understand", pos: "v", rank: 300 },
 
-      "Лучше": { stressed: "Лу́чше", base: "лу́чше", en: "better", pos: "adv" },
-      "лучше": { stressed: "лу́чше", base: "лу́чше", en: "better", pos: "adv" },
+    "Лучше": { stressed: "Лу́чше", base: "лу́чше", en: "better", pos: "adv", rank: 220 },
+    "лучше": { stressed: "лу́чше", base: "лу́чше", en: "better", pos: "adv", rank: 220 },
 
-      "страны": { stressed: "страны́", base: "страна́", en: "country", pos: "n" },
-      "не": { stressed: "не", base: "не", en: "not", pos: "part" },
+    "страны": { stressed: "страны́", base: "страна́", en: "country", pos: "n", rank: 450 },
+    "не": { stressed: "не", base: "не", en: "not", pos: "part", rank: 4 },
 
-      "найдёшь": { stressed: "найдёшь", base: "найти́", en: "find", pos: "v" }
-    };
-
+    "найдёшь": { stressed: "найдёшь", base: "найти́", en: "find", pos: "v", rank: 500 }
+  };
     const lyricsEl = document.getElementById("lyrics");
     const notesEl = document.getElementById("notes");
-    const selectedEl = document.getElementById("selectedText");
     const clearBtn = document.getElementById("clearBtn");
     const resumeBtn = document.getElementById("resumeBtn");
     const toggleTransBtn = document.getElementById("toggleTransBtn");
     let karaoke = null;
+    const START_SECONDS = 25;
+    const END_SECONDS = 88;
 
     function escapeHtml(s) {
       return String(s)
@@ -593,28 +632,45 @@
     }
 
     function lookup(rawToken) {
-      const key = normalizeWord(rawToken);
-      return DICT[key] || { stressed: key || "(word?)", base: "(base?)", en: "(add translation)", pos: "?" };
+      const key = normalizeWord(rawToken).trim();
+      if (!key) return null;
+      return DICT[key] || { stressed: key, base: "(base?)", en: "(add translation)", pos: "?", rank: null };
     }
 
-    function setSelected(surface, base, en, pos) {
-      // No "Selected:" label; POS only shown here (bottom window)
-      selectedEl.innerHTML =
-        `<b>${escapeHtml(surface)}</b> ` +
-        `(${escapeHtml(pos)}) ` +
-        `(<span class="base">${escapeHtml(base)}</span>) ` +
-        `<span class="arrow">→</span> <span>${escapeHtml(en)}</span>`;
+    /**
+     * Returns a color class based on frequency rank.
+     * @param {number | null} rank
+     * @returns {string}
+     */
+    function getRankClass(rank) {
+      if (typeof rank !== "number") return "";
+      if (rank < 300) return "rank-green";
+      if (rank < 600) return "rank-blue";
+      return "rank-yellow";
     }
 
-    function addEntry(surface, base, en, pos) {
+
+    /**
+     * Appends a formatted entry to the notes panel.
+     * @param {string} surface
+     * @param {string} base
+     * @param {string} en
+     * @param {string} pos
+     * @param {number | null} rank
+     * @returns {void}
+     */
+    function addEntry(surface, base, en, pos, rank) {
+      const rankClass = getRankClass(rank);
+      const rankText = (typeof rank === "number") ? String(rank) : "";
       const entry = document.createElement("div");
       entry.className = "entry";
       entry.innerHTML = `
-        <span class="ru">${escapeHtml(surface)}</span>
+        <span class="ru ${rankClass}">${escapeHtml(surface)}</span>
         <span style="color: rgba(255,255,255,.35);"> (${escapeHtml(pos)}) · </span>
         <span class="base">${escapeHtml(base)}</span>
         <span class="arrow">→</span>
         <span class="en">${escapeHtml(en)}</span>
+        ${rankText ? `<span class="rank-label"> · ${escapeHtml(rankText)}</span>` : ""}
       `;
       notesEl.appendChild(entry);
       entry.scrollIntoView({ block: "nearest" });
@@ -635,6 +691,11 @@
         const ruDiv = document.createElement("div");
         ruDiv.className = "ruCell";
 
+        const ruContent = document.createElement("div");
+        ruContent.className = "ruContent";
+        ruContent.dataset.lineIndex = String(li);
+
+
         const tokens = line.split(/\s+/);
 
         for (let i = 0; i < tokens.length; i++) {
@@ -646,6 +707,12 @@
           const punct = (m && m[2]) ? m[2] : "";
 
           const entry = lookup(rawCore);
+          if (!entry) {
+            const text = `${rawCore}${punct}`;
+            if (text) ruContent.appendChild(document.createTextNode(text));
+            if (i < tokens.length - 1) ruContent.appendChild(document.createTextNode(" "));
+            continue;
+          }
 
           // ✅ Lyrics display: stressed ONLY (no POS here)
           const displayCore = entry.stressed || rawCore;
@@ -662,13 +729,13 @@
 
           span.addEventListener("click", () => {
             pauseVideoSafe();
-            setSelected(span.dataset.surface, span.dataset.base, span.dataset.en, span.dataset.pos);
-            addEntry(span.dataset.surface, span.dataset.base, span.dataset.en, span.dataset.pos);
+            addEntry(span.dataset.surface, span.dataset.base, span.dataset.en, span.dataset.pos, entry.rank ?? null);
           });
 
-          ruDiv.appendChild(span);
-          if (i < tokens.length - 1) ruDiv.appendChild(document.createTextNode(" "));
+        ruContent.appendChild(span);
+          if (i < tokens.length - 1) ruContent.appendChild(document.createTextNode(" "));
         }
+        ruDiv.appendChild(ruContent);
 
         const enDiv = document.createElement("div");
         enDiv.className = "enCell";
@@ -682,7 +749,6 @@
 
     clearBtn.addEventListener("click", () => {
       notesEl.innerHTML = "";
-      setSelected("—", "—", "—", "—");
       notesEl.focus();
     });
 
@@ -706,7 +772,8 @@
           modestbranding: 1,
           playsinline: 1,
           origin: origin,
-          end: 88
+          start: START_SECONDS,
+          end: END_SECONDS
         },
         events: {
           onReady: () => {
@@ -716,10 +783,19 @@
             karaoke = new KaraokeSync({
             player: player,
             timeline: TIMELINE,
-            lineSelector: ".lineRow"
+            lineSelector: ".ruContent"
           });
           karaoke.init();
           karaoke.start();
+          },
+          onStateChange: (event) => {
+            if (!player || typeof player.getCurrentTime !== "function") return;
+            if (event.data === YT.PlayerState.CUED || event.data === YT.PlayerState.PLAYING) {
+              const t = player.getCurrentTime();
+              if (t < START_SECONDS) {
+                player.seekTo(START_SECONDS, true);
+              }
+            }
           }
         }
       });
@@ -754,7 +830,13 @@
     // (If you later re-render lyrics dynamically, call karaoke.init() again.)
 
     // NOTE: karaoke instance is created in YT onReady, but we can init later too.
-    setSelected("—", "—", "—", "—");
   </script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      injectNavbar("#navbar-placeholder");
+    });
+  </script>
+
 </body>
 </html>

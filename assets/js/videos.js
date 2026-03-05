@@ -12,7 +12,7 @@ export class KaraokeSync {
    * @param {string} options.lineSelector
    * @param {number} options.intervalMs
    */
-  constructor({ player, timeline, lineSelector = ".lineRow", intervalMs = 150 }) {
+  constructor({ player, timeline, lineSelector = ".ruContent", intervalMs = 150 }) {
     this.player = player;
     this.timeline = timeline;
     this.lineSelector = lineSelector;
