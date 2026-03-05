@@ -41,6 +41,7 @@ Edit values here to change the theme globally.
     --wash-c: rgba(16, 185, 129, 0.10);
     /* soft green @ 10% */
     /* Fluid type scale (mobile-first) */
+    --fs-60: clamp(0.6rem, 0.55rem + 0.2vw, 0.7rem);
     --fs-100: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
     /* body */
     --fs-300: clamp(1.1rem, 1.0rem + 0.8vw, 1.35rem);
@@ -378,6 +379,10 @@ hr.hair {
     color: transparent;
     line-height: 1.2;
     padding: 0.05em 0;
+}
+
+.font-tiny {
+    font-size: var(--fs-60);
 }
 
 .glass-2 {

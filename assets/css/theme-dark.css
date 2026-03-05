@@ -1,0 +1,145 @@
+/* 
+  File Overview:
+  - Purpose: Dark theme styles for pages that opt in via .theme-dark.
+  - Assumptions: Loaded after site.css so dark overrides apply cleanly.
+*/
+
+/* =========================
+   Dark Theme (Opt-In)
+   ========================= */
+
+.theme-dark {
+  --gap: 12px;
+  --border: 1px solid rgba(255, 255, 255, 0.08);
+  --radius: 16px;
+  --bg: #0f1216;
+  --panel: #151922;
+  --text: #e9edf3;
+  --muted: #a7b0bf;
+  --accent: #8ab4ff;
+  --modal-bg: #151922;
+  --modal-text: #e9edf3;
+  --modal-muted: #a7b0bf;
+}
+
+.theme-dark .pane {
+  overflow:auto;
+  border: var(--border);
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark .w {
+  cursor: pointer;
+  padding: 0 2px;
+  border-radius: 4px;
+  transition: background 0.12s ease, color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.theme-dark .w:hover {
+  background: rgba(138, 180, 255, 0.18);
+  color: #ffffff;
+}
+
+.theme-dark .w.active {
+  background: rgba(138, 180, 255, 0.30);
+  box-shadow: 0 0 0 1px rgba(138, 180, 255, 0.35) inset;
+  color: #ffffff;
+}
+
+.theme-dark .notes {
+  flex: 1;
+  border: var(--border);
+  background: #10141b;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  overflow: auto;
+}
+
+.theme-dark .notes:focus {
+  outline: 2px solid rgba(138, 180, 255, 0.35);
+}
+
+.theme-dark .notes .entry {
+  display: block;
+  padding: 6px 4px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.theme-dark .ru {
+  display: inline-block;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+  margin-right: 6px;
+}
+
+.theme-dark .base {
+  display: inline-block;
+  font-weight: 500;
+  color: #b8c7e6;
+  margin-right: 6px;
+}
+
+.theme-dark .en {
+  color: #e7ebf3;
+  opacity: 0.88;
+}
+
+.theme-dark .arrow {
+  opacity: 0.6;
+  margin: 0 4px;
+}
+
+.theme-dark .legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.theme-dark .legend .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.theme-dark .legend .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.theme-dark .legend code {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Buttons (dark theme, scoped to custom controls) */
+.theme-dark .btns button {
+  border: var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  padding: 5px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 650;
+  font-size: 11px;
+}
+
+.theme-dark .btns button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.theme-dark .btns button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
