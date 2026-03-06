@@ -28,7 +28,7 @@ function insertFairUseNoteIfNeeded(footer) {
     if (footer.querySelector('.fair-use-note')) return;
 
     const note = document.createElement('div');
-    note.className = 'fair-use-note';
+    note.className = 'fair-use-note mb-3';
     note.textContent =
         'This site is an educational resource. All embedded videos are the property of their respective owners and are used here for instructional analysis under Fair Use (17 U.S.C. \u00a7 107).';
 
