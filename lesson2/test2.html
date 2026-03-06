@@ -14,7 +14,7 @@
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
-      height:100vh;
+      min-height:100vh;
       /* overflow:hidden; */
     }
 
@@ -32,6 +32,15 @@
     .rank-blue { color: #74b3ff; }
     .rank-yellow { color: #f2d36f; }
     .rank-label { color: rgba(255, 255, 255, 0.55); }
+    .full-width-card{
+      grid-column:1 / -1;
+      border:var(--border);
+      background:var(--panel);
+      border-radius:var(--radius);
+      padding:12px 14px;
+      margin-top:var(--gap);
+      box-shadow:0 10px 30px rgba(0,0,0,.22);
+    }
 
     .grad-text {
       background: linear-gradient(90deg, #6edbff 0%, #86c6ff 40%, #6aa4ff 100%);
@@ -45,10 +54,10 @@
     }
 
     .app{
-      height:calc(100vh - 44px);
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:var(--gap);
+      align-items:start;
       padding:14px 18px 18px;
     }
 
@@ -74,8 +83,7 @@
       font-size:12px;
       color:var(--muted);
       border-top:var(--border);
-      overflow:auto;
-      min-height:180px; /* taller bottom-left area */
+      overflow:visible;
     }
     .videoFooter .miniTip{
       margin-top:8px;
@@ -88,12 +96,13 @@
       display:flex;
       flex-direction:column;
       gap:var(--gap);
+      height: var(--text-panel-height, auto);
       min-height:0;
     }
 
-    /* Make both bottoms taller */
-    .pane.top{ flex:2; min-height:0; }
-    .pane.bottom{ flex:2; min-height:0; display:flex; flex-direction:column; }
+    /* Split right panel evenly */
+    .pane.top{ flex:1; min-height:0; }
+    .pane.bottom{ flex:1; min-height:0; display:flex; flex-direction:column; }
 
     .title{
       display:flex;
@@ -320,9 +329,20 @@ display:grid;
         <div id="player" style="width:100%; height:100%;"></div>
       </div>
       <div class="videoFooter">
-        Click a word to pause. Use “Resume video” to continue.
-        <div class="miniTip">
-          Tip: The notes box on the right is editable. Students can add their own examples.
+        <div class="exercise-block">
+          <strong>Interactive Lyrics Suggestions:</strong>
+          <ol>
+            <li>Listen once and read the Russian lyrics without translation. Do you recognize any words?</li>
+            <li>Click a word to add it to the notes box. It will show the base form, translation, part of speech, and word rank.</li>
+            <li>Notes are editable, so you can delete or add whatever you find helpful.</li>
+            <li>Words are color-coded by rank; blue indicates the most frequently used words.
+              This helps you focus on common vocabulary.</li>
+            <li>Using your notes, translate the lyrics into English.
+              Then check your understanding by clicking the translation button.</li>
+            <li>Notice how the word-by-word translation would sound very awkward in English because Russian sentence structure is different.</li>
+            <li>Practice your pronunciation by reading the Russian lyrics aloud and checking against the video.</li>
+            <li>Sing with the singer first, then try a karaoke version on YouTube <a href="https://www.youtube.com/watch?v=eA4sIoIzu1A" target="_blank" rel="noopener">(or click here)</a> and sing along!</li>
+          </ol>
         </div>
       </div>
     </section>
@@ -372,6 +392,15 @@ display:grid;
       </div>
     </section>
 
+    <div class="exercise-block full-width-card">
+      <strong>Grammar review</strong>
+      <ol>
+        <li>Re-listen to the first four lines. Do the vowels sound like their letter names? Why or why not? See <a href="key_diff.html">Key differences</a> (stress + vowel reduction)</li>
+        <li>Find two nouns, two verbs, and two adjectives. See <a href="pos_mnemonic_tool.html">Parts of speech</a>.</li>
+        <li>Identify noun gender (<a href="genders.html">Genders</a>) and mark singular/plural (<a href="plural_singular_forms.html">Singular vs. plural</a>).</li>
+        <li>Spot nouns in nominative and prepositional cases (<a href="prepositional_case.html">Prepositional case</a>).</li>
+      </ol>
+    </div>
   </main>
 
   <!-- POS legend modal -->
@@ -833,9 +862,30 @@ display:grid;
   </script>
 
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    /**
+     * Sets the right panel to the visible viewport height.
+     * @returns {void}
+     */
+    function setTextPanelHeight() {
+      const textPanel = document.querySelector(".textPanel");
+      if (!textPanel) return;
+      const rect = textPanel.getBoundingClientRect();
+      const available = window.innerHeight - rect.top;
+      if (available <= 0) return;
+      textPanel.style.setProperty("--text-panel-height", `${Math.floor(available)}px`);
+    }
+
+    /**
+     * Initializes shared layout behavior after the DOM is ready.
+     * @returns {void}
+     */
+    function handleDomReady() {
       injectNavbar("#navbar-placeholder");
-    });
+      setTextPanelHeight();
+      window.addEventListener("resize", setTextPanelHeight);
+    }
+
+    window.addEventListener("DOMContentLoaded", handleDomReady);
   </script>
 
 </body>
