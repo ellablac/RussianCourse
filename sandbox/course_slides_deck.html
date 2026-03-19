@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Russian Course Presentation</title>
+    <style>
+        /* Base dark mode styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #030305;
+            color: #ffffff;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Cooler, more blueish glowing effect */
+        .glow-background {
+            position: fixed;
+            bottom: -50px;
+            left: 10%;
+            right: 10%;
+            height: 300px;
+            background: linear-gradient(90deg, rgba(0, 188, 212, 0.3), rgba(74, 144, 226, 0.4), rgba(126, 87, 194, 0.3));
+            filter: blur(80px);
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Slide container */
+        .slide {
+            display: none;
+            width: 80%;
+            max-width: 1000px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography and Gradients */
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            /* Cyan to Blue to Soft Indigo */
+            background: linear-gradient(90deg, #00BCD4, #4A90E2, #7E57C2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 400;
+        }
+        h3 {
+            font-size: 1.8rem;
+            color: #4A90E2;
+            margin-bottom: 1rem;
+        }
+        
+        /* Lists */
+        ul {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+        }
+        li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            color: #4A90E2; /* Blue sparkles */
+        }
+
+        /* Layouts */
+        .center-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .grid-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(74, 144, 226, 0.2); /* Soft blue border by default */
+            padding: 30px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Buttons */
+        .pill-button {
+            /* Cyan to Blue gradient */
+            background: linear-gradient(90deg, #00BCD4, #4A90E2);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .pill-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+        }
+
+        /* Navigation controls */
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-background"></div>
+
+    <div class="slide active" id="slide1">
+        <div class="center-content">
+            <div style="font-size: 4rem; margin-bottom: 20px;">✨</div>
+            <h1>Community Russian Course</h1>
+            <h2>👋 Добро пожаловать!</h2>
+        </div>
+    </div>
+
+    <div class="slide" id="slide2">
+        <h1>An Open Community</h1>
+        <div class="grid-card" style="margin-top: 40px;">
+            <ul>
+                <li><strong>All Levels Welcome:</strong> No prior experience needed.</li>
+                <li><strong>Driven by Community:</strong> Less like a formal classroom, more like a language club.</li>
+                <li><strong>Free & Flexible:</strong> Jump in anytime at zero cost.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide" id="slide3">
+        <h1>Why Learn With Us?</h1>
+        <div class="grid-card">
+            <ul>
+                <li><strong>Make New Friends:</strong> Connect with fellow learners and native speakers.</li>
+                <li><strong>Sharpen Communication:</strong> Enhance your skills by actively participating and collaborating.</li>
+                <li><strong>Boost Brain Power:</strong> Language learning provides excellent mental flexibility and memory exercise.</li>
+                <li><strong>Cultural Insight:</strong> Gain a deeper understanding of Russian culture, media, and traditions.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide" id="slide4">
+        <h1>How We Learn Together</h1>
+        <div class="grid-card">
+            <ul>
+                <li><strong>Hybrid Format:</strong> A flexible mix of online and in-person sessions.</li>
+                <li><strong>Peer & Native Interaction:</strong> Learn in small groups and practice with native conversational partners.</li>
+                <li><strong>Modern Tech:</strong> We utilize our course website, apps, and free AI tools for instant feedback.</li>
+                <li><strong>Pop Culture Immersion:</strong> We make grammar fun by breaking down scenes from hit movies, music videos, and engaging activities.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide" id="slide5">
+        <h1>Learn by Teaching</h1>
+        <div class="grid-card" style="border-color: rgba(126, 87, 194, 0.4);">
+            <ul>
+                <li><strong>The Philosophy:</strong> Second-language learners uniquely understand the hurdles beginners face.</li>
+                <li><strong>The Practice:</strong> You are invited (never required!) to teach concepts you’ve mastered to your peers.</li>
+                <li><strong>The Result:</strong> We learn something new, pass it along, and build a truly collaborative learning loop.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide" id="slide6">
+        <h1 style="font-size: 3rem;">Course Structure: The Foundations</h1>
+        <div class="grid-2">
+            <div class="grid-card" style="border-color: rgba(0, 188, 212, 0.4);">
+                <h3 style="color: #00BCD4;">Part 1: Starting Strong</h3>
+                <ul>
+                    <li>Mastering the Cyrillic Alphabet</li>
+                    <li>Basic Phonetics & Pronunciation</li>
+                    <li>Essential Greetings & Introductions</li>
+                </ul>
+            </div>
+            <div class="grid-card" style="border-color: rgba(74, 144, 226, 0.4);">
+                <h3>Part 2: The Building Blocks</h3>
+                <ul>
+                    <li>Understanding Noun Genders</li>
+                    <li>Forming Plurals</li>
+                    <li>Constructing Basic Sentences</li>
+                    <li>A Gentle Introduction to Cases</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide7">
+        <h1 style="font-size: 3rem;">Course Structure: Expanding Horizons</h1>
+        <div class="grid-2">
+            <div class="grid-card" style="border-color: rgba(74, 144, 226, 0.4);">
+                <h3>Part 3: Action & Description</h3>
+                <ul>
+                    <li>Verb Conjugations (Past, Present, Future)</li>
+                    <li>Describing the world with Adjectives</li>
+                    <li>Prepositional & Accusative Cases</li>
+                </ul>
+            </div>
+            <div class="grid-card" style="border-color: rgba(126, 87, 194, 0.4);">
+                <h3 style="color: #7E57C2;">Part 4: Fluidity & Motion</h3>
+                <ul>
+                    <li>Introduction to Verbs of Motion</li>
+                    <li>Genitive, Dative, and Instrumental Cases</li>
+                    <li><i>Vocabulary builds gradually across all parts!</i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" id="slide8">
+        <div class="center-content">
+            <h1>Ready to dive in?</h1>
+            <p style="font-size: 1.5rem; color: #E8EAED; margin-top: 10px;">Join us and start communicating from day one.</p>
+            <button class="pill-button">Join the Community</button>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="nav-btn" onclick="changeSlide(-1)">&#8592;</button>
+        <button class="nav-btn" onclick="changeSlide(1)">&#8594;</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide) => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+    </script>
+</body>
+</html>
