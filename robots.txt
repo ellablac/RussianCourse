@@ -1,0 +1,7 @@
+# robots.txt for the Russian Course site.
+# Allows public crawling of the static site and declares the canonical sitemap location.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ellablac.github.io/RussianCourse/sitemap.xml
