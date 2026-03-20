@@ -52,7 +52,10 @@ for root, dirs, files in os.walk(root_dir):
         full_path = Path(root) / file
         rel_path = full_path.relative_to(root_dir).as_posix()
 
-        loc = BASE_URL + rel_path
+        if rel_path == "index.html":
+            loc = BASE_URL
+        else:
+            loc = BASE_URL + rel_path
         lastmod = datetime.fromtimestamp(full_path.stat().st_mtime).date()
 
         print(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{lastmod}</lastmod>\n  </url>")
