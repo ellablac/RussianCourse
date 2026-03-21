@@ -1,7 +1,7 @@
 // Google Analytics loader for Sky4Tech projects
 
 (function () {
-  const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // ← replace this
+  const GA_MEASUREMENT_ID = "G-ZMV43BYPET";
 
   // Load gtag script dynamically
   const script = document.createElement("script");
